@@ -3,3 +3,5 @@ __pycache__/
 data/live/
 .env
 .DS_Store
+.venv/
+data/intraday/
