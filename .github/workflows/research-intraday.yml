@@ -20,8 +20,11 @@ jobs:
           path: data/intraday
           key: exp201-dukascopy-m30-v1-${{ hashFiles('config/exp201.json') }}
       - name: Dukascopy-Daten laden (30 Min, Bid + Ask)
+        shell: bash
         run: |
-          mkdir -p data/intraday
+          set -o pipefail
+          mkdir -p data/intraday reports
+          exec > >(tee reports/exp201-fetch.log) 2>&1
           TO=$(date -u -d "yesterday" +%F)
           for pair in US500:usa500idxusd US100:usatechidxusd DE40:deuidxeur; do
             name=${pair%%:*}; id=${pair##*:}
@@ -30,9 +33,11 @@ jobs:
               npx --yes dukascopy-node@1 -s -i "$id" -from 2016-01-01 -to "$TO" -t m30 -p "$side" \
                 -f csv -dir data/intraday -fn "$name-$side" -bs 15 -bp 500 -r 5 -rp 2000
               f=$(ls data/intraday/$name-$side* | head -1); [ "$f" = "data/intraday/$name-$side.csv" ] || mv "$f" "data/intraday/$name-$side.csv"
-              wc -l "data/intraday/$name-$side.csv"; head -2 "data/intraday/$name-$side.csv"
+              ls -la data/intraday; wc -l "data/intraday/$name-$side.csv"; head -2 "data/intraday/$name-$side.csv"
             done
           done
-      - run: python scripts/research_intraday.py
-      - run: bash .github/workflows/_commit.sh reports
+      - run: python scripts/research_intraday.py 2>&1 | tee -a reports/exp201-fetch.log
+        shell: bash
+      - if: always()
+        run: bash .github/workflows/_commit.sh reports
         env: { COMMIT_MSG: "research: EXP-201 Ergebnis" }
