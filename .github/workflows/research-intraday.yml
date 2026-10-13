@@ -1,6 +1,9 @@
 name: Research EXP-201 (Intraday)
 on:
   workflow_dispatch:
+    inputs:
+      from: { description: 'Startdatum', default: '2016-01-01' }
+      probe: { description: 'Nur Probeabruf (1 Woche, ohne Auswertung)', type: boolean, default: false }
 concurrency: { group: repo-write, cancel-in-progress: false }
 permissions: { contents: write }
 jobs:
@@ -25,18 +28,20 @@ jobs:
           set -o pipefail
           mkdir -p data/intraday reports
           exec > >(tee reports/exp201-fetch.log) 2>&1
-          TO=$(date -u -d "yesterday" +%F)
+          FROM="${{ inputs.from }}"; TO=$(date -u -d "yesterday" +%F)
+          if [ "${{ inputs.probe }}" = "true" ]; then FROM=2024-03-04; TO=2024-03-08; rm -f data/intraday/*.csv; fi
           for pair in US500:usa500idxusd US100:usatechidxusd DE40:deuidxeur; do
             name=${pair%%:*}; id=${pair##*:}
             for side in bid ask; do
               [ -s "data/intraday/$name-$side.csv" ] && continue
-              npx --yes dukascopy-node@1 -s -i "$id" -from 2016-01-01 -to "$TO" -t m30 -p "$side" \
-                -f csv -dir data/intraday -fn "$name-$side" -bs 15 -bp 500 -r 5 -rp 2000
+              npx --yes dukascopy-node@1 -s -i "$id" -from "$FROM" -to "$TO" -t m30 -p "$side" \
+                -f csv -dir data/intraday -fn "$name-$side" -bs 3 -bp 1500 -r 10 -rp 5000 -re
               f=$(ls data/intraday/$name-$side* | head -1); [ "$f" = "data/intraday/$name-$side.csv" ] || mv "$f" "data/intraday/$name-$side.csv"
               ls -la data/intraday; wc -l "data/intraday/$name-$side.csv"; head -2 "data/intraday/$name-$side.csv"
             done
           done
-      - run: python scripts/research_intraday.py 2>&1 | tee -a reports/exp201-fetch.log
+      - if: ${{ !inputs.probe }}
+        run: python scripts/research_intraday.py 2>&1 | tee -a reports/exp201-fetch.log
         shell: bash
       - if: always()
         run: bash .github/workflows/_commit.sh reports
