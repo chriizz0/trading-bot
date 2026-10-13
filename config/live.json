@@ -1,0 +1,9 @@
+{
+  "strategy": null,
+  "strategy_note": "Wird erst gesetzt, wenn eine Strategie das vorregistrierte Gate in reports/EXP-101.md besteht. 'PIPELINE-TEST' = 60/40-Benchmark, nur zum Testen der Technik im Paper-Konto.",
+  "drift_band": 0.05,
+  "min_order_usd": 5,
+  "max_drawdown_halt": 0.25,
+  "live_max_equity_usd": 600,
+  "history_start_days": 800
+}

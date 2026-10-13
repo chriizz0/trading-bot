@@ -1,0 +1,65 @@
+{
+  "preregistered": "2026-10-13",
+  "note": "Vor Sichtung jeglicher Ergebnisse festgelegt. Parameter stammen aus den Originalquellen und werden NICHT optimiert. Änderungen nur mit neuer Experiment-ID.",
+  "experiment_id": "EXP-101",
+  "universe": ["SPY", "EFA", "IEF", "AGG", "VNQ", "DBC", "BIL"],
+  "costs": {
+    "slippage_bps": 5,
+    "commission_per_order": 0.0
+  },
+  "periods": {
+    "dev": ["2007-06-01", "2018-12-31"],
+    "validation": ["2019-01-01", "2022-12-31"],
+    "holdout": ["2023-01-01", null]
+  },
+  "strategies": {
+    "TREND-SPY": {
+      "type": "sma_trend",
+      "assets": ["SPY"],
+      "cash": "BIL",
+      "sma_months": 10,
+      "source": "Faber (2007), A Quantitative Approach to Tactical Asset Allocation – Timing-Regel auf Monatsschlusskursen"
+    },
+    "GTAA5": {
+      "type": "sma_trend",
+      "assets": ["SPY", "EFA", "IEF", "VNQ", "DBC"],
+      "cash": "BIL",
+      "sma_months": 10,
+      "source": "Faber (2007/2013), GTAA mit fünf Anlageklassen, je 20 %, Anlageklasse unter 10-Monats-SMA -> Cash"
+    },
+    "GEM": {
+      "type": "dual_momentum",
+      "equities": ["SPY", "EFA"],
+      "bonds": "AGG",
+      "cash": "BIL",
+      "lookback_months": 12,
+      "source": "Antonacci (2014), Dual Momentum Investing – Global Equities Momentum"
+    }
+  },
+  "benchmarks": {
+    "SPY-BH": {"SPY": 1.0},
+    "60-40": {"SPY": 0.6, "AGG": 0.4}
+  },
+  "gate_to_paper": {
+    "benchmark": "SPY-BH",
+    "full_period": {
+      "min_sharpe_vs_benchmark": 0.0,
+      "max_drawdown_ratio_vs_benchmark": 0.6,
+      "min_cagr_vs_60_40": 0.0
+    },
+    "each_subperiod": {
+      "min_sharpe_vs_benchmark": -0.15
+    },
+    "selection_rule": "Bestehen mehrere Strategien alle Gates, wird die mit der höchsten Sharpe Ratio in 'dev' gewählt (nicht nach Holdout).",
+    "if_none_passes": "Kein Papertrading einer Strategie. Ergebnis unverändert dokumentieren, neue Hypothese mit neuer Experiment-ID."
+  },
+  "gate_to_live": {
+    "min_paper_months": 3,
+    "min_executed_rebalances": 3,
+    "max_operational_errors": 0,
+    "max_abs_return_gap_vs_shadow_pp": 1.5,
+    "kill_switch_never_triggered": true,
+    "initial_live_cap_eur": 500,
+    "note": "Echtgeld nur nach ausdrücklicher Freigabe durch Chris."
+  }
+}
