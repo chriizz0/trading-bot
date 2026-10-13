@@ -1,0 +1,38 @@
+name: Research EXP-201 (Intraday)
+on:
+  workflow_dispatch:
+concurrency: { group: repo-write, cancel-in-progress: false }
+permissions: { contents: write }
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12", cache: pip }
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+      - run: pip install -q -r requirements.txt
+      - run: python -m unittest discover -s tests -q
+      - uses: actions/cache@v4
+        with:
+          path: data/intraday
+          key: exp201-dukascopy-m30-v1-${{ hashFiles('config/exp201.json') }}
+      - name: Dukascopy-Daten laden (30 Min, Bid + Ask)
+        run: |
+          mkdir -p data/intraday
+          TO=$(date -u -d "yesterday" +%F)
+          for pair in US500:usa500idxusd US100:usatechidxusd DE40:deuidxeur; do
+            name=${pair%%:*}; id=${pair##*:}
+            for side in bid ask; do
+              [ -s "data/intraday/$name-$side.csv" ] && continue
+              npx --yes dukascopy-node@1 -s -i "$id" -from 2016-01-01 -to "$TO" -t m30 -p "$side" \
+                -f csv -dir data/intraday -fn "$name-$side" -bs 15 -bp 500 -r 5 -rp 2000
+              f=$(ls data/intraday/$name-$side* | head -1); [ "$f" = "data/intraday/$name-$side.csv" ] || mv "$f" "data/intraday/$name-$side.csv"
+              wc -l "data/intraday/$name-$side.csv"; head -2 "data/intraday/$name-$side.csv"
+            done
+          done
+      - run: python scripts/research_intraday.py
+      - run: bash .github/workflows/_commit.sh reports
+        env: { COMMIT_MSG: "research: EXP-201 Ergebnis" }

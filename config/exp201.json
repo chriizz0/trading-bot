@@ -1,0 +1,74 @@
+{
+  "experiment_id": "EXP-201",
+  "preregistered": "2026-10-13",
+  "note": "Kurzfristige Index-CFD-Strategien. Vor Sichtung jeglicher Daten oder Ergebnisse festgelegt. Keine Parameteroptimierung. Änderungen = neue Experiment-ID.",
+  "data": {
+    "source": "Dukascopy (dukascopy-node), 30-Minuten-Bid- und -Ask-Kerzen, Mid = (Bid+Ask)/2",
+    "start": "2016-01-01",
+    "timeframe": "m30"
+  },
+  "instruments": {
+    "US500": {"dukascopy": "usa500idxusd", "tz": "America/New_York", "session": ["09:30", "16:00"], "currency": "USD",
+              "spread_session": 0.8, "spread_off": 1.5},
+    "US100": {"dukascopy": "usatechidxusd", "tz": "America/New_York", "session": ["09:30", "16:00"], "currency": "USD",
+              "spread_session": 2.0, "spread_off": 4.0},
+    "DE40":  {"dukascopy": "deuidxeur", "tz": "Europe/Berlin", "session": ["09:00", "17:30"], "currency": "EUR",
+              "spread_session": 1.5, "spread_off": 4.0}
+  },
+  "costs": {
+    "spread_note": "Spreads in Indexpunkten, konservativ ca. IG-Konditionen x 1,25; Capital.com ähnlich.",
+    "slippage_points_market": 0.25,
+    "slippage_points_stop_extra": 0.5,
+    "financing_long_pa": 0.065,
+    "financing_short_pa": 0.015,
+    "financing_cutoff_local": "23:00",
+    "financing_cutoff_tz": "Europe/Berlin",
+    "financing_day_count": 360
+  },
+  "risk": {
+    "risk_per_trade": 0.01,
+    "max_leverage": 5.0,
+    "initial_equity": 10000
+  },
+  "quality_gate": {
+    "min_session_slot_coverage_per_day": 0.9,
+    "note": "Tage mit < 90 % der erwarteten 30-Min-Slots in der Hauptsitzung werden nicht gehandelt (Lehre aus EXP-001)."
+  },
+  "periods": {
+    "dev": [null, "2021-12-31"],
+    "validation": ["2022-01-01", "2023-12-31"],
+    "holdout": ["2024-01-01", null]
+  },
+  "strategies": {
+    "IMOM": {
+      "description": "Market Intraday Momentum: Rendite vom Vortagesschluss bis Ende der ersten Sitzungs-halben-Stunde bestimmt Richtung der letzten halben Stunde. Einstieg Open der letzten 30-Min-Kerze, Ausstieg Sitzungsschluss.",
+      "source": "Gao, Han, Li, Zhou (2018), Market Intraday Momentum, Journal of Financial Economics",
+      "stop_pct": 0.004,
+      "min_abs_first_return": 0.0
+    },
+    "IBS": {
+      "description": "Mean Reversion über Internal Bar Strength der Hauptsitzung: IBS=(C-L)/(H-L) < 0,2 -> Long zum nächsten Bar-Open nach Sitzungsschluss, Ausstieg zum Sitzungsschluss des Folgetags. Nur Long.",
+      "source": "Pagonidis (2014), The IBS Effect: Mean Reversion in Equity ETFs (NAAIM)",
+      "ibs_threshold": 0.2,
+      "stop_atr_mult": 2.0,
+      "atr_days": 10
+    },
+    "DONCH": {
+      "description": "Trendfolge auf 1h-Kerzen: Ausbruch über 55-Bar-Hoch -> Long, unter 55-Bar-Tief -> Short; Ausstieg bei Gegenausbruch über 20 Bars oder Stop 2 x ATR(24); Einstieg Open der nächsten Kerze.",
+      "source": "Donchian-/Turtle-Regeln (Faith 2007), auf Stundenbasis übertragen",
+      "entry_bars": 55,
+      "exit_bars": 20,
+      "atr_bars": 24,
+      "stop_atr_mult": 2.0
+    }
+  },
+  "gate_to_demo": {
+    "per": "Strategie x Instrument (9 Kombinationen)",
+    "dev": {"min_trades": 100, "min_t_stat": 2.5, "min_profit_factor": 1.15},
+    "validation": {"min_mean_net": 0.0, "min_profit_factor": 1.05},
+    "holdout": {"min_mean_net": 0.0, "min_profit_factor": 1.0},
+    "full": {"max_drawdown": 0.25},
+    "multiple_testing": "t >= 2,5 statt 2,0 wegen 9 Kombinationen",
+    "if_none_passes": "Kein Demo-Handel. Ergebnis unverändert dokumentieren, neue Hypothesen mit neuer Experiment-ID."
+  }
+}

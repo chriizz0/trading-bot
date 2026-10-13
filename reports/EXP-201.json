@@ -1,0 +1,599 @@
+{
+  "experiment": "EXP-201",
+  "data": {
+    "US500": {
+      "bars": 68785,
+      "first": "2020-01-01 00:00:00+00:00",
+      "last": "2025-06-30 00:00:00+00:00",
+      "errors": [],
+      "session_days": 1433,
+      "good_days": 1433
+    },
+    "US100": {
+      "bars": 68785,
+      "first": "2020-01-01 00:00:00+00:00",
+      "last": "2025-06-30 00:00:00+00:00",
+      "errors": [],
+      "session_days": 1433,
+      "good_days": 1433
+    },
+    "DE40": {
+      "bars": 68785,
+      "first": "2020-01-01 00:00:00+00:00",
+      "last": "2025-06-30 00:00:00+00:00",
+      "errors": [],
+      "session_days": 1433,
+      "good_days": 1433
+    }
+  },
+  "results": {
+    "IMOM/US500": {
+      "stats": {
+        "full": {
+          "trades": 1432,
+          "mean_ret": -0.0007554682368344094,
+          "t_stat": -7.698677205645725,
+          "profit_factor": 0.5818151415706493,
+          "win_rate": 0.4245810055865922,
+          "total_return": -0.664497538927934,
+          "max_drawdown": -0.6693335443584475,
+          "avg_hold_h": 0.4895251396648045,
+          "cost_share_of_gross_abs": 0.2868693201957574,
+          "avg_leverage": 2.3996971208701314
+        },
+        "dev": {
+          "trades": 522,
+          "mean_ret": -0.000903635356912682,
+          "t_stat": -5.581051004417095,
+          "profit_factor": 0.5405754965643724,
+          "win_rate": 0.41954022988505746,
+          "total_return": -0.3784166053611696,
+          "max_drawdown": -0.3922370399521323,
+          "avg_hold_h": 0.4885057471264368,
+          "cost_share_of_gross_abs": 0.3216385583667018,
+          "avg_leverage": 2.3830761801997267
+        },
+        "validation": {
+          "trades": 520,
+          "mean_ret": -0.000779610225549646,
+          "t_stat": -4.747484176820433,
+          "profit_factor": 0.5939764246005367,
+          "win_rate": 0.4,
+          "total_return": -0.33581905271438706,
+          "max_drawdown": -0.3447437250579529,
+          "avg_hold_h": 0.49038461538461536,
+          "cost_share_of_gross_abs": 0.2622990987256973,
+          "avg_leverage": 2.403348253769537
+        },
+        "holdout": {
+          "trades": 390,
+          "mean_ret": -0.0005249629270580474,
+          "t_stat": -2.8105838344541936,
+          "profit_factor": 0.6921393524196512,
+          "win_rate": 0.4641025641025641,
+          "total_return": -0.1873381114809426,
+          "max_drawdown": -0.1914074828975978,
+          "avg_hold_h": 0.4897435897435897,
+          "cost_share_of_gross_abs": 0.23026612800599727,
+          "avg_leverage": 2.4170754334913114
+        }
+      },
+      "checks": {
+        "dev_trades": true,
+        "dev_t_stat": false,
+        "dev_profit_factor": false,
+        "validation_mean": false,
+        "validation_profit_factor": false,
+        "holdout_mean": false,
+        "holdout_profit_factor": false,
+        "full_drawdown": false
+      },
+      "passed": false
+    },
+    "IBS/US500": {
+      "stats": {
+        "full": {
+          "trades": 328,
+          "mean_ret": -0.0001915467467327537,
+          "t_stat": -0.6176766405555564,
+          "profit_factor": 0.9119992771824198,
+          "win_rate": 0.4969512195121951,
+          "total_return": -0.06573285228689651,
+          "max_drawdown": -0.12489747504525561,
+          "avg_hold_h": 33.39329268292683,
+          "cost_share_of_gross_abs": 0.09161179448758558,
+          "avg_leverage": 0.5457668135686865
+        },
+        "dev": {
+          "trades": 120,
+          "mean_ret": -0.0004794687289402998,
+          "t_stat": -0.9131379774391758,
+          "profit_factor": 0.8107144003587354,
+          "win_rate": 0.475,
+          "total_return": -0.05778369942038486,
+          "max_drawdown": -0.1067934912239813,
+          "avg_hold_h": 29.65,
+          "cost_share_of_gross_abs": 0.08990266615190103,
+          "avg_leverage": 0.5331910483021622
+        },
+        "validation": {
+          "trades": 112,
+          "mean_ret": -0.0002368384470577027,
+          "t_stat": -0.4438468945148327,
+          "profit_factor": 0.8953212864024312,
+          "win_rate": 0.48214285714285715,
+          "total_return": -0.027902707920899106,
+          "max_drawdown": -0.0736041613073809,
+          "avg_hold_h": 32.120535714285715,
+          "cost_share_of_gross_abs": 0.08848454767972458,
+          "avg_leverage": 0.5485526074423143
+        },
+        "holdout": {
+          "trades": 96,
+          "mean_ret": 0.0002211960480724531,
+          "t_stat": 0.3984169648371054,
+          "profit_factor": 1.0962630633403698,
+          "win_rate": 0.5416666666666666,
+          "total_return": 0.020024800128034537,
+          "max_drawdown": -0.05600381605648741,
+          "avg_hold_h": 39.557291666666664,
+          "cost_share_of_gross_abs": 0.09762140447886426,
+          "avg_leverage": 0.558236427299276
+        }
+      },
+      "checks": {
+        "dev_trades": true,
+        "dev_t_stat": false,
+        "dev_profit_factor": false,
+        "validation_mean": false,
+        "validation_profit_factor": false,
+        "holdout_mean": true,
+        "holdout_profit_factor": true,
+        "full_drawdown": true
+      },
+      "passed": false
+    },
+    "DONCH/US500": {
+      "stats": {
+        "full": {
+          "trades": 548,
+          "mean_ret": -0.0008670225768260005,
+          "t_stat": -1.2537529231474804,
+          "profit_factor": 0.8530837607306532,
+          "win_rate": 0.3010948905109489,
+          "total_return": -0.42037193122875416,
+          "max_drawdown": -0.4943214852910559,
+          "avg_hold_h": 46.25547445255474,
+          "cost_share_of_gross_abs": 0.09570520531964342,
+          "avg_leverage": 1.3568655062341979
+        },
+        "dev": {
+          "trades": 185,
+          "mean_ret": 0.00031323252323239685,
+          "t_stat": 0.24242502158320112,
+          "profit_factor": 1.0295785207603336,
+          "win_rate": 0.34594594594594597,
+          "total_return": 0.030750528240402586,
+          "max_drawdown": -0.2898714091058936,
+          "avg_hold_h": 52.0,
+          "cost_share_of_gross_abs": 0.10356117802793542,
+          "avg_leverage": 1.3481728964691058
+        },
+        "validation": {
+          "trades": 213,
+          "mean_ret": -0.001782944192098002,
+          "t_stat": -1.8969675166366953,
+          "profit_factor": 0.7137663616604148,
+          "win_rate": 0.29107981220657275,
+          "total_return": -0.3295413425481194,
+          "max_drawdown": -0.3666015165683064,
+          "avg_hold_h": 43.68544600938967,
+          "cost_share_of_gross_abs": 0.09802391266037977,
+          "avg_leverage": 1.3595126136798592
+        },
+        "holdout": {
+          "trades": 150,
+          "mean_ret": -0.0010220618398784494,
+          "t_stat": -0.7109324340608931,
+          "profit_factor": 0.8244850579932671,
+          "win_rate": 0.26,
+          "total_return": -0.16126679062046134,
+          "max_drawdown": -0.23184819798419942,
+          "avg_hold_h": 42.82,
+          "cost_share_of_gross_abs": 0.07713795182713863,
+          "avg_leverage": 1.3638274990383057
+        }
+      },
+      "checks": {
+        "dev_trades": true,
+        "dev_t_stat": false,
+        "dev_profit_factor": false,
+        "validation_mean": false,
+        "validation_profit_factor": false,
+        "holdout_mean": false,
+        "holdout_profit_factor": false,
+        "full_drawdown": false
+      },
+      "passed": false
+    },
+    "IMOM/US100": {
+      "stats": {
+        "full": {
+          "trades": 1432,
+          "mean_ret": -0.000707928686837348,
+          "t_stat": -7.216140866329877,
+          "profit_factor": 0.6180342460439153,
+          "win_rate": 0.4231843575418994,
+          "total_return": -0.640841206394978,
+          "max_drawdown": -0.6428345122317107,
+          "avg_hold_h": 0.48812849162011174,
+          "cost_share_of_gross_abs": 0.22793334257681516,
+          "avg_leverage": 2.4212473037386166
+        },
+        "dev": {
+          "trades": 522,
+          "mean_ret": -0.0006150448742515301,
+          "t_stat": -3.97061282011136,
+          "profit_factor": 0.6504399743604887,
+          "win_rate": 0.4367816091954023,
+          "total_return": -0.27705375109462194,
+          "max_drawdown": -0.28152115437591607,
+          "avg_hold_h": 0.48946360153256707,
+          "cost_share_of_gross_abs": 0.2495106397324835,
+          "avg_leverage": 2.4119661508168018
+        },
+        "validation": {
+          "trades": 520,
+          "mean_ret": -0.0008597272179539598,
+          "t_stat": -5.052182903940496,
+          "profit_factor": 0.5681082973647352,
+          "win_rate": 0.40576923076923077,
+          "total_return": -0.3631146189647271,
+          "max_drawdown": -0.36619993797697203,
+          "avg_hold_h": 0.48653846153846153,
+          "cost_share_of_gross_abs": 0.22915765537192315,
+          "avg_leverage": 2.4146846784641665
+        },
+        "holdout": {
+          "trades": 390,
+          "mean_ret": -0.0006298520560403192,
+          "t_stat": -3.3500744977067876,
+          "profit_factor": 0.6348431623016043,
+          "win_rate": 0.4282051282051282,
+          "total_return": -0.21995579433336632,
+          "max_drawdown": -0.21995579433336632,
+          "avg_hold_h": 0.48846153846153845,
+          "cost_share_of_gross_abs": 0.16295499349865714,
+          "avg_leverage": 2.4424199369896447
+        }
+      },
+      "checks": {
+        "dev_trades": true,
+        "dev_t_stat": false,
+        "dev_profit_factor": false,
+        "validation_mean": false,
+        "validation_profit_factor": false,
+        "holdout_mean": false,
+        "holdout_profit_factor": false,
+        "full_drawdown": false
+      },
+      "passed": false
+    },
+    "IBS/US100": {
+      "stats": {
+        "full": {
+          "trades": 294,
+          "mean_ret": 0.0006807902944893944,
+          "t_stat": 2.030610053888656,
+          "profit_factor": 1.3423930206281287,
+          "win_rate": 0.5816326530612245,
+          "total_return": 0.21561060514136443,
+          "max_drawdown": -0.07458276128155605,
+          "avg_hold_h": 33.18707482993197,
+          "cost_share_of_gross_abs": 0.08057557261433541,
+          "avg_leverage": 0.5515100508410297
+        },
+        "dev": {
+          "trades": 112,
+          "mean_ret": 0.00014926905537409373,
+          "t_stat": 0.2630285464687494,
+          "profit_factor": 1.0560819217008226,
+          "win_rate": 0.5714285714285714,
+          "total_return": 0.014821958429217519,
+          "max_drawdown": -0.07458276128155605,
+          "avg_hold_h": 36.42857142857143,
+          "cost_share_of_gross_abs": 0.09033616449716472,
+          "avg_leverage": 0.5611477810361644
+        },
+        "validation": {
+          "trades": 104,
+          "mean_ret": 0.0012933931087912378,
+          "t_stat": 2.539819001339505,
+          "profit_factor": 1.8861552584786316,
+          "win_rate": 0.6153846153846154,
+          "total_return": 0.14229598230551965,
+          "max_drawdown": -0.029435609531022644,
+          "avg_hold_h": 31.096153846153847,
+          "cost_share_of_gross_abs": 0.08837384732344214,
+          "avg_leverage": 0.5457629175025563
+        },
+        "holdout": {
+          "trades": 78,
+          "mean_ret": 0.0006271965264576238,
+          "t_stat": 0.9137237141438604,
+          "profit_factor": 1.27848046313664,
+          "win_rate": 0.5512820512820513,
+          "total_return": 0.04863892666511904,
+          "max_drawdown": -0.03466073748350973,
+          "avg_hold_h": 31.32051282051282,
+          "cost_share_of_gross_abs": 0.06102787439049483,
+          "avg_leverage": 0.5453341032172618
+        }
+      },
+      "checks": {
+        "dev_trades": true,
+        "dev_t_stat": false,
+        "dev_profit_factor": false,
+        "validation_mean": true,
+        "validation_profit_factor": true,
+        "holdout_mean": true,
+        "holdout_profit_factor": true,
+        "full_drawdown": true
+      },
+      "passed": false
+    },
+    "DONCH/US100": {
+      "stats": {
+        "full": {
+          "trades": 564,
+          "mean_ret": -0.0014404786279071673,
+          "t_stat": -1.8694000893649119,
+          "profit_factor": 0.7039737821033809,
+          "win_rate": 0.2624113475177305,
+          "total_return": -0.5949053390365295,
+          "max_drawdown": -0.6815512346133255,
+          "avg_hold_h": 44.223404255319146,
+          "cost_share_of_gross_abs": 0.08824041862050307,
+          "avg_leverage": 1.3731866108157915
+        },
+        "dev": {
+          "trades": 213,
+          "mean_ret": -0.002726183577281085,
+          "t_stat": -2.576453642617053,
+          "profit_factor": 0.5505280923327538,
+          "win_rate": 0.2347417840375587,
+          "total_return": -0.45448261151804104,
+          "max_drawdown": -0.5066545038175014,
+          "avg_hold_h": 42.76525821596244,
+          "cost_share_of_gross_abs": 0.09813322015572275,
+          "avg_leverage": 1.3721463764078914
+        },
+        "validation": {
+          "trades": 207,
+          "mean_ret": -0.0018025815428067134,
+          "t_stat": -1.4276725129131005,
+          "profit_factor": 0.7246474331768543,
+          "win_rate": 0.2753623188405797,
+          "total_return": -0.3338115598232294,
+          "max_drawdown": -0.367959382743009,
+          "avg_hold_h": 42.82125603864734,
+          "cost_share_of_gross_abs": 0.08639969382020382,
+          "avg_leverage": 1.3677048771639957
+        },
+        "holdout": {
+          "trades": 144,
+          "mean_ret": 0.0009818162165431835,
+          "t_stat": 0.5372246795598643,
+          "profit_factor": 1.1236144722195247,
+          "win_rate": 0.2847222222222222,
+          "total_return": 0.1146815902330518,
+          "max_drawdown": -0.13877506823949182,
+          "avg_hold_h": 48.395833333333336,
+          "cost_share_of_gross_abs": 0.06999708240539598,
+          "avg_leverage": 1.3826052830019337
+        }
+      },
+      "checks": {
+        "dev_trades": true,
+        "dev_t_stat": false,
+        "dev_profit_factor": false,
+        "validation_mean": false,
+        "validation_profit_factor": false,
+        "holdout_mean": true,
+        "holdout_profit_factor": true,
+        "full_drawdown": false
+      },
+      "passed": false
+    },
+    "IMOM/DE40": {
+      "stats": {
+        "full": {
+          "trades": 1432,
+          "mean_ret": -0.00028111910630787107,
+          "t_stat": -2.9571790538860085,
+          "profit_factor": 0.8178524415666998,
+          "win_rate": 0.473463687150838,
+          "total_return": -0.3376009199777392,
+          "max_drawdown": -0.3537268112042008,
+          "avg_hold_h": 0.4926675977653631,
+          "cost_share_of_gross_abs": 0.13510069634236888,
+          "avg_leverage": 2.4513441160223057
+        },
+        "dev": {
+          "trades": 522,
+          "mean_ret": -0.000248769789171859,
+          "t_stat": -1.624087044166293,
+          "profit_factor": 0.8322124569264888,
+          "win_rate": 0.4674329501915709,
+          "total_return": -0.12459324638882163,
+          "max_drawdown": -0.1714201584780939,
+          "avg_hold_h": 0.4952107279693487,
+          "cost_share_of_gross_abs": 0.12225366716732548,
+          "avg_leverage": 2.457266544161517
+        },
+        "validation": {
+          "trades": 520,
+          "mean_ret": -0.00022636566926199984,
+          "t_stat": -1.4109853481309222,
+          "profit_factor": 0.8460748775674712,
+          "win_rate": 0.49038461538461536,
+          "total_return": -0.11414397674534449,
+          "max_drawdown": -0.1698242044924656,
+          "avg_hold_h": 0.4894230769230769,
+          "cost_share_of_gross_abs": 0.12956262093094686,
+          "avg_leverage": 2.453198338990516
+        },
+        "holdout": {
+          "trades": 390,
+          "mean_ret": -0.00039742200581774644,
+          "t_stat": -2.149923706719585,
+          "profit_factor": 0.7550779604348961,
+          "win_rate": 0.45897435897435895,
+          "total_return": -0.145825336282434,
+          "max_drawdown": -0.15271293171428013,
+          "avg_hold_h": 0.4935897435897436,
+          "cost_share_of_gross_abs": 0.1650411492202486,
+          "avg_leverage": 2.440944876452722
+        }
+      },
+      "checks": {
+        "dev_trades": true,
+        "dev_t_stat": false,
+        "dev_profit_factor": false,
+        "validation_mean": false,
+        "validation_profit_factor": false,
+        "holdout_mean": false,
+        "holdout_profit_factor": false,
+        "full_drawdown": false
+      },
+      "passed": false
+    },
+    "IBS/DE40": {
+      "stats": {
+        "full": {
+          "trades": 323,
+          "mean_ret": -0.0005811500155960067,
+          "t_stat": -2.0943275811092312,
+          "profit_factor": 0.744041495205433,
+          "win_rate": 0.44891640866873067,
+          "total_return": -0.1745052485583618,
+          "max_drawdown": -0.2242401769416983,
+          "avg_hold_h": 33.654798761609904,
+          "cost_share_of_gross_abs": 0.07127493210148225,
+          "avg_leverage": 0.4894129150878009
+        },
+        "dev": {
+          "trades": 122,
+          "mean_ret": -0.0005203311438972514,
+          "t_stat": -1.0997166189202254,
+          "profit_factor": 0.7790498909440228,
+          "win_rate": 0.4180327868852459,
+          "total_return": -0.06307198475666753,
+          "max_drawdown": -0.08751274017808797,
+          "avg_hold_h": 33.0,
+          "cost_share_of_gross_abs": 0.0647524914344397,
+          "avg_leverage": 0.49469680679075817
+        },
+        "validation": {
+          "trades": 122,
+          "mean_ret": -0.0010663059574898997,
+          "t_stat": -2.423491818596663,
+          "profit_factor": 0.5775590722412394,
+          "win_rate": 0.4098360655737705,
+          "total_return": -0.12329951176928489,
+          "max_drawdown": -0.13247471303252345,
+          "avg_hold_h": 34.51639344262295,
+          "cost_share_of_gross_abs": 0.07365390055719107,
+          "avg_leverage": 0.4848595560589754
+        },
+        "holdout": {
+          "trades": 79,
+          "mean_ret": 7.415533331294008e-05,
+          "t_stat": 0.13786582891962273,
+          "profit_factor": 1.0332889415075375,
+          "win_rate": 0.5569620253164557,
+          "total_return": 0.004978666801478626,
+          "max_drawdown": -0.03555068644879478,
+          "avg_hold_h": 33.335443037974684,
+          "cost_share_of_gross_abs": 0.0802856303077742,
+          "avg_leverage": 0.48828475070496424
+        }
+      },
+      "checks": {
+        "dev_trades": true,
+        "dev_t_stat": false,
+        "dev_profit_factor": false,
+        "validation_mean": false,
+        "validation_profit_factor": false,
+        "holdout_mean": true,
+        "holdout_profit_factor": true,
+        "full_drawdown": true
+      },
+      "passed": false
+    },
+    "DONCH/DE40": {
+      "stats": {
+        "full": {
+          "trades": 567,
+          "mean_ret": -0.0008426042096780812,
+          "t_stat": -1.259755876320139,
+          "profit_factor": 0.860973720778033,
+          "win_rate": 0.2892416225749559,
+          "total_return": -0.42206474288332163,
+          "max_drawdown": -0.5290627053852754,
+          "avg_hold_h": 44.44268077601411,
+          "cost_share_of_gross_abs": 0.06456154732234923,
+          "avg_leverage": 1.3808154004052853
+        },
+        "dev": {
+          "trades": 202,
+          "mean_ret": -0.0005447596310545739,
+          "t_stat": -0.44677937120020617,
+          "profit_factor": 0.8977677677776661,
+          "win_rate": 0.2722772277227723,
+          "total_return": -0.13021574864190766,
+          "max_drawdown": -0.3108643361974359,
+          "avg_hold_h": 46.83168316831683,
+          "cost_share_of_gross_abs": 0.06302832726803154,
+          "avg_leverage": 1.3779365853533325
+        },
+        "validation": {
+          "trades": 206,
+          "mean_ret": -0.0006206866118789927,
+          "t_stat": -0.5970324198881708,
+          "profit_factor": 0.8818585032706219,
+          "win_rate": 0.30097087378640774,
+          "total_return": -0.1396146304808208,
+          "max_drawdown": -0.24323919781230752,
+          "avg_hold_h": 44.189320388349515,
+          "cost_share_of_gross_abs": 0.061372089465002236,
+          "avg_leverage": 1.3844426233321476
+        },
+        "holdout": {
+          "trades": 159,
+          "mean_ret": -0.001508513832499218,
+          "t_stat": -1.2352049903020812,
+          "profit_factor": 0.7679112123348831,
+          "win_rate": 0.29559748427672955,
+          "total_return": -0.22772027573067544,
+          "max_drawdown": -0.27716731154161045,
+          "avg_hold_h": 41.735849056603776,
+          "cost_share_of_gross_abs": 0.07217764374668237,
+          "avg_leverage": 1.3797733420251632
+        }
+      },
+      "checks": {
+        "dev_trades": true,
+        "dev_t_stat": false,
+        "dev_profit_factor": false,
+        "validation_mean": false,
+        "validation_profit_factor": false,
+        "holdout_mean": false,
+        "holdout_profit_factor": false,
+        "full_drawdown": false
+      },
+      "passed": false
+    }
+  },
+  "passed": []
+}
