@@ -1,5 +1,11 @@
 # trading-bot
 
+> **Aktueller Fokus (13.10.2026): kurzfristiges Index-CFD-Trading (US500, US100, DE40), Stunden bis wenige Tage, erst Demo.**
+> Experiment **EXP-201** (`config/exp201.json`, vorregistriert): IMOM (Intraday-Momentum), IBS (Mean Reversion), DONCH (1h-Trendfolge).
+> Workflow `Research EXP-201 (Intraday)` lädt Dukascopy-Daten und schreibt `reports/EXP-201.md`.
+> Broker für Demo: Capital.com (Konto in Klärung). Der Bot handelt dort später selbst innerhalb harter Grenzen; Claude prüft täglich.
+> Der Tages-ETF-Teil unten (EXP-101, Alpaca) ist geparkt.
+
 KI-überwachter Regel-Bot: **Backtest → Papertrading → (vielleicht) kleines Echtgeld.**
 Neuanfang ab 13.10.2026. Der Backtest-Gedanke, die Datenprüfung und die
 Lehren stammen aus `trading-research` (eingefroren); der Code ist neu und auf
