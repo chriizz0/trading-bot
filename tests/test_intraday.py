@@ -60,3 +60,22 @@ class TestIBT(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestBi5(unittest.TestCase):
+    def test_parse_and_aggregate(self):
+        import lzma
+        import struct
+        from datetime import date
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+        from fetch_dukascopy import parse_bi5, to_m30
+        recs = b"".join(struct.pack(">5if", t * 60, 4950000 + t, 4950500 + t, 4949000, 4951000 + t, 1.0) for t in range(60))
+        rows = parse_bi5(lzma.compress(recs, format=lzma.FORMAT_ALONE), date(2024, 2, 5))
+        self.assertEqual(len(rows), 60)
+        ts, o, h, l, c = rows[0]
+        self.assertEqual(pd.Timestamp(ts, unit="ms", tz="UTC"), pd.Timestamp("2024-02-05", tz="UTC"))
+        self.assertAlmostEqual(o, 4950.0); self.assertAlmostEqual(c, 4950.5); self.assertAlmostEqual(l, 4949.0); self.assertAlmostEqual(h, 4951.0)
+        m30 = to_m30(rows)
+        self.assertEqual(len(m30), 2)
+        self.assertAlmostEqual(m30["open"].iloc[1], 4950.030)
+        self.assertAlmostEqual(m30["close"].iloc[0], 4950.529)

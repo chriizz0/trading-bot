@@ -14,32 +14,22 @@ jobs:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
         with: { python-version: "3.12", cache: pip }
-      - uses: actions/setup-node@v5
-        with: { node-version: "20" }
       - run: pip install -q -r requirements.txt
       - run: python -m unittest discover -s tests -q
       - uses: actions/cache@v4
         with:
           path: data/intraday
-          key: exp201-dukascopy-m30-v1-${{ hashFiles('config/exp201.json') }}
-      - name: Dukascopy-Daten laden (30 Min, Bid + Ask)
+          key: exp201-dukascopy-bi5-v2-${{ hashFiles('config/exp201.json') }}
+      - name: Dukascopy-Daten laden (bi5, 1 Min -> 30 Min, Bid + Ask)
         shell: bash
         run: |
           set -o pipefail
-          mkdir -p data/intraday reports
-          exec > >(tee reports/exp201-fetch.log) 2>&1
-          FROM="${{ inputs.from }}"; TO=$(date -u -d "yesterday" +%F)
-          if [ "${{ inputs.probe }}" = "true" ]; then FROM=2024-03-04; TO=2024-03-08; rm -f data/intraday/*.csv; fi
-          for pair in US500:usa500idxusd US100:usatechidxusd DE40:deuidxeur; do
-            name=${pair%%:*}; id=${pair##*:}
-            for side in bid ask; do
-              [ -s "data/intraday/$name-$side.csv" ] && continue
-              npx --yes dukascopy-node@1 -s -i "$id" -from "$FROM" -to "$TO" -t m30 -p "$side" \
-                -f csv -dir data/intraday -fn "$name-$side" -bs 3 -bp 1500 -r 10 -rp 5000 -re
-              f=$(ls data/intraday/$name-$side* | head -1); [ "$f" = "data/intraday/$name-$side.csv" ] || mv "$f" "data/intraday/$name-$side.csv"
-              ls -la data/intraday; wc -l "data/intraday/$name-$side.csv"; head -2 "data/intraday/$name-$side.csv"
-            done
-          done
+          mkdir -p reports
+          if [ "${{ inputs.probe }}" = "true" ]; then
+            python scripts/fetch_dukascopy.py --from 2024-02-05 --to 2024-02-09 --out /tmp/probe 2>&1 | tee reports/exp201-fetch.log
+          else
+            python scripts/fetch_dukascopy.py --from "${{ inputs.from }}" 2>&1 | tee reports/exp201-fetch.log
+          fi
       - if: ${{ !inputs.probe }}
         run: python scripts/research_intraday.py 2>&1 | tee -a reports/exp201-fetch.log
         shell: bash
