@@ -1,31 +1,8 @@
-US500 bid: 7200 Minuten → 240 30-Min-Kerzen, 2024-02-05 00:00:00+00:00 – 2024-02-09 23:30:00+00:00, Close min/max 4923.1/5026.6, 20s
-US500 ask: 7200 Minuten → 240 30-Min-Kerzen, 2024-02-05 00:00:00+00:00 – 2024-02-09 23:30:00+00:00, Close min/max 4923.6/5027.1, 20s
-US100 bid: 7200 Minuten → 240 30-Min-Kerzen, 2024-02-05 00:00:00+00:00 – 2024-02-09 23:30:00+00:00, Close min/max 17498.9/17973.0, 19s
-US100 ask: 7200 Minuten → 240 30-Min-Kerzen, 2024-02-05 00:00:00+00:00 – 2024-02-09 23:30:00+00:00, Close min/max 17500.4/17974.4, 83s
 Traceback (most recent call last):
-  File "/home/runner/work/trading-bot/trading-bot/scripts/fetch_dukascopy.py", line 102, in <module>
-    sys.exit(main())
-             ^^^^^^
-  File "/home/runner/work/trading-bot/trading-bot/scripts/fetch_dukascopy.py", line 88, in main
-    parts = list(ex.map(lambda d: fetch_day(SYMBOLS[name], d, side), days))
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
-    yield _result_or_cancel(fs.pop())
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
-    return fut.result(timeout)
-           ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/concurrent/futures/_base.py", line 449, in result
-    return self.__get_result()
-           ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
-    raise self._exception
-  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/concurrent/futures/thread.py", line 59, in run
-    result = self.fn(*self.args, **self.kwargs)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/trading-bot/trading-bot/scripts/fetch_dukascopy.py", line 88, in <lambda>
-    parts = list(ex.map(lambda d: fetch_day(SYMBOLS[name], d, side), days))
-                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/trading-bot/trading-bot/scripts/fetch_dukascopy.py", line 55, in fetch_day
-    raise RuntimeError(f"Download fehlgeschlagen: {sym} {d} {side}")
-RuntimeError: Download fehlgeschlagen: DEUIDXEUR 2024-02-06 bid
+  File "<stdin>", line 5, in <module>
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/pandas/core/reshape/concat.py", line 407, in concat
+    objs, keys, ndims = _clean_keys_and_objs(objs, keys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/pandas/core/reshape/concat.py", line 808, in _clean_keys_and_objs
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
