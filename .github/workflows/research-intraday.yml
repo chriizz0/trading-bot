@@ -1,38 +1,64 @@
 name: Research EXP-201 (Intraday)
 on:
   workflow_dispatch:
-    inputs:
-      from: { description: 'Startdatum', default: '2016-01-01' }
-      probe: { description: 'Nur Probeabruf (1 Woche, ohne Auswertung)', type: boolean, default: false }
-concurrency: { group: repo-write, cancel-in-progress: false }
+concurrency: { group: exp201, cancel-in-progress: false }
 permissions: { contents: write }
 jobs:
-  run:
+  fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        name: [US500, US100, DE40]
+        side: [bid, ask]
+        chunk: ["2016-01-01:2017-12-31", "2018-01-01:2019-12-31", "2020-01-01:2021-12-31", "2022-01-01:2023-12-31", "2024-01-01:2099-12-31"]
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with: { python-version: "3.12", cache: pip }
+      - run: pip install -q -r requirements.txt
+      - shell: bash
+        run: |
+          c="${{ matrix.chunk }}"
+          python scripts/fetch_dukascopy.py --name ${{ matrix.name }} --side ${{ matrix.side }} \
+            --from "${c%%:*}" --to "${c##*:}" --out "parts/${{ matrix.name }}-${{ matrix.side }}-${c%%:*}.csv" \
+            2>&1 | tee "parts/log-${{ matrix.name }}-${{ matrix.side }}-${c%%:*}.txt"
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: part-${{ matrix.name }}-${{ matrix.side }}-${{ strategy.job-index }}
+          path: parts/
+          retention-days: 7
+  research:
+    needs: fetch
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
         with: { python-version: "3.12", cache: pip }
       - run: pip install -q -r requirements.txt
       - run: python -m unittest discover -s tests -q
-      - uses: actions/cache@v4
-        with:
-          path: data/intraday
-          key: exp201-dukascopy-bi5-v2-${{ hashFiles('config/exp201.json') }}
-      - name: Dukascopy-Daten laden (bi5, 1 Min -> 30 Min, Bid + Ask)
-        shell: bash
+      - uses: actions/download-artifact@v4
+        with: { pattern: part-*, path: parts, merge-multiple: true }
+      - shell: bash
         run: |
           set -o pipefail
-          mkdir -p reports
-          if [ "${{ inputs.probe }}" = "true" ]; then
-            python scripts/fetch_dukascopy.py --from 2024-02-05 --to 2024-02-09 --out /tmp/probe 2>&1 | tee reports/exp201-fetch.log
-          else
-            python scripts/fetch_dukascopy.py --from "${{ inputs.from }}" 2>&1 | tee reports/exp201-fetch.log
-          fi
-      - if: ${{ !inputs.probe }}
-        run: python scripts/research_intraday.py 2>&1 | tee -a reports/exp201-fetch.log
-        shell: bash
+          mkdir -p reports data/intraday
+          cat parts/log-*.txt > reports/exp201-fetch.log || true
+          python - <<'PY' 2>&1 | tee -a reports/exp201-fetch.log
+          import glob, pandas as pd
+          for n in ["US500", "US100", "DE40"]:
+              for s in ["bid", "ask"]:
+                  fs = sorted(glob.glob(f"parts/{n}-{s}-*.csv"))
+                  df = pd.concat([pd.read_csv(f) for f in fs]).drop_duplicates("timestamp").sort_values("timestamp")
+                  df.to_csv(f"data/intraday/{n}-{s}.csv", index=False)
+                  print(n, s, len(fs), "Teile", len(df), "Kerzen")
+          PY
+          python scripts/research_intraday.py 2>&1 | tee -a reports/exp201-fetch.log
       - if: always()
         run: bash .github/workflows/_commit.sh reports
-        env: { COMMIT_MSG: "research: EXP-201 Ergebnis" }
+        env: { COMMIT_MSG: "research: EXP-201 Ergebnis (echte Dukascopy-Daten)" }

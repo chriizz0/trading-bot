@@ -37,7 +37,7 @@ def parse_bi5(raw: bytes, d: date) -> list[tuple]:
             for t, o, c, l, h, _v in REC.iter_unpack(lzma.decompress(raw))]
 
 
-def fetch_day(sym: str, d: date, side: str, retries: int = 6) -> list[tuple]:
+def fetch_day(sym: str, d: date, side: str, retries: int = 8) -> list[tuple] | None:
     req = urllib.request.Request(url(sym, d, side), headers={"User-Agent": UA, "Referer": "https://www.dukascopy.com/"})
     for k in range(retries):
         try:
@@ -51,8 +51,8 @@ def fetch_day(sym: str, d: date, side: str, retries: int = 6) -> list[tuple]:
                 return []
         except (urllib.error.URLError, TimeoutError, lzma.LZMAError, ConnectionError):
             pass
-        time.sleep(1.5 * (k + 1))
-    raise RuntimeError(f"Download fehlgeschlagen: {sym} {d} {side}")
+        time.sleep(min(2 ** k, 30))
+    return None  # endgültig fehlgeschlagen → als fehlender Tag protokolliert
 
 
 def to_m30(rows: list[tuple]) -> pd.DataFrame:
@@ -66,36 +66,30 @@ def to_m30(rows: list[tuple]) -> pd.DataFrame:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--from", dest="start", default="2016-01-01")
+    ap.add_argument("--name", required=True, choices=list(SYMBOLS))
+    ap.add_argument("--side", required=True, choices=["bid", "ask"])
+    ap.add_argument("--from", dest="start", required=True)
     ap.add_argument("--to", dest="end", default=str(date.today() - timedelta(days=1)))
-    ap.add_argument("--out", default="data/intraday")
-    ap.add_argument("--only", nargs="*", default=list(SYMBOLS))
-    ap.add_argument("--workers", type=int, default=8)
+    ap.add_argument("--out", required=True)
+    ap.add_argument("--workers", type=int, default=6)
     a = ap.parse_args()
-    out = Path(a.out)
-    out.mkdir(parents=True, exist_ok=True)
-    d0, d1 = date.fromisoformat(a.start), date.fromisoformat(a.end)
+    d0, d1 = date.fromisoformat(a.start), min(date.fromisoformat(a.end), date.today() - timedelta(days=1))
     days = [d0 + timedelta(n) for n in range((d1 - d0).days + 1)]
     days = [d for d in days if d.weekday() != 5]  # Samstag ohne Handel
-    for name in a.only:
-        for side in ("bid", "ask"):
-            target = out / f"{name}-{side}.csv"
-            if target.exists() and target.stat().st_size > 0:
-                print(f"{target} vorhanden")
-                continue
-            t0 = time.time()
-            with ThreadPoolExecutor(a.workers) as ex:
-                parts = list(ex.map(lambda d: fetch_day(SYMBOLS[name], d, side), days))
-            rows = [r for p in parts for r in p]
-            if not rows:
-                print(f"KEINE DATEN {name} {side}")
-                return 1
-            df = to_m30(rows)
-            df.to_csv(target, index=False, float_format="%.3f")
-            print(f"{name} {side}: {len(rows)} Minuten → {len(df)} 30-Min-Kerzen, "
-                  f"{df.index[0]} – {df.index[-1]}, Close min/max {df.close.min():.1f}/{df.close.max():.1f}, "
-                  f"{time.time() - t0:.0f}s", flush=True)
-    return 0
+    t0 = time.time()
+    with ThreadPoolExecutor(a.workers) as ex:
+        parts = list(ex.map(lambda d: fetch_day(SYMBOLS[a.name], d, a.side), days))
+    missing = [str(d) for d, p in zip(days, parts) if p is None]
+    rows = [r for p in parts if p for r in p]
+    if not rows:
+        print(f"KEINE DATEN {a.name} {a.side} {d0}–{d1}")
+        return 1
+    df = to_m30(rows)
+    Path(a.out).parent.mkdir(parents=True, exist_ok=True)
+    df.to_csv(a.out, index=False, float_format="%.3f")
+    print(f"{a.name} {a.side} {d0}–{d1}: {len(df)} 30-Min-Kerzen, Close {df.close.min():.1f}–{df.close.max():.1f}, "
+          f"{len(missing)} Tage fehlgeschlagen {missing[:10]}, {time.time() - t0:.0f}s", flush=True)
+    return 1 if len(missing) > 0.02 * len(days) else 0
 
 
 if __name__ == "__main__":
