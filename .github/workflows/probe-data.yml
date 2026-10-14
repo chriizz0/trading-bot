@@ -1,0 +1,20 @@
+name: Probe Datenquellen
+on: { workflow_dispatch: }
+permissions: { contents: write }
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - shell: bash
+        run: |
+          mkdir -p reports; L=reports/probe-data.log; : > $L
+          U="https://datafeed.dukascopy.com/datafeed/USA500IDXUSD/2024/02/05/BID_candles_min_1.bi5"
+          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15"
+          echo "duka plain: $(curl -s -o /tmp/a -w '%{http_code} %{size_download}' $U)" >> $L
+          echo "duka UA: $(curl -s -o /tmp/b -w '%{http_code} %{size_download}' -A "$UA" -H 'Referer: https://www.dukascopy.com/' $U)" >> $L
+          echo "histdata: $(curl -s -o /dev/null -w '%{http_code}' -A "$UA" https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/spxusd/2024)" >> $L
+          echo "capital demo: $(curl -s -o /dev/null -w '%{http_code}' https://demo-api-capital.backend-capital.com/api/v1/ping)" >> $L
+          cat $L
+      - run: bash .github/workflows/_commit.sh reports
+        env: { COMMIT_MSG: "probe: Datenquellen" }
