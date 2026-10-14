@@ -1,17 +1,12 @@
 #!/bin/zsh
-# EXP-201-Daten auf dem eigenen Mac laden (Dukascopy blockt GitHub-Server mit HTTP 202).
-# Aufruf im Terminal:  zsh fetch_intraday_mac.sh
+# EXP-201 auf dem Mac: Daten laden (fortsetzbar), auswerten, Ergebnis pushen.
+# Aufruf im Ordner trading-bot:  zsh scripts/fetch_intraday_mac.sh
 set -e
-DIR="$HOME/Documents/20 Projekte/trading-bot-daten"
-mkdir -p "$DIR" && cd "$DIR"
-TO=$(date -v-1d +%F)
-for pair in US500:usa500idxusd US100:usatechidxusd DE40:deuidxeur; do
-  name=${pair%%:*}; id=${pair##*:}
-  for side in bid ask; do
-    [ -s "$name-$side.csv" ] && { echo "$name-$side vorhanden"; continue; }
-    echo "Lade $name $side ..."
-    npx --yes dukascopy-node@1 -s -i "$id" -from 2016-01-01 -to "$TO" -t m30 -p "$side" \
-      -f csv -dir . -fn "$name-$side" -bs 10 -bp 500 -r 10 -rp 3000 -ch -chpath .cache
-  done
-done
-ls -lh *.csv && echo "FERTIG – sag Claude Bescheid."
+cd "$(dirname "$0")/.."
+git pull -q
+PY=.venv/bin/python; [ -x "$PY" ] || { python3 -m venv .venv && .venv/bin/pip install -q -r requirements.txt; }
+$PY scripts/fetch_dukascopy.py || { echo "Abruf unvollständig – Skript einfach nochmal starten."; exit 1; }
+$PY -m unittest discover -s tests -q
+$PY scripts/research_intraday.py | tail -40
+git add reports/EXP-201.md reports/EXP-201.json reports/exp201
+git commit -qm "research: EXP-201 Ergebnis (Dukascopy, lokal geladen)" && git push -q && echo "FERTIG – Ergebnis gepusht."

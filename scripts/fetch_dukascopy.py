@@ -51,7 +51,7 @@ def fetch_day(sym: str, d: date, side: str, retries: int = 8) -> list[tuple] | N
                 return []
         except (urllib.error.URLError, TimeoutError, lzma.LZMAError, ConnectionError):
             pass
-        time.sleep(min(2 ** k, 30))
+        time.sleep(min(3 * 2 ** k, 60))
     return None  # endgültig fehlgeschlagen → als fehlender Tag protokolliert
 
 
@@ -64,32 +64,65 @@ def to_m30(rows: list[tuple]) -> pd.DataFrame:
     return m30
 
 
+def fetch_month(name: str, side: str, y: int, m: int, cache: Path, workers: int, pause: float) -> tuple[int | None, list[str]]:
+    """Einen Monat laden und als 30-Min-CSV im Cache ablegen (fortsetzbar)."""
+    f = cache / f"{name}-{side}-{y}-{m:02d}.csv"
+    if f.exists():
+        return -1, []
+    d0 = date(y, m, 1)
+    d1 = min((date(y + (m == 12), m % 12 + 1, 1) - timedelta(days=1)), date.today() - timedelta(days=1))
+    days = [d0 + timedelta(n) for n in range((d1 - d0).days + 1) if (d0 + timedelta(n)).weekday() != 5]
+
+    def get(d):
+        time.sleep(pause)
+        return fetch_day(SYMBOLS[name], d, side)
+
+    with ThreadPoolExecutor(workers) as ex:
+        parts = list(ex.map(get, days))
+    missing = [str(d) for d, p in zip(days, parts) if p is None]
+    if len(missing) > 2:  # Monat nicht cachen → beim nächsten Lauf erneut versuchen
+        return None, missing
+    rows = [r for p in parts if p for r in p]
+    df = to_m30(rows) if rows else pd.DataFrame(columns=["timestamp", "open", "high", "low", "close"])
+    df.to_csv(f, index=False, float_format="%.3f")
+    return len(df), missing
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--name", required=True, choices=list(SYMBOLS))
-    ap.add_argument("--side", required=True, choices=["bid", "ask"])
-    ap.add_argument("--from", dest="start", required=True)
-    ap.add_argument("--to", dest="end", default=str(date.today() - timedelta(days=1)))
-    ap.add_argument("--out", required=True)
-    ap.add_argument("--workers", type=int, default=6)
+    ap.add_argument("--names", nargs="+", default=list(SYMBOLS))
+    ap.add_argument("--from", dest="start", default="2016-01-01")
+    ap.add_argument("--out", default="data/intraday")
+    ap.add_argument("--workers", type=int, default=3)
+    ap.add_argument("--pause", type=float, default=0.15, help="Pause je Anfrage und Thread (Sekunden)")
     a = ap.parse_args()
-    d0, d1 = date.fromisoformat(a.start), min(date.fromisoformat(a.end), date.today() - timedelta(days=1))
-    days = [d0 + timedelta(n) for n in range((d1 - d0).days + 1)]
-    days = [d for d in days if d.weekday() != 5]  # Samstag ohne Handel
-    t0 = time.time()
-    with ThreadPoolExecutor(a.workers) as ex:
-        parts = list(ex.map(lambda d: fetch_day(SYMBOLS[a.name], d, a.side), days))
-    missing = [str(d) for d, p in zip(days, parts) if p is None]
-    rows = [r for p in parts if p for r in p]
-    if not rows:
-        print(f"KEINE DATEN {a.name} {a.side} {d0}–{d1}")
-        return 1
-    df = to_m30(rows)
-    Path(a.out).parent.mkdir(parents=True, exist_ok=True)
-    df.to_csv(a.out, index=False, float_format="%.3f")
-    print(f"{a.name} {a.side} {d0}–{d1}: {len(df)} 30-Min-Kerzen, Close {df.close.min():.1f}–{df.close.max():.1f}, "
-          f"{len(missing)} Tage fehlgeschlagen {missing[:10]}, {time.time() - t0:.0f}s", flush=True)
-    return 1 if len(missing) > 0.02 * len(days) else 0
+    out, cache = Path(a.out), Path(a.out) / "cache"
+    cache.mkdir(parents=True, exist_ok=True)
+    s0, end = date.fromisoformat(a.start), date.today() - timedelta(days=1)
+    months = [(y, m) for y in range(s0.year, end.year + 1) for m in range(1, 13)
+              if date(y, m, 1) >= date(s0.year, s0.month, 1) and date(y, m, 1) <= end]
+    failed = []
+    for name in a.names:
+        for side in ("bid", "ask"):
+            for y, m in months:
+                t0 = time.time()
+                n, missing = fetch_month(name, side, y, m, cache, a.workers, a.pause)
+                if n == -1:
+                    continue
+                status = "OK" if n is not None else "UNVOLLSTÄNDIG – später erneut"
+                print(f"{name} {side} {y}-{m:02d}: {n} Kerzen, {len(missing)} Tage fehlgeschlagen, "
+                      f"{time.time() - t0:.0f}s {status}", flush=True)
+                if n is None:
+                    failed.append(f"{name}-{side}-{y}-{m:02d}")
+            files = sorted(cache.glob(f"{name}-{side}-*.csv"))
+            frames = [pd.read_csv(f) for f in files if f.stat().st_size > 40]
+            if frames:
+                df = pd.concat(frames).drop_duplicates("timestamp").sort_values("timestamp")
+                df.to_csv(out / f"{name}-{side}.csv", index=False)
+                print(f"== {name} {side}: {len(df)} Kerzen aus {len(files)} Monaten → {out / f'{name}-{side}.csv'}", flush=True)
+    if failed:
+        print(f"Nicht vollständig: {failed} – Skript einfach erneut starten.")
+    return 1 if failed else 0
 
 
 if __name__ == "__main__":
