@@ -5,6 +5,10 @@
 > Workflow `Research EXP-201 (Intraday)` lädt Dukascopy-Daten und schreibt `reports/EXP-201.md`.
 > Broker für Demo: Capital.com (Konto in Klärung). Der Bot handelt dort später selbst innerhalb harter Grenzen; Claude prüft täglich.
 > Der Tages-ETF-Teil unten (EXP-101, Alpaca) ist geparkt.
+>
+> **Capital.com-Demo** (`src/tbot/capital.py`, nur Demo-URL): `.env.example` → `.env` kopieren und Demo-API-Schlüssel eintragen.
+> `python scripts/capital_markets.py` schreibt Epics, Mindestgröße, Spread, Margin, Finanzierung und Handelszeiten nach
+> `reports/capital-markets.json`; `--test-order` öffnet die kleinste Position mit Stop und schließt sie nach 10 s.
 
 KI-überwachter Regel-Bot: **Backtest → Papertrading → (vielleicht) kleines Echtgeld.**
 Neuanfang ab 13.10.2026. Der Backtest-Gedanke, die Datenprüfung und die
