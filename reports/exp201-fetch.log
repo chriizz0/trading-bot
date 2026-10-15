@@ -64,7 +64,7 @@ DE40 2026-09: 945 Kerzen, Close 25034.2–26218.2
 
 - US500: 122951 Kerzen 2016-01-03–2026-10-01, 2564/2763 Sitzungstage geprüft ok
 - US100: 123007 Kerzen 2016-01-03–2026-10-01, 2561/2763 Sitzungstage geprüft ok
-- DE40: 94268 Kerzen 2016-01-04–2026-10-01, 2627/2750 Sitzungstage geprüft ok
+- DE40: 94268 Kerzen 2016-01-04–2026-10-01, 2627/2750 Sitzungstage geprüft ok, FEHLER: 2 Kurssprünge > 15 % zwischen Kerzen, erster 2020-06-15
 
 ## full
 
@@ -76,9 +76,6 @@ DE40 2026-09: 945 Kerzen, Close 25034.2–26218.2
 | IMOM/US100 | 2482 | -0.044 % | -3.45 | 0.75 | 42 % | -68.4 % | -68.7 % | 0.5 | 18 % |
 | IBS/US100 | 413 | 0.019 % | 0.85 | 1.11 | 54 % | 7.8 % | -8.6 % | 33.9 | 7 % |
 | DONCH/US100 | 1028 | -0.112 % | -1.99 | 0.81 | 27 % | -73.1 % | -75.9 % | 43.0 | 10 % |
-| IMOM/DE40 | 2612 | -0.069 % | -6.73 | 0.69 | 42 % | -83.9 % | -84.8 % | 0.5 | 16 % |
-| IBS/DE40 | 471 | -0.064 % | -3.14 | 0.69 | 47 % | -26.4 % | -28.4 % | 33.8 | 8 % |
-| DONCH/DE40 | 801 | 0.748 % | 0.97 | 1.22 | 27 % | 354.5 % | -42.2 % | 56.3 | 5 % |
 
 ## dev
 
@@ -90,9 +87,6 @@ DE40 2026-09: 945 Kerzen, Close 25034.2–26218.2
 | IMOM/US100 | 1454 | -0.058 % | -3.37 | 0.68 | 40 % | -58.2 % | -60.3 % | 0.5 | 24 % |
 | IBS/US100 | 203 | 0.024 % | 0.72 | 1.13 | 57 % | 4.7 % | -5.0 % | 34.1 | 9 % |
 | DONCH/US100 | 584 | -0.109 % | -1.42 | 0.81 | 28 % | -51.8 % | -58.3 % | 44.1 | 12 % |
-| IMOM/DE40 | 1516 | -0.061 % | -4.52 | 0.72 | 42 % | -61.1 % | -61.1 % | 0.5 | 16 % |
-| IBS/DE40 | 264 | -0.056 % | -2.02 | 0.72 | 47 % | -14.1 % | -16.2 % | 34.6 | 8 % |
-| DONCH/DE40 | 417 | 0.112 % | 0.58 | 1.09 | 27 % | 24.6 % | -34.2 % | 63.8 | 8 % |
 
 ## validation
 
@@ -104,9 +98,6 @@ DE40 2026-09: 945 Kerzen, Close 25034.2–26218.2
 | IMOM/US100 | 376 | 0.006 % | 0.15 | 1.01 | 49 % | 1.1 % | -14.0 % | 0.4 | 8 % |
 | IBS/US100 | 99 | -0.010 % | -0.22 | 0.94 | 45 % | -1.1 % | -4.6 % | 33.8 | 4 % |
 | DONCH/US100 | 164 | -0.089 % | -0.67 | 0.85 | 27 % | -15.5 % | -25.0 % | 45.1 | 5 % |
-| IMOM/DE40 | 395 | -0.175 % | -5.66 | 0.48 | 36 % | -50.3 % | -50.3 % | 0.4 | 25 % |
-| IBS/DE40 | 82 | -0.109 % | -2.44 | 0.48 | 45 % | -8.6 % | -10.0 % | 32.3 | 11 % |
-| DONCH/DE40 | 98 | 6.069 % | 0.97 | 6.69 | 30 % | 486.4 % | -18.5 % | 74.5 | 2 % |
 
 ## holdout
 
@@ -118,9 +109,6 @@ DE40 2026-09: 945 Kerzen, Close 25034.2–26218.2
 | IMOM/US100 | 652 | -0.043 % | -2.11 | 0.78 | 45 % | -25.2 % | -26.9 % | 0.5 | 8 % |
 | IBS/US100 | 111 | 0.037 % | 0.88 | 1.23 | 56 % | 4.1 % | -3.1 % | 33.6 | 5 % |
 | DONCH/US100 | 280 | -0.132 % | -1.24 | 0.80 | 27 % | -33.8 % | -45.7 % | 39.5 | 5 % |
-| IMOM/DE40 | 701 | -0.025 % | -1.51 | 0.85 | 46 % | -16.7 % | -23.0 % | 0.5 | 7 % |
-| IBS/DE40 | 125 | -0.050 % | -1.27 | 0.74 | 47 % | -6.2 % | -7.8 % | 33.4 | 6 % |
-| DONCH/DE40 | 286 | -0.148 % | -1.30 | 0.78 | 24 % | -37.8 % | -40.4 % | 39.3 | 6 % |
 
 ## Gates zu Demo
 
@@ -130,9 +118,6 @@ DE40 2026-09: 945 Kerzen, Close 25034.2–26218.2
 - **IMOM/US100**: nein – dev_t_stat, dev_profit_factor, validation_profit_factor, holdout_mean, holdout_profit_factor, full_drawdown
 - **IBS/US100**: nein – dev_t_stat, dev_profit_factor, validation_mean, validation_profit_factor
 - **DONCH/US100**: nein – dev_t_stat, dev_profit_factor, validation_mean, validation_profit_factor, holdout_mean, holdout_profit_factor, full_drawdown
-- **IMOM/DE40**: nein – dev_t_stat, dev_profit_factor, validation_mean, validation_profit_factor, holdout_mean, holdout_profit_factor, full_drawdown
-- **IBS/DE40**: nein – dev_t_stat, dev_profit_factor, validation_mean, validation_profit_factor, holdout_mean, holdout_profit_factor, full_drawdown
-- **DONCH/DE40**: nein – dev_t_stat, dev_profit_factor, holdout_mean, holdout_profit_factor, full_drawdown
 
 **Bestanden:** keine Kombination
 
