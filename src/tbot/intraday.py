@@ -41,6 +41,10 @@ def load_mid(data_dir: str | Path, name: str) -> tuple[pd.DataFrame, list[str]]:
     if (a["close"] < b["close"] - 1e-9).mean() > 0.001:
         errors.append("Ask < Bid in > 0,1 % der Kerzen")
     mid = (b + a) / 2
+    jump = (mid["open"] / mid["close"].shift(1) - 1).abs()
+    if (jump > 0.15).any():  # Kerzensprung > 15 %: Instrumentwechsel/Datenfehler (Lehre HistData GRXEUR 2020–2023)
+        bad = mid.index[jump > 0.15]
+        errors.append(f"{len(bad)} Kurssprünge > 15 % zwischen Kerzen, erster {bad[0]:%Y-%m-%d}")
     # Bars ohne Preisbewegung und mit Bid==Ask-Artefakten sind bei Dukascopy oft Füllkerzen außerhalb der Handelszeit
     flat = (b["high"] == b["low"]) & (a["high"] == a["low"]) & (b["open"] == b["close"])
     mid = mid[~flat]

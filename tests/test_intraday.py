@@ -79,3 +79,18 @@ class TestBi5(unittest.TestCase):
         self.assertEqual(len(m30), 2)
         self.assertAlmostEqual(m30["open"].iloc[1], 4950.030)
         self.assertAlmostEqual(m30["close"].iloc[0], 4950.529)
+
+
+class TestJump(unittest.TestCase):
+    def test_level_jump_is_error(self):
+        import tempfile
+        from tbot.intraday import load_mid
+        idx = pd.date_range("2024-01-02 14:30", periods=4, freq="30min", tz="UTC")
+        px = [100, 101, 30, 31]
+        df = pd.DataFrame({"timestamp": idx.as_unit("ms").asi8, "open": px, "high": [p + 1 for p in px],
+                           "low": [p - 1 for p in px], "close": px})
+        with tempfile.TemporaryDirectory() as d:
+            for s in ("bid", "ask"):
+                df.to_csv(f"{d}/X-{s}.csv", index=False)
+            _, err = load_mid(d, "X")
+        self.assertTrue(any("Kurssprünge" in e for e in err))
