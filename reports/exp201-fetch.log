@@ -1,0 +1,138 @@
+US500 2016: 11910 Kerzen, Close 1806.5–2277.8
+US500 2017: 11586 Kerzen, Close 2240.5–2697.8
+US500 2018: 11870 Kerzen, Close 2326.0–2945.0
+US500 2019: 11519 Kerzen, Close 2440.1–3250.3
+US500 2020: 11491 Kerzen, Close 2186.0–3755.1
+US500 2021: 11560 Kerzen, Close 3675.0–4805.5
+US500 2022: 11553 Kerzen, Close 3500.6–4814.2
+US500 2023: 10081 Kerzen, Close 3800.8–4795.1
+US500 2024: 11561 Kerzen, Close 4674.9–6099.3
+US500 2025: 11507 Kerzen, Close 4827.2–6938.7
+US500 2026-01: 938 Kerzen, Close 6786.4–7007.0
+US500 2026-02: 893 Kerzen, Close 6750.8–6998.4
+US500 2026-03: 1000 Kerzen, Close 6318.7–6896.8
+US500 2026-04: 945 Kerzen, Close 6464.3–7235.7
+US500 2026-05: 937 Kerzen, Close 7187.3–7604.2
+US500 2026-06: 983 Kerzen, Close 7235.1–7615.1
+US500 2026-07: 1015 Kerzen, Close 7305.3–7583.6
+US500 2026-08: 957 Kerzen, Close 7517.6–7814.7
+US500 2026-09: 942 Kerzen, Close 7523.1–7773.4
+== US500: 123248 Kerzen
+US100 2016: 11961 Kerzen, Close 3871.5–4990.2
+US100 2017: 11667 Kerzen, Close 4881.5–6544.0
+US100 2018: 11911 Kerzen, Close 5831.9–7724.2
+US100 2019: 11521 Kerzen, Close 6130.4–8813.8
+US100 2020: 11482 Kerzen, Close 6641.5–12901.4
+US100 2021: 11560 Kerzen, Close 12236.4–16745.0
+US100 2022: 11552 Kerzen, Close 10467.9–16550.1
+US100 2023: 10077 Kerzen, Close 10687.3–16962.8
+US100 2024: 11532 Kerzen, Close 16215.3–22126.1
+US100 2025: 11502 Kerzen, Close 16402.4–26236.2
+US100 2026-01: 938 Kerzen, Close 24904.2–26189.1
+US100 2026-02: 893 Kerzen, Close 24243.8–25901.0
+US100 2026-03: 995 Kerzen, Close 22830.8–25184.1
+US100 2026-04: 945 Kerzen, Close 23508.0–27529.2
+US100 2026-05: 937 Kerzen, Close 27419.2–30512.4
+US100 2026-06: 983 Kerzen, Close 28308.6–30733.3
+US100 2026-07: 1016 Kerzen, Close 27155.5–30176.5
+US100 2026-08: 957 Kerzen, Close 28297.4–30243.6
+US100 2026-09: 942 Kerzen, Close 28823.7–30767.8
+== US100: 123371 Kerzen
+DE40 2016: 7217 Kerzen, Close 8728.0–11479.8
+DE40 2017: 6981 Kerzen, Close 11432.8–13522.2
+DE40 2018: 7199 Kerzen, Close 10298.7–13579.5
+DE40 2019: 11519 Kerzen, Close 10400.9–13423.2
+DE40 2020: 9104 Kerzen, Close 2912.0–13819.9
+DE40 2021: 7224 Kerzen, Close 3466.1–4412.1
+DE40 2022: 7219 Kerzen, Close 3262.0–4394.1
+DE40 2023: 6288 Kerzen, Close 3818.0–16981.8
+DE40 2024: 11581 Kerzen, Close 16351.3–20507.2
+DE40 2025: 11572 Kerzen, Close 19214.7–24747.3
+DE40 2026-01: 942 Kerzen, Close 24295.3–25492.3
+DE40 2026-02: 897 Kerzen, Close 24269.6–25374.3
+DE40 2026-03: 992 Kerzen, Close 21874.4–24982.1
+DE40 2026-04: 945 Kerzen, Close 22717.8–24745.8
+DE40 2026-05: 940 Kerzen, Close 23679.4–25397.5
+DE40 2026-06: 986 Kerzen, Close 23984.9–25324.5
+DE40 2026-07: 1018 Kerzen, Close 24652.2–25887.3
+DE40 2026-08: 953 Kerzen, Close 25827.2–26600.8
+DE40 2026-09: 945 Kerzen, Close 25034.2–26218.2
+== DE40: 94522 Kerzen
+# EXP-201 Ergebnis
+
+## Daten
+
+- US500: 122951 Kerzen 2016-01-03–2026-10-01, 2564/2763 Sitzungstage geprüft ok
+- US100: 123007 Kerzen 2016-01-03–2026-10-01, 2561/2763 Sitzungstage geprüft ok
+- DE40: 94268 Kerzen 2016-01-04–2026-10-01, 2627/2750 Sitzungstage geprüft ok
+
+## full
+
+| Kombi | Trades | Ø Netto/Trade | t | PF | Trefferq. | Gesamt | Max DD | Ø Halten h | Kosten/|Brutto| |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| IMOM/US500 | 2484 | -0.074 % | -6.89 | 0.58 | 37 % | -84.8 % | -84.8 % | 0.5 | 34 % |
+| IBS/US500 | 422 | -0.014 % | -0.57 | 0.92 | 50 % | -6.2 % | -16.7 % | 33.2 | 11 % |
+| DONCH/US500 | 1032 | -0.211 % | -4.02 | 0.64 | 25 % | -90.2 % | -90.3 % | 42.1 | 18 % |
+| IMOM/US100 | 2482 | -0.044 % | -3.45 | 0.75 | 42 % | -68.4 % | -68.7 % | 0.5 | 18 % |
+| IBS/US100 | 413 | 0.019 % | 0.85 | 1.11 | 54 % | 7.8 % | -8.6 % | 33.9 | 7 % |
+| DONCH/US100 | 1028 | -0.112 % | -1.99 | 0.81 | 27 % | -73.1 % | -75.9 % | 43.0 | 10 % |
+| IMOM/DE40 | 2612 | -0.069 % | -6.73 | 0.69 | 42 % | -83.9 % | -84.8 % | 0.5 | 16 % |
+| IBS/DE40 | 471 | -0.064 % | -3.14 | 0.69 | 47 % | -26.4 % | -28.4 % | 33.8 | 8 % |
+| DONCH/DE40 | 801 | 0.748 % | 0.97 | 1.22 | 27 % | 354.5 % | -42.2 % | 56.3 | 5 % |
+
+## dev
+
+| Kombi | Trades | Ø Netto/Trade | t | PF | Trefferq. | Gesamt | Max DD | Ø Halten h | Kosten/|Brutto| |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| IMOM/US500 | 1449 | -0.092 % | -6.36 | 0.52 | 32 % | -74.1 % | -74.5 % | 0.5 | 40 % |
+| IBS/US500 | 216 | -0.043 % | -1.18 | 0.81 | 50 % | -9.2 % | -13.9 % | 32.6 | 13 % |
+| DONCH/US500 | 576 | -0.238 % | -3.27 | 0.59 | 25 % | -76.7 % | -78.4 % | 42.8 | 21 % |
+| IMOM/US100 | 1454 | -0.058 % | -3.37 | 0.68 | 40 % | -58.2 % | -60.3 % | 0.5 | 24 % |
+| IBS/US100 | 203 | 0.024 % | 0.72 | 1.13 | 57 % | 4.7 % | -5.0 % | 34.1 | 9 % |
+| DONCH/US100 | 584 | -0.109 % | -1.42 | 0.81 | 28 % | -51.8 % | -58.3 % | 44.1 | 12 % |
+| IMOM/DE40 | 1516 | -0.061 % | -4.52 | 0.72 | 42 % | -61.1 % | -61.1 % | 0.5 | 16 % |
+| IBS/DE40 | 264 | -0.056 % | -2.02 | 0.72 | 47 % | -14.1 % | -16.2 % | 34.6 | 8 % |
+| DONCH/DE40 | 417 | 0.112 % | 0.58 | 1.09 | 27 % | 24.6 % | -34.2 % | 63.8 | 8 % |
+
+## validation
+
+| Kombi | Trades | Ø Netto/Trade | t | PF | Trefferq. | Gesamt | Max DD | Ø Halten h | Kosten/|Brutto| |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| IMOM/US500 | 378 | -0.029 % | -0.88 | 0.87 | 45 % | -11.1 % | -15.2 % | 0.4 | 16 % |
+| IBS/US500 | 94 | -0.006 % | -0.12 | 0.96 | 41 % | -0.6 % | -5.0 % | 34.2 | 7 % |
+| DONCH/US500 | 161 | -0.007 % | -0.05 | 0.97 | 29 % | -3.6 % | -20.0 % | 46.0 | 8 % |
+| IMOM/US100 | 376 | 0.006 % | 0.15 | 1.01 | 49 % | 1.1 % | -14.0 % | 0.4 | 8 % |
+| IBS/US100 | 99 | -0.010 % | -0.22 | 0.94 | 45 % | -1.1 % | -4.6 % | 33.8 | 4 % |
+| DONCH/US100 | 164 | -0.089 % | -0.67 | 0.85 | 27 % | -15.5 % | -25.0 % | 45.1 | 5 % |
+| IMOM/DE40 | 395 | -0.175 % | -5.66 | 0.48 | 36 % | -50.3 % | -50.3 % | 0.4 | 25 % |
+| IBS/DE40 | 82 | -0.109 % | -2.44 | 0.48 | 45 % | -8.6 % | -10.0 % | 32.3 | 11 % |
+| DONCH/DE40 | 98 | 6.069 % | 0.97 | 6.69 | 30 % | 486.4 % | -18.5 % | 74.5 | 2 % |
+
+## holdout
+
+| Kombi | Trades | Ø Netto/Trade | t | PF | Trefferq. | Gesamt | Max DD | Ø Halten h | Kosten/|Brutto| |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| IMOM/US500 | 657 | -0.062 % | -3.63 | 0.65 | 42 % | -34.1 % | -34.4 % | 0.5 | 18 % |
+| IBS/US500 | 112 | 0.036 % | 0.82 | 1.21 | 58 % | 4.0 % | -3.2 % | 33.3 | 9 % |
+| DONCH/US500 | 295 | -0.272 % | -3.13 | 0.66 | 25 % | -56.6 % | -59.7 % | 38.7 | 11 % |
+| IMOM/US100 | 652 | -0.043 % | -2.11 | 0.78 | 45 % | -25.2 % | -26.9 % | 0.5 | 8 % |
+| IBS/US100 | 111 | 0.037 % | 0.88 | 1.23 | 56 % | 4.1 % | -3.1 % | 33.6 | 5 % |
+| DONCH/US100 | 280 | -0.132 % | -1.24 | 0.80 | 27 % | -33.8 % | -45.7 % | 39.5 | 5 % |
+| IMOM/DE40 | 701 | -0.025 % | -1.51 | 0.85 | 46 % | -16.7 % | -23.0 % | 0.5 | 7 % |
+| IBS/DE40 | 125 | -0.050 % | -1.27 | 0.74 | 47 % | -6.2 % | -7.8 % | 33.4 | 6 % |
+| DONCH/DE40 | 286 | -0.148 % | -1.30 | 0.78 | 24 % | -37.8 % | -40.4 % | 39.3 | 6 % |
+
+## Gates zu Demo
+
+- **IMOM/US500**: nein – dev_t_stat, dev_profit_factor, validation_mean, validation_profit_factor, holdout_mean, holdout_profit_factor, full_drawdown
+- **IBS/US500**: nein – dev_t_stat, dev_profit_factor, validation_mean, validation_profit_factor
+- **DONCH/US500**: nein – dev_t_stat, dev_profit_factor, validation_mean, validation_profit_factor, holdout_mean, holdout_profit_factor, full_drawdown
+- **IMOM/US100**: nein – dev_t_stat, dev_profit_factor, validation_profit_factor, holdout_mean, holdout_profit_factor, full_drawdown
+- **IBS/US100**: nein – dev_t_stat, dev_profit_factor, validation_mean, validation_profit_factor
+- **DONCH/US100**: nein – dev_t_stat, dev_profit_factor, validation_mean, validation_profit_factor, holdout_mean, holdout_profit_factor, full_drawdown
+- **IMOM/DE40**: nein – dev_t_stat, dev_profit_factor, validation_mean, validation_profit_factor, holdout_mean, holdout_profit_factor, full_drawdown
+- **IBS/DE40**: nein – dev_t_stat, dev_profit_factor, validation_mean, validation_profit_factor, holdout_mean, holdout_profit_factor, full_drawdown
+- **DONCH/DE40**: nein – dev_t_stat, dev_profit_factor, holdout_mean, holdout_profit_factor, full_drawdown
+
+**Bestanden:** keine Kombination
+
