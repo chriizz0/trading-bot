@@ -14,7 +14,7 @@ def _post(url: str, headers: dict, body: dict) -> dict:
 
 
 def ask_openai(prompt: str, model: str | None = None) -> str:
-    model = model or os.environ.get("OPENAI_MODEL", "gpt-5")
+    model = model or os.environ.get("OPENAI_MODEL", "gpt-6-astra")
     out = _post("https://api.openai.com/v1/chat/completions",
                 {"Authorization": f"Bearer {os.environ['OPENAI_API_KEY']}"},
                 {"model": model, "messages": [{"role": "user", "content": prompt}]})

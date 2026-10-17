@@ -26,7 +26,7 @@ jobs:
         run: python scripts/exp401_rival.py
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5' }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-6-astra' }}
       - run: python scripts/dashboard.py
       - if: always()
         run: bash .github/workflows/_commit.sh reports/exp401 predictions/exp401-chatgpt docs
