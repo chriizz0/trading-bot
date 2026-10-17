@@ -51,7 +51,7 @@ def main() -> int:
         clean.append({"symbol": s, "p_up": q, "trade": tr, "reason": p.get("reason", "")})
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps({"experiment": "EXP-401", "week_start": week.isoformat(), "analyst": "ChatGPT",
-                               "model": os.environ.get("OPENAI_MODEL", "gpt-5-mini"),
+                               "model": os.environ.get("OPENAI_MODEL", "gpt-5"),
                                "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                                "inputs": [snaps[-1].name], "predictions": clean}, indent=2, ensure_ascii=False))
     print(f"ChatGPT-Prognosen gespeichert: {out.name}, fehlende Werte: {[s for s in universe if s not in preds]}")

@@ -59,7 +59,7 @@ const tip=document.getElementById("tip");
 function card(k,v,extra=""){return `<div class="card"><div class="k">${k}</div><div class="v">${v}</div>${extra}</div>`}
 function pbar(p,color){if(p==null)return"–";const x=Math.round(p*100),l=Math.min(50,x),w=Math.abs(x-50);
  return `<div style="display:flex;gap:8px;align-items:center"><span style="width:34px">${p.toFixed(2).replace(".",",")}</span><div class="bar"><i style="left:${l}%;width:${w}%;background:${color}"></i><i style="left:50%;width:1px;background:var(--muted)"></i></div></div>`}
-fetch("data.json?"+Date.now()).then(r=>r.json()).then(d=>{
+fetch((location.protocol==="file:"?"https://raw.githubusercontent.com/chriizz0/trading-bot/main/docs/data.json":"data.json")+"?"+Date.now()).then(r=>r.json()).then(d=>{
  document.getElementById("gen").textContent="Stand "+d.generated.replace("T"," ").replace("+00:00","")+" UTC";
  const sc=(d.exp401&&d.exp401.score)||{arms:{}},arms=document.getElementById("arms");
  const names=["Claude","ChatGPT"],cols={Claude:"var(--s1)",ChatGPT:"var(--s2)"};
