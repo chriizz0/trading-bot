@@ -3,9 +3,34 @@
   "name": "Claude als Analyst – Vorwärtstest",
   "preregistered": "2026-10-17",
   "note": "Claude gibt jede Woche für alle Werte eine Prognose ab (Chart + Nachrichten). Prognosen werden vor Wochenbeginn committet (Git-Zeitstempel) und danach nie geändert. Kein Geld. Laufzeit 1 Monat (4 Runden) auf Wunsch von Chris – statistisch nur ein erster Eindruck, kein Beweis.",
-  "universe": ["AAPL", "MSFT", "NVDA", "AMZN", "GOOGL", "META", "TSLA", "JPM", "XOM", "LLY",
-               "SPY", "QQQ", "GLD", "^GDAXI", "SAP.DE", "SIE.DE", "ALV.DE", "DTE.DE", "RHM.DE", "MBG.DE"],
-  "rounds": ["2026-10-19", "2026-10-26", "2026-11-02", "2026-11-09"],
+  "universe": [
+    "AAPL",
+    "MSFT",
+    "NVDA",
+    "AMZN",
+    "GOOGL",
+    "META",
+    "TSLA",
+    "JPM",
+    "XOM",
+    "LLY",
+    "SPY",
+    "QQQ",
+    "GLD",
+    "^GDAXI",
+    "SAP.DE",
+    "SIE.DE",
+    "ALV.DE",
+    "DTE.DE",
+    "RHM.DE",
+    "MBG.DE"
+  ],
+  "rounds": [
+    "2026-10-19",
+    "2026-10-26",
+    "2026-11-02",
+    "2026-11-09"
+  ],
   "horizon": "Einstieg Montag-Eröffnung, Ausstieg Freitag-Schluss derselben Woche (oder früher bei Stop/Ziel)",
   "prediction_fields": {
     "p_up": "Wahrscheinlichkeit 0–1, dass Freitag-Schluss > Montag-Eröffnung (Pflicht für jeden Wert)",
@@ -15,13 +40,88 @@
   "scoring": {
     "hit_rate": "Anteil richtiger Richtungen (p_up > 0,5 ⇒ up); p_up = 0,5 zählt nicht",
     "brier": "Mittel (p_up − Ergebnis)²; Münzwurf = 0,25",
-    "baselines": ["immer 0,5 (Münzwurf)", "immer long mit p=0,55", "Momentum: up, wenn 4-Wochen-Rendite > 0"],
+    "baselines": [
+      "immer 0,5 (Münzwurf)",
+      "immer long mit p=0,55",
+      "Momentum: up, wenn 4-Wochen-Rendite > 0"
+    ],
     "trades": "Rendite je Trade mit Stop/Ziel auf Tageskerzen (Stop zuerst, wenn beides am selben Tag), 0,1 % Kosten hin+zurück; in R (Vielfachen des Stops)"
   },
   "success_after_1_month": {
     "hit_rate_min": 0.55,
-    "brier_must_beat": ["Münzwurf", "immer long", "Momentum"],
+    "brier_must_beat": [
+      "Münzwurf",
+      "immer long",
+      "Momentum"
+    ],
     "trades_mean_R_min": 0.0,
-    "meaning": "Nur 'vielversprechend → auf 3 Monate verlängern'. Kein Echtgeld auf Basis von 1 Monat."
-  }
+    "meaning": "Nur 'vielversprechend → auf 3 Monate verlängern'. Kein Echtgeld auf Basis von 1 Monat.",
+    "ic_mean_min": 0.0,
+    "permutation_p_max": 0.1
+  },
+  "amendments": [
+    {
+      "date": "2026-10-17",
+      "before_any_outcome": true,
+      "why": "Recherche: Effekt von LLM-Prognosen ist bei großen Werten klein und vor allem relativ (Lopez-Lira/Tang 2023); 20 stark korrelierte Werte geben zu wenig unabhängige Beobachtungen; strukturierte, datenbasierte Prompts schlagen naive (CNMV WP 96, 2026).",
+      "changes": [
+        "Zusätzliche Auswertung (gilt auch für Runde 1): Überrendite ggü. Benchmark (US→SPY, .DE→DAX, übriges Europa→Euro Stoxx 50), Information Coefficient (Rangkorrelation p_up vs. Überrendite) je Woche, Permutationstest, Long-Short-Portfolio, Kalibrierung nach Konfidenz-Klassen.",
+        "Ab Runde 2: Universum auf 40 Werte erweitert (universe_from_round2) für mehr unabhängige Beobachtungen.",
+        "Ab Runde 2: Eingaben strukturiert – Kennzahlen nur aus Code (Snapshot), Termine und Nachrichtenstimmung über Bigdata.com, feste Checkliste je Wert."
+      ]
+    }
+  ],
+  "universe_from_round2": [
+    "AAPL",
+    "MSFT",
+    "NVDA",
+    "AMZN",
+    "GOOGL",
+    "META",
+    "TSLA",
+    "JPM",
+    "XOM",
+    "LLY",
+    "SPY",
+    "QQQ",
+    "GLD",
+    "^GDAXI",
+    "SAP.DE",
+    "SIE.DE",
+    "ALV.DE",
+    "DTE.DE",
+    "RHM.DE",
+    "MBG.DE",
+    "AMD",
+    "AVGO",
+    "NFLX",
+    "COST",
+    "WMT",
+    "UNH",
+    "PG",
+    "KO",
+    "CAT",
+    "BA",
+    "ASML.AS",
+    "NOVO-B.CO",
+    "MC.PA",
+    "NESN.SW",
+    "SHEL.L",
+    "BAS.DE",
+    "BAYN.DE",
+    "DBK.DE",
+    "IFX.DE",
+    "VOW3.DE"
+  ],
+  "benchmarks": {
+    "US": "SPY",
+    "DE": "^GDAXI",
+    "EU": "^STOXX50E"
+  },
+  "not_in_ic": [
+    "SPY",
+    "QQQ",
+    "GLD",
+    "^GDAXI"
+  ]
 }

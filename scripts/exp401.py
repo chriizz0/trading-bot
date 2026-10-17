@@ -36,8 +36,13 @@ def rsi(c: pd.Series, n: int = 14) -> float:
 
 def snapshot() -> None:
     rows = []
-    for s in CFG["universe"]:
-        d = history(s)
+    for s in CFG.get("universe_from_round2", CFG["universe"]):
+        try:
+            d = history(s)
+            assert len(d) > 210
+        except Exception as e:  # noqa: BLE001
+            rows.append({"Wert": s, "Datum": f"FEHLT ({type(e).__name__})"})
+            continue
         c = d["Close"]
         tr = pd.concat([d["High"] - d["Low"], (d["High"] - c.shift()).abs(), (d["Low"] - c.shift()).abs()], axis=1).max(axis=1)
         r = lambda n: c.iloc[-1] / c.iloc[-1 - n] - 1  # noqa: E731
@@ -55,6 +60,15 @@ def snapshot() -> None:
     (OUT / f"snapshot-{today}.md").write_text(f"# EXP-401 Snapshot {today} (Daten bis Freitag-Schluss)\n\n" + df.to_markdown(index=False) + "\n")
     (OUT / "snapshot-latest.json").write_text(df.to_json(orient="records", indent=1, force_ascii=False))
     print(df.to_string(index=False))
+
+
+def bench_of(sym: str) -> str:
+    b = CFG["benchmarks"]
+    if sym.endswith(".DE"):
+        return b["DE"]
+    if "." in sym:
+        return b["EU"]
+    return b["US"]
 
 
 def committed_at(path: Path) -> datetime | None:
@@ -99,8 +113,11 @@ def score() -> None:
             up = float(wk["Close"].iloc[-1] > wk["Open"].iloc[0])
             prev = h.loc[:week - pd.Timedelta(days=1), "Close"]
             mom = float(prev.iloc[-1] / prev.iloc[-21] - 1 > 0)
+            ret = float(wk["Close"].iloc[-1] / wk["Open"].iloc[0] - 1)
+            bk = history(bench_of(x["symbol"]), str((week - pd.Timedelta(days=10)).date())).loc[week:end]
+            bret = float(bk["Close"].iloc[-1] / bk["Open"].iloc[0] - 1) if len(bk) else float("nan")
             rows.append({"week": p["week_start"], "symbol": x["symbol"], "p": x["p_up"], "up": up, "mom": mom,
-                         "ret": float(wk["Close"].iloc[-1] / wk["Open"].iloc[0] - 1)})
+                         "ret": ret, "alpha": ret - bret})
             tr = x.get("trade")
             if tr:
                 side = 1 if tr["side"] == "long" else -1
@@ -116,8 +133,24 @@ def score() -> None:
               f"- Trefferquote Richtung: {hit:.1%} (Ziel ≥ 55 %; Anteil steigender Werte: {r.up.mean():.0%})",
               f"- Brier Claude: {brier(r.p):.4f} · Münzwurf: 0,2500 · immer long 0,55: {brier(pd.Series(0.55, index=r.index)):.4f}"
               f" · Momentum: {brier(r.mom * 0.1 + 0.45):.4f} (kleiner = besser)", ""]
-        per = r.assign(hit=(r.p > 0.5) == (r.up == 1)).groupby("week").agg(n=("hit", "size"), Treffer=("hit", "mean"))
+        per = dec.assign(hit=(dec.p > 0.5) == (dec.up == 1)).groupby("week").agg(n=("hit", "size"), Treffer=("hit", "mean"))
         L += [per.to_markdown(), ""]
+        # Relativ-Auswertung (ohne Indizes/ETFs)
+        x = r[~r.symbol.isin(CFG["not_in_ic"])].dropna(subset=["alpha"])
+        ics = x.groupby("week").apply(lambda g: g.p.rank().corr(g.alpha.rank()) if g.p.nunique() > 1 else np.nan).dropna()
+        if len(ics):
+            rng = np.random.default_rng(0)
+            null = [np.mean([g.p.sample(frac=1, random_state=int(rng.integers(1e9))).rank().reset_index(drop=True)
+                             .corr(g.alpha.rank().reset_index(drop=True)) for _, g in x.groupby("week") if g.p.nunique() > 1])
+                    for _ in range(2000)]
+            pval = float(np.mean(np.array(null) >= ics.mean()))
+            ls = x.groupby("week").apply(lambda g: g.loc[g.p > 0.5, "alpha"].mean() - g.loc[g.p < 0.5, "alpha"].mean())
+            L += [f"- Information Coefficient (Rang p_up vs. Überrendite): Ø {ics.mean():+.3f} je Woche "
+                  f"(Permutationstest p = {pval:.2f}; Ziel IC > 0 und p ≤ 0,10)",
+                  f"- Long-Short (Ø Überrendite p>0,5 minus p<0,5): {ls.mean()*100:+.2f} % pro Woche, kumuliert {ls.sum()*100:+.2f} %", ""]
+        bins = r.p.map(lambda q: "≤0,4" if q <= 0.4 else "0,4–0,5" if q < 0.5 else "0,5" if q == 0.5 else "0,5–0,6" if q < 0.6 else "≥0,6")
+        cal = r.groupby(bins, observed=True).agg(n=("up", "size"), p_mittel=("p", "mean"), tatsächlich_hoch=("up", "mean")).round(2)
+        L += ["Kalibrierung:", "", cal.to_markdown(), ""]
     if trades:
         t = pd.DataFrame(trades)
         L += [f"- Trade-Vorschläge: {len(t)}, Ø {t.R.mean():+.2f} R, Gewinner {float((t.R > 0).mean()):.0%}", "",
