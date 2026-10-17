@@ -1,0 +1,149 @@
+{
+  "experiment": "EXP-401",
+  "week_start": "2026-10-19",
+  "created_at": "2026-10-17T13:52:33+00:00",
+  "analyst": "Claude",
+  "inputs": [
+    "reports/exp401/snapshot-2026-10-17.md",
+    "Earnings: TSLA, META, SAP Mi 21.10. nach Schluss",
+    "Makro: CPI/PPI über Erwartung, VIX 22, Fed-Sitzung 27./28.10."
+  ],
+  "predictions": [
+    {
+      "symbol": "AAPL",
+      "p_up": 0.6,
+      "trade": {
+        "side": "long",
+        "stop_pct": 0.03,
+        "target_pct": 0.04
+      },
+      "reason": "Auf 52-Wochen-Hoch, relative Stärke trotz Tech-Ausverkauf, Volumen 1,6x."
+    },
+    {
+      "symbol": "MSFT",
+      "p_up": 0.55,
+      "trade": null,
+      "reason": "Nahe Hoch, starker 3-Monats-Trend, hielt sich in der Schwächewoche gut."
+    },
+    {
+      "symbol": "NVDA",
+      "p_up": 0.52,
+      "trade": null,
+      "reason": "−6,6 % in der Woche, RSI 38 überverkauft; AI-Finanzierungssorgen (CoreWeave) können weiterlaufen."
+    },
+    {
+      "symbol": "AMZN",
+      "p_up": 0.5,
+      "trade": null,
+      "reason": "Kein klares Bild, knapp unter SMA20/50."
+    },
+    {
+      "symbol": "GOOGL",
+      "p_up": 0.5,
+      "trade": null,
+      "reason": "Seitwärts bis schwach, auf SMA200 – kein Vorteil erkennbar."
+    },
+    {
+      "symbol": "META",
+      "p_up": 0.5,
+      "trade": null,
+      "reason": "Zahlen Mi. nach Börsenschluss – Ausgang offen."
+    },
+    {
+      "symbol": "TSLA",
+      "p_up": 0.48,
+      "trade": null,
+      "reason": "Zahlen Mi., unter SMA200, −28 % vom Hoch; Ereignisrisiko in beide Richtungen."
+    },
+    {
+      "symbol": "JPM",
+      "p_up": 0.53,
+      "trade": null,
+      "reason": "Zahlen schon veröffentlicht, stabil über SMA200."
+    },
+    {
+      "symbol": "XOM",
+      "p_up": 0.5,
+      "trade": null,
+      "reason": "Starker Trend, aber RSI 73 überkauft – Momentum vs. Rücksetzer gleichen sich aus."
+    },
+    {
+      "symbol": "LLY",
+      "p_up": 0.53,
+      "trade": null,
+      "reason": "Klarer Aufwärtstrend nahe Hoch, leicht überkauft."
+    },
+    {
+      "symbol": "SPY",
+      "p_up": 0.6,
+      "trade": {
+        "side": "long",
+        "stop_pct": 0.025,
+        "target_pct": 0.03
+      },
+      "reason": "Nach −2 % Woche und VIX-Spitze 22 historisch leichte Erholungsneigung; Trend über SMA200 intakt."
+    },
+    {
+      "symbol": "QQQ",
+      "p_up": 0.6,
+      "trade": {
+        "side": "long",
+        "stop_pct": 0.035,
+        "target_pct": 0.04
+      },
+      "reason": "Schlechteste Woche seit Juni, RSI 35, über SMA200 – Erholung wahrscheinlicher als weiterer Einbruch."
+    },
+    {
+      "symbol": "GLD",
+      "p_up": 0.4,
+      "trade": {
+        "side": "short",
+        "stop_pct": 0.03,
+        "target_pct": 0.03
+      },
+      "reason": "Unter SMA50 und SMA200, −23 % vom Hoch, Abwärtstrend; heiße Inflation stützt Zinsen."
+    },
+    {
+      "symbol": "^GDAXI",
+      "p_up": 0.55,
+      "trade": null,
+      "reason": "Hielt sich gegen US-Tech, über SMA200."
+    },
+    {
+      "symbol": "SAP.DE",
+      "p_up": 0.52,
+      "trade": null,
+      "reason": "Zahlen Mi. nach Schluss, starke Woche, Ereignisrisiko."
+    },
+    {
+      "symbol": "SIE.DE",
+      "p_up": 0.52,
+      "trade": null,
+      "reason": "Neutral um SMA20/50."
+    },
+    {
+      "symbol": "ALV.DE",
+      "p_up": 0.54,
+      "trade": null,
+      "reason": "Defensiv, über SMA200, gute Woche."
+    },
+    {
+      "symbol": "DTE.DE",
+      "p_up": 0.5,
+      "trade": null,
+      "reason": "Abwärtstrend, aber Erholung letzte Woche – unentschieden."
+    },
+    {
+      "symbol": "RHM.DE",
+      "p_up": 0.5,
+      "trade": null,
+      "reason": "+16 % Woche nach −43 % vom Hoch, sehr volatil – kein Vorteil."
+    },
+    {
+      "symbol": "MBG.DE",
+      "p_up": 0.48,
+      "trade": null,
+      "reason": "Unter SMA50/200, schwacher Trend."
+    }
+  ]
+}
