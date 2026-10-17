@@ -1,6 +1,8 @@
 # trading-bot
 
-> **Aktueller Fokus (13.10.2026): kurzfristiges Index-CFD-Trading (US500, US100, DE40), Stunden bis wenige Tage, erst Demo.**
+> **Stand 17.10.2026: Keine Strategie hat ihr Gate bestanden – siehe `reports/ENTSCHEIDUNG-2026-10-17.md`. CFD-Pläne ruhen.**
+>
+> Frühere Fokussierung (13.10.2026): kurzfristiges Index-CFD-Trading (US500, US100, DE40).
 > Experiment **EXP-201** (`config/exp201.json`, vorregistriert): IMOM (Intraday-Momentum), IBS (Mean Reversion), DONCH (1h-Trendfolge).
 > Daten + Auswertung lokal auf dem Mac: `zsh scripts/fetch_intraday_mac.sh` (Dukascopy sperrt GitHub-Server; fortsetzbar) → `reports/EXP-201.md`.
 > Broker für Demo: Capital.com (Konto in Klärung). Der Bot handelt dort später selbst innerhalb harter Grenzen; Claude prüft täglich.
