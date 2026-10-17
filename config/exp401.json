@@ -1,0 +1,27 @@
+{
+  "experiment_id": "EXP-401",
+  "name": "Claude als Analyst – Vorwärtstest",
+  "preregistered": "2026-10-17",
+  "note": "Claude gibt jede Woche für alle Werte eine Prognose ab (Chart + Nachrichten). Prognosen werden vor Wochenbeginn committet (Git-Zeitstempel) und danach nie geändert. Kein Geld. Laufzeit 1 Monat (4 Runden) auf Wunsch von Chris – statistisch nur ein erster Eindruck, kein Beweis.",
+  "universe": ["AAPL", "MSFT", "NVDA", "AMZN", "GOOGL", "META", "TSLA", "JPM", "XOM", "LLY",
+               "SPY", "QQQ", "GLD", "^GDAXI", "SAP.DE", "SIE.DE", "ALV.DE", "DTE.DE", "RHM.DE", "MBG.DE"],
+  "rounds": ["2026-10-19", "2026-10-26", "2026-11-02", "2026-11-09"],
+  "horizon": "Einstieg Montag-Eröffnung, Ausstieg Freitag-Schluss derselben Woche (oder früher bei Stop/Ziel)",
+  "prediction_fields": {
+    "p_up": "Wahrscheinlichkeit 0–1, dass Freitag-Schluss > Montag-Eröffnung (Pflicht für jeden Wert)",
+    "trade": "optional, nur bei p_up ≥ 0,6 (long) oder ≤ 0,4 (short): stop_pct und target_pct relativ zum Einstieg",
+    "reason": "1–2 Sätze"
+  },
+  "scoring": {
+    "hit_rate": "Anteil richtiger Richtungen (p_up > 0,5 ⇒ up); p_up = 0,5 zählt nicht",
+    "brier": "Mittel (p_up − Ergebnis)²; Münzwurf = 0,25",
+    "baselines": ["immer 0,5 (Münzwurf)", "immer long mit p=0,55", "Momentum: up, wenn 4-Wochen-Rendite > 0"],
+    "trades": "Rendite je Trade mit Stop/Ziel auf Tageskerzen (Stop zuerst, wenn beides am selben Tag), 0,1 % Kosten hin+zurück; in R (Vielfachen des Stops)"
+  },
+  "success_after_1_month": {
+    "hit_rate_min": 0.55,
+    "brier_must_beat": ["Münzwurf", "immer long", "Momentum"],
+    "trades_mean_R_min": 0.0,
+    "meaning": "Nur 'vielversprechend → auf 3 Monate verlängern'. Kein Echtgeld auf Basis von 1 Monat."
+  }
+}
