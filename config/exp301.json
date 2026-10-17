@@ -1,0 +1,39 @@
+{
+  "experiment_id": "EXP-301",
+  "preregistered": "2026-10-17",
+  "note": "Diversifiziertes Trendfolgen (Time-Series Momentum) auf Tagesdaten, Haltedauer Tage bis Wochen, mit moderatem Hebel über Volatilitätssteuerung. Vor Sichtung jeglicher Ergebnisse festgelegt; keine Parameteroptimierung. Eine Hauptstrategie (gatet), eine Variante nur zur Einordnung.",
+  "why": "Nach EXP-201 (Intraday scheitert an Spreads) und Recherche: Trendfolgen ist die am breitesten belegte systematische Prämie (Moskowitz/Ooi/Pedersen 2012; Hurst/Ooi/Pedersen 2017, 1880–2016) und handelt selten. Bei CFDs belastet die Übernachtgebühr (Capital.com: Benchmark ± 0,01096 %/Tag ≈ 4 % p.a.) – deshalb zwei Kostenmodelle.",
+  "data": {"source": "yfinance, adjustierte Tagesschlusskurse (Gesamtrendite) von ETFs als Stellvertreter der Märkte", "start": "2007-06-01"},
+  "universe": {
+    "SPY": "US-Aktien", "QQQ": "US-Tech", "EFA": "Aktien Industrieländer ex US", "EEM": "Schwellenländer",
+    "IEF": "US-Anleihen 7–10J", "TLT": "US-Anleihen 20J+", "GLD": "Gold", "SLV": "Silber", "DBC": "Rohstoffe breit",
+    "UUP": "US-Dollar", "FXE": "Euro", "FXY": "Yen"
+  },
+  "cash": "BIL",
+  "strategy": {
+    "name": "TSMOM-HOP",
+    "source": "Hurst, Ooi, Pedersen (2017): A Century of Evidence on Trend-Following Investing",
+    "signal": "Mittel der Vorzeichen der Überrenditen (vs. BIL) über 21, 63 und 252 Handelstage → Wert in {-1,-1/3,1/3,1}",
+    "asset_vol_lookback_days": 63,
+    "asset_target_vol": 0.10,
+    "portfolio_target_vol": 0.10,
+    "portfolio_vol_lookback_days": 126,
+    "max_gross_leverage": 3.0,
+    "rebalance": "wöchentlich, Signal am letzten Handelstag der Woche, wirksam ab nächstem Tag"
+  },
+  "variant_info_only": {"name": "TSMOM-12M", "signal": "nur Vorzeichen der 252-Tage-Überrendite"},
+  "cost_models": {
+    "FUTURES": {"note": "Micro-/Mini-Futures (z. B. IBKR): Finanzierung steckt zum risikofreien Satz im Preis, kein Aufschlag",
+                "trade_cost_bps": {"default": 2.0}, "financing_markup_pa": 0.0},
+    "CFD": {"note": "Capital.com-ähnlich: Spread + Übernachtgebühr ≈ 4 % p.a. auf das Exposure (long und short)",
+            "trade_cost_bps": {"default": 5.0}, "financing_markup_pa": 0.04}
+  },
+  "periods": {"dev": [null, "2016-12-31"], "validation": ["2017-01-01", "2022-12-31"], "holdout": ["2023-01-01", null]},
+  "benchmark": "SPY",
+  "gate_to_paper": {
+    "applies_to": "TSMOM-HOP je Kostenmodell",
+    "full": {"min_sharpe": 0.4, "max_drawdown": 0.25, "max_corr_to_spy": 0.5},
+    "each_period": {"min_sharpe": 0.0},
+    "note": "Sharpe auf Überrendite (über BIL). Besteht nur FUTURES, ist das Vehikel Futures (z. B. IBKR-Paper), nicht CFDs."
+  }
+}

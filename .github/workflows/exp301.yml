@@ -1,0 +1,29 @@
+name: Research EXP-301 (Trendfolgen)
+on:
+  workflow_dispatch:
+concurrency:
+  group: exp301
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -q -r requirements.txt
+      - run: python -m unittest discover -s tests -q
+      - name: Daten laden und auswerten
+        shell: bash
+        run: |
+          set -o pipefail; mkdir -p reports
+          python scripts/fetch_data.py --symbols SPY QQQ EFA EEM IEF TLT GLD SLV DBC UUP FXE FXY BIL --start 2007-01-01 2>&1 | tee reports/exp301-fetch.log
+          python scripts/research_tsmom.py 2>&1 | tee -a reports/exp301-fetch.log
+      - if: always()
+        run: bash .github/workflows/_commit.sh reports
+        env:
+          COMMIT_MSG: "research: EXP-301 Ergebnis"
