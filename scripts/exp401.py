@@ -17,7 +17,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 CFG = json.loads((ROOT / "config/exp401.json").read_text())
 OUT = ROOT / "reports/exp401"
-PRED = ROOT / "predictions/exp401"
+ARMS = {"Claude": ROOT / "predictions/exp401", "ChatGPT": ROOT / "predictions/exp401-chatgpt"}
 COST = 0.001
 
 
@@ -57,7 +57,10 @@ def snapshot() -> None:
     df = pd.DataFrame(rows)
     OUT.mkdir(parents=True, exist_ok=True)
     today = date.today().isoformat()
-    (OUT / f"snapshot-{today}.md").write_text(f"# EXP-401 Snapshot {today} (Daten bis Freitag-Schluss)\n\n" + df.to_markdown(index=False) + "\n")
+    name = OUT / f"snapshot-{today}.md"
+    if name.exists():  # nie einen alten Snapshot überschreiben (Prognose-Eingaben bleiben nachvollziehbar)
+        name = OUT / f"snapshot-{datetime.now(timezone.utc):%Y-%m-%dT%H%M}.md"
+    name.write_text(f"# EXP-401 Snapshot {today} (Daten bis Freitag-Schluss)\n\n" + df.to_markdown(index=False) + "\n")
     (OUT / "snapshot-latest.json").write_text(df.to_json(orient="records", indent=1, force_ascii=False))
     print(df.to_string(index=False))
 
@@ -92,71 +95,103 @@ def simulate(d: pd.DataFrame, side: int, stop: float, target: float) -> float:
     return (side * (ex / entry - 1) - COST) / stop
 
 
-def score() -> None:
+_HIST: dict = {}
+
+
+def hist_cached(sym: str, start: str) -> pd.DataFrame:
+    if sym not in _HIST:
+        _HIST[sym] = history(sym, "2026-06-01")
+    return _HIST[sym].loc[start:]
+
+
+def evaluate(arm: str, folder: Path) -> tuple[pd.DataFrame, pd.DataFrame, list[str]]:
     rows, trades, notes = [], [], []
-    for f in sorted(PRED.glob("*.json")):
+    for f in sorted(folder.glob("*.json")):
         p = json.loads(f.read_text())
         week = pd.Timestamp(p["week_start"])
         t = committed_at(f)
         if t is None or t > datetime(week.year, week.month, week.day, 13, 30, tzinfo=timezone.utc):
-            notes.append(f"{f.name}: nach Wochenbeginn committet → ungültig")
+            notes.append(f"{arm} {f.name}: nicht vor Wochenbeginn committet → ungültig")
             continue
         end = week + pd.Timedelta(days=4)
         if pd.Timestamp(date.today()) <= end:
-            notes.append(f"{f.name}: Woche läuft noch")
+            notes.append(f"{arm} {f.name}: Woche läuft noch")
             continue
         for x in p["predictions"]:
-            h = history(x["symbol"], str((week - pd.Timedelta(days=60)).date()))
+            h = hist_cached(x["symbol"], str((week - pd.Timedelta(days=60)).date()))
             wk = h.loc[week:end]
             if wk.empty:
                 continue
-            up = float(wk["Close"].iloc[-1] > wk["Open"].iloc[0])
-            prev = h.loc[:week - pd.Timedelta(days=1), "Close"]
-            mom = float(prev.iloc[-1] / prev.iloc[-21] - 1 > 0)
             ret = float(wk["Close"].iloc[-1] / wk["Open"].iloc[0] - 1)
-            bk = history(bench_of(x["symbol"]), str((week - pd.Timedelta(days=10)).date())).loc[week:end]
+            bk = hist_cached(bench_of(x["symbol"]), str(week.date())).loc[:end]
             bret = float(bk["Close"].iloc[-1] / bk["Open"].iloc[0] - 1) if len(bk) else float("nan")
-            rows.append({"week": p["week_start"], "symbol": x["symbol"], "p": x["p_up"], "up": up, "mom": mom,
+            prev = h.loc[:week - pd.Timedelta(days=1), "Close"]
+            rows.append({"arm": arm, "week": p["week_start"], "symbol": x["symbol"], "p": float(x["p_up"]),
+                         "up": float(ret > 0), "mom": float(prev.iloc[-1] / prev.iloc[-21] - 1 > 0),
                          "ret": ret, "alpha": ret - bret})
             tr = x.get("trade")
             if tr:
                 side = 1 if tr["side"] == "long" else -1
-                trades.append({"week": p["week_start"], "symbol": x["symbol"], "side": tr["side"],
+                trades.append({"arm": arm, "week": p["week_start"], "symbol": x["symbol"], "side": tr["side"],
                                "R": simulate(wk, side, tr["stop_pct"], tr["target_pct"])})
-    L = ["# EXP-401 Zwischenstand – Claude als Analyst", "", f"Stand {date.today()}", ""]
-    if rows:
-        r = pd.DataFrame(rows)
-        dec = r[r.p != 0.5]
-        hit = float(((dec.p > 0.5) == (dec.up == 1)).mean()) if len(dec) else float("nan")
-        brier = lambda q: float(((q - r.up) ** 2).mean())  # noqa: E731
-        L += [f"- Prognosen ausgewertet: {len(r)} (Wochen: {r.week.nunique()})",
-              f"- Trefferquote Richtung: {hit:.1%} (Ziel ≥ 55 %; Anteil steigender Werte: {r.up.mean():.0%})",
-              f"- Brier Claude: {brier(r.p):.4f} · Münzwurf: 0,2500 · immer long 0,55: {brier(pd.Series(0.55, index=r.index)):.4f}"
-              f" · Momentum: {brier(r.mom * 0.1 + 0.45):.4f} (kleiner = besser)", ""]
-        per = dec.assign(hit=(dec.p > 0.5) == (dec.up == 1)).groupby("week").agg(n=("hit", "size"), Treffer=("hit", "mean"))
-        L += [per.to_markdown(), ""]
-        # Relativ-Auswertung (ohne Indizes/ETFs)
-        x = r[~r.symbol.isin(CFG["not_in_ic"])].dropna(subset=["alpha"])
-        ics = x.groupby("week").apply(lambda g: g.p.rank().corr(g.alpha.rank()) if g.p.nunique() > 1 else np.nan).dropna()
-        if len(ics):
-            rng = np.random.default_rng(0)
-            null = [np.mean([g.p.sample(frac=1, random_state=int(rng.integers(1e9))).rank().reset_index(drop=True)
-                             .corr(g.alpha.rank().reset_index(drop=True)) for _, g in x.groupby("week") if g.p.nunique() > 1])
-                    for _ in range(2000)]
-            pval = float(np.mean(np.array(null) >= ics.mean()))
-            ls = x.groupby("week").apply(lambda g: g.loc[g.p > 0.5, "alpha"].mean() - g.loc[g.p < 0.5, "alpha"].mean())
-            L += [f"- Information Coefficient (Rang p_up vs. Überrendite): Ø {ics.mean():+.3f} je Woche "
-                  f"(Permutationstest p = {pval:.2f}; Ziel IC > 0 und p ≤ 0,10)",
-                  f"- Long-Short (Ø Überrendite p>0,5 minus p<0,5): {ls.mean()*100:+.2f} % pro Woche, kumuliert {ls.sum()*100:+.2f} %", ""]
-        bins = r.p.map(lambda q: "≤0,4" if q <= 0.4 else "0,4–0,5" if q < 0.5 else "0,5" if q == 0.5 else "0,5–0,6" if q < 0.6 else "≥0,6")
-        cal = r.groupby(bins, observed=True).agg(n=("up", "size"), p_mittel=("p", "mean"), tatsächlich_hoch=("up", "mean")).round(2)
-        L += ["Kalibrierung:", "", cal.to_markdown(), ""]
-    if trades:
-        t = pd.DataFrame(trades)
-        L += [f"- Trade-Vorschläge: {len(t)}, Ø {t.R.mean():+.2f} R, Gewinner {float((t.R > 0).mean()):.0%}", "",
-              t.round(2).to_markdown(index=False), ""]
-    L += [f"- {n}" for n in notes]
+    return pd.DataFrame(rows), pd.DataFrame(trades), notes
+
+
+def metrics(r: pd.DataFrame, t: pd.DataFrame) -> dict:
+    dec = r[r.p != 0.5]
+    out = {"n": int(len(r)), "weeks": int(r.week.nunique()),
+           "hit_rate": float(((dec.p > 0.5) == (dec.up == 1)).mean()) if len(dec) else None,
+           "share_up": float(r.up.mean()),
+           "brier": float(((r.p - r.up) ** 2).mean()),
+           "brier_coin": 0.25, "brier_always_long": float(((0.55 - r.up) ** 2).mean()),
+           "brier_momentum": float(((r.mom * 0.1 + 0.45 - r.up) ** 2).mean())}
+    x = r[~r.symbol.isin(CFG["not_in_ic"])].dropna(subset=["alpha"])
+    wk = [g for _, g in x.groupby("week") if g.p.nunique() > 1]
+    if wk:
+        ics = [g.p.rank().corr(g.alpha.rank()) for g in wk]
+        rng = np.random.default_rng(0)
+        null = [np.mean([pd.Series(rng.permutation(g.p.values)).rank().corr(g.alpha.rank().reset_index(drop=True))
+                         for g in wk]) for _ in range(2000)]
+        ls = [g.loc[g.p > 0.5, "alpha"].mean() - g.loc[g.p < 0.5, "alpha"].mean() for g in wk]
+        out.update({"ic_mean": float(np.mean(ics)), "ic_by_week": dict(zip([g.week.iloc[0] for g in wk], map(float, ics))),
+                    "perm_p": float(np.mean(np.array(null) >= np.mean(ics))),
+                    "ls_by_week": dict(zip([g.week.iloc[0] for g in wk], map(float, ls)))})
+    bins = r.p.map(lambda q: "≤0,4" if q <= 0.4 else "0,4–0,5" if q < 0.5 else "0,5" if q == 0.5 else "0,5–0,6" if q < 0.6 else "≥0,6")
+    out["calibration"] = r.groupby(bins).agg(n=("up", "size"), p=("p", "mean"), up=("up", "mean")).round(3).reset_index(names="bin").to_dict("records")
+    if len(t):
+        out.update({"trades": int(len(t)), "trade_mean_R": float(t.R.mean()), "trade_win": float((t.R > 0).mean())})
+    return out
+
+
+def score() -> None:
+    allr, allt, notes, res = [], [], [], {}
+    for arm, folder in ARMS.items():
+        if not folder.exists():
+            continue
+        r, t, n = evaluate(arm, folder)
+        notes += n
+        if len(r):
+            res[arm] = metrics(r, t)
+            allr.append(r)
+            if len(t):
+                allt.append(t)
     OUT.mkdir(parents=True, exist_ok=True)
+    payload = {"updated": str(date.today()), "arms": res, "notes": notes,
+               "predictions": pd.concat(allr).round(5).to_dict("records") if allr else [],
+               "trades": pd.concat(allt).round(3).to_dict("records") if allt else []}
+    (OUT / "score.json").write_text(json.dumps(payload, indent=1, ensure_ascii=False, default=str))
+    L = ["# EXP-401 Zwischenstand – KI als Analyst", "", f"Stand {date.today()}", ""]
+    for arm, m in res.items():
+        L += [f"## {arm}", "",
+              f"- Prognosen: {m['n']} in {m['weeks']} Wochen · Trefferquote {m['hit_rate']:.1%} (Ziel ≥ 55 %; Anteil steigender Werte {m['share_up']:.0%})",
+              f"- Brier {m['brier']:.4f} · Münzwurf 0,2500 · immer long {m['brier_always_long']:.4f} · Momentum {m['brier_momentum']:.4f} (kleiner = besser)"]
+        if "ic_mean" in m:
+            L.append(f"- Information Coefficient Ø {m['ic_mean']:+.3f} (Permutationstest p = {m['perm_p']:.2f}) · "
+                     f"Long-Short kumuliert {sum(m['ls_by_week'].values())*100:+.2f} %")
+        if "trades" in m:
+            L.append(f"- Trades: {m['trades']}, Ø {m['trade_mean_R']:+.2f} R, Gewinner {m['trade_win']:.0%}")
+        L += ["", pd.DataFrame(m["calibration"]).to_markdown(index=False), ""]
+    L += [f"- {n}" for n in notes]
     (OUT / "SCORE.md").write_text("\n".join(L) + "\n")
     print("\n".join(L))
 

@@ -1,0 +1,134 @@
+{
+ "generated": "2026-10-17T23:23+00:00",
+ "history": [
+  {
+   "id": "EXP-101",
+   "title": "ETF-Strategien monatlich",
+   "verdict": "knapp gescheitert",
+   "detail": "TREND-SPY: Sharpe 0,68 vs. SPY 0,66, Drawdown −25 % vs. −51 %, Rendite knapp unter 60/40"
+  },
+  {
+   "id": "EXP-201",
+   "title": "Intraday mit Index-CFDs",
+   "verdict": "gescheitert",
+   "detail": "Spread frisst 18–40 % der Bewegung; alle Kombinationen ≤ 0"
+  },
+  {
+   "id": "EXP-301",
+   "title": "Trendfolgen 12 Märkte mit Hebel",
+   "verdict": "gescheitert",
+   "detail": "Futures-Kosten Sharpe 0,27; mit CFD-Gebühren −4 % p.a."
+  }
+ ],
+ "exp401": {
+  "score": null,
+  "week": "2026-10-19",
+  "rows": [
+   {
+    "symbol": "AAPL",
+    "Claude": 0.6,
+    "Claude_trade": "long (Stop 3.0%, Ziel 4.0%)",
+    "reason": "Auf 52-Wochen-Hoch, relative Stärke trotz Tech-Ausverkauf, Volumen 1,6x."
+   },
+   {
+    "symbol": "ALV.DE",
+    "Claude": 0.54,
+    "reason": "Defensiv, über SMA200, gute Woche."
+   },
+   {
+    "symbol": "AMZN",
+    "Claude": 0.5,
+    "reason": "Kein klares Bild, knapp unter SMA20/50."
+   },
+   {
+    "symbol": "DTE.DE",
+    "Claude": 0.5,
+    "reason": "Abwärtstrend, aber Erholung letzte Woche – unentschieden."
+   },
+   {
+    "symbol": "GLD",
+    "Claude": 0.4,
+    "Claude_trade": "short (Stop 3.0%, Ziel 3.0%)",
+    "reason": "Unter SMA50 und SMA200, −23 % vom Hoch, Abwärtstrend; heiße Inflation stützt Zinsen."
+   },
+   {
+    "symbol": "GOOGL",
+    "Claude": 0.5,
+    "reason": "Seitwärts bis schwach, auf SMA200 – kein Vorteil erkennbar."
+   },
+   {
+    "symbol": "JPM",
+    "Claude": 0.53,
+    "reason": "Zahlen schon veröffentlicht, stabil über SMA200."
+   },
+   {
+    "symbol": "LLY",
+    "Claude": 0.53,
+    "reason": "Klarer Aufwärtstrend nahe Hoch, leicht überkauft."
+   },
+   {
+    "symbol": "MBG.DE",
+    "Claude": 0.48,
+    "reason": "Unter SMA50/200, schwacher Trend."
+   },
+   {
+    "symbol": "META",
+    "Claude": 0.5,
+    "reason": "Zahlen Mi. nach Börsenschluss – Ausgang offen."
+   },
+   {
+    "symbol": "MSFT",
+    "Claude": 0.55,
+    "reason": "Nahe Hoch, starker 3-Monats-Trend, hielt sich in der Schwächewoche gut."
+   },
+   {
+    "symbol": "NVDA",
+    "Claude": 0.52,
+    "reason": "−6,6 % in der Woche, RSI 38 überverkauft; AI-Finanzierungssorgen (CoreWeave) können weiterlaufen."
+   },
+   {
+    "symbol": "QQQ",
+    "Claude": 0.6,
+    "Claude_trade": "long (Stop 3.5%, Ziel 4.0%)",
+    "reason": "Schlechteste Woche seit Juni, RSI 35, über SMA200 – Erholung wahrscheinlicher als weiterer Einbruch."
+   },
+   {
+    "symbol": "RHM.DE",
+    "Claude": 0.5,
+    "reason": "+16 % Woche nach −43 % vom Hoch, sehr volatil – kein Vorteil."
+   },
+   {
+    "symbol": "SAP.DE",
+    "Claude": 0.52,
+    "reason": "Zahlen Mi. nach Schluss, starke Woche, Ereignisrisiko."
+   },
+   {
+    "symbol": "SIE.DE",
+    "Claude": 0.52,
+    "reason": "Neutral um SMA20/50."
+   },
+   {
+    "symbol": "SPY",
+    "Claude": 0.6,
+    "Claude_trade": "long (Stop 2.5%, Ziel 3.0%)",
+    "reason": "Nach −2 % Woche und VIX-Spitze 22 historisch leichte Erholungsneigung; Trend über SMA200 intakt."
+   },
+   {
+    "symbol": "TSLA",
+    "Claude": 0.48,
+    "reason": "Zahlen Mi., unter SMA200, −28 % vom Hoch; Ereignisrisiko in beide Richtungen."
+   },
+   {
+    "symbol": "XOM",
+    "Claude": 0.5,
+    "reason": "Starker Trend, aber RSI 73 überkauft – Momentum vs. Rücksetzer gleichen sich aus."
+   },
+   {
+    "symbol": "^GDAXI",
+    "Claude": 0.55,
+    "reason": "Hielt sich gegen US-Tech, über SMA200."
+   }
+  ]
+ },
+ "exp402": null
+}

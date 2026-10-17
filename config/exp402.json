@@ -1,0 +1,16 @@
+{
+  "experiment_id": "EXP-402",
+  "name": "Nachrichten-Reaktion mit günstigem Modell (Vorwärtstest)",
+  "preregistered": "2026-10-18",
+  "basis": "Lopez-Lira & Tang (2023): LLM-Bewertung von Schlagzeilen sagt die Rendite der nächsten 1–2 Tage voraus; stärker bei negativen Nachrichten, schwächer bei großen Werten und seit 2023 abnehmend.",
+  "universe": ["AAPL", "MSFT", "NVDA", "AMZN", "GOOGL", "META", "TSLA", "JPM", "XOM", "LLY",
+               "AMD", "AVGO", "NFLX", "COST", "WMT", "UNH", "PG", "KO", "CAT", "BA"],
+  "benchmark": "SPY",
+  "model": "Claude Haiku über die Anthropic-API (Secret ANTHROPIC_API_KEY), Variable ANTHROPIC_MODEL",
+  "schedule": "Mo–Fr 21:15 UTC nach US-Börsenschluss; Schlagzeilen der letzten 24 h",
+  "signal": "score je Wert in [-1, 1] = erwartete Wirkung der Schlagzeilen auf den Kurs am nächsten Handelstag; 0 = keine/irrelevante Nachrichten",
+  "outcome": "Überrendite vs. SPY vom Schluss am Signaltag bis Schluss am nächsten Handelstag",
+  "end": "2026-11-13",
+  "scoring": ["Information Coefficient je Tag (nur Werte mit score ≠ 0)", "Long-Short: Ø Überrendite score>0 minus score<0", "getrennt: nur negative Nachrichten", "Permutationstest"],
+  "success": {"ic_mean_min": 0.0, "perm_p_max": 0.10, "note": "Nur Forschung, kein Handel. Erfolg = Grund für längeren Test."}
+}

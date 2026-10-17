@@ -22,7 +22,13 @@ jobs:
       - run: pip install -q -r requirements.txt
       - run: python scripts/exp401.py snapshot
       - run: python scripts/exp401.py score
+      - name: ChatGPT-Gegenspieler (nur mit Secret OPENAI_API_KEY)
+        run: python scripts/exp401_rival.py
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5-mini' }}
+      - run: python scripts/dashboard.py
       - if: always()
-        run: bash .github/workflows/_commit.sh reports/exp401
+        run: bash .github/workflows/_commit.sh reports/exp401 predictions/exp401-chatgpt docs
         env:
           COMMIT_MSG: "exp401: Snapshot und Auswertung"
