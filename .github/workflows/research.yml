@@ -20,5 +20,5 @@ jobs:
       - run: python -m unittest discover -s tests -q
       - run: python scripts/fetch_data.py --symbols SPY EFA IEF AGG VNQ DBC BIL --start 2000-01-01
       - run: python scripts/research.py
-      - run: bash .github/workflows/_commit.sh data/raw reports
+      - run: bash .github/workflows/_commit.sh reports
         env: { COMMIT_MSG: "research: EXP-101 Daten + Ergebnis" }
