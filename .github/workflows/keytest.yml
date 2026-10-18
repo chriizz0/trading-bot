@@ -1,0 +1,22 @@
+name: Schlüssel-Test
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Anthropic
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL || 'claude-haiku-5-5' }}
+        run: python -c "import sys;sys.path.insert(0,'src');from tbot.llm import ask_anthropic;print('Anthropic OK:',ask_anthropic('Antworte nur mit OK',max_tokens=5))"
+      - name: OpenAI
+        if: always()
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-6-astra' }}
+        run: python -c "import sys;sys.path.insert(0,'src');from tbot.llm import ask_openai;print('OpenAI OK:',ask_openai('Antworte nur mit OK')[:20])"
