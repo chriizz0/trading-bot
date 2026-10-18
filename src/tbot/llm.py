@@ -4,13 +4,24 @@ from __future__ import annotations
 import json
 import os
 import re
+import urllib.error
 import urllib.request
 
 
+class LLMError(RuntimeError):
+    """Fehlermeldung ohne Header/Schlüssel – darf geloggt werden."""
+
+
 def _post(url: str, headers: dict, body: dict) -> dict:
-    req = urllib.request.Request(url, data=json.dumps(body).encode(), headers={**headers, "Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=300) as r:
-        return json.loads(r.read())
+    headers = {k: v.strip() for k, v in headers.items()}  # Zeilenumbruch aus kopierten Schlüsseln entfernen
+    try:
+        req = urllib.request.Request(url, data=json.dumps(body).encode(), headers={**headers, "Content-Type": "application/json"})
+        with urllib.request.urlopen(req, timeout=300) as r:
+            return json.loads(r.read())
+    except urllib.error.HTTPError as e:
+        raise LLMError(f"HTTP {e.code} von {url.split('/')[2]}: {e.read()[:300].decode('utf-8', 'replace')}") from None
+    except Exception as e:  # noqa: BLE001 – niemals die Original-Meldung (kann Header enthalten) weitergeben
+        raise LLMError(f"{type(e).__name__} beim Aufruf von {url.split('/')[2]}") from None
 
 
 def ask_openai(prompt: str, model: str | None = None) -> str:
