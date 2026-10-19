@@ -74,8 +74,9 @@ def score() -> int:
     rows = []
     if files:
         syms = CFG["universe"] + [CFG["benchmark"]]
-        px = yf.download(syms, start="2026-10-01", auto_adjust=True, progress=False)["Close"]
-        px.index = pd.DatetimeIndex(px.index).tz_localize(None)
+        raw = yf.download(syms, start="2026-10-01", auto_adjust=True, progress=False)
+        px, op = raw["Close"], raw["Open"]
+        px.index = op.index = pd.DatetimeIndex(px.index).tz_localize(None)
         for f in files:
             p = json.loads(f.read_text())
             d = pd.Timestamp(p["signal_date"])
@@ -84,10 +85,13 @@ def score() -> int:
             i = px.index.get_loc(d)
             if i + 1 >= len(px):
                 continue
-            r = px.iloc[i + 1] / px.iloc[i] - 1
+            r = px.iloc[i + 1] / op.iloc[i + 1] - 1          # handelbar: Eröffnung → Schluss nächster Tag
+            r2 = px.iloc[i + 1] / px.iloc[i] - 1             # informativ: Schluss → Schluss (enthält nicht handelbare Nachtlücke)
+            b = CFG["benchmark"]
             for s, v in p.get("scores", {}).items():
                 if v != 0:
-                    rows.append({"date": p["signal_date"], "symbol": s, "score": v, "alpha": float(r[s] - r[CFG["benchmark"]])})
+                    rows.append({"date": p["signal_date"], "symbol": s, "score": v, "alpha": float(r[s] - r[b]),
+                                 "alpha_close_close": float(r2[s] - r2[b])})
     res = {"updated": datetime.now(timezone.utc).date().isoformat(), "signals": len(rows)}
     if rows:
         x = pd.DataFrame(rows)
@@ -103,6 +107,7 @@ def score() -> int:
                     "perm_p": float(np.mean(np.array(null) >= np.mean(list(ics.values())))) if ics else None,
                     "ls_by_day": ls, "neg_mean_alpha": float(neg.alpha.mean()) if len(neg) else None,
                     "pos_mean_alpha": float(x[x.score > 0].alpha.mean()) if (x.score > 0).any() else None,
+                    "ic_close_close_info": float(np.mean([g.score.rank().corr(g.alpha_close_close.rank()) for g in days])) if days else None,
                     "signals_list": x.round(5).to_dict("records")})
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "score.json").write_text(json.dumps(res, indent=1, ensure_ascii=False))

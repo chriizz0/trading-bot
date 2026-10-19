@@ -69,6 +69,15 @@
         "Ab Runde 2: Universum auf 40 Werte erweitert (universe_from_round2) für mehr unabhängige Beobachtungen.",
         "Ab Runde 2: Eingaben strukturiert – Kennzahlen nur aus Code (Snapshot), Termine und Nachrichtenstimmung über Bigdata.com, feste Checkliste je Wert."
       ]
+    },
+    {
+      "date": "2026-10-19",
+      "before_any_outcome": true,
+      "why": "Audit 19.10.: Xetra öffnet Montag 09:00 MEZ/MESZ, Messung ab Eröffnung – Abgabeschluss 13:30 UTC lag danach.",
+      "changes": [
+        "Abgabeschluss für alle Arme: Montag 00:00 UTC (vor jeder Markteröffnung). Runde 1 (Commit 17.10.) nicht betroffen.",
+        "Bericht trennt Prognosegüte und simulierte Trade-Rendite."
+      ]
     }
   ],
   "universe_from_round2": [

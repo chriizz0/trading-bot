@@ -110,8 +110,8 @@ def evaluate(arm: str, folder: Path) -> tuple[pd.DataFrame, pd.DataFrame, list[s
         p = json.loads(f.read_text())
         week = pd.Timestamp(p["week_start"])
         t = committed_at(f)
-        if t is None or t > datetime(week.year, week.month, week.day, 13, 30, tzinfo=timezone.utc):
-            notes.append(f"{arm} {f.name}: nicht vor Wochenbeginn committet → ungültig")
+        if t is None or t > datetime(week.year, week.month, week.day, 0, 0, tzinfo=timezone.utc):  # vor Xetra- und US-Eröffnung
+            notes.append(f"{arm} {f.name}: nicht vor Montag 00:00 UTC committet → ungültig")
             continue
         end = week + pd.Timedelta(days=4)
         if pd.Timestamp(date.today()) <= end:
@@ -182,13 +182,14 @@ def score() -> None:
     (OUT / "score.json").write_text(json.dumps(payload, indent=1, ensure_ascii=False, default=str))
     L = ["# EXP-401 Zwischenstand – KI als Analyst", "", f"Stand {date.today()}", ""]
     for arm, m in res.items():
-        L += [f"## {arm}", "",
+        L += [f"## {arm}", "", "**Prognosegüte**", "",
               f"- Prognosen: {m['n']} in {m['weeks']} Wochen · Trefferquote {m['hit_rate']:.1%} (Ziel ≥ 55 %; Anteil steigender Werte {m['share_up']:.0%})",
               f"- Brier {m['brier']:.4f} · Münzwurf 0,2500 · immer long {m['brier_always_long']:.4f} · Momentum {m['brier_momentum']:.4f} (kleiner = besser)"]
         if "ic_mean" in m:
             L.append(f"- Information Coefficient Ø {m['ic_mean']:+.3f} (Permutationstest p = {m['perm_p']:.2f}) · "
                      f"Long-Short kumuliert {sum(m['ls_by_week'].values())*100:+.2f} %")
         if "trades" in m:
+            L += ["", "**Simulierte Trades** (Tageskerzen, 0,1 % Kosten, keine echte Ausführung – getrennt von der Prognosegüte lesen)", ""]
             L.append(f"- Trades: {m['trades']}, Ø {m['trade_mean_R']:+.2f} R, Gewinner {m['trade_win']:.0%}")
         L += ["", pd.DataFrame(m["calibration"]).to_markdown(index=False), ""]
     L += [f"- {n}" for n in notes]

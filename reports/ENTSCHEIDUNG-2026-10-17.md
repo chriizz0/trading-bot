@@ -11,7 +11,9 @@ Getestet (alle vorregistriert, keine Parameteroptimierung, nach Kosten):
 
 Schlüsse:
 1. CFDs sind für systematisches Trading ungeeignet: kurz → Spread, länger → Übernachtgebühr
-   (Capital.com: Benchmark + ~4 % p.a. auf das Exposure, long und short).
+   (Capital.com: Long zahlt Benchmark + Aufschlag, Short erhält Benchmark − Aufschlag, variabel je Markt.
+   Das EXP-301-Kostenmodell rechnet vereinfacht ~4 % p.a. Kosten auf das gesamte Exposure – eine Modellannahme, für Shorts konservativ;
+   Korrektur nach Audit 19.10.).
 2. Keine getestete Strategie hat sich Echtgeld verdient. Gates werden nicht nachträglich gelockert.
 3. Bestes Chance-Risiko-Verhältnis im Test: breit gestreut passiv (Welt-/S&P-ETF bzw. 60/40).
 
