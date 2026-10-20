@@ -1,8 +1,10 @@
 {
- "yfinance": "1.7.0",
- "n_items": 0,
- "first_keys": [],
- "content_keys": [],
- "first_pub": null,
- "parsed_24h": 0
+ "yahoo_rss": {
+  "fehler": "HTTPError"
+ },
+ "google_news": {
+  "items": 42,
+  "last_24h": 6,
+  "beispiel": "AAPL Stock Downgraded As iPhone Shipment Concerns Mount — Analysts Flag Sales Growth Slowi"
+ }
 }
