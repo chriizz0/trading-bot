@@ -3,6 +3,10 @@ on:
   schedule:
     - cron: "15 21 * * 1-5"
   workflow_dispatch:
+    inputs:
+      debug:
+        type: boolean
+        default: false
 concurrency:
   group: repo-write
 permissions:
@@ -18,7 +22,10 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -q -r requirements.txt
-      - run: python scripts/exp402.py predict
+      - if: ${{ inputs.debug }}
+        run: python scripts/exp402.py debug
+      - if: ${{ !inputs.debug }}
+        run: python scripts/exp402.py predict
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL || 'claude-haiku-5-5' }}

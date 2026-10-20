@@ -27,6 +27,20 @@ voraussichtlich auf den Kurs am NÄCHSTEN Handelstag (relativ zum Gesamtmarkt)? 
 Antworte NUR mit JSON: {{"scores": {{"TICKER": 0.0, ...}}, "notes": {{"TICKER": "max. 8 Wörter"}}}}"""
 
 
+def debug() -> int:
+    import yfinance as yf
+    items = yf.Ticker("AAPL").news or []
+    info = {"yfinance": yf.__version__, "n_items": len(items),
+            "first_keys": list(items[0].keys()) if items else [],
+            "content_keys": list(items[0].get("content", {}).keys()) if items and isinstance(items[0].get("content"), dict) else [],
+            "first_pub": str((items[0].get("content") or items[0]).get("pubDate") or items[0].get("providerPublishTime")) if items else None,
+            "parsed_24h": len(headlines("AAPL", datetime.now(timezone.utc) - timedelta(hours=24)))}
+    OUT.mkdir(parents=True, exist_ok=True)
+    (OUT / "debug.json").write_text(json.dumps(info, indent=1))
+    print(info)
+    return 0
+
+
 def headlines(sym: str, since: datetime) -> list[str]:
     import yfinance as yf
     out = []
@@ -41,9 +55,26 @@ def headlines(sym: str, since: datetime) -> list[str]:
     return out[:6]
 
 
+def signal_day(now: datetime):
+    """Handelstag, dessen US-Schluss das Signal abschließt. Während der US-Handelszeit: kein Signal."""
+    ny = pd.Timestamp(now).tz_convert("America/New_York")
+    t = ny.hour * 60 + ny.minute
+    if t >= 16 * 60:
+        d = ny.normalize()
+    elif t < 9 * 60 + 15:
+        d = ny.normalize() - pd.offsets.BDay(1)
+    else:
+        return None
+    return (d - pd.offsets.BDay(1) if d.dayofweek >= 5 else d).date()
+
+
 def predict() -> int:
     now = datetime.now(timezone.utc)
-    day = now.date().isoformat()
+    sd = signal_day(now)
+    if sd is None:
+        print("US-Markt offen – kein Signal (sonst Vorgriff auf die Eröffnung).")
+        return 0
+    day = sd.isoformat()
     if now.date() > pd.Timestamp(CFG["end"]).date():
         print("EXP-402 beendet.")
         return 0
@@ -123,4 +154,4 @@ def score() -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit({"predict": predict, "score": score}[sys.argv[1]]())
+    raise SystemExit({"predict": predict, "score": score, "debug": debug}[sys.argv[1]]())
