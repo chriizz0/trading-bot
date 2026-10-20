@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-20T13:34+00:00",
+ "generated": "2026-10-20T23:51+00:00",
  "history": [
   {
    "id": "EXP-101",
@@ -30,167 +30,111 @@
    "predictions": [],
    "trades": []
   },
-  "week": "2026-10-26",
+  "week": "2026-10-19",
   "rows": [
    {
     "symbol": "AAPL",
-    "ChatGPT": 0.54
+    "Claude": 0.6,
+    "Claude_trade": "long (Stop 3.0%, Ziel 4.0%)",
+    "reason": "Auf 52-Wochen-Hoch, relative Stärke trotz Tech-Ausverkauf, Volumen 1,6x."
    },
    {
     "symbol": "ALV.DE",
-    "ChatGPT": 0.52
-   },
-   {
-    "symbol": "AMD",
-    "ChatGPT": 0.48
+    "Claude": 0.54,
+    "reason": "Defensiv, über SMA200, gute Woche."
    },
    {
     "symbol": "AMZN",
-    "ChatGPT": 0.55
-   },
-   {
-    "symbol": "ASML.AS",
-    "ChatGPT": 0.48
-   },
-   {
-    "symbol": "AVGO",
-    "ChatGPT": 0.45
-   },
-   {
-    "symbol": "BA",
-    "ChatGPT": 0.47
-   },
-   {
-    "symbol": "BAS.DE",
-    "ChatGPT": 0.55
-   },
-   {
-    "symbol": "BAYN.DE",
-    "ChatGPT": 0.47
-   },
-   {
-    "symbol": "CAT",
-    "ChatGPT": 0.47
-   },
-   {
-    "symbol": "COST",
-    "ChatGPT": 0.52
-   },
-   {
-    "symbol": "DBK.DE",
-    "ChatGPT": 0.48
+    "Claude": 0.5,
+    "reason": "Kein klares Bild, knapp unter SMA20/50."
    },
    {
     "symbol": "DTE.DE",
-    "ChatGPT": 0.48
+    "Claude": 0.5,
+    "reason": "Abwärtstrend, aber Erholung letzte Woche – unentschieden."
    },
    {
     "symbol": "GLD",
-    "ChatGPT": 0.46
+    "Claude": 0.4,
+    "Claude_trade": "short (Stop 3.0%, Ziel 3.0%)",
+    "reason": "Unter SMA50 und SMA200, −23 % vom Hoch, Abwärtstrend; heiße Inflation stützt Zinsen."
    },
    {
     "symbol": "GOOGL",
-    "ChatGPT": 0.47
-   },
-   {
-    "symbol": "IFX.DE",
-    "ChatGPT": 0.45
+    "Claude": 0.5,
+    "reason": "Seitwärts bis schwach, auf SMA200 – kein Vorteil erkennbar."
    },
    {
     "symbol": "JPM",
-    "ChatGPT": 0.49
-   },
-   {
-    "symbol": "KO",
-    "ChatGPT": 0.52
+    "Claude": 0.53,
+    "reason": "Zahlen schon veröffentlicht, stabil über SMA200."
    },
    {
     "symbol": "LLY",
-    "ChatGPT": 0.54
+    "Claude": 0.53,
+    "reason": "Klarer Aufwärtstrend nahe Hoch, leicht überkauft."
    },
    {
     "symbol": "MBG.DE",
-    "ChatGPT": 0.48
-   },
-   {
-    "symbol": "MC.PA",
-    "ChatGPT": 0.46
+    "Claude": 0.48,
+    "reason": "Unter SMA50/200, schwacher Trend."
    },
    {
     "symbol": "META",
-    "ChatGPT": 0.48
+    "Claude": 0.5,
+    "reason": "Zahlen Mi. nach Börsenschluss – Ausgang offen."
    },
    {
     "symbol": "MSFT",
-    "ChatGPT": 0.53
-   },
-   {
-    "symbol": "NESN.SW",
-    "ChatGPT": 0.51
-   },
-   {
-    "symbol": "NFLX",
-    "ChatGPT": 0.47
-   },
-   {
-    "symbol": "NOVO-B.CO",
-    "ChatGPT": 0.5
+    "Claude": 0.55,
+    "reason": "Nahe Hoch, starker 3-Monats-Trend, hielt sich in der Schwächewoche gut."
    },
    {
     "symbol": "NVDA",
-    "ChatGPT": 0.48
-   },
-   {
-    "symbol": "PG",
-    "ChatGPT": 0.53
+    "Claude": 0.52,
+    "reason": "−6,6 % in der Woche, RSI 38 überverkauft; AI-Finanzierungssorgen (CoreWeave) können weiterlaufen."
    },
    {
     "symbol": "QQQ",
-    "ChatGPT": 0.48
+    "Claude": 0.6,
+    "Claude_trade": "long (Stop 3.5%, Ziel 4.0%)",
+    "reason": "Schlechteste Woche seit Juni, RSI 35, über SMA200 – Erholung wahrscheinlicher als weiterer Einbruch."
    },
    {
     "symbol": "RHM.DE",
-    "ChatGPT": 0.51
+    "Claude": 0.5,
+    "reason": "+16 % Woche nach −43 % vom Hoch, sehr volatil – kein Vorteil."
    },
    {
     "symbol": "SAP.DE",
-    "ChatGPT": 0.54
-   },
-   {
-    "symbol": "SHEL.L",
-    "ChatGPT": 0.52
+    "Claude": 0.52,
+    "reason": "Zahlen Mi. nach Schluss, starke Woche, Ereignisrisiko."
    },
    {
     "symbol": "SIE.DE",
-    "ChatGPT": 0.46
+    "Claude": 0.52,
+    "reason": "Neutral um SMA20/50."
    },
    {
     "symbol": "SPY",
-    "ChatGPT": 0.5
+    "Claude": 0.6,
+    "Claude_trade": "long (Stop 2.5%, Ziel 3.0%)",
+    "reason": "Nach −2 % Woche und VIX-Spitze 22 historisch leichte Erholungsneigung; Trend über SMA200 intakt."
    },
    {
     "symbol": "TSLA",
-    "ChatGPT": 0.49
-   },
-   {
-    "symbol": "UNH",
-    "ChatGPT": 0.53
-   },
-   {
-    "symbol": "VOW3.DE",
-    "ChatGPT": 0.47
-   },
-   {
-    "symbol": "WMT",
-    "ChatGPT": 0.52
+    "Claude": 0.48,
+    "reason": "Zahlen Mi., unter SMA200, −28 % vom Hoch; Ereignisrisiko in beide Richtungen."
    },
    {
     "symbol": "XOM",
-    "ChatGPT": 0.53
+    "Claude": 0.5,
+    "reason": "Starker Trend, aber RSI 73 überkauft – Momentum vs. Rücksetzer gleichen sich aus."
    },
    {
     "symbol": "^GDAXI",
-    "ChatGPT": 0.49
+    "Claude": 0.55,
+    "reason": "Hielt sich gegen US-Tech, über SMA200."
    }
   ]
  },
@@ -198,7 +142,178 @@
   "updated": "2026-10-20",
   "signals": 0
  },
- "exp402_latest": null,
+ "exp402_latest": {
+  "experiment": "EXP-402",
+  "signal_date": "2026-10-20",
+  "created_at": "2026-10-20T23:51:14+00:00",
+  "model": "claude-haiku-5-5",
+  "headlines": {
+   "AAPL": [
+    "Apple (NASDAQ:AAPL) Stock Falls 1% on Insider Selling - MarketBeat",
+    "Apple (AAPL) Stock Sinks As Market Gains: What You Should Know - Yahoo Finance",
+    "Prediction: Apple’s Stock Is Due for a Reality Check on Nov. 2 - The Motley Fool",
+    "Apple Stock Just Got a Shocking Downgrade Over iPhone Demand - TradingView",
+    "Why Is Apple (NASDAQ:AAPL) Stock Falling? Analyst Warns 13 Million iPhone Shipments May Not Recover - Stocks Down Under",
+    "Apple Inc. (AAPL) Stock Price, News, Quote & History - Yahoo! Finance Canada"
+   ],
+   "MSFT": [
+    "Qualcomm To Reportedly Conduct Global Layoffs In Performance-Driven Overhaul - Stocktwits",
+    "US Analyst Updates — October 20th, 2026 - The Globe and Mail",
+    "Morgan Stanley sees new hurdle for Microsoft stock - TheStreet",
+    "Anthropic Is in Talks for Another $45 Billion AI Deal. Nvidia Could Be a Big Winner. - The Globe and Mail",
+    "MSFT Feb 2027 430.000 call (MSFT270219C00430000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+    "Microsoft Stock (NASDAQ:MSFT) Slips as British Government Considers More Regulation - TipRanks"
+   ],
+   "NVDA": [
+    "Why AI Chip Stocks Nvidia, Broadcom, and Micron Climb After Hours — and What Wall Street Sees Next - TipRanks",
+    "Anthropic Is in Talks for Another $45 Billion AI Deal. Nvidia Could Be a Big Winner. - The Motley Fool",
+    "Why Isn’t Nvidia (NASDAQ:NVDA) Stock Rising Despite Reports of US$35 Billion in China AI Chip Orders? - Stocks Down Under",
+    "Why Vicor Shares Are Soaring Today - The Globe and Mail",
+    "Arete’s $369 NVIDIA Share Target Excludes Binance Futures Contract - TOKENPOST",
+    "Nvidia Reportedly Just Landed $35 Billion In Chip Orders From Chinese Companies. Here's Why That Could Be Great News for the Stock - The Motley Fool"
+   ],
+   "AMZN": [
+    "Amazon vs Alphabet: Which \"Magnificent Seven\" Stock Is the Better Buy Right Now? - The Motley Fool",
+    "Amazon Stock Costs More Than the Market. I'd Still Buy It for the Next 5 Years. - The Motley Fool",
+    "Amazon stockpiles Nvidia AI hardware ahead of power availability -Business Insider - Yahoo Finance",
+    "Amazon Stocks Rise With a 4.8 Billion German Cloud Push - TradingView",
+    "Starting Jan. 1, 2027, Amazon seasonal workers get day-one health coverage if they work at least 30 hours a week. - Stock Titan",
+    "Amazon Introduces Healthcare Benefits for Seasonal Employees - Intellectia AI"
+   ],
+   "GOOGL": [
+    "Alphabet Inc. (GOOG) Stock Drops Despite Market Gains: Important Facts to Note - Yahoo Finance Australia",
+    "Alphabet (GOOGL) Stock Declines While Market Improves: Some Information for Investors - Yahoo Finance Australia",
+    "GOOG Stock Price Today: Why is Google Stock Down Today? Alphabet Shares Slips $339 Ahead of Q4 Earnings & Cloud Growth – Check Financial Indicators, Revenue Performance, Market Analysis & More - The Sunday Guardian",
+    "GOOG Stock Risks Breakdown as Alphabet Earnings and Google Legal Risks Weigh - FXLeaders",
+    "Alphabet Inc. (GOOG) stock price, news, quote and history - Yahoo Finance Australia",
+    "Not IonQ. Not Rigetti Computing. This Quantum Computing Stock Is the One I'd Buy and Hold Through 2030. - The Globe and Mail"
+   ],
+   "META": [
+    "Meta Platforms (NASDAQ:META) Shares Down 1.6% - What's Next? - MarketBeat",
+    "META Earnings & 2 Other AI-Related Reports to Watch This Week - The Globe and Mail",
+    "Stocks Finish Mostly Higher on Earnings Optimism - Barchart.com",
+    "Here’s How Much Meta Stock Is Expected to Move After Earnings - Investopedia",
+    "Meta's $1,000 Bull Case: How Muse AI Changes The Valuation Game - Investor's Business Daily",
+    "Meta Q3 earnings to test Wall Street's stomach for AI spending - Yahoo Finance"
+   ],
+   "TSLA": [
+    "Tesla (NASDAQ:TSLA) Shares Up 1.5% - Here's Why - MarketBeat",
+    "Options data bullish on Tesla stock despite expected Q3 earnings decline - Invezz",
+    "Here’s How Much $100 Invested in Tesla Stock Today Could be Worth if Cathie Wood’s Prediction Comes True in 2031 - Benzinga",
+    "Tesla (TSLA) Q3 2026 earnings preview: flat revenue, falling profits - Electrek",
+    "Elon Musk to give a share of SpaceX (SPCX) to every American child, President Trump praises the act, more - Tesla Oracle",
+    "Tesla Stocks Rise Ahead of a $323 Million Gross-Profit Forecast Gap - TradingView"
+   ],
+   "JPM": [
+    "J.P. Morgan keeps HKD 7.00 target for Longyuan Power stock - ad-hoc-news.de",
+    "J.P. Morgan cuts target to USD 7 for Fluence Energy stock - ad-hoc-news.de",
+    "J.P. Morgan keeps USD 25.00 target for MDU Resources Group stock - ad-hoc-news.de",
+    "JPMorgan Chase (NYSE:JPM) Share Price, Forecast & Analysis - Stocks Down Under",
+    "J.P. Morgan keeps JPY 1,750 target for Idemitsu Kosan stock - ad-hoc-news.de",
+    "J.P. Morgan kept GBp 715.00 target for EasyJet stock - ad-hoc-news.de"
+   ],
+   "XOM": [
+    "Fund Update: New $14.0M $XOM stock position opened by Carnegie Investment Counsel - Quiver Quantitative",
+    "ExxonMobil (NYSE:XOM) Share Price, Forecast & Analysis - Stocks Down Under",
+    "Energy ETFs: How to Play the Sector's Surge - TradingView",
+    "Exxon Mobil (XOM) Shares Slip Amid Light Options Trading Ahead o - GuruFocus",
+    "DJT Stock Plummets To New Lows: Trump Appeal Fades As 2026 Midterms Draw Closer - Stocktwits",
+    "Energy Stocks And Industry News: Oil, Gas, Solar, Coal And Nuclear Energy - Investor's Business Daily"
+   ],
+   "LLY": [
+    "LLY Stock Hits All-Time High After Goldman Sachs Raises Price Target Ahead Of Q3 Earnings - Stocktwits",
+    "Eli Lilly Stocks Rise 4.36% as AI Delivery Deal Makes Billions Conditional - TradingView",
+    "Eli Lilly (NYSE:LLY) Share Price, Forecast & Analysis - Stocks Down Under",
+    "Eli Lilly Stock (LLY) Hits All-Time High Ahead of Earnings - TipRanks",
+    "Stock Market Correction In Its ‘Final Innings,’ Says Morgan Stanley’s Investment Chief - Stocktwits",
+    "Meta Policy Chief Joel Kaplan Reportedly To Leave In 2027 — Leadership Transition Comes Amid Zuckerberg's AI Push - Stocktwits"
+   ],
+   "AMD": [
+    "AMD says EAGLE-4 runs on Instinct MI355X GPUs from day one - Blockchain News",
+    "AMD (NASDAQ:AMD) Gets Fresh Backing: Can It Reclaim Its Peak? - Kalkine Media",
+    "AMD: The Helios Ramp Is Priced But The Margin Path Is Not (NASDAQ:AMD) - Seeking Alpha",
+    "AMD Oct 2026 435.000 put (AMD261021P00435000) Interactive Stock Chart - Yahoo! Finance Canada",
+    "AMD Stock Price Forecast: AMD Rebounds to $542.71 as $13B Q3 Guide Holds — $608 Target - TradingNEWS",
+    "AMD Faces Key Test as AI Server Demand Surges - Yahoo Finance"
+   ],
+   "AVGO": [
+    "OpenAI Is Reportedly Raising $30 Billion. Which Chip Stock Gains the Most? - The Globe and Mail",
+    "AVGO Oct 2026 280.000 put (AVGO261021P00280000) stock price, news, quote and history - Yahoo Finance Singapore",
+    "AVGO Oct 2026 280.000 call (AVGO261021C00280000) stock price, news, quote and history - Yahoo Finance Singapore",
+    "Broadcom Grew 200%, Then Crashed 23% (AVGO Stock) Saudi Arabia (xeWKLnQ2w3) - Unisba Media",
+    "3 Artificial Intelligence (AI) Stocks That Look Like Great Buys Right Now - The Globe and Mail",
+    "BoFa sees NVDA to generally maintain ~70%+ AI accelerator share over time - Substack"
+   ],
+   "NFLX": [
+    "Netflix Is Cheap Again As Management Tackles Growth (NASDAQ:NFLX) - Seeking Alpha",
+    "Netflix co-CEO Sarandos says 'we could do better' after weak forecast - Reuters",
+    "Netflix shares drop on slowing engagement, revenue growth - Yahoo Finance UK",
+    "Netflix NFLX Stock Falls Below $65 After Q3 Earnings and Revenue Targets Raise the Bar - FXLeaders",
+    "Wedbush’s Ives reiterates In Line rating on Netflix stock at $75 - Investing.com Nigeria",
+    "Netflix Cut Its Ad Revenue Forecast by $300 Million. Does That Matter More Than Its Earnings Beat? - AOL.com"
+   ],
+   "COST": [
+    "Genuine Parts (GPC) Stock Price And Q3 Earnings Clash Over Margins - Simply Wall Street",
+    "F.N.B (FNB) Stock Jumps On Q3 Earnings As Cost Risks Linger - Simply Wall Street",
+    "The company ended its program to sell new shares. Its adviser committed to buy 2.5% of its stock each quarter. - Stock Titan",
+    "General Motors (GM) Stock Price Slides As Q3 Earnings Meet Leverage Fears - Yahoo Finance",
+    "Stock Market Today, Oct. 20: IREN Slides on Funding Worries and Rate Fears - The Motley Fool",
+    "Is Current Price Of Robinhood Stock A Strong Support? - Trefis"
+   ],
+   "WMT": [
+    "Walmart takes aim at Amazon and Costco with new membership program — but is it a good deal? - MarketWatch",
+    "What Are Walmart Investors Betting On? - Trefis",
+    "WMT Stock Alert: What to Know as Walmart Teams Up With Sam's Club - Barchart.com",
+    "KR Stock Inches Higher On A $5B Investment Plan To Improve Value, Gather Market Share - TradingView",
+    "Fire briefly closes Wilkes-Barre Twp. Walmart - The Citizens' Voice",
+    "Dick’s Pays a Higher Dividend Yield Than Walmart. Is It Worth the Risk? - 24/7 Wall St."
+   ],
+   "UNH": [
+    "RBC Capital raises UnitedHealth stock price target to $498 on strong quarter - Investing.com Nigeria",
+    "UnitedHealth Group Inc (UNH) Stock Up 3.0% and Still Undervalued -- GF Score: 84/100 - GuruFocus",
+    "Dow rises 1% as earnings gains and lower oil prices lift Wall Street - Invezz",
+    "Prologis (PLD) Stock Price Today, Live Chart & News - TechGraph",
+    "A walk in the woods may be good for your mood, UNH researchers find - newscentermaine.com",
+    "UnitedHealth Group rated Strong Buy with 33% up... - Pluang"
+   ],
+   "PG": [
+    "PG&E sets October 22 results date: PG&E Corporation stock sits 31.21 percent below its high - ad-hoc-news.de",
+    "US Analyst Updates — October 20th, 2026 - The Globe and Mail",
+    "Procter & Gamble (NYSE:PG) Share Price, Forecast & Analysis - Stocks Down Under",
+    "PG Oct 2026 155.000 put (PG261023P00155000) interactive stock chart - Yahoo Finance UK",
+    "GU postpones sem 5, PG sem 3 exams - The Times of India",
+    "Willis Investment Counsel Sells 45,000 Shares of Procter & Gamble Company (The) $PG - MarketBeat"
+   ],
+   "KO": [
+    "Why Are SPCX, ECHO, KO Stocks Moving Premarket Today? - Stocktwits",
+    "Dow Jones Leader Coca-Cola Breaks Out As Stock Market Volatility Ramps Up - Investor's Business Daily",
+    "Coca-Cola (NYSE:KO) Share Price, Forecast & Analysis - Stocks Down Under",
+    "Coca-Cola stock rises 35% in 2026, investors we... - Pluang",
+    "Coca-Cola Is Up 35% This Year: Take Profits, or Hold On for the Ride? - Yahoo Finance",
+    "Coca-Cola Is Up 35% This Year: Take Profits, or Hold On for the Ride? - 24/7 Wall St."
+   ],
+   "CAT": [
+    "List of 2026’s Most Popular and Trending Pet Names Released, and ‘Chicken Nugget’ Is Surging - People.com",
+    "Caterpillar (CAT) Expands In North Carolina As Investors Ask If The Stock Is A Bargain - Simply Wall Street",
+    "Caterpillar (CAT) Formally Objects To Tokenized Trading Of Its Shares - Yahoo Finance",
+    "CAT Nov 2026 855.000 put (CAT261127P00855000) Interactive Stock Chart - Yahoo! Finance Canada",
+    "AI’s Most Watched Cooling Stock Has Fallen for 11 Straight Days: Analysts Now See a 50% Upside - TradingView",
+    "3 ASX Penny Stocks With Market Caps Under A$1B To Watch - Simply Wall Street"
+   ],
+   "BA": [
+    "Anthropic’s New Prospectus Shows Revenue Is Growing Fast, So Are Its Compute Costs, Losses And AI Risks: Report - Stocktwits",
+    "Boeing Finally Gets FAA Approval for Its 737 Max 10 Jet. This Is Big. - Barron's",
+    "Qualcomm To Reportedly Conduct Global Layoffs In Performance-Driven Overhaul - Stocktwits",
+    "FAA Clears Boeing’s MAX 10 After Long Wait, But BA Traders Say Deliveries Will Drive The Stock - Yahoo Finance",
+    "US regulators certify Boeing 737 MAX 10 after delays - Yahoo Finance",
+    "Boeing's largest 737 MAX jet wins long-awaited FAA approval (BA:NYSE) - Seeking Alpha"
+   ]
+  },
+  "scores": {},
+  "notes": {
+   "_fehler": "Antwort nicht auswertbar: JSONDecodeError"
+  }
+ },
  "exp401_rounds": [
   "2026-10-19",
   "2026-10-26",
