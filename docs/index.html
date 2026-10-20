@@ -4,97 +4,162 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Trading-Labor</title>
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-512.png">
+<meta name="theme-color" content="#14223b">
 <style>
-:root{--bg:#f6f6f4;--surface:#fcfcfb;--line:#e4e3de;--text:#0b0b0b;--text2:#52514e;--muted:#8a8984;
---s1:#2a78d6;--s2:#eb6834;--good:#0a7d32;--bad:#c62828;--warn:#a86b00;--radius:12px}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121211;--surface:#1a1a19;--line:#2e2e2c;--text:#f0efec;--text2:#c3c2b7;--muted:#8d8c86;--s1:#3987e5;--s2:#d95926;--good:#4caf50;--bad:#ef5350;--warn:#e0a020}}
-:root[data-theme="dark"]{--bg:#121211;--surface:#1a1a19;--line:#2e2e2c;--text:#f0efec;--text2:#c3c2b7;--muted:#8d8c86;--s1:#3987e5;--s2:#d95926;--good:#4caf50;--bad:#ef5350;--warn:#e0a020}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif}
-main{max-width:1040px;margin:0 auto;padding:24px 16px 64px}
-h1{font-size:26px;margin:0 0 4px}h2{font-size:18px;margin:32px 0 12px}.sub{color:var(--text2);margin:0 0 20px}
-.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
-.k{color:var(--text2);font-size:13px}.v{font-size:24px;font-weight:600;font-variant-numeric:tabular-nums}
-.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:99px;border:1px solid var(--line);color:var(--text2)}
-.tag.bad{color:var(--bad);border-color:currentColor}.tag.warn{color:var(--warn);border-color:currentColor}
-table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}th,td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-th{font-size:12px;color:var(--text2);font-weight:600}td.n{text-align:right}.wrap{overflow-x:auto}
+:root{--bg:#f6f6f4;--surface:#fcfcfb;--line:#e4e3de;--text:#0b0b0b;--text2:#52514e;--muted:#7d7c77;
+--s1:#2a78d6;--s2:#eb6834;--good:#0a7d32;--goodbg:#e6f4ea;--bad:#b42318;--badbg:#fdecea;--warn:#8a5a00;--warnbg:#fff4dc;--neutralbg:#efeeea;--r:14px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121211;--surface:#1a1a19;--line:#2e2e2c;--text:#f0efec;--text2:#c3c2b7;--muted:#8d8c86;--s1:#3987e5;--s2:#d95926;--good:#5cc77a;--goodbg:#173322;--bad:#f07167;--badbg:#3a1d1b;--warn:#e8b14a;--warnbg:#3a2f15;--neutralbg:#252523}}
+:root[data-theme="dark"]{--bg:#121211;--surface:#1a1a19;--line:#2e2e2c;--text:#f0efec;--text2:#c3c2b7;--muted:#8d8c86;--s1:#3987e5;--s2:#d95926;--good:#5cc77a;--goodbg:#173322;--bad:#f07167;--badbg:#3a1d1b;--warn:#e8b14a;--warnbg:#3a2f15;--neutralbg:#252523}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif}
+main{max-width:1000px;margin:0 auto;padding:24px 16px 64px}
+header{display:flex;gap:14px;align-items:center;margin-bottom:6px}header img{width:48px;height:48px;border-radius:12px}
+h1{font-size:26px;margin:0}h2{font-size:19px;margin:36px 0 6px}h3{font-size:15px;margin:0 0 6px}
+.lead{color:var(--text2);margin:4px 0 18px}.muted{color:var(--muted);font-size:13px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.intro{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.intro .card p{margin:0;color:var(--text2);font-size:14px}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;padding:3px 10px;border-radius:99px}
+.b-good{background:var(--goodbg);color:var(--good)}.b-bad{background:var(--badbg);color:var(--bad)}.b-warn{background:var(--warnbg);color:var(--warn)}.b-neutral{background:var(--neutralbg);color:var(--text2)}
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.step{border-radius:12px;padding:10px;border:1px solid var(--line);background:var(--surface);font-size:13px}
+.step b{display:block;font-size:14px}.step.done{border-color:var(--good)}.step.now{border:2px solid var(--s1)}
+.vs{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.vs th,.vs td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.vs th{font-size:12px;color:var(--text2)}.vs td.v{font-weight:600;white-space:nowrap}
 .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:middle}
-.bar{height:6px;border-radius:3px;background:var(--line);position:relative;min-width:80px}.bar i{position:absolute;top:0;bottom:0;border-radius:3px}
+.list{display:grid;gap:8px}.row{display:grid;grid-template-columns:90px 1fr auto;gap:10px;align-items:center;padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.row .sym{font-weight:700}.row .why{color:var(--text2);font-size:13px}
+.lean{font-size:13px;font-weight:600;white-space:nowrap}.up{color:var(--good)}.down{color:var(--bad)}.flat{color:var(--muted)}
+.trade{font-size:12px;color:var(--text2)}
+details{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 16px;margin-top:12px}
+summary{cursor:pointer;font-weight:600}dl{margin:8px 0 0}dt{font-weight:600;margin-top:10px}dd{margin:2px 0 0;color:var(--text2)}
 svg text{fill:var(--text2);font-size:11px}.tip{position:fixed;pointer-events:none;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:13px;display:none;box-shadow:0 4px 16px #0002}
-.note{color:var(--muted);font-size:13px}
-@media (max-width:640px){.grid{grid-template-columns:1fr 1fr}.v{font-size:20px}#pred th:nth-child(5),#pred td:nth-child(5){display:none}.bar{min-width:40px}td,th{padding:6px 4px;font-size:13px}}.legend span{margin-right:16px;color:var(--text2);font-size:13px}
+.tabs{display:flex;gap:6px;margin:8px 0 10px}.tabs button{font:inherit;font-size:13px;padding:6px 12px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--text2);cursor:pointer}.tabs button[aria-pressed=true]{background:var(--text);color:var(--bg);border-color:var(--text)}
+@media (max-width:640px){.timeline{grid-template-columns:1fr 1fr}.row{grid-template-columns:70px 1fr}.row .lean{grid-column:2}h1{font-size:22px}}
 </style>
 </head>
 <body>
 <main>
-<h1>Trading-Labor</h1>
-<p class="sub">Ehrliche Vorwärtstests: Kann eine KI Kursbewegungen vorhersagen? Kein Echtgeld. <span id="gen" class="note"></span></p>
+<header><img src="icon-192.png" alt="" onerror="this.remove()"><div><h1>Trading-Labor</h1><div class="muted" id="gen"></div></div></header>
+<p class="lead">Kann eine KI Aktienkurse besser vorhersagen als der Zufall? Hier wird das ehrlich gemessen – <b>ohne echtes Geld</b>.</p>
 
-<h2>EXP-401 · KI als Analyst (Woche für Woche)</h2>
-<div class="grid" id="arms"></div>
-<div class="card" style="margin-top:12px">
-  <div class="legend"><span><i class="dot" style="background:var(--s1)"></i>Claude</span><span><i class="dot" style="background:var(--s2)"></i>ChatGPT</span></div>
-  <div class="k">Long-Short kumuliert: Überrendite der Werte mit p &gt; 0,5 minus p &lt; 0,5</div>
-  <svg id="ls" width="100%" height="220" role="img" aria-label="Kumulierte Long-Short-Überrendite je Woche"></svg>
-  <p class="note" id="lsnote"></p>
+<div class="card" id="status"></div>
+
+<h2>So funktioniert der Test</h2>
+<div class="intro">
+  <div class="card"><h3>1 · Vorhersage am Wochenende</h3><p>Claude und ChatGPT schätzen für jede Aktie, wie wahrscheinlich sie in der kommenden Woche steigt (z. B. „60 %“). Die Schätzung wird vor Börsenstart mit Zeitstempel gespeichert und nie geändert.</p></div>
+  <div class="card"><h3>2 · Die Woche läuft</h3><p>Gemessen wird vom Montag-Eröffnungskurs bis Freitag-Schluss. Niemand kann nachträglich schummeln.</p></div>
+  <div class="card"><h3>3 · Auswertung samstags</h3><p>Verglichen wird mit einfachen Regeln: Münzwurf, „immer kaufen“ und „was zuletzt stieg, steigt weiter“. Gut ist die KI nur, wenn sie diese schlägt.</p></div>
 </div>
 
-<h2>Prognosen dieser Runde <span id="week" class="note"></span></h2>
-<div class="card wrap"><table id="pred"><thead><tr><th>Wert</th><th>Claude p(↑)</th><th>ChatGPT p(↑)</th><th>Trades</th><th>Begründung (Claude)</th></tr></thead><tbody></tbody></table></div>
+<h2>Zeitplan</h2>
+<div class="timeline" id="timeline"></div>
 
-<h2>EXP-402 · Nachrichten-Reaktion (täglich, günstiges Modell)</h2>
+<h2>Wer sagt besser voraus?</h2>
+<p class="muted">Erste Werte nach dem ersten Samstag. Ein Monat ist nur ein erster Eindruck – Glück spielt noch eine große Rolle.</p>
+<div class="card" style="overflow-x:auto"><table class="vs" id="vs"></table></div>
+<div class="card" style="margin-top:12px">
+  <h3>Gewinn, wenn man den Tipps gefolgt wäre (ohne Kosten, nur als Gedankenspiel)</h3>
+  <p class="muted" style="margin:0 0 6px">Je Woche: Aktien mit „steigt eher“ minus Aktien mit „fällt eher“, jeweils im Vergleich zu ihrem Index. Über 0 = Tipps waren nützlich.</p>
+  <div class="muted"><span><i class="dot" style="background:var(--s1)"></i>Claude</span> &nbsp; <span><i class="dot" style="background:var(--s2)"></i>ChatGPT</span></div>
+  <svg id="ls" width="100%" height="200" role="img" aria-label="Kumulierter Nutzen der Tipps je Woche"></svg>
+  <p class="muted" id="lsnote"></p>
+</div>
+
+<h2>Tipps für diese Woche <span class="muted" id="week"></span></h2>
+<div class="tabs" id="tabs"></div>
+<div class="list" id="tips"></div>
+
+<h2>Nachrichten-Test (täglich)</h2>
+<p class="muted">Jeden Abend liest eine günstige KI (Claude Haiku) die Schlagzeilen zu 20 US-Aktien und schätzt, ob sie dem Kurs am nächsten Tag helfen oder schaden. Gemessen wird von der Eröffnung bis zum Schluss des Folgetags.</p>
 <div class="grid" id="news"></div>
+<div class="list" id="newslist" style="margin-top:10px"></div>
 
-<h2>Abgeschlossene Experimente</h2>
-<div class="grid" id="hist"></div>
-<p class="note">Daten: GitHub Actions (yfinance), Prognosen mit Zeitstempel im Repo <a href="https://github.com/chriizz0/trading-bot" style="color:inherit">chriizz0/trading-bot</a>. Vergangene Treffer sind kein Beweis für künftige.</p>
+<details><summary>Was bisher getestet wurde (abgeschlossen)</summary><div class="grid" id="hist" style="margin-top:10px"></div></details>
+<details><summary>Begriffe einfach erklärt</summary><dl>
+  <dt>Trefferquote</dt><dd>Wie oft die Richtung stimmte (steigt/fällt). 50 % schafft auch ein Münzwurf. Ab etwa 55 % wird es interessant.</dd>
+  <dt>Brier-Wert</dt><dd>Misst, wie gut die Prozent-Schätzungen sind. Kleiner ist besser. Ein Münzwurf (immer 50 %) liegt bei 0,25.</dd>
+  <dt>Rang-Treffer (IC)</dt><dd>Hat die KI die Aktien in die richtige Reihenfolge gebracht – also die stärkeren vor die schwächeren? Über 0 ist gut.</dd>
+  <dt>Zufallstest</dt><dd>Wie leicht das Ergebnis auch Glück sein könnte. Unter 10 % = eher kein Zufall.</dd>
+  <dt>R</dt><dd>Gewinn/Verlust eines Trade-Tipps gemessen am geplanten Risiko (Stop). +1 R = so viel gewonnen, wie man riskiert hätte.</dd>
+</dl></details>
+<p class="muted" style="margin-top:20px">Daten: GitHub Actions, Kurse über Yahoo Finance, Nachrichten über Google News. Alles im Repo <a href="https://github.com/chriizz0/trading-bot" style="color:inherit">chriizz0/trading-bot</a>. Vergangene Treffer sind kein Beweis für künftige. Keine Anlageberatung.</p>
 </main>
 <div class="tip" id="tip"></div>
 <script>
-const pct=(x,d=1)=>x==null||isNaN(x)?"–":(x*100).toFixed(d).replace(".",",")+" %";
-const num=(x,d=3)=>x==null||isNaN(x)?"–":(x>0?"+":"")+x.toFixed(d).replace(".",",");
+const SRC=location.protocol==="file:"?"https://raw.githubusercontent.com/chriizz0/trading-bot/main/docs/":"";
+const $=id=>document.getElementById(id), tip=$("tip");
+const de=(x,d=1)=>x.toFixed(d).replace(".",",");
+const pct=(x,d=0)=>x==null||isNaN(x)?"–":de(x*100,d)+" %";
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const tip=document.getElementById("tip");
-function card(k,v,extra=""){return `<div class="card"><div class="k">${k}</div><div class="v">${v}</div>${extra}</div>`}
-function pbar(p,color){if(p==null)return"–";const x=Math.round(p*100),l=Math.min(50,x),w=Math.abs(x-50);
- return `<div style="display:flex;gap:8px;align-items:center"><span style="width:34px">${p.toFixed(2).replace(".",",")}</span><div class="bar"><i style="left:${l}%;width:${w}%;background:${color}"></i><i style="left:50%;width:1px;background:var(--muted)"></i></div></div>`}
-fetch((location.protocol==="file:"?"https://raw.githubusercontent.com/chriizz0/trading-bot/main/docs/data.json":"data.json")+"?"+Date.now()).then(r=>r.json()).then(d=>{
- document.getElementById("gen").textContent="Stand "+d.generated.replace("T"," ").replace("+00:00","")+" UTC";
- const sc=(d.exp401&&d.exp401.score)||{arms:{}},arms=document.getElementById("arms");
- const names=["Claude","ChatGPT"],cols={Claude:"var(--s1)",ChatGPT:"var(--s2)"};
- let any=false;
- for(const a of names){const m=sc.arms[a];if(!m)continue;any=true;
-  arms.innerHTML+=card(`<i class="dot" style="background:${cols[a]}"></i>${a} · Trefferquote`,pct(m.hit_rate),`<div class="note">${m.n} Prognosen in ${m.weeks} Wochen · Ziel ≥ 55 %</div>`)
-   +card(`${a} · Brier (kleiner = besser)`,m.brier.toFixed(4).replace(".",","),`<div class="note">Münzwurf 0,2500 · immer long ${m.brier_always_long.toFixed(4).replace(".",",")} · Momentum ${m.brier_momentum.toFixed(4).replace(".",",")}</div>`)
-   +card(`${a} · Rang-Korrelation (IC)`,num(m.ic_mean),`<div class="note">Zufallstest p = ${m.perm_p==null?"–":m.perm_p.toFixed(2).replace(".",",")} · Ziel IC &gt; 0, p ≤ 0,10</div>`)
-   +(m.trades?card(`${a} · Trade-Vorschläge`,num(m.trade_mean_R,2)+" R",`<div class="note">${m.trades} Trades · ${pct(m.trade_win,0)} Gewinner</div>`):"");}
- if(!any)arms.innerHTML=card("Status","Läuft",`<div class="note">Erste Auswertung nach Wochenende ${esc(d.exp401&&d.exp401.week)} (Samstag).</div>`);
- // Linienchart kumuliertes Long-Short
- const svg=document.getElementById("ls"),W=Math.max(300,svg.clientWidth||640),H=220,P={l:48,r:28,t:12,b:26};svg.setAttribute("viewBox",`0 0 ${W} ${H}`);
- const series=names.filter(a=>sc.arms[a]&&sc.arms[a].ls_by_week).map(a=>{let c=0;return{a,pts:Object.entries(sc.arms[a].ls_by_week).sort().map(([w,v])=>({w,v:(c+=v)}))}});
- if(!series.length){document.getElementById("lsnote").textContent="Noch keine abgeschlossene Woche.";}
+const dfmt=s=>{const[y,m,d]=s.split("-");return `${+d}.${+m}.`};
+const badge=(cls,txt)=>`<span class="badge b-${cls}">${txt}</span>`;
+const COLS={Claude:"var(--s1)",ChatGPT:"var(--s2)"};
+fetch(SRC+"data.json?"+Date.now()).then(r=>r.json()).then(d=>{
+ $("gen").textContent="Aktualisiert "+d.generated.replace("T"," ").replace("+00:00","")+" UTC";
+ const sc=(d.exp401&&d.exp401.score)||{arms:{}},arms=sc.arms||{},names=["Claude","ChatGPT"].filter(a=>arms[a]);
+ const today=new Date().toISOString().slice(0,10), rounds=d.exp401_rounds||[];
+ const addDays=(s,n)=>{const t=new Date(s+"T12:00:00Z");t.setUTCDate(t.getUTCDate()+n);return t.toISOString().slice(0,10)};
+ // Status
+ const cur=rounds.find(r=>today>=r&&today<=addDays(r,4)), next=rounds.find(r=>r>today), done=rounds.filter(r=>addDays(r,5)<=today).length;
+ let s=`<h3>Stand heute</h3>`;
+ s+= cur?`<p style="margin:0">Runde ${rounds.indexOf(cur)+1} von ${rounds.length} läuft (Woche ab ${dfmt(cur)}). Nächste Auswertung: <b>Samstag ${dfmt(addDays(cur,5))}</b></p>`
+   : next?`<p style="margin:0">Nächste Runde startet am <b>Montag ${dfmt(next)}</b> – die Tipps dafür kommen am Wochenende.</p>`
+   :`<p style="margin:0">Alle Runden sind gelaufen. Endauswertung am <b>${dfmt(d.exp401_final)}</b></p>`;
+ s+=`<p class="muted" style="margin:6px 0 0">${done} von ${rounds.length} Wochen ausgewertet · Endergebnis am ${dfmt(d.exp401_final)} · Nachrichten-Test bis ${dfmt(d.exp402_end)}</p>`;
+ $("status").innerHTML=s;
+ // Zeitplan
+ $("timeline").innerHTML=rounds.map((r,i)=>{const st=addDays(r,5)<=today?"done":(today>=r&&today<=addDays(r,4))?"now":"";
+   return `<div class="step ${st}"><b>Runde ${i+1}</b>${dfmt(r)}–${dfmt(addDays(r,4))}<br><span class="muted">${st=="done"?"ausgewertet":st=="now"?"läuft gerade":"geplant"}</span></div>`}).join("")
+   +`<div class="step ${today>=d.exp401_final?"done":""}"><b>Ergebnis</b>${dfmt(d.exp401_final)}<br><span class="muted">Endauswertung</span></div>`;
+ // Vergleichstabelle
+ const verdict=(ok,txt)=>ok==null?badge("neutral","noch offen"):ok?badge("good","✓ "+txt):badge("bad","✗ nicht "+txt);
+ const metrics=[
+  ["Trefferquote","Wie oft stimmte die Richtung? (Münzwurf: 50 %)",m=>pct(m.hit_rate),m=>m.hit_rate==null?null:m.hit_rate>=0.55,"über 55 %"],
+  ["Brier-Wert","Güte der Prozent-Schätzungen, kleiner = besser (Münzwurf: 0,25)",m=>de(m.brier,3),m=>m.brier<Math.min(0.25,m.brier_always_long,m.brier_momentum),"besser als einfache Regeln"],
+  ["Rang-Treffer (IC)","Richtige Reihenfolge stark vor schwach? (über 0 = gut)",m=>m.ic_mean==null?"–":(m.ic_mean>0?"+":"")+de(m.ic_mean,2),m=>m.ic_mean==null?null:(m.ic_mean>0&&m.perm_p<=0.1),"klar über Zufall"],
+  ["Trade-Tipps","Ø Ergebnis je Trade in R (über 0 = Gewinn)",m=>m.trades?(m.trade_mean_R>0?"+":"")+de(m.trade_mean_R,2)+" R ("+m.trades+")":"–",m=>m.trades?m.trade_mean_R>0:null,"im Plus"]];
+ if(!names.length){$("vs").innerHTML=`<tr><td>${badge("neutral","Noch keine abgeschlossene Woche")} Erste Auswertung am Samstag ${rounds[0]?dfmt(addDays(rounds[0],5)):""}.</td></tr>`}
+ else{$("vs").innerHTML=`<tr><th>Messgröße</th>${names.map(a=>`<th><i class="dot" style="background:${COLS[a]}"></i>${a}</th>`).join("")}</tr>`+
+  metrics.map(([n,h,f,ok,t])=>`<tr><td><b>${n}</b><div class="muted">${h}</div></td>${names.map(a=>`<td class="v">${f(arms[a])}<br>${verdict(ok(arms[a]),t)}</td>`).join("")}</tr>`).join("")+
+  `<tr><td colspan="${names.length+1}" class="muted">Ausgewertete Tipps: ${names.map(a=>a+" "+arms[a].n).join(" · ")} · Zufallstest Rang-Treffer: ${names.map(a=>a+" "+(arms[a].perm_p==null?"–":pct(arms[a].perm_p))).join(" · ")}</td></tr>`;}
+ // Chart
+ const svg=$("ls"),W=Math.max(300,svg.clientWidth||640),H=200,P={l:52,r:30,t:12,b:26};svg.setAttribute("viewBox",`0 0 ${W} ${H}`);
+ const series=names.filter(a=>arms[a].ls_by_week).map(a=>{let c=0;return{a,pts:Object.entries(arms[a].ls_by_week).sort().map(([w,v])=>({w,v:(c+=v)}))}});
+ if(!series.length){$("lsnote").textContent="Erscheint nach der ersten Auswertung.";svg.style.display="none"}
  else{const ws=[...new Set(series.flatMap(s=>s.pts.map(p=>p.w)))].sort(),vs=series.flatMap(s=>s.pts.map(p=>p.v)).concat([0]);
-  const lo=Math.min(...vs),hi=Math.max(...vs),pad=(hi-lo||0.01)*0.15,y0=lo-pad,y1=hi+pad;
+  const lo=Math.min(...vs),hi=Math.max(...vs),pad=(hi-lo||0.01)*0.2,y0=lo-pad,y1=hi+pad;
   const X=i=>P.l+(ws.length<2?(W-P.l-P.r)/2:i*(W-P.l-P.r)/(ws.length-1)),Y=v=>P.t+(y1-v)/(y1-y0)*(H-P.t-P.b);
-  let g=`<line x1="${P.l}" x2="${W-P.r}" y1="${Y(0)}" y2="${Y(0)}" stroke="var(--line)"/>`;
-  [y0+pad,0,y1-pad].forEach(v=>g+=`<text x="${P.l-6}" y="${Y(v)+4}" text-anchor="end">${pct(v)}</text>`);
-  ws.forEach((w,i)=>g+=`<text x="${X(i)}" y="${H-6}" text-anchor="${ws.length>1&&i==ws.length-1?"end":ws.length>1&&i==0?"start":"middle"}">${w.slice(8)}.${w.slice(5,7)}.</text>`);
-  series.forEach(s=>{const c=cols[s.a],pts=s.pts.map(p=>[X(ws.indexOf(p.w)),Y(p.v)]);
+  let g=`<line x1="${P.l}" x2="${W-P.r}" y1="${Y(0)}" y2="${Y(0)}" stroke="var(--muted)" stroke-dasharray="3 3"/><text x="${P.l-6}" y="${Y(0)+4}" text-anchor="end">0 %</text>`;
+  [y0+pad,y1-pad].forEach(v=>{if(Math.abs(Y(v)-Y(0))>14)g+=`<text x="${P.l-6}" y="${Y(v)+4}" text-anchor="end">${pct(v,1)}</text>`});
+  ws.forEach((w,i)=>g+=`<text x="${X(i)}" y="${H-6}" text-anchor="${ws.length>1&&i==ws.length-1?"end":ws.length>1&&i==0?"start":"middle"}">Woche ${dfmt(w)}</text>`);
+  series.forEach(s=>{const c=COLS[s.a],pts=s.pts.map(p=>[X(ws.indexOf(p.w)),Y(p.v)]);
    g+=`<polyline fill="none" stroke="${c}" stroke-width="2" points="${pts.map(p=>p.join(",")).join(" ")}"/>`;
-   pts.forEach((p,i)=>g+=`<circle cx="${p[0]}" cy="${p[1]}" r="5" fill="${c}" stroke="var(--surface)" stroke-width="2" data-t="${s.a} · Woche ${s.pts[i].w}: ${pct(s.pts[i].v,2)} kumuliert"/>`);});
-  svg.innerHTML=g;
-  svg.querySelectorAll("circle").forEach(c=>{c.onmousemove=e=>{tip.style.display="block";tip.textContent=c.dataset.t;tip.style.left=e.clientX+12+"px";tip.style.top=e.clientY+12+"px"};c.onmouseleave=()=>tip.style.display="none"});}
- // Prognosetabelle
- document.getElementById("week").textContent=d.exp401&&d.exp401.week?"(Woche ab "+d.exp401.week+")":"";
- document.querySelector("#pred tbody").innerHTML=(d.exp401.rows||[]).map(r=>`<tr><td>${esc(r.symbol)}</td><td>${pbar(r.Claude,"var(--s1)")}</td><td>${pbar(r.ChatGPT,"var(--s2)")}</td><td>${[r.Claude_trade?"Claude: "+esc(r.Claude_trade).replace(" (","<br><span class=note>(")+"</span>":"",r.ChatGPT_trade?"ChatGPT: "+esc(r.ChatGPT_trade).replace(" (","<br><span class=note>(")+"</span>":""].filter(Boolean).join("<br>")||"–"}</td><td class="note">${esc(r.reason)}</td></tr>`).join("");
- // EXP-402
- const n=d.exp402,nb=document.getElementById("news");
- nb.innerHTML=n&&n.signals?card("Bewertete Nachrichten-Signale",n.signals)+card("Rang-Korrelation (IC) Ø",num(n.ic_mean),`<div class="note">Zufallstest p = ${n.perm_p==null?"–":n.perm_p.toFixed(2).replace(".",",")}</div>`)
-  +card("Ø Überrendite nach negativen News",pct(n.neg_mean_alpha,2),`<div class="note">positiv: ${pct(n.pos_mean_alpha,2)} · Studie: negative wirken stärker</div>`)
-  :card("Status","Wartet",`<div class="note">Startet, sobald der API-Schlüssel hinterlegt ist; tägliche Läufe nach US-Börsenschluss.</div>`);
+   pts.forEach((p,i)=>g+=`<circle cx="${p[0]}" cy="${p[1]}" r="6" fill="${c}" stroke="var(--surface)" stroke-width="2" data-t="${s.a}, bis Woche ${dfmt(s.pts[i].w)}: ${pct(s.pts[i].v,2)}"/>`)});
+  svg.innerHTML=g;svg.querySelectorAll("circle").forEach(c=>{c.onmousemove=e=>{tip.style.display="block";tip.textContent=c.dataset.t;tip.style.left=e.clientX+12+"px";tip.style.top=e.clientY+12+"px"};c.onmouseleave=()=>tip.style.display="none"});}
+ // Tipps
+ const rows=(d.exp401&&d.exp401.rows)||[];$("week").textContent=d.exp401&&d.exp401.week?"(ab "+dfmt(d.exp401.week)+")":"";
+ const avail=["Claude","ChatGPT"].filter(a=>rows.some(r=>r[a]!=null));let sel=avail[0];
+ const lean=p=>p==null?`<span class="lean flat">–</span>`:p>=0.6?`<span class="lean up">▲ steigt eher (${Math.round(p*100)} %)</span>`:p>0.5?`<span class="lean up">↗ leicht steigend (${Math.round(p*100)} %)</span>`:p==0.5?`<span class="lean flat">● keine Meinung</span>`:p>0.4?`<span class="lean down">↘ leicht fallend (${Math.round(p*100)} %)</span>`:`<span class="lean down">▼ fällt eher (${Math.round(p*100)} %)</span>`;
+ const draw=()=>{const list=rows.filter(r=>r[sel]!=null).sort((a,b)=>Math.abs(b[sel]-0.5)-Math.abs(a[sel]-0.5));
+  $("tips").innerHTML=list.map(r=>`<div class="row"><div class="sym">${esc(r.symbol.replace("^GDAXI","DAX"))}</div><div><div class="why">${sel=="Claude"?esc(r.reason):""}</div>${r[sel+"_trade"]?`<div class="trade">Trade-Tipp: ${esc(r[sel+"_trade"])}</div>`:""}</div>${lean(r[sel])}</div>`).join("")||`<div class="muted">Noch keine Tipps.</div>`;
+  $("tabs").innerHTML=avail.map(a=>`<button aria-pressed="${a==sel}" data-a="${a}"><i class="dot" style="background:${COLS[a]}"></i>${a}</button>`).join("");
+  $("tabs").querySelectorAll("button").forEach(b=>b.onclick=()=>{sel=b.dataset.a;draw()})};
+ draw();
+ // Nachrichten
+ const n=d.exp402,L=d.exp402_latest;
+ $("news").innerHTML=n&&n.signals?
+  `<div class="card"><h3>Ausgewertete Signale</h3><div style="font-size:24px;font-weight:600">${n.signals}</div></div>
+   <div class="card"><h3>Rang-Treffer (IC)</h3><div style="font-size:24px;font-weight:600">${n.ic_mean==null?"–":(n.ic_mean>0?"+":"")+de(n.ic_mean,2)}</div>${verdict(n.ic_mean==null?null:(n.ic_mean>0&&n.perm_p<=0.1),"klar über Zufall")}</div>
+   <div class="card"><h3>Nach schlechten News</h3><div style="font-size:24px;font-weight:600">${pct(n.neg_mean_alpha,2)}</div><div class="muted">Ø Kursbewegung vs. Markt am Folgetag (Forschung: sollte negativ sein)</div></div>`
+  :`<div class="card">${badge("neutral","Sammelt noch Daten")} <span class="muted">Die erste Auswertung braucht ein paar Handelstage.</span></div>`;
+ if(L&&L.scores&&Object.keys(L.scores).length){const e=Object.entries(L.scores).filter(([,v])=>v!=0).sort((a,b)=>Math.abs(b[1])-Math.abs(a[1])).slice(0,8);
+  $("newslist").innerHTML=`<div class="muted">Letzte Bewertung (Signal vom ${dfmt(L.signal_date)}):</div>`+e.map(([k,v])=>`<div class="row"><div class="sym">${esc(k)}</div><div class="why">${esc((L.notes||{})[k]||"")}</div><span class="lean ${v>0?"up":"down"}">${v>0?"▲ positiv":"▼ negativ"} (${(v>0?"+":"")+de(v,1)})</span></div>`).join("")}
  // Historie
- document.getElementById("hist").innerHTML=d.history.map(h=>card(`${h.id} · ${esc(h.title)}`,`<span class="tag ${h.verdict.includes("knapp")?"warn":"bad"}">${esc(h.verdict)}</span>`,`<div class="note">${esc(h.detail)}</div>`)).join("");
+ $("hist").innerHTML=(d.history||[]).map(h=>`<div class="card"><h3>${esc(h.id)} · ${esc(h.title)}</h3>${badge(h.verdict.includes("knapp")?"warn":"bad",esc(h.verdict))}<p class="muted" style="margin:6px 0 0">${esc(h.detail)}</p></div>`).join("");
 });
 </script>
 </body>

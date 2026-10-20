@@ -36,10 +36,14 @@ def main() -> None:
         "history": [
             {"id": "EXP-101", "title": "ETF-Strategien monatlich", "verdict": "knapp gescheitert", "detail": "TREND-SPY: Sharpe 0,68 vs. SPY 0,66, Drawdown −25 % vs. −51 %, Rendite knapp unter 60/40"},
             {"id": "EXP-201", "title": "Intraday mit Index-CFDs", "verdict": "gescheitert", "detail": "Spread frisst 18–40 % der Bewegung; alle Kombinationen ≤ 0"},
-            {"id": "EXP-301", "title": "Trendfolgen 12 Märkte mit Hebel", "verdict": "gescheitert", "detail": "Futures-Kosten Sharpe 0,27; mit CFD-Gebühren −4 % p.a."},
+            {"id": "EXP-301", "title": "Trendfolgen 12 Märkte mit Hebel", "verdict": "gescheitert", "detail": "Futures-Kosten Sharpe 0,27; mit CFD-Kostenmodell −4 % Rendite p.a."},
         ],
         "exp401": {"score": load("reports/exp401/score.json"), "week": cur, "rows": sorted(rows.values(), key=lambda r: r["symbol"])},
         "exp402": load("reports/exp402/score.json"),
+        "exp402_latest": latest("predictions/exp402"),
+        "exp401_rounds": load("config/exp401.json")["rounds"],
+        "exp401_final": "2026-11-14",
+        "exp402_end": load("config/exp402.json")["end"],
     }
     (ROOT / "docs").mkdir(exist_ok=True)
     (ROOT / "docs/data.json").write_text(json.dumps(data, indent=1, ensure_ascii=False))

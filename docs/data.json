@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-20T13:25+00:00",
+ "generated": "2026-10-20T13:30+00:00",
  "history": [
   {
    "id": "EXP-101",
@@ -17,7 +17,7 @@
    "id": "EXP-301",
    "title": "Trendfolgen 12 Märkte mit Hebel",
    "verdict": "gescheitert",
-   "detail": "Futures-Kosten Sharpe 0,27; mit CFD-Gebühren −4 % p.a."
+   "detail": "Futures-Kosten Sharpe 0,27; mit CFD-Kostenmodell −4 % Rendite p.a."
   }
  ],
  "exp401": {
@@ -141,5 +141,14 @@
  "exp402": {
   "updated": "2026-10-20",
   "signals": 0
- }
+ },
+ "exp402_latest": null,
+ "exp401_rounds": [
+  "2026-10-19",
+  "2026-10-26",
+  "2026-11-02",
+  "2026-11-09"
+ ],
+ "exp401_final": "2026-11-14",
+ "exp402_end": "2026-11-13"
 }

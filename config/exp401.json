@@ -78,6 +78,14 @@
         "Abgabeschluss für alle Arme: Montag 00:00 UTC (vor jeder Markteröffnung). Runde 1 (Commit 17.10.) nicht betroffen.",
         "Bericht trennt Prognosegüte und simulierte Trade-Rendite."
       ]
+    },
+    {
+      "date": "2026-10-20",
+      "before_any_outcome": true,
+      "why": "Fairness: ChatGPT bekam bisher nur Kennzahlen, Claude zusätzlich Nachrichten.",
+      "changes": [
+        "Ab Runde 2 enthält der Snapshot je Wert bis zu 3 Schlagzeilen der letzten 7 Tage (Google News) – beide Analysten bekommen dieselben Nachrichten."
+      ]
     }
   ],
   "universe_from_round2": [
@@ -132,5 +140,47 @@
     "QQQ",
     "GLD",
     "^GDAXI"
-  ]
+  ],
+  "names": {
+    "AAPL": "Apple",
+    "MSFT": "Microsoft",
+    "NVDA": "Nvidia",
+    "AMZN": "Amazon",
+    "GOOGL": "Alphabet Google",
+    "META": "Meta Platforms",
+    "TSLA": "Tesla",
+    "JPM": "JPMorgan",
+    "XOM": "Exxon Mobil",
+    "LLY": "Eli Lilly",
+    "SPY": "S&P 500",
+    "QQQ": "Nasdaq 100",
+    "GLD": "gold price",
+    "^GDAXI": "DAX index",
+    "SAP.DE": "SAP",
+    "SIE.DE": "Siemens AG",
+    "ALV.DE": "Allianz",
+    "DTE.DE": "Deutsche Telekom",
+    "RHM.DE": "Rheinmetall",
+    "MBG.DE": "Mercedes-Benz",
+    "AMD": "AMD",
+    "AVGO": "Broadcom",
+    "NFLX": "Netflix",
+    "COST": "Costco",
+    "WMT": "Walmart",
+    "UNH": "UnitedHealth",
+    "PG": "Procter & Gamble",
+    "KO": "Coca-Cola",
+    "CAT": "Caterpillar",
+    "BA": "Boeing",
+    "ASML.AS": "ASML",
+    "NOVO-B.CO": "Novo Nordisk",
+    "MC.PA": "LVMH",
+    "NESN.SW": "Nestle",
+    "SHEL.L": "Shell plc",
+    "BAS.DE": "BASF",
+    "BAYN.DE": "Bayer AG",
+    "DBK.DE": "Deutsche Bank",
+    "IFX.DE": "Infineon",
+    "VOW3.DE": "Volkswagen"
+  }
 }

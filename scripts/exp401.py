@@ -55,12 +55,26 @@ def snapshot() -> None:
                      "vom 52W-Hoch %": round((c.iloc[-1] / c.tail(252).max() - 1) * 100, 1),
                      "Vol/Ø20": round(float(d["Volume"].iloc[-1] / d["Volume"].tail(20).mean()), 2) if d["Volume"].tail(20).mean() > 0 else None})
     df = pd.DataFrame(rows)
+    news_md = ["", "## Schlagzeilen der letzten 7 Tage (Google News, je Wert max. 3)", ""]
+    try:
+        from exp402 import _rss
+        import urllib.parse
+        since = pd.Timestamp.now(tz="UTC") - pd.Timedelta(days=7)
+        for s in CFG.get("universe_from_round2", CFG["universe"]):
+            q = urllib.parse.quote(f'"{CFG["names"].get(s, s)}" when:7d')
+            try:
+                items = [t for ts, t in sorted(_rss(f"https://news.google.com/rss/search?q={q}&hl=en-US&gl=US&ceid=US:en"), reverse=True) if ts >= since][:3]
+            except Exception:  # noqa: BLE001
+                items = []
+            news_md.append(f"- **{s}**: " + (" | ".join(items) if items else "–"))
+    except Exception as e:  # noqa: BLE001
+        news_md.append(f"(Nachrichten nicht verfügbar: {type(e).__name__})")
     OUT.mkdir(parents=True, exist_ok=True)
     today = date.today().isoformat()
     name = OUT / f"snapshot-{today}.md"
     if name.exists():  # nie einen alten Snapshot überschreiben (Prognose-Eingaben bleiben nachvollziehbar)
         name = OUT / f"snapshot-{datetime.now(timezone.utc):%Y-%m-%dT%H%M}.md"
-    name.write_text(f"# EXP-401 Snapshot {today} (Daten bis Freitag-Schluss)\n\n" + df.to_markdown(index=False) + "\n")
+    name.write_text(f"# EXP-401 Snapshot {today} (Daten bis Freitag-Schluss)\n\n" + df.to_markdown(index=False) + "\n" + "\n".join(news_md) + "\n")
     (OUT / "snapshot-latest.json").write_text(df.to_json(orient="records", indent=1, force_ascii=False))
     print(df.to_string(index=False))
 
