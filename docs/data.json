@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-20T13:30+00:00",
+ "generated": "2026-10-20T13:34+00:00",
  "history": [
   {
    "id": "EXP-101",
@@ -22,7 +22,7 @@
  ],
  "exp401": {
   "score": {
-   "updated": "2026-10-17",
+   "updated": "2026-10-20",
    "arms": {},
    "notes": [
     "Claude 2026-10-19.json: Woche läuft noch"
@@ -30,111 +30,167 @@
    "predictions": [],
    "trades": []
   },
-  "week": "2026-10-19",
+  "week": "2026-10-26",
   "rows": [
    {
     "symbol": "AAPL",
-    "Claude": 0.6,
-    "Claude_trade": "long (Stop 3.0%, Ziel 4.0%)",
-    "reason": "Auf 52-Wochen-Hoch, relative Stärke trotz Tech-Ausverkauf, Volumen 1,6x."
+    "ChatGPT": 0.54
    },
    {
     "symbol": "ALV.DE",
-    "Claude": 0.54,
-    "reason": "Defensiv, über SMA200, gute Woche."
+    "ChatGPT": 0.52
+   },
+   {
+    "symbol": "AMD",
+    "ChatGPT": 0.48
    },
    {
     "symbol": "AMZN",
-    "Claude": 0.5,
-    "reason": "Kein klares Bild, knapp unter SMA20/50."
+    "ChatGPT": 0.55
+   },
+   {
+    "symbol": "ASML.AS",
+    "ChatGPT": 0.48
+   },
+   {
+    "symbol": "AVGO",
+    "ChatGPT": 0.45
+   },
+   {
+    "symbol": "BA",
+    "ChatGPT": 0.47
+   },
+   {
+    "symbol": "BAS.DE",
+    "ChatGPT": 0.55
+   },
+   {
+    "symbol": "BAYN.DE",
+    "ChatGPT": 0.47
+   },
+   {
+    "symbol": "CAT",
+    "ChatGPT": 0.47
+   },
+   {
+    "symbol": "COST",
+    "ChatGPT": 0.52
+   },
+   {
+    "symbol": "DBK.DE",
+    "ChatGPT": 0.48
    },
    {
     "symbol": "DTE.DE",
-    "Claude": 0.5,
-    "reason": "Abwärtstrend, aber Erholung letzte Woche – unentschieden."
+    "ChatGPT": 0.48
    },
    {
     "symbol": "GLD",
-    "Claude": 0.4,
-    "Claude_trade": "short (Stop 3.0%, Ziel 3.0%)",
-    "reason": "Unter SMA50 und SMA200, −23 % vom Hoch, Abwärtstrend; heiße Inflation stützt Zinsen."
+    "ChatGPT": 0.46
    },
    {
     "symbol": "GOOGL",
-    "Claude": 0.5,
-    "reason": "Seitwärts bis schwach, auf SMA200 – kein Vorteil erkennbar."
+    "ChatGPT": 0.47
+   },
+   {
+    "symbol": "IFX.DE",
+    "ChatGPT": 0.45
    },
    {
     "symbol": "JPM",
-    "Claude": 0.53,
-    "reason": "Zahlen schon veröffentlicht, stabil über SMA200."
+    "ChatGPT": 0.49
+   },
+   {
+    "symbol": "KO",
+    "ChatGPT": 0.52
    },
    {
     "symbol": "LLY",
-    "Claude": 0.53,
-    "reason": "Klarer Aufwärtstrend nahe Hoch, leicht überkauft."
+    "ChatGPT": 0.54
    },
    {
     "symbol": "MBG.DE",
-    "Claude": 0.48,
-    "reason": "Unter SMA50/200, schwacher Trend."
+    "ChatGPT": 0.48
+   },
+   {
+    "symbol": "MC.PA",
+    "ChatGPT": 0.46
    },
    {
     "symbol": "META",
-    "Claude": 0.5,
-    "reason": "Zahlen Mi. nach Börsenschluss – Ausgang offen."
+    "ChatGPT": 0.48
    },
    {
     "symbol": "MSFT",
-    "Claude": 0.55,
-    "reason": "Nahe Hoch, starker 3-Monats-Trend, hielt sich in der Schwächewoche gut."
+    "ChatGPT": 0.53
+   },
+   {
+    "symbol": "NESN.SW",
+    "ChatGPT": 0.51
+   },
+   {
+    "symbol": "NFLX",
+    "ChatGPT": 0.47
+   },
+   {
+    "symbol": "NOVO-B.CO",
+    "ChatGPT": 0.5
    },
    {
     "symbol": "NVDA",
-    "Claude": 0.52,
-    "reason": "−6,6 % in der Woche, RSI 38 überverkauft; AI-Finanzierungssorgen (CoreWeave) können weiterlaufen."
+    "ChatGPT": 0.48
+   },
+   {
+    "symbol": "PG",
+    "ChatGPT": 0.53
    },
    {
     "symbol": "QQQ",
-    "Claude": 0.6,
-    "Claude_trade": "long (Stop 3.5%, Ziel 4.0%)",
-    "reason": "Schlechteste Woche seit Juni, RSI 35, über SMA200 – Erholung wahrscheinlicher als weiterer Einbruch."
+    "ChatGPT": 0.48
    },
    {
     "symbol": "RHM.DE",
-    "Claude": 0.5,
-    "reason": "+16 % Woche nach −43 % vom Hoch, sehr volatil – kein Vorteil."
+    "ChatGPT": 0.51
    },
    {
     "symbol": "SAP.DE",
-    "Claude": 0.52,
-    "reason": "Zahlen Mi. nach Schluss, starke Woche, Ereignisrisiko."
+    "ChatGPT": 0.54
+   },
+   {
+    "symbol": "SHEL.L",
+    "ChatGPT": 0.52
    },
    {
     "symbol": "SIE.DE",
-    "Claude": 0.52,
-    "reason": "Neutral um SMA20/50."
+    "ChatGPT": 0.46
    },
    {
     "symbol": "SPY",
-    "Claude": 0.6,
-    "Claude_trade": "long (Stop 2.5%, Ziel 3.0%)",
-    "reason": "Nach −2 % Woche und VIX-Spitze 22 historisch leichte Erholungsneigung; Trend über SMA200 intakt."
+    "ChatGPT": 0.5
    },
    {
     "symbol": "TSLA",
-    "Claude": 0.48,
-    "reason": "Zahlen Mi., unter SMA200, −28 % vom Hoch; Ereignisrisiko in beide Richtungen."
+    "ChatGPT": 0.49
+   },
+   {
+    "symbol": "UNH",
+    "ChatGPT": 0.53
+   },
+   {
+    "symbol": "VOW3.DE",
+    "ChatGPT": 0.47
+   },
+   {
+    "symbol": "WMT",
+    "ChatGPT": 0.52
    },
    {
     "symbol": "XOM",
-    "Claude": 0.5,
-    "reason": "Starker Trend, aber RSI 73 überkauft – Momentum vs. Rücksetzer gleichen sich aus."
+    "ChatGPT": 0.53
    },
    {
     "symbol": "^GDAXI",
-    "Claude": 0.55,
-    "reason": "Hielt sich gegen US-Tech, über SMA200."
+    "ChatGPT": 0.49
    }
   ]
  },
