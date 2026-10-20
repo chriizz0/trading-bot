@@ -56,9 +56,16 @@ def predict() -> int:
     if with_news and os.environ.get("ANTHROPIC_API_KEY"):
         from tbot.llm import ask_anthropic, extract_json
         text = "\n".join(f"{s}: " + " | ".join(h) for s, h in with_news.items())
-        data = extract_json(ask_anthropic(PROMPT.format(news=text), max_tokens=1500))
-        scores = {s: max(-1.0, min(1.0, float(v))) for s, v in data.get("scores", {}).items() if s in with_news}
-        notes, model = data.get("notes", {}), os.environ.get("ANTHROPIC_MODEL", "claude-haiku-5-5")
+        from tbot.llm import LLMError
+        model = os.environ.get("ANTHROPIC_MODEL", "claude-haiku-5-5")
+        try:
+            data = extract_json(ask_anthropic(PROMPT.format(news=text), max_tokens=1500))
+            scores = {s: max(-1.0, min(1.0, float(v))) for s, v in data.get("scores", {}).items() if s in with_news}
+            notes = data.get("notes", {})
+        except LLMError as e:  # Meldung enthält garantiert keine Header/Schlüssel
+            notes = {"_fehler": str(e)[:300]}
+        except (ValueError, KeyError) as e:
+            notes = {"_fehler": f"Antwort nicht auswertbar: {type(e).__name__}"}
     elif with_news:
         print("ANTHROPIC_API_KEY fehlt – nur Schlagzeilen gespeichert.")
     PRED.mkdir(parents=True, exist_ok=True)
