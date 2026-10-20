@@ -28,6 +28,9 @@ def main() -> int:
         return 0
     cfg = json.loads((ROOT / "config/exp401.json").read_text())
     today = date.today()
+    if today.weekday() < 5:  # nur am Wochenende mit aktuellem Freitags-Snapshot
+        print("Kein Wochenende – ChatGPT-Arm übersprungen.")
+        return 0
     week = today + timedelta(days=(7 - today.weekday()) % 7 or 7)  # nächster Montag
     if week.isoformat() not in cfg["rounds"]:
         print(f"{week} ist keine Runde.")
