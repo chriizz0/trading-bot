@@ -24,6 +24,9 @@ jobs:
       - run: pip install -q -r requirements.txt
       - if: ${{ inputs.debug }}
         run: python scripts/exp402.py debug
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL || 'claude-haiku-5-5' }}
       - if: ${{ !inputs.debug }}
         run: python scripts/exp402.py predict
         env:

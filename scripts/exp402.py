@@ -37,6 +37,14 @@ def debug() -> int:
                           "beispiel": items[0][1][:90] if items else None}
         except Exception as e:  # noqa: BLE001
             info[name] = {"fehler": type(e).__name__}
+    if os.environ.get("ANTHROPIC_API_KEY"):
+        from tbot.llm import LLMError, ask_anthropic
+        try:
+            info["anthropic"] = "OK: " + ask_anthropic("Antworte nur mit OK", max_tokens=5)[:10]
+        except LLMError as e:
+            info["anthropic"] = str(e)[:200]
+    else:
+        info["anthropic"] = "kein Schlüssel"
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "debug.json").write_text(json.dumps(info, indent=1, ensure_ascii=False))
     print(info)
