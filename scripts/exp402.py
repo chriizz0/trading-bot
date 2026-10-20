@@ -28,31 +28,52 @@ Antworte NUR mit JSON: {{"scores": {{"TICKER": 0.0, ...}}, "notes": {{"TICKER": 
 
 
 def debug() -> int:
-    import yfinance as yf
-    items = yf.Ticker("AAPL").news or []
-    info = {"yfinance": yf.__version__, "n_items": len(items),
-            "first_keys": list(items[0].keys()) if items else [],
-            "content_keys": list(items[0].get("content", {}).keys()) if items and isinstance(items[0].get("content"), dict) else [],
-            "first_pub": str((items[0].get("content") or items[0]).get("pubDate") or items[0].get("providerPublishTime")) if items else None,
-            "parsed_24h": len(headlines("AAPL", datetime.now(timezone.utc) - timedelta(hours=24)))}
+    since = datetime.now(timezone.utc) - timedelta(hours=24)
+    info = {}
+    for name in SOURCES:
+        try:
+            items = _rss(SOURCES[name].format(sym="AAPL"))
+            info[name] = {"items": len(items), "last_24h": len(headlines("AAPL", since, name)),
+                          "beispiel": items[0][1][:90] if items else None}
+        except Exception as e:  # noqa: BLE001
+            info[name] = {"fehler": type(e).__name__}
     OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / "debug.json").write_text(json.dumps(info, indent=1))
+    (OUT / "debug.json").write_text(json.dumps(info, indent=1, ensure_ascii=False))
     print(info)
     return 0
 
 
-def headlines(sym: str, since: datetime) -> list[str]:
-    import yfinance as yf
+UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) AppleWebKit/605.1.15 Version/17.5 Safari/605.1.15"}
+SOURCES = {
+    "yahoo_rss": "https://feeds.finance.yahoo.com/rss/2.0/headline?s={sym}&region=US&lang=en-US",
+    "google_news": "https://news.google.com/rss/search?q={sym}+stock+when:1d&hl=en-US&gl=US&ceid=US:en",
+}
+
+
+def _rss(url: str) -> list[tuple[pd.Timestamp, str]]:
+    import urllib.request
+    import xml.etree.ElementTree as ET
+    from email.utils import parsedate_to_datetime
+    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=20) as r:
+        root = ET.fromstring(r.read())
     out = []
-    for n in yf.Ticker(sym).news or []:
-        c = n.get("content", n)
-        ts = c.get("pubDate") or c.get("providerPublishTime")
-        t = pd.Timestamp(ts, unit="s", tz="UTC") if isinstance(ts, (int, float)) else pd.Timestamp(ts)
-        if t.tzinfo is None:
-            t = t.tz_localize("UTC")
-        if t >= since and c.get("title"):
-            out.append(c["title"].strip())
-    return out[:6]
+    for it in root.iter("item"):
+        t, d = it.findtext("title"), it.findtext("pubDate")
+        if t and d:
+            out.append((pd.Timestamp(parsedate_to_datetime(d)).tz_convert("UTC"), t.strip()))
+    return out
+
+
+def headlines(sym: str, since: datetime, source: str | None = None) -> list[str]:
+    for name in ([source] if source else SOURCES):
+        try:
+            items = _rss(SOURCES[name].format(sym=sym))
+        except Exception:  # noqa: BLE001
+            continue
+        hs = [t for ts, t in sorted(items, reverse=True) if ts >= pd.Timestamp(since)]
+        if hs or source:
+            return list(dict.fromkeys(hs))[:6]
+    return []
 
 
 def signal_day(now: datetime):
