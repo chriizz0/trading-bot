@@ -74,7 +74,7 @@ svg text{fill:var(--text2);font-size:11px}.tip{position:fixed;pointer-events:non
 <div class="list" id="tips"></div>
 
 <h2>Nachrichten-Test (täglich)</h2>
-<p class="muted">Jeden Abend liest eine günstige KI (Claude Haiku) die Schlagzeilen zu 20 US-Aktien und schätzt, ob sie dem Kurs am nächsten Tag helfen oder schaden. Gemessen wird von der Eröffnung bis zum Schluss des Folgetags.</p>
+<p class="muted">Jeden Abend lesen zwei KI-Modelle (Claude Haiku und das größere Claude Sonnet) dieselben Schlagzeilen zu 20 US-Aktien und schätzen, ob sie dem Kurs am nächsten Tag helfen oder schaden. So sehen wir auch, ob ein größeres Modell besser ist. Gemessen wird von der Eröffnung bis zum Schluss des Folgetags.</p>
 <div class="grid" id="news"></div>
 <div class="list" id="newslist" style="margin-top:10px"></div>
 
@@ -149,15 +149,18 @@ fetch(SRC+"data.json?"+Date.now()).then(r=>r.json()).then(d=>{
   $("tabs").innerHTML=avail.map(a=>`<button aria-pressed="${a==sel}" data-a="${a}"><i class="dot" style="background:${COLS[a]}"></i>${a}</button>`).join("");
   $("tabs").querySelectorAll("button").forEach(b=>b.onclick=()=>{sel=b.dataset.a;draw()})};
  draw();
- // Nachrichten
- const n=d.exp402,L=d.exp402_latest;
- $("news").innerHTML=n&&n.signals?
-  `<div class="card"><h3>Ausgewertete Signale</h3><div style="font-size:24px;font-weight:600">${n.signals}</div></div>
-   <div class="card"><h3>Rang-Treffer (IC)</h3><div style="font-size:24px;font-weight:600">${n.ic_mean==null?"–":(n.ic_mean>0?"+":"")+de(n.ic_mean,2)}</div>${verdict(n.ic_mean==null?null:(n.ic_mean>0&&n.perm_p<=0.1),"klar über Zufall")}</div>
-   <div class="card"><h3>Nach schlechten News</h3><div style="font-size:24px;font-weight:600">${pct(n.neg_mean_alpha,2)}</div><div class="muted">Ø Kursbewegung vs. Markt am Folgetag (Forschung: sollte negativ sein)</div></div>`
-  :`<div class="card">${badge("neutral","Sammelt noch Daten")} <span class="muted">Die erste Auswertung braucht ein paar Handelstage.</span></div>`;
- if(L&&L.scores&&Object.keys(L.scores).length){const e=Object.entries(L.scores).filter(([,v])=>v!=0).sort((a,b)=>Math.abs(b[1])-Math.abs(a[1])).slice(0,8);
-  $("newslist").innerHTML=`<div class="muted">Letzte Bewertung (Signal vom ${dfmt(L.signal_date)}):</div>`+e.map(([k,v])=>`<div class="row"><div class="sym">${esc(k)}</div><div class="why">${esc((L.notes||{})[k]||"")}</div><span class="lean ${v>0?"up":"down"}">${v>0?"▲ positiv":"▼ negativ"} (${(v>0?"+":"")+de(v,1)})</span></div>`).join("")}
+ // Nachrichten (je Modell)
+ const n=d.exp402||{},L=d.exp402_latest,mods=n.models||{},mn=m=>m.replace("claude-","").replace("-5-5","").replace(/^./,c=>c.toUpperCase());
+ const mk=Object.keys(mods);
+ $("news").innerHTML=mk.length?mk.map(m=>{const r=mods[m];return `<div class="card"><h3>${esc(mn(m))}</h3>
+   <div class="muted">${r.signals} Signale an ${r.days} Tagen</div>
+   <div style="font-size:22px;font-weight:600;margin-top:6px">IC ${r.ic_mean==null?"–":(r.ic_mean>0?"+":"")+de(r.ic_mean,2)}</div>
+   ${verdict(r.ic_mean==null?null:(r.ic_mean>0&&r.perm_p<=0.1),"klar über Zufall")}
+   <div class="muted" style="margin-top:6px">Nach schlechten News: ${pct(r.neg_mean_alpha,2)} · nach guten: ${pct(r.pos_mean_alpha,2)} (vs. Markt, Eröffnung→Schluss)</div></div>`}).join("")
+  :`<div class="card">${badge("neutral","Sammelt noch Daten")} <span class="muted">Zwei Modelle (Haiku und Sonnet) bewerten jeden Abend dieselben Schlagzeilen. Erste Auswertung nach ein paar Handelstagen.</span></div>`;
+ if(L&&L.runs){const pref=Object.keys(L.runs).find(m=>m.includes("sonnet"))||Object.keys(L.runs)[0],R=L.runs[pref]||{};
+  const e=Object.entries(R.scores||{}).filter(([,v])=>v!=0).sort((a,b)=>Math.abs(b[1])-Math.abs(a[1])).slice(0,8);
+  if(e.length)$("newslist").innerHTML=`<div class="muted">Letzte Bewertung von ${esc(mn(pref))} (Signal vom ${dfmt(L.signal_date)}):</div>`+e.map(([k,v])=>`<div class="row"><div class="sym">${esc(k)}</div><div class="why">${esc((R.notes||{})[k]||"")}</div><span class="lean ${v>0?"up":"down"}">${v>0?"▲ positiv":"▼ negativ"} (${(v>0?"+":"")+de(v,1)})</span></div>`).join("")}
  // Historie
  $("hist").innerHTML=(d.history||[]).map(h=>`<div class="card"><h3>${esc(h.id)} · ${esc(h.title)}</h3>${badge(h.verdict.includes("knapp")?"warn":"bad",esc(h.verdict))}<p class="muted" style="margin:6px 0 0">${esc(h.detail)}</p></div>`).join("");
 });

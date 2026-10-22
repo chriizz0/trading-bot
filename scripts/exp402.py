@@ -45,11 +45,12 @@ def debug() -> int:
             if fs:  # Parse-Test mit gespeicherten Schlagzeilen (wird NICHT als Prognose gespeichert)
                 from tbot.llm import extract_json
                 hl = {k: v for k, v in json.loads(fs[-1].read_text())["headlines"].items() if v}
-                raw = ask_anthropic(PROMPT.format(news="\n".join(f"{k}: " + " | ".join(v) for k, v in hl.items())), max_tokens=4000)
-                try:
-                    info["parse_test"] = f"OK, {len(extract_json(raw).get('scores', {}))} Werte bewertet"
-                except Exception as e:  # noqa: BLE001
-                    info["parse_test"] = f"FEHLER {type(e).__name__}: {raw[:300]}"
+                for m in CFG["models"]:
+                    raw = ask_anthropic(PROMPT.format(news="\n".join(f"{k}: " + " | ".join(v) for k, v in hl.items())), model=m, max_tokens=4000)
+                    try:
+                        info[f"parse_test {m}"] = f"OK, {len(extract_json(raw).get('scores', {}))} Werte bewertet"
+                    except Exception as e:  # noqa: BLE001
+                        info[f"parse_test {m}"] = f"FEHLER {type(e).__name__}: {raw[:300]}"
         except LLMError as e:
             info["anthropic"] = str(e)[:200]
     else:
@@ -121,32 +122,50 @@ def predict() -> int:
         return 0
     news = {s: headlines(s, now - timedelta(hours=24)) for s in CFG["universe"]}
     with_news = {s: h for s, h in news.items() if h}
-    scores, notes, model = {}, {}, None
+    models = [m.strip() for m in os.environ.get("ANTHROPIC_MODELS", ",".join(CFG["models"])).split(",") if m.strip()]
+    runs = {}
     if with_news and os.environ.get("ANTHROPIC_API_KEY"):
-        from tbot.llm import ask_anthropic, extract_json
+        from tbot.llm import LLMError, ask_anthropic, extract_json
         text = "\n".join(f"{s}: " + " | ".join(h) for s, h in with_news.items())
-        from tbot.llm import LLMError
-        model = os.environ.get("ANTHROPIC_MODEL", "claude-haiku-5-5")
-        raw = ""
-        try:
-            raw = ask_anthropic(PROMPT.format(news=text), max_tokens=4000)
-            data = extract_json(raw)
-            scores = {s: max(-1.0, min(1.0, float(v))) for s, v in data.get("scores", {}).items() if s in with_news}
-            notes = data.get("notes", {})
-        except LLMError as e:  # Meldung enthält garantiert keine Header/Schlüssel
-            notes = {"_fehler": str(e)[:300]}
-        except (ValueError, KeyError) as e:
-            notes = {"_fehler": f"Antwort nicht auswertbar: {type(e).__name__}", "_antwort_anfang": raw[:400]}
+        for model in models:  # alle Modelle bekommen exakt denselben Text
+            raw, scores, notes = "", {}, {}
+            try:
+                raw = ask_anthropic(PROMPT.format(news=text), model=model, max_tokens=4000)
+                data = extract_json(raw)
+                scores = {s: max(-1.0, min(1.0, float(v))) for s, v in data.get("scores", {}).items() if s in with_news}
+                notes = data.get("notes", {})
+            except LLMError as e:  # Meldung enthält garantiert keine Header/Schlüssel
+                notes = {"_fehler": str(e)[:300]}
+            except (ValueError, KeyError) as e:
+                notes = {"_fehler": f"Antwort nicht auswertbar: {type(e).__name__}", "_antwort_anfang": raw[:400]}
+            runs[model] = {"scores": scores, "notes": notes}
     elif with_news:
         print("ANTHROPIC_API_KEY fehlt – nur Schlagzeilen gespeichert.")
     PRED.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps({"experiment": "EXP-402", "signal_date": day, "created_at": now.isoformat(timespec="seconds"),
-                               "model": model, "headlines": news, "scores": scores, "notes": notes}, indent=1, ensure_ascii=False))
-    print(f"{day}: {len(with_news)} Werte mit Nachrichten, {len(scores)} bewertet")
-    if "_fehler" in notes or (with_news and not scores) or not with_news:
+                               "headlines": news, "runs": runs}, indent=1, ensure_ascii=False))
+    print(f"{day}: {len(with_news)} Werte mit Nachrichten; bewertet: " + ", ".join(f"{m} {len(r['scores'])}" for m, r in runs.items()))
+    if not with_news or any("_fehler" in r["notes"] or not r["scores"] for r in runs.values()) or len(runs) < len(models):
         print("WARNUNG: Lauf unvollständig – Workflow wird als fehlgeschlagen markiert (GitHub schickt eine E-Mail).")
         return 1
     return 0
+
+
+def _metrics(x: pd.DataFrame) -> dict:
+    days = [g for _, g in x.groupby("date") if len(g) >= 3 and g.score.nunique() > 1]
+    ics = {g.date.iloc[0]: float(g.score.rank().corr(g.alpha.rank())) for g in days}
+    rng = np.random.default_rng(0)
+    null = [np.mean([pd.Series(rng.permutation(g.score.values)).rank().corr(g.alpha.rank().reset_index(drop=True)) for g in days])
+            for _ in range(2000)] if days else []
+    ls = {d: float(g.loc[g.score > 0, "alpha"].mean() - g.loc[g.score < 0, "alpha"].mean())
+          for d, g in x.groupby("date") if (g.score > 0).any() and (g.score < 0).any()}
+    neg, pos = x[x.score < 0], x[x.score > 0]
+    return {"signals": int(len(x)), "days": int(x.date.nunique()),
+            "ic_mean": float(np.mean(list(ics.values()))) if ics else None, "ic_by_day": ics,
+            "perm_p": float(np.mean(np.array(null) >= np.mean(list(ics.values())))) if ics else None,
+            "ls_by_day": ls, "neg_mean_alpha": float(neg.alpha.mean()) if len(neg) else None,
+            "pos_mean_alpha": float(pos.alpha.mean()) if len(pos) else None,
+            "ic_close_close_info": float(np.mean([g.score.rank().corr(g.alpha_close_close.rank()) for g in days])) if days else None}
 
 
 def score() -> int:
@@ -169,30 +188,20 @@ def score() -> int:
             r = px.iloc[i + 1] / op.iloc[i + 1] - 1          # handelbar: Eröffnung → Schluss nächster Tag
             r2 = px.iloc[i + 1] / px.iloc[i] - 1             # informativ: Schluss → Schluss (enthält nicht handelbare Nachtlücke)
             b = CFG["benchmark"]
-            for s, v in p.get("scores", {}).items():
-                if v != 0:
-                    rows.append({"date": p["signal_date"], "symbol": s, "score": v, "alpha": float(r[s] - r[b]),
-                                 "alpha_close_close": float(r2[s] - r2[b])})
-    res = {"updated": datetime.now(timezone.utc).date().isoformat(), "signals": len(rows)}
+            runs = p.get("runs") or ({p["model"]: {"scores": p.get("scores", {})}} if p.get("model") else {})
+            for model, run in runs.items():
+                for s, v in run.get("scores", {}).items():
+                    if v != 0:
+                        rows.append({"model": model, "date": p["signal_date"], "symbol": s, "score": v,
+                                     "alpha": float(r[s] - r[b]), "alpha_close_close": float(r2[s] - r2[b])})
+    res = {"updated": datetime.now(timezone.utc).date().isoformat(), "signals": len(rows), "models": {}}
     if rows:
         x = pd.DataFrame(rows)
-        days = [g for _, g in x.groupby("date") if len(g) >= 3 and g.score.nunique() > 1]
-        ics = {g.date.iloc[0]: float(g.score.rank().corr(g.alpha.rank())) for g in days}
-        rng = np.random.default_rng(0)
-        null = [np.mean([pd.Series(rng.permutation(g.score.values)).rank().corr(g.alpha.rank().reset_index(drop=True)) for g in days])
-                for _ in range(2000)] if days else []
-        ls = {d: float(g.loc[g.score > 0, "alpha"].mean() - g.loc[g.score < 0, "alpha"].mean())
-              for d, g in x.groupby("date") if (g.score > 0).any() and (g.score < 0).any()}
-        neg = x[x.score < 0]
-        res.update({"ic_mean": float(np.mean(list(ics.values()))) if ics else None, "ic_by_day": ics,
-                    "perm_p": float(np.mean(np.array(null) >= np.mean(list(ics.values())))) if ics else None,
-                    "ls_by_day": ls, "neg_mean_alpha": float(neg.alpha.mean()) if len(neg) else None,
-                    "pos_mean_alpha": float(x[x.score > 0].alpha.mean()) if (x.score > 0).any() else None,
-                    "ic_close_close_info": float(np.mean([g.score.rank().corr(g.alpha_close_close.rank()) for g in days])) if days else None,
-                    "signals_list": x.round(5).to_dict("records")})
+        res["models"] = {m: _metrics(g) for m, g in x.groupby("model")}
+        res["signals_list"] = x.round(5).to_dict("records")
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "score.json").write_text(json.dumps(res, indent=1, ensure_ascii=False))
-    print({k: v for k, v in res.items() if k not in ("signals_list", "ic_by_day", "ls_by_day")})
+    print({m: {k: v for k, v in r.items() if k not in ("ic_by_day", "ls_by_day")} for m, r in res["models"].items()})
     return 0
 
 

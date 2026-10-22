@@ -26,11 +26,11 @@
     "BA"
   ],
   "benchmark": "SPY",
-  "model": "Claude Haiku über die Anthropic-API (Secret ANTHROPIC_API_KEY), Variable ANTHROPIC_MODEL",
+  "model": "Claude Haiku und Claude Sonnet parallel über die Anthropic-API (Secret ANTHROPIC_API_KEY); beide bekommen denselben Schlagzeilen-Text.",
   "schedule": "Mo–Fr 21:15 UTC nach US-Börsenschluss; Schlagzeilen der letzten 24 h",
   "signal": "score je Wert in [-1, 1] = erwartete Wirkung der Schlagzeilen auf den Kurs am nächsten Handelstag; 0 = keine/irrelevante Nachrichten",
   "outcome": "Primär (handelbar): Überrendite vs. SPY von Eröffnung bis Schluss des nächsten Handelstags. Sekundär (nur informativ, nicht handelbar, da Signal erst nach US-Schluss entsteht): Schluss Signaltag → Schluss nächster Tag.",
-  "end": "2026-11-13",
+  "end": "2026-11-17",
   "scoring": [
     "Information Coefficient je Tag (nur Werte mit score ≠ 0)",
     "Long-Short: Ø Überrendite score>0 minus score<0",
@@ -47,6 +47,19 @@
       "date": "2026-10-19",
       "before_any_outcome": true,
       "why": "Audit 19.10.: Signal entsteht nach US-Schluss, Renditefenster begann beim Schlusskurs davor."
+    },
+    {
+      "date": "2026-10-22",
+      "before_any_outcome": true,
+      "why": "20./21.10. ohne gültige Bewertung (Parse-Fehler); Forschung zeigt Abhängigkeit von der Modellgröße.",
+      "changes": [
+        "Zweites Modell (Claude Sonnet) bewertet parallel dieselben Schlagzeilen; Auswertung je Modell getrennt.",
+        "Ende auf 17.11. verschoben als Ausgleich für 2 ausgefallene Handelstage."
+      ]
     }
+  ],
+  "models": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
   ]
 }
