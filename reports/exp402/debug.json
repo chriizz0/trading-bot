@@ -3,10 +3,11 @@
   "fehler": "HTTPError"
  },
  "google_news": {
-  "items": 47,
+  "items": 49,
   "last_24h": 6,
   "beispiel": "Apple (AAPL) Stock Could Be 25% Overvalued Despite New Device Launch Plans - Yahoo Finance"
  },
  "anthropic": "OK: OK",
- "parse_test": "OK, 20 Werte bewertet"
+ "parse_test claude-haiku-5-5": "OK, 20 Werte bewertet",
+ "parse_test claude-sonnet-5-5": "OK, 20 Werte bewertet"
 }
