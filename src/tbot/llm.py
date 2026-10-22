@@ -41,6 +41,14 @@ def ask_anthropic(prompt: str, model: str | None = None, max_tokens: int = 4000)
 
 
 def extract_json(text: str):
+    """JSON aus einer Modellantwort holen – auch mit Codeblock, Vor-/Nachtext oder abgeschnittenem Ende."""
     m = re.search(r"```(?:json)?\s*(.*?)```", text, re.S)
-    raw = m.group(1) if m else text[text.find("{") if "{" in text else text.find("["):]
-    return json.loads(raw)
+    if m:
+        text = m.group(1)
+    a, b = text.find("{"), text.rfind("}")
+    if a < 0:
+        raise ValueError("kein JSON in der Antwort")
+    try:
+        return json.loads(text[a:b + 1])
+    except json.JSONDecodeError:
+        return json.JSONDecoder().raw_decode(text[a:])[0]

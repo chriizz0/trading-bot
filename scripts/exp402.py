@@ -24,7 +24,7 @@ voraussichtlich auf den Kurs am NÄCHSTEN Handelstag (relativ zum Gesamtmarkt)? 
 
 {news}
 
-Antworte NUR mit JSON: {{"scores": {{"TICKER": 0.0, ...}}, "notes": {{"TICKER": "max. 8 Wörter"}}}}"""
+Antworte NUR mit einem JSON-Objekt, ohne Text davor oder danach: {{"scores": {{"TICKER": 0.0, ...}}, "notes": {{"TICKER": "max. 6 Wörter, nur für score ungleich 0"}}}}"""
 
 
 def debug() -> int:
@@ -41,6 +41,15 @@ def debug() -> int:
         from tbot.llm import LLMError, ask_anthropic
         try:
             info["anthropic"] = "OK: " + ask_anthropic("Antworte nur mit OK", max_tokens=5)[:10]
+            fs = sorted(PRED.glob("*.json"))
+            if fs:  # Parse-Test mit gespeicherten Schlagzeilen (wird NICHT als Prognose gespeichert)
+                from tbot.llm import extract_json
+                hl = {k: v for k, v in json.loads(fs[-1].read_text())["headlines"].items() if v}
+                raw = ask_anthropic(PROMPT.format(news="\n".join(f"{k}: " + " | ".join(v) for k, v in hl.items())), max_tokens=4000)
+                try:
+                    info["parse_test"] = f"OK, {len(extract_json(raw).get('scores', {}))} Werte bewertet"
+                except Exception as e:  # noqa: BLE001
+                    info["parse_test"] = f"FEHLER {type(e).__name__}: {raw[:300]}"
         except LLMError as e:
             info["anthropic"] = str(e)[:200]
     else:
@@ -118,14 +127,16 @@ def predict() -> int:
         text = "\n".join(f"{s}: " + " | ".join(h) for s, h in with_news.items())
         from tbot.llm import LLMError
         model = os.environ.get("ANTHROPIC_MODEL", "claude-haiku-5-5")
+        raw = ""
         try:
-            data = extract_json(ask_anthropic(PROMPT.format(news=text), max_tokens=1500))
+            raw = ask_anthropic(PROMPT.format(news=text), max_tokens=4000)
+            data = extract_json(raw)
             scores = {s: max(-1.0, min(1.0, float(v))) for s, v in data.get("scores", {}).items() if s in with_news}
             notes = data.get("notes", {})
         except LLMError as e:  # Meldung enthält garantiert keine Header/Schlüssel
             notes = {"_fehler": str(e)[:300]}
         except (ValueError, KeyError) as e:
-            notes = {"_fehler": f"Antwort nicht auswertbar: {type(e).__name__}"}
+            notes = {"_fehler": f"Antwort nicht auswertbar: {type(e).__name__}", "_antwort_anfang": raw[:400]}
     elif with_news:
         print("ANTHROPIC_API_KEY fehlt – nur Schlagzeilen gespeichert.")
     PRED.mkdir(parents=True, exist_ok=True)
