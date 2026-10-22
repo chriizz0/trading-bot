@@ -143,6 +143,9 @@ def predict() -> int:
     out.write_text(json.dumps({"experiment": "EXP-402", "signal_date": day, "created_at": now.isoformat(timespec="seconds"),
                                "model": model, "headlines": news, "scores": scores, "notes": notes}, indent=1, ensure_ascii=False))
     print(f"{day}: {len(with_news)} Werte mit Nachrichten, {len(scores)} bewertet")
+    if "_fehler" in notes or (with_news and not scores) or not with_news:
+        print("WARNUNG: Lauf unvollständig – Workflow wird als fehlgeschlagen markiert (GitHub schickt eine E-Mail).")
+        return 1
     return 0
 
 
