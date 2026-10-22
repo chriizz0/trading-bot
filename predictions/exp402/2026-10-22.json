@@ -1,0 +1,249 @@
+{
+ "experiment": "EXP-402",
+ "signal_date": "2026-10-22",
+ "created_at": "2026-10-22T23:58:35+00:00",
+ "headlines": {
+  "AAPL": [
+   "Apple (NASDAQ:AAPL) SVP Sells $814,748.38 in Stock - MarketBeat",
+   "Apple SVP Jennifer Newstead sells $814,748 in AAPL stock By Investing.com - Investing.com UK",
+   "Apple (AAPL) counsel sells 2,399 shares under a preset trading plan. - Stock Titan",
+   "Apple Reportedly Raised Its iPhone Duo Target 44%. Here’s What November 2 Has to Show - Yahoo Finance",
+   "Apple stock hits all-time high at 348.25 USD By Investing.com - Investing.com Nigeria",
+   "Better Buffett Stock: Alphabet vs. Apple - The Motley Fool"
+  ],
+  "MSFT": [
+   "Microsoft (MSFT) Falls More Steeply Than Broader Market: What Investors Need to Know - Yahoo Finance",
+   "Alphabet (GOOGL) vs. MSFT and AMZN: Can AI Investments and Google Cloud Growth Unlock a 26% Upside? - Yahoo Finance",
+   "Google Is Paying SpaceX $11 Billion a Year for Compute. Here's the Concentration Risk Nobody Is Pricing In. - The Globe and Mail",
+   "Oracle (NYSE: ORCL) Takes On Microsoft (NASDAQ: MSFT) With Debt, Stock Sales, And Customer Prepayments In AI Infrastructure Battle - Foreign Policy Journal",
+   "20 Years of AI “Tumult” Ahead, Says Bill Gates: Microsoft Stock (NASDAQ:MSFT) Slides - TipRanks",
+   "How much MSFT stock does Microsoft CEO Satya Nadella actually own? - TheStreet"
+  ],
+  "NVDA": [
+   "Dow Jones Top Movers: UNH, MRK, AMGN Lead Gainers; NVDA, CAT, GS Decline in Today's US Session - ChartMill",
+   "Is Nvidia a Top Quantum Computing Stock? - Yahoo Finance",
+   "CoreWeave (NASDAQ:CRWV) Stock Crashes Nearly 10% as Nvidia CEO Flags AI Funding Crunch - Stocks Down Under",
+   "Is Nvidia a Top Quantum Computing Stock? - The Motley Fool",
+   "Why HubSpot Stock Rallied Today - The Globe and Mail",
+   "Nvidia: Apex Arbiter Of Agentic And Physical Compute Economy (NASDAQ:NVDA) - Seeking Alpha"
+  ],
+  "AMZN": [
+   "Is Amazon.com Inc (AMZN) a Bargain After 4.6% Drop? GF Value Says Undervalued - GuruFocus",
+   "AMZN Oct 2026 140.000 call (AMZN261023C00140000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+   "Elon Musk hints at launching an Amazon competit... - Pluang",
+   "Amazon (AMZN) Suffers a Larger Drop Than the General Market: Key Insights - Yahoo Finance Singapore",
+   "Amazon: Rule Of 90 In FY2028? We'll Hit 80 By Year-End (NASDAQ:AMZN) - Seeking Alpha",
+   "Alphabet (GOOGL) vs. MSFT and AMZN: Can AI Investments and Google Cloud Growth Unlock a 26% Upside? - Yahoo Finance"
+  ],
+  "GOOGL": [
+   "GOOGL261019C00312500 interactive stock chart | GOOGL Oct 2026 312.500 call stock - Yahoo Finance UK",
+   "GOOGL Oct 2026 200.000 call (GOOGL261023C00200000) stock price, news, quote and history - Yahoo Finance Singapore",
+   "Alphabet Inc. | GOOGL Stock Price & Real-time Quotes - finance.biggo.com",
+   "Alphabet (GOOGL) vs. MSFT and AMZN: Can AI Investments and Google Cloud Growth Unlock a 26% Upside? - Yahoo Finance",
+   "Google Is Paying SpaceX $11 Billion a Year for Compute. Here's the Concentration Risk Nobody Is Pricing In. - The Globe and Mail",
+   "GOOGL Oct 2026 392.500 call (GOOGL261023C00392500) Stock Price, News, Quote & History - Yahoo! Finance Canada"
+  ],
+  "META": [
+   "Nasdaq Suffers Worst Session Since June As AI, War Jitters Ramp Up; Meta Plummets - Investor's Business Daily",
+   "Meta Stock Eyes $500 After Support Breach as $825B AI Spending Alarms Investors Despite Meta Platforms Beating Third-Quarter Revenue Expectations - FXLeaders",
+   "AI buildout bill sinks Meta, other tech favorite stocks - Nikkei Asia",
+   "Mark Zuckerberg threatened to leave California over its 5% wealth tax — so Meta created a new stock class to keep him - Yahoo Finance",
+   "Why are CoreWeave and IREN stock down today: New 2026 lows - Opening Bell Daily",
+   "Rosenblatt maintains Buy on Meta stock amid capital raise concerns - Investing.com"
+  ],
+  "TSLA": [
+   "TSLA, SPCX Boards Confirm Special Committees On Potential Combination As Megapack Deals And Terafab Plans Deepen Ties - TradingView",
+   "TSLA.O - Reuters",
+   "Tesla Inc Stock (TSLA) Closed Down by 3.08% on Oct 22: What Signal Does It Send? - TradingKey",
+   "Tesla, Inc. (TSLA.NE) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+   "Tesla: ARK's $4,400 Price Target, Let's Examine (NASDAQ:TSLA) - Seeking Alpha",
+   "Tesla Q3 Results Overshadowed by SpaceX Merger Talk: Analysts Struggle to See ‘Meaningful Upside’ From Deal - Benzinga"
+  ],
+  "JPM": [
+   "Evolution stock: J.P. Morgan keeps AUD 15.80 target for Evolution Mining stock - AD HOC NEWS",
+   "JPM Oct 2026 332.500 put (JPM261023P00332500) stock price, news, quote and history - Yahoo Finance Australia",
+   "JPM Oct 2026 322.500 call (JPM261023C00322500) stock price, news, quote and history - Yahoo Finance Australia",
+   "CapitaLand Ascendas stock: J.P. Morgan keeps SGD 2.60 target - AD HOC NEWS",
+   "JPM Oct 2026 347.500 put (JPM261023P00347500) stock price, news, quote and history - Yahoo Finance Australia",
+   "Duke Energy (DUK) Stock Price Today, Live Chart & News - TechGraph"
+  ],
+  "XOM": [
+   "ExxonMobil Stock And Oil Majors With The Most Riding On Crude Prices - Yahoo! Finance Canada",
+   "Eni SpA Q3 Earnings Ahead: What's in Store for the Stock? - TradingView",
+   "Why Did XOM, CVX, MPC Stocks Surge To 52-Week Highs Today? - Stocktwits",
+   "Fund Update: New $83.1M $XOM stock position opened by YOUSIF CAPITAL MANAGEMENT, LLC - Quiver Quantitative",
+   "Sector Update: Energy Stocks Decline Late Afternoon - Yahoo Finance",
+   "NextEra Energy (NEE) Stock Price Today, Live Chart & News - TechGraph"
+  ],
+  "LLY": [
+   "Amgen vs. Eli Lilly: Does the GLP-1 Mania Make LLY Stock a Better Buy in 2026? - Yahoo Finance",
+   "Eli Lilly (LLY) Price Forecast: Breakout Strengthens Ahead of Earnings - FXEmpire",
+   "Investors are punishing Big Tech's biggest spenders. Meta is the latest casualty. - شبكة تواصل الإخبارية",
+   "Johnson & Johnson Stock (JNJ) Moved Up by 3.48% on Oct 22: Facts Behind the Movement - TradingKey",
+   "Roche's 9M 2026 Sales Rise on Strong Drug Demand, Pipeline Advances - Yahoo Finance",
+   "David Burrows’ Top Picks for Oct. 22, 2026 - BNN Bloomberg"
+  ],
+  "AMD": [
+   "Why AMD Stock Fell on Thursday - Yahoo Finance",
+   "Why AMD Stock Fell on Thursday - The Motley Fool",
+   "AMD pulled lower by tech slide, falls 8% (AMD:NASDAQ) - Seeking Alpha",
+   "AMD, Lam Research among market cap stock movers on Thursday - Investing.com",
+   "AMD, Marvell among market cap stock movers on Thursday - Investing.com",
+   "AMD Stocks Drop 7.53% as AI Spending Fears Challenge a $620 Target - Yahoo Finance"
+  ],
+  "AVGO": [
+   "Broadcom Inc. (AVGO) Suffers a Larger Drop Than the General Market: Key Insights - Yahoo Finance",
+   "AVGO Oct 2026 322.500 put (AVGO261028P00322500) Interactive Stock Chart - Yahoo! Finance Canada",
+   "AVGO Oct 2026 317.500 put (AVGO261021P00317500) stock price, news, quote and history - Yahoo Finance Australia",
+   "Broadcom Stocks Dip 4.5% After New AI Fraud Defense Launch - TradingView",
+   "AVGO Oct 2026 380.000 call (AVGO261021C00380000) interactive stock chart – Yahoo Finance - Yahoo Finance Singapore",
+   "Broadcom Stocks Dip 4.5% After New AI Fraud Defense Launch - GuruFocus"
+  ],
+  "NFLX": [
+   "Stock Market Today, Oct. 22: Netflix Rises as Investors Capitalize on Post-Earnings Sell-Off - The Motley Fool",
+   "Moderately bullish activity in Netflix with shares up 3.11% - TipRanks",
+   "The Truth About Netflix’s Massive Stock Buybacks - The Globe and Mail",
+   "The Truth About Netflix’s Massive Stock Buybacks - The Motley Fool",
+   "Why Waste Connections Stock Is Up Today - The Globe and Mail",
+   "Netflix CFO Eyes Double-Digit Revenue Growth Into 2027 Despite ‘Modest’ Viewership Gains, Points to 3 Key Drivers: ‘Not Overly Dependent…’ - Yahoo Finance"
+  ],
+  "COST": [
+   "NKE Stock In Focus: Barclays Raises Price Target To $45, Says Shares Are ‘Near Bottom’ - Stocktwits",
+   "Western Digital shares slide as cost pressures, higher capex overshadow earnings - Investing.com",
+   "Standard Chartered PLC (STAN.L) stock price, news, quote and history - Yahoo Finance UK",
+   "TSLA.O - Reuters",
+   "S&P 500, Nasdaq end sharply lower as revived AI doubts ignite tech selloff - Reuters",
+   "Costco (COST) Advances While Market Declines: Some Information for Investors - Yahoo Finance"
+  ],
+  "WMT": [
+   "Don’t miss rare chance to score 18-piece granite pots, pans set with wooden handles under $64 - Cleveland.com",
+   "Dow Jones Top Movers: UNH, MRK, AMGN Lead Gainers; NVDA, CAT, GS Decline in Today's US Session - ChartMill",
+   "Walmart (WMT) Advances While Market Declines: Some Information for Investors - Yahoo Finance",
+   "Costco Wholesale Corp. stock outperforms competitors on strong trading day - MarketWatch",
+   "Walmart Stock Heads for Best Month Since 1999 - Walmart (NASDAQ:WMT) - Benzinga",
+   "Kroger Is Spending $5 Billion to Cut Prices. Walmart and Costco Are the Target - 24/7 Wall St."
+  ],
+  "UNH": [
+   "Dow Jones Top Movers: UNH, MRK, AMGN Lead Gainers; NVDA, CAT, GS Decline in Today's US Session - ChartMill",
+   "UnitedHealth (NYSE:UNH) Medical Cost Trends Draw Attention Across Managed Care - Kalkine Media",
+   "NextEra Energy (NEE) Stock Price Today, Live Chart & News - TechGraph",
+   "UNH climbs nearly 2% after robust earnings beat and upgraded guidance - Traders Union",
+   "Duke Energy (DUK) Stock Price Today, Live Chart & News - TechGraph",
+   "UNH Nov 2026 425.000 put (UNH261106P00425000) Stock Price, News, Quote & History - Yahoo! Finance Canada"
+  ],
+  "PG": [
+   "Procter & Gamble (NYSE:PG) Surges on a Beat: Can It Keep Climbing? - Kalkine Media",
+   "Is It Too Late to Buy Procter & Gamble Co (PG) After 5.6% Rally? GF Value Says Undervalued - GuruFocus",
+   "Procter & Gamble (NYSE:PG) Shares Up 5.8% After Better-Than-Expected Earnings - MarketBeat",
+   "Is Procter & Gamble (PG) Reasonable After Strong Q1 Cash Flow? - Simply Wall Street",
+   "Procter & Gamble Company (The) (PG) Stock Forecasts - Yahoo Finance",
+   "Procter & Gamble (PG) Pairs Q1 Beat With AI Focus And Fresh Product Rollout - Yahoo Finance"
+  ],
+  "KO": [
+   "Coca-Cola (NYSE:KO) Hits A New High: Is There More Fizz Left? - Kalkine Media",
+   "Coca-Cola Joins Costco in the $400 Billion Club. I Predict Only 1 of These Dividend Stocks Will Surpass $1 Trillion by 2036. - The Motley Fool",
+   "Coca-Cola (KO) Rises As Market Takes a Dip: Key Facts - Yahoo Finance",
+   "Coca-Cola keeps WPP on global creative work while Omnicom is selected for North American media. - Stock Titan",
+   "Coca-Cola Joins Costco in the $400 Billion Club. I Predict Only 1 of These Dividend Stocks Will Surpass $1 Trillion by 2036. - AOL.com",
+   "Keurig Dr Pepper (KDP) vs. KO and PEP: Can the JDE Peet’s Acquisition and Planned Split Unlock Value Despite Rising Debt? - Yahoo Finance"
+  ],
+  "CAT": [
+   "Black Cat targets growth across WA gold operations - Australian Mining",
+   "CAT Nov 2026 770.000 call (CAT261127C00770000) stock price, news, quote and history - Yahoo Finance Australia",
+   "CAT Nov 2026 845.000 put (CAT261106P00845000) stock price, news, quote and history - Yahoo Finance Singapore",
+   "Caterpillar Inc (CAT) Stock Down 4.9% but Still Overvalued -- GF Score: 90/100 - GuruFocus",
+   "AI Sell-Off Spreads to Industrials: Caterpillar, GE Vernova, Vertiv Trapped in Bear Market - Benzinga",
+   "CAT Nov 2026 745.000 put (CAT261106P00745000) interactive stock chart – Yahoo Finance - Yahoo Finance Singapore"
+  ],
+  "BA": [
+   "Boeing (NYSE:BA) Shares Down 2.5% - Here's What Happened - MarketBeat",
+   "Form 4 Boeing Co For: 22 October By Investing.com - Investing.com Nigeria",
+   "Boeing (BA) Declines More Than Market: Some Information for Investors - Yahoo Finance",
+   "GETS N'YO NAMAN AKO 'DI BA 🥰 BTS member Jin shares snaps on his social media from the group’s ARIRANG World Tour. (📷: Jin/IG) - Facebook",
+   "Dow Jones Top Movers Today: PG and JNJ Lead Gainers, CAT and AMZN Lead Losers - ChartMill",
+   "Browns prepare for Titans; Cavaliers open their season: Thursday’s Sports 4 CLE - Cleveland.com"
+  ]
+ },
+ "runs": {
+  "claude-haiku-5-5": {
+   "scores": {
+    "AAPL": 0.2,
+    "MSFT": -0.1,
+    "NVDA": -0.3,
+    "AMZN": -0.1,
+    "GOOGL": 0.0,
+    "META": -0.4,
+    "TSLA": -0.1,
+    "JPM": 0.0,
+    "XOM": 0.0,
+    "LLY": 0.1,
+    "AMD": -0.3,
+    "AVGO": -0.2,
+    "NFLX": 0.2,
+    "COST": 0.0,
+    "WMT": 0.0,
+    "UNH": 0.2,
+    "PG": 0.0,
+    "KO": 0.0,
+    "CAT": -0.2,
+    "BA": 0.0
+   },
+   "notes": {
+    "AAPL": "Analystenziel angehoben, Rekordhoch erreicht",
+    "MSFT": "Unterdurchschnittlich, Konkurrenzdruck durch Oracle",
+    "NVDA": "CEO warnt vor KI-Finanzierungsengpass",
+    "AMZN": "Schwächer als Markt, Musk-Konkurrenzhinweis",
+    "META": "KI-Ausgabensorgen, Kapitalerhöhung belastet Aktie",
+    "TSLA": "SpaceX-Fusion ohne klaren Nutzen",
+    "LLY": "Technischer Ausbruch vor Quartalszahlen",
+    "AMD": "KI-Ausgabensorgen, starker Kursrückgang",
+    "AVGO": "Kursrückgang trotz neuer KI-Produkte",
+    "NFLX": "CFO erwartet zweistelliges Umsatzwachstum",
+    "UNH": "Zahlen über Erwartung, Prognose angehoben",
+    "CAT": "KI-Ausverkauf erfasst Industriewerte"
+   }
+  },
+  "claude-sonnet-5-5": {
+   "scores": {
+    "AAPL": 0.05,
+    "MSFT": -0.1,
+    "NVDA": -0.1,
+    "AMZN": -0.05,
+    "GOOGL": 0.0,
+    "META": -0.15,
+    "TSLA": -0.05,
+    "JPM": 0.0,
+    "XOM": 0.05,
+    "LLY": 0.05,
+    "AMD": -0.1,
+    "AVGO": -0.1,
+    "NFLX": 0.05,
+    "COST": 0.0,
+    "WMT": 0.0,
+    "UNH": 0.1,
+    "PG": 0.05,
+    "KO": 0.05,
+    "CAT": -0.1,
+    "BA": -0.05
+   },
+   "notes": {
+    "AAPL": "Allzeithoch, Momentum positiv",
+    "MSFT": "KI-Ausgabensorgen, Tech-Abverkauf",
+    "NVDA": "KI-Finanzierungssorgen belasten",
+    "AMZN": "Schwächer als Markt, Musk-Konkurrenz",
+    "META": "Kapitalbedarf und KI-Ausgaben alarmieren",
+    "TSLA": "SpaceX-Fusion unklar, Kursverlust",
+    "XOM": "Nahe 52-Wochen-Hoch, Energie schwankt",
+    "LLY": "Ausbruch vor Zahlen",
+    "AMD": "Starker Abverkauf, KI-Ängste",
+    "AVGO": "Tech-Abverkauf, Kursrückgang",
+    "NFLX": "Erholung nach Earnings-Abverkauf",
+    "UNH": "Gewinnüberraschung, Prognose angehoben",
+    "PG": "Starke Zahlen, Rally großteils eingepreist",
+    "KO": "Neues Hoch, defensiv gefragt",
+    "CAT": "Industrie-Abverkauf durch KI-Sorgen",
+    "BA": "Leichte Schwäche unter Markt"
+   }
+  }
+ }
+}
