@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-22T23:58+00:00",
+ "generated": "2026-10-23T23:51+00:00",
  "history": [
   {
    "id": "EXP-101",
@@ -139,255 +139,507 @@
   ]
  },
  "exp402": {
-  "updated": "2026-10-22",
-  "signals": 0,
-  "models": {}
+  "updated": "2026-10-23",
+  "signals": 28,
+  "models": {
+   "claude-haiku-5-5": {
+    "signals": 12,
+    "days": 1,
+    "ic_mean": -0.7225343193980591,
+    "ic_by_day": {
+     "2026-10-22": -0.7225343193980591
+    },
+    "perm_p": 0.9935,
+    "ls_by_day": {
+     "2026-10-22": -0.01721206874976164
+    },
+    "neg_mean_alpha": 0.0022530845718523596,
+    "pos_mean_alpha": -0.01495898417790928,
+    "ic_close_close_info": -0.2740647418406431
+   },
+   "claude-sonnet-5-5": {
+    "signals": 16,
+    "days": 1,
+    "ic_mean": -0.5524515445746937,
+    "ic_by_day": {
+     "2026-10-22": -0.5524515445746937
+    },
+    "perm_p": 0.9915,
+    "ls_by_day": {
+     "2026-10-22": -0.015096287171186345
+    },
+    "neg_mean_alpha": 0.0035108058044283938,
+    "pos_mean_alpha": -0.01158548136675795,
+    "ic_close_close_info": -0.3370108308129748
+   }
+  },
+  "signals_list": [
+   {
+    "model": "claude-haiku-5-5",
+    "date": "2026-10-22",
+    "symbol": "AAPL",
+    "score": 0.2,
+    "alpha": -0.00406,
+    "alpha_close_close": 0.0038
+   },
+   {
+    "model": "claude-haiku-5-5",
+    "date": "2026-10-22",
+    "symbol": "MSFT",
+    "score": -0.1,
+    "alpha": 0.01248,
+    "alpha_close_close": 0.01181
+   },
+   {
+    "model": "claude-haiku-5-5",
+    "date": "2026-10-22",
+    "symbol": "NVDA",
+    "score": -0.3,
+    "alpha": -0.0,
+    "alpha_close_close": -0.00067
+   },
+   {
+    "model": "claude-haiku-5-5",
+    "date": "2026-10-22",
+    "symbol": "AMZN",
+    "score": -0.1,
+    "alpha": -0.00231,
+    "alpha_close_close": -0.00428
+   },
+   {
+    "model": "claude-haiku-5-5",
+    "date": "2026-10-22",
+    "symbol": "META",
+    "score": -0.4,
+    "alpha": 0.00695,
+    "alpha_close_close": -0.00438
+   },
+   {
+    "model": "claude-haiku-5-5",
+    "date": "2026-10-22",
+    "symbol": "TSLA",
+    "score": -0.1,
+    "alpha": -0.00255,
+    "alpha_close_close": -0.00108
+   },
+   {
+    "model": "claude-haiku-5-5",
+    "date": "2026-10-22",
+    "symbol": "LLY",
+    "score": 0.1,
+    "alpha": -0.02363,
+    "alpha_close_close": -0.02021
+   },
+   {
+    "model": "claude-haiku-5-5",
+    "date": "2026-10-22",
+    "symbol": "AMD",
+    "score": -0.3,
+    "alpha": 0.01292,
+    "alpha_close_close": 0.02267
+   },
+   {
+    "model": "claude-haiku-5-5",
+    "date": "2026-10-22",
+    "symbol": "AVGO",
+    "score": -0.2,
+    "alpha": 0.00124,
+    "alpha_close_close": 0.0004
+   },
+   {
+    "model": "claude-haiku-5-5",
+    "date": "2026-10-22",
+    "symbol": "NFLX",
+    "score": 0.2,
+    "alpha": -0.01741,
+    "alpha_close_close": -0.01267
+   },
+   {
+    "model": "claude-haiku-5-5",
+    "date": "2026-10-22",
+    "symbol": "UNH",
+    "score": 0.2,
+    "alpha": -0.01473,
+    "alpha_close_close": -0.01099
+   },
+   {
+    "model": "claude-haiku-5-5",
+    "date": "2026-10-22",
+    "symbol": "CAT",
+    "score": -0.2,
+    "alpha": -0.01071,
+    "alpha_close_close": -0.01899
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "date": "2026-10-22",
+    "symbol": "AAPL",
+    "score": 0.05,
+    "alpha": -0.00406,
+    "alpha_close_close": 0.0038
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "date": "2026-10-22",
+    "symbol": "MSFT",
+    "score": -0.1,
+    "alpha": 0.01248,
+    "alpha_close_close": 0.01181
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "date": "2026-10-22",
+    "symbol": "NVDA",
+    "score": -0.1,
+    "alpha": -0.0,
+    "alpha_close_close": -0.00067
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "date": "2026-10-22",
+    "symbol": "AMZN",
+    "score": -0.05,
+    "alpha": -0.00231,
+    "alpha_close_close": -0.00428
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "date": "2026-10-22",
+    "symbol": "META",
+    "score": -0.15,
+    "alpha": 0.00695,
+    "alpha_close_close": -0.00438
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "date": "2026-10-22",
+    "symbol": "TSLA",
+    "score": -0.05,
+    "alpha": -0.00255,
+    "alpha_close_close": -0.00108
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "date": "2026-10-22",
+    "symbol": "XOM",
+    "score": 0.05,
+    "alpha": 0.02131,
+    "alpha_close_close": 0.03316
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "date": "2026-10-22",
+    "symbol": "LLY",
+    "score": 0.05,
+    "alpha": -0.02363,
+    "alpha_close_close": -0.02021
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "date": "2026-10-22",
+    "symbol": "AMD",
+    "score": -0.1,
+    "alpha": 0.01292,
+    "alpha_close_close": 0.02267
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "date": "2026-10-22",
+    "symbol": "AVGO",
+    "score": -0.1,
+    "alpha": 0.00124,
+    "alpha_close_close": 0.0004
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "date": "2026-10-22",
+    "symbol": "NFLX",
+    "score": 0.05,
+    "alpha": -0.01741,
+    "alpha_close_close": -0.01267
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "date": "2026-10-22",
+    "symbol": "UNH",
+    "score": 0.1,
+    "alpha": -0.01473,
+    "alpha_close_close": -0.01099
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "date": "2026-10-22",
+    "symbol": "PG",
+    "score": 0.05,
+    "alpha": -0.01827,
+    "alpha_close_close": -0.02238
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "date": "2026-10-22",
+    "symbol": "KO",
+    "score": 0.05,
+    "alpha": -0.02431,
+    "alpha_close_close": -0.02236
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "date": "2026-10-22",
+    "symbol": "CAT",
+    "score": -0.1,
+    "alpha": -0.01071,
+    "alpha_close_close": -0.01899
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "date": "2026-10-22",
+    "symbol": "BA",
+    "score": -0.05,
+    "alpha": 0.01357,
+    "alpha_close_close": 0.00949
+   }
+  ]
  },
  "exp402_latest": {
   "experiment": "EXP-402",
-  "signal_date": "2026-10-22",
-  "created_at": "2026-10-22T23:58:35+00:00",
+  "signal_date": "2026-10-23",
+  "created_at": "2026-10-23T23:51:17+00:00",
   "headlines": {
    "AAPL": [
-    "Apple (NASDAQ:AAPL) SVP Sells $814,748.38 in Stock - MarketBeat",
-    "Apple SVP Jennifer Newstead sells $814,748 in AAPL stock By Investing.com - Investing.com UK",
-    "Apple (AAPL) counsel sells 2,399 shares under a preset trading plan. - Stock Titan",
-    "Apple Reportedly Raised Its iPhone Duo Target 44%. Here’s What November 2 Has to Show - Yahoo Finance",
-    "Apple stock hits all-time high at 348.25 USD By Investing.com - Investing.com Nigeria",
-    "Better Buffett Stock: Alphabet vs. Apple - The Motley Fool"
+    "Apple (NASDAQ: AAPL) Reclaims Wall Street's Most Valuable Crown From Nvidia (NASDAQ: NVDA) For The Fifth Time - Foreign Policy Journal",
+    "How much AAPL stock does former Apple CEO Tim Cook actually own? - TheStreet",
+    "Here’s How Much You Would Have Made Owning Apple Stock In The Last 15 Years - Benzinga",
+    "Where to buy the Apple iPhone Duo as delivery stretches into 2027 - London Evening Standard",
+    "Tesla Stock Lags Apple Because Of ‘Communications Problem,’ Says Investor Gary Black - Stocktwits",
+    "3 Portfolio-Worthy Stocks Hitting 52-Week Highs: AAPL, LLY & KO - Yahoo Finance"
    ],
    "MSFT": [
-    "Microsoft (MSFT) Falls More Steeply Than Broader Market: What Investors Need to Know - Yahoo Finance",
-    "Alphabet (GOOGL) vs. MSFT and AMZN: Can AI Investments and Google Cloud Growth Unlock a 26% Upside? - Yahoo Finance",
-    "Google Is Paying SpaceX $11 Billion a Year for Compute. Here's the Concentration Risk Nobody Is Pricing In. - The Globe and Mail",
-    "Oracle (NYSE: ORCL) Takes On Microsoft (NASDAQ: MSFT) With Debt, Stock Sales, And Customer Prepayments In AI Infrastructure Battle - Foreign Policy Journal",
-    "20 Years of AI “Tumult” Ahead, Says Bill Gates: Microsoft Stock (NASDAQ:MSFT) Slides - TipRanks",
-    "How much MSFT stock does Microsoft CEO Satya Nadella actually own? - TheStreet"
+    "Microsoft: Security And Silicon Set The Stage For Cloud Margin Recovery (NASDAQ:MSFT) - Seeking Alpha",
+    "The AI Boom Isn't 1999—and Big Tech Could Cushion a Market Crash, This CEO Says - Benzinga",
+    "Microsoft (NASDAQ:MSFT) Puts Cloud & AI Software Back In The Spotlight - Kalkine Media",
+    "MSFT Feb 2027 480.000 call (MSFT270219C00480000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+    "Apple Is Up 28% This Year: Take Profits, or Hold On for the Ride? - 24/7 Wall St.",
+    "Microsoft Stocks Face a Cloud-Margin Test in Wednesday's AI Earnings - TradingView"
    ],
    "NVDA": [
-    "Dow Jones Top Movers: UNH, MRK, AMGN Lead Gainers; NVDA, CAT, GS Decline in Today's US Session - ChartMill",
-    "Is Nvidia a Top Quantum Computing Stock? - Yahoo Finance",
-    "CoreWeave (NASDAQ:CRWV) Stock Crashes Nearly 10% as Nvidia CEO Flags AI Funding Crunch - Stocks Down Under",
-    "Is Nvidia a Top Quantum Computing Stock? - The Motley Fool",
-    "Why HubSpot Stock Rallied Today - The Globe and Mail",
-    "Nvidia: Apex Arbiter Of Agentic And Physical Compute Economy (NASDAQ:NVDA) - Seeking Alpha"
+    "Jim Cramer’s 5% to 8% rule puts Nvidia stock in focus - TheStreet",
+    "Why RingCentral Stock Is Up Today - The Globe and Mail",
+    "Prediction: Nvidia Will Outperform Broadcom Over the Next 5 Years - Yahoo Finance",
+    "Prediction: Nvidia Will Outperform Broadcom Over the Next 5 Years - The Motley Fool",
+    "Nvidia is unveiling a shipping-container AI factory as neocloud stocks slide - Quartz",
+    "Nvidia NVDA Stock Falls 4.4% to $212.21 as AI Financing Fears Hit Chips - FXLeaders"
    ],
    "AMZN": [
-    "Is Amazon.com Inc (AMZN) a Bargain After 4.6% Drop? GF Value Says Undervalued - GuruFocus",
-    "AMZN Oct 2026 140.000 call (AMZN261023C00140000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
-    "Elon Musk hints at launching an Amazon competit... - Pluang",
-    "Amazon (AMZN) Suffers a Larger Drop Than the General Market: Key Insights - Yahoo Finance Singapore",
-    "Amazon: Rule Of 90 In FY2028? We'll Hit 80 By Year-End (NASDAQ:AMZN) - Seeking Alpha",
-    "Alphabet (GOOGL) vs. MSFT and AMZN: Can AI Investments and Google Cloud Growth Unlock a 26% Upside? - Yahoo Finance"
+    "Amazon Stocks Edge Lower Ahead of Earnings After 37% AWS Revenue Growth - TradingView",
+    "Amazon Ranks No. 1 Among Consumer Stocks - Yahoo Finance",
+    "Catalyst watch: Fed meeting, earnings blitz, Oracle AI event, and a pure-play hockey stock (SPY:NYSEARCA) - Seeking Alpha",
+    "Amazon Investment Signals OpenAI IPO Or Meeting Milestones 07/31/2026 - MediaPost",
+    "Amazon Survived a 50% Crash. Here’s What a $1,000 Investment Became - AOL.com",
+    "Amazon Survived a 50% Crash. Here’s What a $1,000 Investment Became - 24/7 Wall St."
    ],
    "GOOGL": [
-    "GOOGL261019C00312500 interactive stock chart | GOOGL Oct 2026 312.500 call stock - Yahoo Finance UK",
-    "GOOGL Oct 2026 200.000 call (GOOGL261023C00200000) stock price, news, quote and history - Yahoo Finance Singapore",
-    "Alphabet Inc. | GOOGL Stock Price & Real-time Quotes - finance.biggo.com",
-    "Alphabet (GOOGL) vs. MSFT and AMZN: Can AI Investments and Google Cloud Growth Unlock a 26% Upside? - Yahoo Finance",
-    "Google Is Paying SpaceX $11 Billion a Year for Compute. Here's the Concentration Risk Nobody Is Pricing In. - The Globe and Mail",
-    "GOOGL Oct 2026 392.500 call (GOOGL261023C00392500) Stock Price, News, Quote & History - Yahoo! Finance Canada"
+    "Futures: Three Titans Lead Earnings; What To Do Amid Mixed Signals - Investor's Business Daily",
+    "Alphabet (NASDAQ:GOOGL) Takes The Stage As Market Mood Swings - Kalkine Media",
+    "Apple Is Up 28% This Year: Take Profits, or Hold On for the Ride? - 24/7 Wall St.",
+    "Alphabet Stocks Face Wednesday Earnings Test After 82% Cloud Rev - GuruFocus",
+    "Alphabet (GOOGL): Investing Behind AI Demand and TPU Growth - Yahoo Finance",
+    "Alphabet: Gemini 4 Argon Is Coming For ChatGPT’s Lunch (NASDAQ:GOOG) - Seeking Alpha"
    ],
    "META": [
-    "Nasdaq Suffers Worst Session Since June As AI, War Jitters Ramp Up; Meta Plummets - Investor's Business Daily",
-    "Meta Stock Eyes $500 After Support Breach as $825B AI Spending Alarms Investors Despite Meta Platforms Beating Third-Quarter Revenue Expectations - FXLeaders",
-    "AI buildout bill sinks Meta, other tech favorite stocks - Nikkei Asia",
-    "Mark Zuckerberg threatened to leave California over its 5% wealth tax — so Meta created a new stock class to keep him - Yahoo Finance",
-    "Why are CoreWeave and IREN stock down today: New 2026 lows - Opening Bell Daily",
-    "Rosenblatt maintains Buy on Meta stock amid capital raise concerns - Investing.com"
+    "Mercari stock: Meta plans Muse link to Mercari stock in Japan - ad-hoc-news.de",
+    "GE Vernova Fell Nearly 11% in a Day After Meta’s Earnings. Here’s Where the Stock Could Go by 2030 - TIKR.com",
+    "Meta Spent Its Way To Negative Cash Flow. The Stock Noticed. - Yahoo Finance",
+    "AI pixie dust is losing its stock market power - Axios",
+    "Meta Just Burned Cash for the First Time Since Its IPO Year: Wall Street Raised Its Targets Anyway - Yahoo Finance",
+    "Meta stock closes out Friday down as AI spending fears continue to rattle markets - Yahoo Finance"
    ],
    "TSLA": [
-    "TSLA, SPCX Boards Confirm Special Committees On Potential Combination As Megapack Deals And Terafab Plans Deepen Ties - TradingView",
-    "TSLA.O - Reuters",
-    "Tesla Inc Stock (TSLA) Closed Down by 3.08% on Oct 22: What Signal Does It Send? - TradingKey",
-    "Tesla, Inc. (TSLA.NE) Stock Price, News, Quote & History - Yahoo! Finance Canada",
-    "Tesla: ARK's $4,400 Price Target, Let's Examine (NASDAQ:TSLA) - Seeking Alpha",
-    "Tesla Q3 Results Overshadowed by SpaceX Merger Talk: Analysts Struggle to See ‘Meaningful Upside’ From Deal - Benzinga"
+    "Tesla Stock Lags Apple Because Of ‘Communications Problem,’ Says Investor Gary Black - Stocktwits",
+    "Tesla, Inc. (TSLA) Stock Forecasts - Yahoo Finance",
+    "Tesla Stocks Edge Lower as Refunds Blur the Margin Beat - TradingView",
+    "Prediction: Here's What a $5,000 Investment in Rivian Will Be Worth in 5 Years - The Globe and Mail",
+    "Why Tesla (NASDAQ:TSLA) Keeps Popping Up on Market Watchlists? - Kalkine Media",
+    "Tesla Stock Drops as Cybertruck Exit Hits Australia and New Zealand - TradingView"
    ],
    "JPM": [
-    "Evolution stock: J.P. Morgan keeps AUD 15.80 target for Evolution Mining stock - AD HOC NEWS",
-    "JPM Oct 2026 332.500 put (JPM261023P00332500) stock price, news, quote and history - Yahoo Finance Australia",
-    "JPM Oct 2026 322.500 call (JPM261023C00322500) stock price, news, quote and history - Yahoo Finance Australia",
-    "CapitaLand Ascendas stock: J.P. Morgan keeps SGD 2.60 target - AD HOC NEWS",
-    "JPM Oct 2026 347.500 put (JPM261023P00347500) stock price, news, quote and history - Yahoo Finance Australia",
-    "Duke Energy (DUK) Stock Price Today, Live Chart & News - TechGraph"
+    "JPMorgan Chase & Co. (NYSE:JPM) Stock Price Down 1.4% - What's Next? - MarketBeat",
+    "JPMorgan Chase (NYSE:JPM) Share Price, Forecast & Analysis - Stocks Down Under",
+    "JPM Nov 2026 285.000 put (JPM261127P00285000) interactive stock chart – Yahoo Finance - Yahoo Finance Singapore",
+    "Inwit stock: J.P. Morgan keeps Hold rating at EUR 7.50 target - AD HOC NEWS",
+    "BofA Securities Maintains JPMorgan(JPM.US) With Buy Rating - Moomoo",
+    "Renault stock: J.P. Morgan keeps EUR 45.00 target for Renault stock - AD HOC NEWS"
    ],
    "XOM": [
-    "ExxonMobil Stock And Oil Majors With The Most Riding On Crude Prices - Yahoo! Finance Canada",
-    "Eni SpA Q3 Earnings Ahead: What's in Store for the Stock? - TradingView",
-    "Why Did XOM, CVX, MPC Stocks Surge To 52-Week Highs Today? - Stocktwits",
-    "Fund Update: New $83.1M $XOM stock position opened by YOUSIF CAPITAL MANAGEMENT, LLC - Quiver Quantitative",
-    "Sector Update: Energy Stocks Decline Late Afternoon - Yahoo Finance",
-    "NextEra Energy (NEE) Stock Price Today, Live Chart & News - TechGraph"
+    "ExxonMobil (NYSE:XOM) Shares Up 2.8% - Time to Buy? - MarketBeat",
+    "3 Energy Stocks to Buy and Hold for the Next Decade, Starting With ExxonMobil - The Motley Fool",
+    "Dow Jones Drops 653 Points as Oil Tops US$116. Three Risks Facing Wall Street Next Week - Stocks Down Under",
+    "Exxon Mobil Holdings (XOM) Gains As Market Dips: What You Should Know - Yahoo Finance",
+    "Fund Update: New $17.5M $XOM stock position opened by SIGNATUREFD, LLC - Quiver Quantitative",
+    "Why Is Palo Alto Networks (NASDAQ:PANW) Stock Surging 7.2%? AI Security Demand Fuels Rally - Stocks Down Under"
    ],
    "LLY": [
-    "Amgen vs. Eli Lilly: Does the GLP-1 Mania Make LLY Stock a Better Buy in 2026? - Yahoo Finance",
-    "Eli Lilly (LLY) Price Forecast: Breakout Strengthens Ahead of Earnings - FXEmpire",
-    "Investors are punishing Big Tech's biggest spenders. Meta is the latest casualty. - شبكة تواصل الإخبارية",
-    "Johnson & Johnson Stock (JNJ) Moved Up by 3.48% on Oct 22: Facts Behind the Movement - TradingKey",
-    "Roche's 9M 2026 Sales Rise on Strong Drug Demand, Pipeline Advances - Yahoo Finance",
-    "David Burrows’ Top Picks for Oct. 22, 2026 - BNN Bloomberg"
+    "3 Portfolio-Worthy Stocks Hitting 52-Week Highs: AAPL, LLY & KO - Yahoo Finance",
+    "Futures: Three Titans Lead Earnings; What To Do Amid Mixed Signals - Investor's Business Daily",
+    "Eli Lilly Stocks Slip 1.7% Ahead of Earnings After 48% Revenue Growth - TradingView",
+    "Eli Lilly Stocks Slip 1.7% Ahead of Earnings After 48% Revenue Growth - GuruFocus",
+    "LLY declines as overbought conditions weigh on upward momentum - Traders Union",
+    "Eli Lilly and Co Stock (LLY) Moved Down by 3.33% on Oct 23: Drivers Behind the Movement - TradingKey"
    ],
    "AMD": [
-    "Why AMD Stock Fell on Thursday - Yahoo Finance",
-    "Why AMD Stock Fell on Thursday - The Motley Fool",
-    "AMD pulled lower by tech slide, falls 8% (AMD:NASDAQ) - Seeking Alpha",
-    "AMD, Lam Research among market cap stock movers on Thursday - Investing.com",
-    "AMD, Marvell among market cap stock movers on Thursday - Investing.com",
-    "AMD Stocks Drop 7.53% as AI Spending Fears Challenge a $620 Target - Yahoo Finance"
+    "Advanced Micro Devices (NASDAQ:AMD) Stock Price Up 1.7% - Here's Why - MarketBeat",
+    "Why are AMD, Intel stocks gaining today? - Invezz",
+    "AMD Stock Fell 8% in a Day as Lam Research’s Supply Warning Sank Chip Stocks. Here’s Where the Stock Could Go by 2030 - TIKR.com",
+    "AMD Stock Drops 6% Weekly to $507.93 as AI Spending Fears Hit Chip Stocks - FXLeaders",
+    "AMD Stocks Gain as $620 Target Raises the Execution Bar - Yahoo Finance",
+    "AMD Stocks Gain as $620 Target Raises the Execution Bar - GuruFocus"
    ],
    "AVGO": [
-    "Broadcom Inc. (AVGO) Suffers a Larger Drop Than the General Market: Key Insights - Yahoo Finance",
-    "AVGO Oct 2026 322.500 put (AVGO261028P00322500) Interactive Stock Chart - Yahoo! Finance Canada",
-    "AVGO Oct 2026 317.500 put (AVGO261021P00317500) stock price, news, quote and history - Yahoo Finance Australia",
-    "Broadcom Stocks Dip 4.5% After New AI Fraud Defense Launch - TradingView",
-    "AVGO Oct 2026 380.000 call (AVGO261021C00380000) interactive stock chart – Yahoo Finance - Yahoo Finance Singapore",
-    "Broadcom Stocks Dip 4.5% After New AI Fraud Defense Launch - GuruFocus"
+    "Prediction: Nvidia Will Outperform Broadcom Over the Next 5 Years - The Globe and Mail",
+    "Prediction: Nvidia Will Outperform Broadcom Over the Next 5 Years - The Motley Fool",
+    "Fund Update: 123,677 BROADCOM (AVGO) shares added to LORING WOLCOTT & COOLIDGE FIDUCIARY ADVISORS LLP|MA portfolio - Quiver Quantitative",
+    "Broadcom (NASDAQ:AVGO) Stock Falls 4.31%: Technical Indicators and EPS Growth - Kalkine India",
+    "Taiwan Semiconductor (TSMC) Posted Record Profit and the Stock Still Fell. Here's What the Market Is Worried About. - The Globe and Mail",
+    "AMD or Broadcom: If I Could Only Own 1 AI Chip Stock Through 2030, Here's My Pick - The Motley Fool"
    ],
    "NFLX": [
-    "Stock Market Today, Oct. 22: Netflix Rises as Investors Capitalize on Post-Earnings Sell-Off - The Motley Fool",
-    "Moderately bullish activity in Netflix with shares up 3.11% - TipRanks",
-    "The Truth About Netflix’s Massive Stock Buybacks - The Globe and Mail",
-    "The Truth About Netflix’s Massive Stock Buybacks - The Motley Fool",
-    "Why Waste Connections Stock Is Up Today - The Globe and Mail",
-    "Netflix CFO Eyes Double-Digit Revenue Growth Into 2027 Despite ‘Modest’ Viewership Gains, Points to 3 Key Drivers: ‘Not Overly Dependent…’ - Yahoo Finance"
+    "Netflix (NASDAQ:NFLX) Stock Falls 1.8% - What's Next? - MarketBeat",
+    "Can Netflix Stock Hold Margin Gains as Content Spending Keeps Growing? - Zacks Investment Research",
+    "Netflix Stock Slips as Q3 Earnings Hand Investors a Win Wrapped in Caution - FinanceBuzz",
+    "Netflix Stock Slips as Q3 Earnings Hand Investors a Win Wrapped in Caution - AOL.com",
+    "Can Netflix (NASDAQ:NFLX) Stand Out as AI Worries Ripple Through Markets? - Kalkine Media",
+    "Netflix Hits a 52-Week Low as Valuation Gets Cheaper - TradingView"
    ],
    "COST": [
-    "NKE Stock In Focus: Barclays Raises Price Target To $45, Says Shares Are ‘Near Bottom’ - Stocktwits",
-    "Western Digital shares slide as cost pressures, higher capex overshadow earnings - Investing.com",
-    "Standard Chartered PLC (STAN.L) stock price, news, quote and history - Yahoo Finance UK",
-    "TSLA.O - Reuters",
-    "S&P 500, Nasdaq end sharply lower as revived AI doubts ignite tech selloff - Reuters",
-    "Costco (COST) Advances While Market Declines: Some Information for Investors - Yahoo Finance"
+    "Prediction: $5,000 in Costco Stock Will Trail the Market Through 2030 - Yahoo Finance",
+    "Copper price rebounds as inventories, stock markets stabilize - Mining.com",
+    "Prediction: $5,000 in Costco Stock Will Trail the Market Through 2030 - The Motley Fool",
+    "Blue Owl Capital Inc. (OWL) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+    "He Bought the Same Stock Twice, in 2009 and in 2023. When He Gives His Granddaughter 100 Shares, He'll Pick the 2009 Lot, and the Gain He's Carried for Sixteen Years Will Leave His Return With It, Into Her 0% Bracket - 24/7 Wall St.",
+    "Celanese Corporation (CE) stock price, news, quote and history - Yahoo Finance UK"
    ],
    "WMT": [
-    "Don’t miss rare chance to score 18-piece granite pots, pans set with wooden handles under $64 - Cleveland.com",
-    "Dow Jones Top Movers: UNH, MRK, AMGN Lead Gainers; NVDA, CAT, GS Decline in Today's US Session - ChartMill",
-    "Walmart (WMT) Advances While Market Declines: Some Information for Investors - Yahoo Finance",
-    "Costco Wholesale Corp. stock outperforms competitors on strong trading day - MarketWatch",
-    "Walmart Stock Heads for Best Month Since 1999 - Walmart (NASDAQ:WMT) - Benzinga",
-    "Kroger Is Spending $5 Billion to Cut Prices. Walmart and Costco Are the Target - 24/7 Wall St."
+    "Walmart (NASDAQ:WMT) Stock Falls 1% - Here's Why - MarketBeat",
+    "Affirm Lost Walmart to Klarna in 2025. Now It Has Sam’s Club. Here’s What Moves the Stock Before November 5 - Yahoo Finance",
+    "Walmart (NASDAQ: WMT) Surges Toward $1 Trillion Market Cap As Best Month Since 1999 Raises Valuation Questions - Foreign Policy Journal",
+    "Target Corp. stock underperforms Friday when compared to competitors - MarketWatch",
+    "Tech-to-Defensive Rotation, GM Stock Logs Worst Week Since 2023: This Week on Wall Street - TradingView",
+    "Walmart unveils AI agent shopping controls, spending limits - Digital Commerce 360"
    ],
    "UNH": [
-    "Dow Jones Top Movers: UNH, MRK, AMGN Lead Gainers; NVDA, CAT, GS Decline in Today's US Session - ChartMill",
-    "UnitedHealth (NYSE:UNH) Medical Cost Trends Draw Attention Across Managed Care - Kalkine Media",
-    "NextEra Energy (NEE) Stock Price Today, Live Chart & News - TechGraph",
-    "UNH climbs nearly 2% after robust earnings beat and upgraded guidance - Traders Union",
-    "Duke Energy (DUK) Stock Price Today, Live Chart & News - TechGraph",
-    "UNH Nov 2026 425.000 put (UNH261106P00425000) Stock Price, News, Quote & History - Yahoo! Finance Canada"
+    "UnitedHealth Group (UNH), What Is Behind The Fresh Attention Now? - Simply Wall Street",
+    "UnitedHealth (NYSE:UNH) Stock Rises 1.91%: P/E, EPS Decline and RSI Review - Kalkine India",
+    "CVS Caremark, Express Scripts, Optum Rx targeted in House investigation (UNH:NYSE) - Seeking Alpha",
+    "UNH Nov 2026 285.000 put (UNH261106P00285000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+    "UNH Nov 2026 460.000 call (UNH261127C00460000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+    "What Is Putting UnitedHealth Group (NYSE:UNH) in Focus Today? - Kalkine Media"
    ],
    "PG": [
-    "Procter & Gamble (NYSE:PG) Surges on a Beat: Can It Keep Climbing? - Kalkine Media",
-    "Is It Too Late to Buy Procter & Gamble Co (PG) After 5.6% Rally? GF Value Says Undervalued - GuruFocus",
-    "Procter & Gamble (NYSE:PG) Shares Up 5.8% After Better-Than-Expected Earnings - MarketBeat",
-    "Is Procter & Gamble (PG) Reasonable After Strong Q1 Cash Flow? - Simply Wall Street",
-    "Procter & Gamble Company (The) (PG) Stock Forecasts - Yahoo Finance",
-    "Procter & Gamble (PG) Pairs Q1 Beat With AI Focus And Fresh Product Rollout - Yahoo Finance"
+    "Annaly Capital Management Inc 6.50% Series G Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock - TradingView",
+    "Procter & Gamble (NYSE:PG) Stock Price Down 2.6% - Here's What Happened - MarketBeat",
+    "Procter & Gamble (NYSE:PG) Upgraded at Freedom Broker - MarketBeat",
+    "UBS Group Forecasts Strong Price Appreciation for Procter & Gamble (NYSE:PG) Stock - MarketBeat",
+    "P&G’s Q1 Results Draw Price-Target Hikes As Analysts Cite Stronger Underlying Performance - Stocktwits",
+    "Procter & Gamble (NYSE:PG) Faces New Market Questions - Kalkine Media"
    ],
    "KO": [
-    "Coca-Cola (NYSE:KO) Hits A New High: Is There More Fizz Left? - Kalkine Media",
-    "Coca-Cola Joins Costco in the $400 Billion Club. I Predict Only 1 of These Dividend Stocks Will Surpass $1 Trillion by 2036. - The Motley Fool",
-    "Coca-Cola (KO) Rises As Market Takes a Dip: Key Facts - Yahoo Finance",
-    "Coca-Cola keeps WPP on global creative work while Omnicom is selected for North American media. - Stock Titan",
-    "Coca-Cola Joins Costco in the $400 Billion Club. I Predict Only 1 of These Dividend Stocks Will Surpass $1 Trillion by 2036. - AOL.com",
-    "Keurig Dr Pepper (KDP) vs. KO and PEP: Can the JDE Peet’s Acquisition and Planned Split Unlock Value Despite Rising Debt? - Yahoo Finance"
+    "PepsiCo Kept Taco Bell Through 2036. Here’s the Supply Chain Update It Still Owes Investors in Late 2026 - TIKR.com",
+    "CocaCola (NYSE:KO) Stock Falls 2.7% - Here's Why - MarketBeat",
+    "3 Portfolio-Worthy Stocks Hitting 52-Week Highs: AAPL, LLY & KO - Yahoo Finance",
+    "Coca-Cola (KO) Registers a Bigger Fall Than the Market: Important Facts to Note - Yahoo Finance",
+    "Coca-Cola (NYSE:KO) Share Price, Forecast & Analysis - Stocks Down Under",
+    "What Keeps Coca-Cola (NYSE:KO) at the Center of Attention? - Kalkine Media"
    ],
    "CAT": [
-    "Black Cat targets growth across WA gold operations - Australian Mining",
-    "CAT Nov 2026 770.000 call (CAT261127C00770000) stock price, news, quote and history - Yahoo Finance Australia",
-    "CAT Nov 2026 845.000 put (CAT261106P00845000) stock price, news, quote and history - Yahoo Finance Singapore",
-    "Caterpillar Inc (CAT) Stock Down 4.9% but Still Overvalued -- GF Score: 90/100 - GuruFocus",
-    "AI Sell-Off Spreads to Industrials: Caterpillar, GE Vernova, Vertiv Trapped in Bear Market - Benzinga",
-    "CAT Nov 2026 745.000 put (CAT261106P00745000) interactive stock chart – Yahoo Finance - Yahoo Finance Singapore"
+    "Caterpillar Stock Fell Nearly 5% as Power-Equipment Stocks Slid a Week Before Its Q3 Report. Here’s Where the Stock Could Go - TIKR.com",
+    "Dow Jones Decliners: Top Losers for Oct. 23, 2026 - ChartMill",
+    "Crowdstrike, Micron among market cap stock movers on Friday - Investing.com",
+    "Crowdstrike, Micron among market cap stock movers on Friday By Investing.com - Investing.com India",
+    "CAT Dec 2026 1080.000 put (CAT261218P01080000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+    "Red Cat Wins Analyst Backing for Steyr Bid as the Hard Part Comes Into Focus - ad-hoc-news.de"
    ],
    "BA": [
-    "Boeing (NYSE:BA) Shares Down 2.5% - Here's What Happened - MarketBeat",
-    "Form 4 Boeing Co For: 22 October By Investing.com - Investing.com Nigeria",
-    "Boeing (BA) Declines More Than Market: Some Information for Investors - Yahoo Finance",
-    "GETS N'YO NAMAN AKO 'DI BA 🥰 BTS member Jin shares snaps on his social media from the group’s ARIRANG World Tour. (📷: Jin/IG) - Facebook",
-    "Dow Jones Top Movers Today: PG and JNJ Lead Gainers, CAT and AMZN Lead Losers - ChartMill",
-    "Browns prepare for Titans; Cavaliers open their season: Thursday’s Sports 4 CLE - Cleveland.com"
+    "Boeing (NYSE:BA) Share Price, Forecast & Analysis - Stocks Down Under",
+    "I screened the ASX 200 for quality shares trading at a discount. These 3 stood out - The Motley Fool Australia",
+    "BA student killed, 6 injured in SUV-scooter crash near bus stop in Pune - The Times of India",
+    "MAIRE Adds 552,000 Shares in Buyback for Incentive Plans - The Globe and Mail",
+    "Boeing (NYSE: BA) stock analysts see 42% upside after 737 MAX 10 approval - Beinsure",
+    "Norway Jobless Rate Surges, Shocking Market Forecasts - The Globe and Mail"
    ]
   },
   "runs": {
    "claude-haiku-5-5": {
     "scores": {
-     "AAPL": 0.2,
-     "MSFT": -0.1,
-     "NVDA": -0.3,
-     "AMZN": -0.1,
-     "GOOGL": 0.0,
-     "META": -0.4,
-     "TSLA": -0.1,
+     "AAPL": 0.1,
+     "MSFT": 0.0,
+     "NVDA": -0.1,
+     "AMZN": 0.1,
+     "GOOGL": 0.1,
+     "META": -0.3,
+     "TSLA": -0.2,
      "JPM": 0.0,
-     "XOM": 0.0,
-     "LLY": 0.1,
-     "AMD": -0.3,
-     "AVGO": -0.2,
-     "NFLX": 0.2,
+     "XOM": 0.2,
+     "LLY": 0.0,
+     "AMD": 0.0,
+     "AVGO": -0.1,
+     "NFLX": 0.0,
      "COST": 0.0,
      "WMT": 0.0,
-     "UNH": 0.2,
-     "PG": 0.0,
+     "UNH": -0.1,
+     "PG": 0.2,
      "KO": 0.0,
-     "CAT": -0.2,
-     "BA": 0.0
+     "CAT": -0.1,
+     "BA": 0.2
     },
     "notes": {
-     "AAPL": "Analystenziel angehoben, Rekordhoch erreicht",
-     "MSFT": "Unterdurchschnittlich, Konkurrenzdruck durch Oracle",
-     "NVDA": "CEO warnt vor KI-Finanzierungsengpass",
-     "AMZN": "Schwächer als Markt, Musk-Konkurrenzhinweis",
-     "META": "KI-Ausgabensorgen, Kapitalerhöhung belastet Aktie",
-     "TSLA": "SpaceX-Fusion ohne klaren Nutzen",
-     "LLY": "Technischer Ausbruch vor Quartalszahlen",
-     "AMD": "KI-Ausgabensorgen, starker Kursrückgang",
-     "AVGO": "Kursrückgang trotz neuer KI-Produkte",
-     "NFLX": "CFO erwartet zweistelliges Umsatzwachstum",
-     "UNH": "Zahlen über Erwartung, Prognose angehoben",
-     "CAT": "KI-Ausverkauf erfasst Industriewerte"
+     "AAPL": "Wieder wertvollstes Unternehmen, bereits eingepreist",
+     "NVDA": "KI-Finanzierungssorgen belasten Chipwerte",
+     "AMZN": "AWS-Wachstum 37%, Zahlen anstehend",
+     "GOOGL": "Cloud-Umsatz stark, Zahlen anstehend",
+     "META": "Erstmals seit IPO-Jahr negativer Cashflow",
+     "TSLA": "Cybertruck-Rückzug, Erstattungen belasten Marge",
+     "XOM": "Ölpreis über 116 $ stützt Energiewerte",
+     "AVGO": "Gewinnmitnahmen trotz TSMC-Rekordgewinn",
+     "UNH": "Kongress-Untersuchung gegen PBM-Geschäft",
+     "PG": "Analysten heben Kursziele nach Q1",
+     "CAT": "Schwäche vor Q3-Bericht, Energieausrüster schwach",
+     "BA": "737 MAX 10 zugelassen, Analysten optimistisch"
     }
    },
    "claude-sonnet-5-5": {
     "scores": {
-     "AAPL": 0.05,
-     "MSFT": -0.1,
+     "AAPL": 0.1,
+     "MSFT": 0.0,
      "NVDA": -0.1,
-     "AMZN": -0.05,
+     "AMZN": 0.0,
      "GOOGL": 0.0,
-     "META": -0.15,
-     "TSLA": -0.05,
+     "META": -0.1,
+     "TSLA": -0.1,
      "JPM": 0.0,
      "XOM": 0.05,
-     "LLY": 0.05,
+     "LLY": 0.0,
      "AMD": -0.1,
      "AVGO": -0.1,
-     "NFLX": 0.05,
+     "NFLX": -0.05,
      "COST": 0.0,
      "WMT": 0.0,
-     "UNH": 0.1,
-     "PG": 0.05,
-     "KO": 0.05,
+     "UNH": -0.05,
+     "PG": 0.0,
+     "KO": 0.0,
      "CAT": -0.1,
-     "BA": -0.05
+     "BA": 0.1
     },
     "notes": {
-     "AAPL": "Allzeithoch, Momentum positiv",
-     "MSFT": "KI-Ausgabensorgen, Tech-Abverkauf",
-     "NVDA": "KI-Finanzierungssorgen belasten",
-     "AMZN": "Schwächer als Markt, Musk-Konkurrenz",
-     "META": "Kapitalbedarf und KI-Ausgaben alarmieren",
-     "TSLA": "SpaceX-Fusion unklar, Kursverlust",
-     "XOM": "Nahe 52-Wochen-Hoch, Energie schwankt",
-     "LLY": "Ausbruch vor Zahlen",
-     "AMD": "Starker Abverkauf, KI-Ängste",
-     "AVGO": "Tech-Abverkauf, Kursrückgang",
-     "NFLX": "Erholung nach Earnings-Abverkauf",
-     "UNH": "Gewinnüberraschung, Prognose angehoben",
-     "PG": "Starke Zahlen, Rally großteils eingepreist",
-     "KO": "Neues Hoch, defensiv gefragt",
-     "CAT": "Industrie-Abverkauf durch KI-Sorgen",
-     "BA": "Leichte Schwäche unter Markt"
+     "AAPL": "Wieder wertvollste Firma, Momentum",
+     "NVDA": "KI-Finanzierungsängste belasten Chips",
+     "META": "KI-Ausgaben, negativer Cashflow belasten",
+     "TSLA": "Cybertruck-Rückzug, Rückerstattungen trüben Marge",
+     "AMD": "Chip-Verkäufe wegen KI-Sorgen",
+     "AVGO": "Chipwerte schwach, TSMC-Sorgen",
+     "NFLX": "52-Wochen-Tief, vorsichtiger Ausblick",
+     "UNH": "Kongressuntersuchung PBM-Branche",
+     "CAT": "Power-Equipment schwach vor Quartalszahlen",
+     "BA": "737 MAX 10 Zulassung positiv",
+     "XOM": "Ölpreis hoch stützt Aktie"
     }
    }
   }

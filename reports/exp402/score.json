@@ -1,5 +1,262 @@
 {
- "updated": "2026-10-22",
- "signals": 0,
- "models": {}
+ "updated": "2026-10-23",
+ "signals": 28,
+ "models": {
+  "claude-haiku-5-5": {
+   "signals": 12,
+   "days": 1,
+   "ic_mean": -0.7225343193980591,
+   "ic_by_day": {
+    "2026-10-22": -0.7225343193980591
+   },
+   "perm_p": 0.9935,
+   "ls_by_day": {
+    "2026-10-22": -0.01721206874976164
+   },
+   "neg_mean_alpha": 0.0022530845718523596,
+   "pos_mean_alpha": -0.01495898417790928,
+   "ic_close_close_info": -0.2740647418406431
+  },
+  "claude-sonnet-5-5": {
+   "signals": 16,
+   "days": 1,
+   "ic_mean": -0.5524515445746937,
+   "ic_by_day": {
+    "2026-10-22": -0.5524515445746937
+   },
+   "perm_p": 0.9915,
+   "ls_by_day": {
+    "2026-10-22": -0.015096287171186345
+   },
+   "neg_mean_alpha": 0.0035108058044283938,
+   "pos_mean_alpha": -0.01158548136675795,
+   "ic_close_close_info": -0.3370108308129748
+  }
+ },
+ "signals_list": [
+  {
+   "model": "claude-haiku-5-5",
+   "date": "2026-10-22",
+   "symbol": "AAPL",
+   "score": 0.2,
+   "alpha": -0.00406,
+   "alpha_close_close": 0.0038
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "date": "2026-10-22",
+   "symbol": "MSFT",
+   "score": -0.1,
+   "alpha": 0.01248,
+   "alpha_close_close": 0.01181
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "date": "2026-10-22",
+   "symbol": "NVDA",
+   "score": -0.3,
+   "alpha": -0.0,
+   "alpha_close_close": -0.00067
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "date": "2026-10-22",
+   "symbol": "AMZN",
+   "score": -0.1,
+   "alpha": -0.00231,
+   "alpha_close_close": -0.00428
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "date": "2026-10-22",
+   "symbol": "META",
+   "score": -0.4,
+   "alpha": 0.00695,
+   "alpha_close_close": -0.00438
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "date": "2026-10-22",
+   "symbol": "TSLA",
+   "score": -0.1,
+   "alpha": -0.00255,
+   "alpha_close_close": -0.00108
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "date": "2026-10-22",
+   "symbol": "LLY",
+   "score": 0.1,
+   "alpha": -0.02363,
+   "alpha_close_close": -0.02021
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "date": "2026-10-22",
+   "symbol": "AMD",
+   "score": -0.3,
+   "alpha": 0.01292,
+   "alpha_close_close": 0.02267
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "date": "2026-10-22",
+   "symbol": "AVGO",
+   "score": -0.2,
+   "alpha": 0.00124,
+   "alpha_close_close": 0.0004
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "date": "2026-10-22",
+   "symbol": "NFLX",
+   "score": 0.2,
+   "alpha": -0.01741,
+   "alpha_close_close": -0.01267
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "date": "2026-10-22",
+   "symbol": "UNH",
+   "score": 0.2,
+   "alpha": -0.01473,
+   "alpha_close_close": -0.01099
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "date": "2026-10-22",
+   "symbol": "CAT",
+   "score": -0.2,
+   "alpha": -0.01071,
+   "alpha_close_close": -0.01899
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-22",
+   "symbol": "AAPL",
+   "score": 0.05,
+   "alpha": -0.00406,
+   "alpha_close_close": 0.0038
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-22",
+   "symbol": "MSFT",
+   "score": -0.1,
+   "alpha": 0.01248,
+   "alpha_close_close": 0.01181
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-22",
+   "symbol": "NVDA",
+   "score": -0.1,
+   "alpha": -0.0,
+   "alpha_close_close": -0.00067
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-22",
+   "symbol": "AMZN",
+   "score": -0.05,
+   "alpha": -0.00231,
+   "alpha_close_close": -0.00428
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-22",
+   "symbol": "META",
+   "score": -0.15,
+   "alpha": 0.00695,
+   "alpha_close_close": -0.00438
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-22",
+   "symbol": "TSLA",
+   "score": -0.05,
+   "alpha": -0.00255,
+   "alpha_close_close": -0.00108
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-22",
+   "symbol": "XOM",
+   "score": 0.05,
+   "alpha": 0.02131,
+   "alpha_close_close": 0.03316
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-22",
+   "symbol": "LLY",
+   "score": 0.05,
+   "alpha": -0.02363,
+   "alpha_close_close": -0.02021
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-22",
+   "symbol": "AMD",
+   "score": -0.1,
+   "alpha": 0.01292,
+   "alpha_close_close": 0.02267
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-22",
+   "symbol": "AVGO",
+   "score": -0.1,
+   "alpha": 0.00124,
+   "alpha_close_close": 0.0004
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-22",
+   "symbol": "NFLX",
+   "score": 0.05,
+   "alpha": -0.01741,
+   "alpha_close_close": -0.01267
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-22",
+   "symbol": "UNH",
+   "score": 0.1,
+   "alpha": -0.01473,
+   "alpha_close_close": -0.01099
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-22",
+   "symbol": "PG",
+   "score": 0.05,
+   "alpha": -0.01827,
+   "alpha_close_close": -0.02238
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-22",
+   "symbol": "KO",
+   "score": 0.05,
+   "alpha": -0.02431,
+   "alpha_close_close": -0.02236
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-22",
+   "symbol": "CAT",
+   "score": -0.1,
+   "alpha": -0.01071,
+   "alpha_close_close": -0.01899
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-22",
+   "symbol": "BA",
+   "score": -0.05,
+   "alpha": 0.01357,
+   "alpha_close_close": 0.00949
+  }
+ ]
 }
