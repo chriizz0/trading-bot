@@ -1,0 +1,252 @@
+{
+  "experiment": "EXP-401",
+  "week_start": "2026-10-26",
+  "analyst": "ChatGPT",
+  "model": "gpt-6-astra",
+  "created_at": "2026-10-24T09:29:19+00:00",
+  "inputs": [
+    "snapshot-2026-10-24.md"
+  ],
+  "predictions": [
+    {
+      "symbol": "AAPL",
+      "p_up": 0.55,
+      "trade": null,
+      "reason": "Positive Trends über allen drei Durchschnitten stützen eine leicht positive Schätzung, aber die Hoch-Nähe ohne auffälliges Volumen begründet keinen starken Wochenvorteil."
+    },
+    {
+      "symbol": "MSFT",
+      "p_up": 0.52,
+      "trade": null,
+      "reason": "Der mittelfristige Aufwärtstrend überwiegt knapp, während die jüngste Schwäche unter dem SMA20 und niedriges Volumen die Aussagekraft begrenzen."
+    },
+    {
+      "symbol": "NVDA",
+      "p_up": 0.48,
+      "trade": null,
+      "reason": "Die Schwäche unter SMA20 und SMA50 spricht leicht gegen einen Wochenanstieg, wobei RSI 38 und der positive Abstand zum SMA200 eine Gegenbewegung ermöglichen."
+    },
+    {
+      "symbol": "AMZN",
+      "p_up": 0.48,
+      "trade": null,
+      "reason": "Negative kurzfristige Trends und Kurse unter SMA20 und SMA50 ergeben bei noch positivem Abstand zum SMA200 lediglich eine leichte Abwärtstendenz."
+    },
+    {
+      "symbol": "GOOGL",
+      "p_up": 0.47,
+      "trade": null,
+      "reason": "Die Position unter allen drei Durchschnitten belastet, doch RSI 31 und der jüngste Rückgang erhöhen das Gegenbewegungsrisiko und begrenzen die negative Einschätzung."
+    },
+    {
+      "symbol": "META",
+      "p_up": 0.48,
+      "trade": null,
+      "reason": "Der starke Monatsverlust signalisiert Schwäche, aber der große Abstand unter dem SMA20 bei RSI 36 lässt auch eine kurzfristige Erholung zu."
+    },
+    {
+      "symbol": "TSLA",
+      "p_up": 0.51,
+      "trade": null,
+      "reason": "Der Wochenanstieg und die Rückkehr über SMA20 und SMA50 stehen einem weiterhin unterschrittenen SMA200 gegenüber, sodass die Richtung nahezu offen bleibt."
+    },
+    {
+      "symbol": "JPM",
+      "p_up": 0.48,
+      "trade": null,
+      "reason": "Negative Wochen-, Monats- und Dreimonatsrenditen sprechen leicht gegen steigende Kurse, während der SMA200 weiterhin unterschrittene kurzfristige Durchschnitte relativiert."
+    },
+    {
+      "symbol": "XOM",
+      "p_up": 0.53,
+      "trade": null,
+      "reason": "Der durchgängige Aufwärtstrend bis zum Jahreshoch ist positiv, wird für den kurzen Horizont aber durch RSI 76 und den großen SMA20-Abstand abgeschwächt."
+    },
+    {
+      "symbol": "LLY",
+      "p_up": 0.55,
+      "trade": null,
+      "reason": "Positive Renditen über alle angegebenen Zeiträume und RSI 62 stützen einen moderaten Aufwärtsvorteil, ohne eine belastbare Wahrscheinlichkeit von 0.60 zu rechtfertigen."
+    },
+    {
+      "symbol": "SPY",
+      "p_up": 0.5,
+      "trade": null,
+      "reason": "Kurzfristige Schwäche unter SMA20 und SMA50 und ein weiterhin positiver langfristiger Trend liefern für Montag-Eröffnung bis Freitag-Schluss kein klares Richtungssignal."
+    },
+    {
+      "symbol": "QQQ",
+      "p_up": 0.49,
+      "trade": null,
+      "reason": "Die Monatskorrektur und unterschrittene kurzfristige Durchschnitte belasten, während RSI 37 und der gehaltene SMA200 die negative Tendenz abschwächen."
+    },
+    {
+      "symbol": "GLD",
+      "p_up": 0.46,
+      "trade": null,
+      "reason": "Negative Renditen über alle Zeiträume und die Lage unter sämtlichen Durchschnitten sprechen leicht für weitere Schwäche, wobei RSI 34 eine Erholung begünstigen kann."
+    },
+    {
+      "symbol": "^GDAXI",
+      "p_up": 0.49,
+      "trade": null,
+      "reason": "Leicht negative Renditen und Kurse unter SMA20 und SMA50 stehen einem knapp positiven SMA200-Abstand gegenüber, weshalb die Schätzung nahe 0.50 bleibt."
+    },
+    {
+      "symbol": "SAP.DE",
+      "p_up": 0.52,
+      "trade": null,
+      "reason": "Das starke Momentum ist positiv, doch RSI 77 und der zweistellige Abstand zum SMA20 erhöhen das Rückschlagsrisiko über die kommende Woche."
+    },
+    {
+      "symbol": "SIE.DE",
+      "p_up": 0.47,
+      "trade": null,
+      "reason": "Negative Renditen über alle Zeiträume und die Lage unter allen drei Durchschnitten belasten, während RSI 39 einen kurzfristigen Erholungsversuch zulässt."
+    },
+    {
+      "symbol": "ALV.DE",
+      "p_up": 0.51,
+      "trade": null,
+      "reason": "Ein positiver Monatsverlauf und die Lage über SMA20 und SMA200 ergeben bei neutralem RSI und unterschrittenem SMA50 nur einen minimalen Aufwärtsvorteil."
+    },
+    {
+      "symbol": "DTE.DE",
+      "p_up": 0.45,
+      "trade": null,
+      "reason": "Durchgehend negative Renditen und Kurse unter sämtlichen Durchschnitten sprechen für eine leichte Abwärtstendenz, ohne bei RSI 41 ein extremes Gegenbewegungssignal zu liefern."
+    },
+    {
+      "symbol": "RHM.DE",
+      "p_up": 0.49,
+      "trade": null,
+      "reason": "Positive Monatsrendite und ein Kurs über SMA20 widersprechen dem schwachen langfristigen Trend, während das geringe Volumen die Richtungsüberzeugung zusätzlich begrenzt."
+    },
+    {
+      "symbol": "MBG.DE",
+      "p_up": 0.47,
+      "trade": null,
+      "reason": "Der ausgeprägte mittelfristige Abwärtstrend belastet, aber die Position knapp über SMA20 deutet auf eine mögliche kurzfristige Stabilisierung hin."
+    },
+    {
+      "symbol": "AMD",
+      "p_up": 0.49,
+      "trade": null,
+      "reason": "Die starke Monatskorrektur unter SMA20 und SMA50 trifft auf einen weiterhin deutlich positiven SMA200-Abstand, sodass Fortsetzung und Gegenbewegung ähnlich plausibel bleiben."
+    },
+    {
+      "symbol": "AVGO",
+      "p_up": 0.46,
+      "trade": null,
+      "reason": "Negative Renditen und deutliche Abstände unter allen Durchschnitten sprechen leicht gegen einen Wochenanstieg, wobei RSI 34 die Gefahr einer Gegenbewegung erhöht."
+    },
+    {
+      "symbol": "NFLX",
+      "p_up": 0.46,
+      "trade": null,
+      "reason": "Die übereinstimmend schwachen Renditen und die Lage unter allen Durchschnitten ergeben einen moderaten Abwärtsbias, aber keinen ausreichend sicheren Short-Vorteil."
+    },
+    {
+      "symbol": "COST",
+      "p_up": 0.54,
+      "trade": null,
+      "reason": "Positive Renditen und Kurse über allen Durchschnitten stützen die Aufwärtsseite, während RSI 69 die Erwartung weiterer kurzfristiger Gewinne begrenzt."
+    },
+    {
+      "symbol": "WMT",
+      "p_up": 0.52,
+      "trade": null,
+      "reason": "Der positive Trend spricht für Anschlussgewinne, doch RSI 70 und der erhöhte Abstand zum SMA20 mindern den Vorteil für einen Einstieg erst am Montag."
+    },
+    {
+      "symbol": "UNH",
+      "p_up": 0.53,
+      "trade": null,
+      "reason": "Wochen- und Monatsmomentum sowie die Lage über allen Durchschnitten sind positiv, während die kurzfristige Streckung und niedriges Volumen Zurückhaltung nahelegen."
+    },
+    {
+      "symbol": "PG",
+      "p_up": 0.55,
+      "trade": null,
+      "reason": "Übereinstimmend positive Renditen und Kurse über allen Durchschnitten bei RSI 66 begründen eine leicht überdurchschnittliche, aber nicht starke Aufwärtswahrscheinlichkeit."
+    },
+    {
+      "symbol": "KO",
+      "p_up": 0.53,
+      "trade": null,
+      "reason": "Der positive Monats- und Dreimonatstrend über sämtlichen Durchschnitten überwiegt die jüngste Wochenschwäche knapp."
+    },
+    {
+      "symbol": "CAT",
+      "p_up": 0.48,
+      "trade": null,
+      "reason": "Der ausgeprägte Abwärtstrend belastet, doch RSI 27 und die großen negativen Durchschnittsabstände machen eine kurzfristige Gegenbewegung besonders relevant."
+    },
+    {
+      "symbol": "BA",
+      "p_up": 0.46,
+      "trade": null,
+      "reason": "Durchgehend negative Renditen und die Lage unter allen Durchschnitten sprechen leicht gegen steigende Kurse, wobei die Nähe zum SMA20 eine Stabilisierung zulässt."
+    },
+    {
+      "symbol": "ASML.AS",
+      "p_up": 0.48,
+      "trade": null,
+      "reason": "Kurzfristiges Abwärtsmomentum steht einem noch positiven SMA200-Abstand und möglichem Erholungspotenzial bei RSI 37 gegenüber."
+    },
+    {
+      "symbol": "NOVO-B.CO",
+      "p_up": 0.5,
+      "trade": null,
+      "reason": "Leicht positive Wochen- und Monatsrenditen über SMA20 gleichen den weiterhin negativen mittelfristigen Trend für diesen kurzen Prognosehorizont ungefähr aus."
+    },
+    {
+      "symbol": "MC.PA",
+      "p_up": 0.46,
+      "trade": null,
+      "reason": "Negative Renditen über alle Zeiträume und Kurse unter sämtlichen Durchschnitten belasten, während RSI 38 eine kurzfristige Erholung nicht ausschließt."
+    },
+    {
+      "symbol": "NESN.SW",
+      "p_up": 0.52,
+      "trade": null,
+      "reason": "Der positive Trend über allen Durchschnitten wird durch RSI 72 und den erhöhten SMA20-Abstand für die nächste Woche deutlich relativiert."
+    },
+    {
+      "symbol": "SHEL.L",
+      "p_up": 0.51,
+      "trade": null,
+      "reason": "Starkes Aufwärtsmomentum am Jahreshoch steht RSI 78 und unterdurchschnittlichem Volumen gegenüber, sodass für einen neuen Wocheneinstieg kaum ein klarer Vorteil bleibt."
+    },
+    {
+      "symbol": "BAS.DE",
+      "p_up": 0.52,
+      "trade": null,
+      "reason": "Die Lage über allen Durchschnitten und RSI 56 sprechen leicht für steigende Kurse, während die negative Wochenrendite die Trendbestätigung einschränkt."
+    },
+    {
+      "symbol": "BAYN.DE",
+      "p_up": 0.48,
+      "trade": null,
+      "reason": "Die schwache Monatsentwicklung und unterschrittene kurzfristige Durchschnitte belasten, doch der noch positive SMA200-Abstand verhindert ein einheitlich negatives Trendbild."
+    },
+    {
+      "symbol": "DBK.DE",
+      "p_up": 0.48,
+      "trade": null,
+      "reason": "Der negative Trend unter allen Durchschnitten spricht gegen Anschlussgewinne, wird aber durch mögliches Gegenbewegungspotenzial bei RSI 29 stark relativiert."
+    },
+    {
+      "symbol": "IFX.DE",
+      "p_up": 0.47,
+      "trade": null,
+      "reason": "Der starke Abwärtstrend belastet, während RSI 31 und sehr große negative Durchschnittsabstände bei hoher ATR erhebliche Gegenbewegungen ermöglichen."
+    },
+    {
+      "symbol": "VOW3.DE",
+      "p_up": 0.48,
+      "trade": null,
+      "reason": "Die leicht positive Woche und die Position knapp über SMA20 deuten auf Stabilisierung, reichen aber nicht aus, um den negativen mittel- und langfristigen Trend aufzuwiegen."
+    }
+  ]
+}

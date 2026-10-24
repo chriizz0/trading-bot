@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-23T23:51+00:00",
+ "generated": "2026-10-24T09:29+00:00",
  "history": [
   {
    "id": "EXP-101",
@@ -22,119 +22,457 @@
  ],
  "exp401": {
   "score": {
-   "updated": "2026-10-20",
-   "arms": {},
-   "notes": [
-    "Claude 2026-10-19.json: Woche läuft noch"
+   "updated": "2026-10-24",
+   "arms": {
+    "Claude": {
+     "n": 20,
+     "weeks": 1,
+     "hit_rate": 0.2857142857142857,
+     "share_up": 0.3,
+     "brier": 0.26252000000000003,
+     "brier_coin": 0.25,
+     "brier_always_long": 0.2725,
+     "brier_momentum": 0.24250000000000002,
+     "ic_mean": 0.11226046435304586,
+     "ic_by_week": {
+      "2026-10-19": 0.11226046435304586
+     },
+     "perm_p": 0.3255,
+     "ls_by_week": {
+      "2026-10-19": -0.022212838968880974
+     },
+     "calibration": [
+      {
+       "bin": "0,4–0,5",
+       "n": 2,
+       "p": 0.48,
+       "up": 1.0
+      },
+      {
+       "bin": "0,5",
+       "n": 6,
+       "p": 0.5,
+       "up": 0.167
+      },
+      {
+       "bin": "0,5–0,6",
+       "n": 8,
+       "p": 0.532,
+       "up": 0.25
+      },
+      {
+       "bin": "≤0,4",
+       "n": 1,
+       "p": 0.4,
+       "up": 0.0
+      },
+      {
+       "bin": "≥0,6",
+       "n": 3,
+       "p": 0.6,
+       "up": 0.333
+      }
+     ],
+     "trades": 4,
+     "trade_mean_R": 0.14054351717745492,
+     "trade_win": 0.5
+    }
+   },
+   "notes": [],
+   "predictions": [
+    {
+     "arm": "Claude",
+     "week": "2026-10-19",
+     "symbol": "AAPL",
+     "p": 0.6,
+     "up": 1.0,
+     "mom": 1.0,
+     "ret": 0.02039,
+     "alpha": 0.02986
+    },
+    {
+     "arm": "Claude",
+     "week": "2026-10-19",
+     "symbol": "MSFT",
+     "p": 0.55,
+     "up": 0.0,
+     "mom": 1.0,
+     "ret": -0.00793,
+     "alpha": 0.00154
+    },
+    {
+     "arm": "Claude",
+     "week": "2026-10-19",
+     "symbol": "NVDA",
+     "p": 0.52,
+     "up": 0.0,
+     "mom": 0.0,
+     "ret": -0.03274,
+     "alpha": -0.02327
+    },
+    {
+     "arm": "Claude",
+     "week": "2026-10-19",
+     "symbol": "AMZN",
+     "p": 0.5,
+     "up": 0.0,
+     "mom": 0.0,
+     "ret": -0.0284,
+     "alpha": -0.01894
+    },
+    {
+     "arm": "Claude",
+     "week": "2026-10-19",
+     "symbol": "GOOGL",
+     "p": 0.5,
+     "up": 0.0,
+     "mom": 0.0,
+     "ret": -0.06826,
+     "alpha": -0.0588
+    },
+    {
+     "arm": "Claude",
+     "week": "2026-10-19",
+     "symbol": "META",
+     "p": 0.5,
+     "up": 0.0,
+     "mom": 1.0,
+     "ret": -0.09127,
+     "alpha": -0.0818
+    },
+    {
+     "arm": "Claude",
+     "week": "2026-10-19",
+     "symbol": "TSLA",
+     "p": 0.48,
+     "up": 1.0,
+     "mom": 0.0,
+     "ret": 0.04117,
+     "alpha": 0.05064
+    },
+    {
+     "arm": "Claude",
+     "week": "2026-10-19",
+     "symbol": "JPM",
+     "p": 0.53,
+     "up": 0.0,
+     "mom": 0.0,
+     "ret": -0.02252,
+     "alpha": -0.01306
+    },
+    {
+     "arm": "Claude",
+     "week": "2026-10-19",
+     "symbol": "XOM",
+     "p": 0.5,
+     "up": 1.0,
+     "mom": 1.0,
+     "ret": 0.02667,
+     "alpha": 0.03614
+    },
+    {
+     "arm": "Claude",
+     "week": "2026-10-19",
+     "symbol": "LLY",
+     "p": 0.53,
+     "up": 1.0,
+     "mom": 1.0,
+     "ret": 0.02418,
+     "alpha": 0.03365
+    },
+    {
+     "arm": "Claude",
+     "week": "2026-10-19",
+     "symbol": "SPY",
+     "p": 0.6,
+     "up": 0.0,
+     "mom": 1.0,
+     "ret": -0.00946,
+     "alpha": 0.0
+    },
+    {
+     "arm": "Claude",
+     "week": "2026-10-19",
+     "symbol": "QQQ",
+     "p": 0.6,
+     "up": 0.0,
+     "mom": 0.0,
+     "ret": -0.02114,
+     "alpha": -0.01167
+    },
+    {
+     "arm": "Claude",
+     "week": "2026-10-19",
+     "symbol": "GLD",
+     "p": 0.4,
+     "up": 0.0,
+     "mom": 0.0,
+     "ret": -0.03885,
+     "alpha": -0.02939
+    },
+    {
+     "arm": "Claude",
+     "week": "2026-10-19",
+     "symbol": "^GDAXI",
+     "p": 0.55,
+     "up": 0.0,
+     "mom": 1.0,
+     "ret": -0.01406,
+     "alpha": -0.0046
+    },
+    {
+     "arm": "Claude",
+     "week": "2026-10-19",
+     "symbol": "SAP.DE",
+     "p": 0.52,
+     "up": 1.0,
+     "mom": 1.0,
+     "ret": 0.07436,
+     "alpha": 0.08842
+    },
+    {
+     "arm": "Claude",
+     "week": "2026-10-19",
+     "symbol": "SIE.DE",
+     "p": 0.52,
+     "up": 0.0,
+     "mom": 1.0,
+     "ret": -0.04589,
+     "alpha": -0.03182
+    },
+    {
+     "arm": "Claude",
+     "week": "2026-10-19",
+     "symbol": "ALV.DE",
+     "p": 0.54,
+     "up": 0.0,
+     "mom": 0.0,
+     "ret": -0.01041,
+     "alpha": 0.00365
+    },
+    {
+     "arm": "Claude",
+     "week": "2026-10-19",
+     "symbol": "DTE.DE",
+     "p": 0.5,
+     "up": 0.0,
+     "mom": 0.0,
+     "ret": -0.01744,
+     "alpha": -0.00338
+    },
+    {
+     "arm": "Claude",
+     "week": "2026-10-19",
+     "symbol": "RHM.DE",
+     "p": 0.5,
+     "up": 0.0,
+     "mom": 1.0,
+     "ret": -0.05788,
+     "alpha": -0.04382
+    },
+    {
+     "arm": "Claude",
+     "week": "2026-10-19",
+     "symbol": "MBG.DE",
+     "p": 0.48,
+     "up": 1.0,
+     "mom": 0.0,
+     "ret": 0.00197,
+     "alpha": 0.01603
+    }
    ],
-   "predictions": [],
-   "trades": []
+   "trades": [
+    {
+     "arm": "Claude",
+     "week": "2026-10-19",
+     "symbol": "AAPL",
+     "side": "long",
+     "R": 0.646
+    },
+    {
+     "arm": "Claude",
+     "week": "2026-10-19",
+     "symbol": "SPY",
+     "side": "long",
+     "R": -0.419
+    },
+    {
+     "arm": "Claude",
+     "week": "2026-10-19",
+     "symbol": "QQQ",
+     "side": "long",
+     "R": -0.632
+    },
+    {
+     "arm": "Claude",
+     "week": "2026-10-19",
+     "symbol": "GLD",
+     "side": "short",
+     "R": 0.967
+    }
+   ]
   },
-  "week": "2026-10-19",
+  "week": "2026-10-26",
   "rows": [
    {
     "symbol": "AAPL",
-    "Claude": 0.6,
-    "Claude_trade": "long (Stop 3.0%, Ziel 4.0%)",
-    "reason": "Auf 52-Wochen-Hoch, relative Stärke trotz Tech-Ausverkauf, Volumen 1,6x."
+    "ChatGPT": 0.55
    },
    {
     "symbol": "ALV.DE",
-    "Claude": 0.54,
-    "reason": "Defensiv, über SMA200, gute Woche."
+    "ChatGPT": 0.51
+   },
+   {
+    "symbol": "AMD",
+    "ChatGPT": 0.49
    },
    {
     "symbol": "AMZN",
-    "Claude": 0.5,
-    "reason": "Kein klares Bild, knapp unter SMA20/50."
+    "ChatGPT": 0.48
+   },
+   {
+    "symbol": "ASML.AS",
+    "ChatGPT": 0.48
+   },
+   {
+    "symbol": "AVGO",
+    "ChatGPT": 0.46
+   },
+   {
+    "symbol": "BA",
+    "ChatGPT": 0.46
+   },
+   {
+    "symbol": "BAS.DE",
+    "ChatGPT": 0.52
+   },
+   {
+    "symbol": "BAYN.DE",
+    "ChatGPT": 0.48
+   },
+   {
+    "symbol": "CAT",
+    "ChatGPT": 0.48
+   },
+   {
+    "symbol": "COST",
+    "ChatGPT": 0.54
+   },
+   {
+    "symbol": "DBK.DE",
+    "ChatGPT": 0.48
    },
    {
     "symbol": "DTE.DE",
-    "Claude": 0.5,
-    "reason": "Abwärtstrend, aber Erholung letzte Woche – unentschieden."
+    "ChatGPT": 0.45
    },
    {
     "symbol": "GLD",
-    "Claude": 0.4,
-    "Claude_trade": "short (Stop 3.0%, Ziel 3.0%)",
-    "reason": "Unter SMA50 und SMA200, −23 % vom Hoch, Abwärtstrend; heiße Inflation stützt Zinsen."
+    "ChatGPT": 0.46
    },
    {
     "symbol": "GOOGL",
-    "Claude": 0.5,
-    "reason": "Seitwärts bis schwach, auf SMA200 – kein Vorteil erkennbar."
+    "ChatGPT": 0.47
+   },
+   {
+    "symbol": "IFX.DE",
+    "ChatGPT": 0.47
    },
    {
     "symbol": "JPM",
-    "Claude": 0.53,
-    "reason": "Zahlen schon veröffentlicht, stabil über SMA200."
+    "ChatGPT": 0.48
+   },
+   {
+    "symbol": "KO",
+    "ChatGPT": 0.53
    },
    {
     "symbol": "LLY",
-    "Claude": 0.53,
-    "reason": "Klarer Aufwärtstrend nahe Hoch, leicht überkauft."
+    "ChatGPT": 0.55
    },
    {
     "symbol": "MBG.DE",
-    "Claude": 0.48,
-    "reason": "Unter SMA50/200, schwacher Trend."
+    "ChatGPT": 0.47
+   },
+   {
+    "symbol": "MC.PA",
+    "ChatGPT": 0.46
    },
    {
     "symbol": "META",
-    "Claude": 0.5,
-    "reason": "Zahlen Mi. nach Börsenschluss – Ausgang offen."
+    "ChatGPT": 0.48
    },
    {
     "symbol": "MSFT",
-    "Claude": 0.55,
-    "reason": "Nahe Hoch, starker 3-Monats-Trend, hielt sich in der Schwächewoche gut."
+    "ChatGPT": 0.52
+   },
+   {
+    "symbol": "NESN.SW",
+    "ChatGPT": 0.52
+   },
+   {
+    "symbol": "NFLX",
+    "ChatGPT": 0.46
+   },
+   {
+    "symbol": "NOVO-B.CO",
+    "ChatGPT": 0.5
    },
    {
     "symbol": "NVDA",
-    "Claude": 0.52,
-    "reason": "−6,6 % in der Woche, RSI 38 überverkauft; AI-Finanzierungssorgen (CoreWeave) können weiterlaufen."
+    "ChatGPT": 0.48
+   },
+   {
+    "symbol": "PG",
+    "ChatGPT": 0.55
    },
    {
     "symbol": "QQQ",
-    "Claude": 0.6,
-    "Claude_trade": "long (Stop 3.5%, Ziel 4.0%)",
-    "reason": "Schlechteste Woche seit Juni, RSI 35, über SMA200 – Erholung wahrscheinlicher als weiterer Einbruch."
+    "ChatGPT": 0.49
    },
    {
     "symbol": "RHM.DE",
-    "Claude": 0.5,
-    "reason": "+16 % Woche nach −43 % vom Hoch, sehr volatil – kein Vorteil."
+    "ChatGPT": 0.49
    },
    {
     "symbol": "SAP.DE",
-    "Claude": 0.52,
-    "reason": "Zahlen Mi. nach Schluss, starke Woche, Ereignisrisiko."
+    "ChatGPT": 0.52
+   },
+   {
+    "symbol": "SHEL.L",
+    "ChatGPT": 0.51
    },
    {
     "symbol": "SIE.DE",
-    "Claude": 0.52,
-    "reason": "Neutral um SMA20/50."
+    "ChatGPT": 0.47
    },
    {
     "symbol": "SPY",
-    "Claude": 0.6,
-    "Claude_trade": "long (Stop 2.5%, Ziel 3.0%)",
-    "reason": "Nach −2 % Woche und VIX-Spitze 22 historisch leichte Erholungsneigung; Trend über SMA200 intakt."
+    "ChatGPT": 0.5
    },
    {
     "symbol": "TSLA",
-    "Claude": 0.48,
-    "reason": "Zahlen Mi., unter SMA200, −28 % vom Hoch; Ereignisrisiko in beide Richtungen."
+    "ChatGPT": 0.51
+   },
+   {
+    "symbol": "UNH",
+    "ChatGPT": 0.53
+   },
+   {
+    "symbol": "VOW3.DE",
+    "ChatGPT": 0.48
+   },
+   {
+    "symbol": "WMT",
+    "ChatGPT": 0.52
    },
    {
     "symbol": "XOM",
-    "Claude": 0.5,
-    "reason": "Starker Trend, aber RSI 73 überkauft – Momentum vs. Rücksetzer gleichen sich aus."
+    "ChatGPT": 0.53
    },
    {
     "symbol": "^GDAXI",
-    "Claude": 0.55,
-    "reason": "Hielt sich gegen US-Tech, über SMA200."
+    "ChatGPT": 0.49
    }
   ]
  },
