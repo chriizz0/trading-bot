@@ -1,0 +1,267 @@
+{
+  "experiment": "EXP-401",
+  "week_start": "2026-10-26",
+  "created_at": "2026-10-25T09:43:46+00:00",
+  "analyst": "Claude",
+  "inputs": [
+    "reports/exp401/snapshot-2026-10-24T1311.md",
+    "reports/exp401/SCORE.md",
+    "Bigdata.com (https://bigdata.com) Unternehmenskalender 26.–30.10.: KO, BA Di; GOOGL, MSFT (nach Schluss), MBG, BAS, DBK Mi; SHEL, VOW, CAT, LLY, AMZN (nach Schluss) Do; XOM Fr",
+    "Bigdata.com Wirtschaftskalender: Fed-Entscheid Mi 28.10. (Konsens 4 % unverändert), US-BIP/Core-PCE Do, EZB Do 29.10. (unverändert erwartet), DE-BIP/VPI Fr",
+    "Websuche: Apple-Zahlen erst 2.11. (mactrast.com)"
+  ],
+  "predictions": [
+    {
+      "symbol": "AAPL",
+      "p_up": 0.57,
+      "trade": null,
+      "reason": "Am 52W-Hoch über allen SMAs, relative Stärke ggü. SPY; iPhone-Duo-Start mit hoher Nachfrage, Zahlen erst 2.11."
+    },
+    {
+      "symbol": "MSFT",
+      "p_up": 0.5,
+      "trade": null,
+      "reason": "Quartalszahlen Mi. 28.10. nach Schluss – Ausgang offen."
+    },
+    {
+      "symbol": "NVDA",
+      "p_up": 0.45,
+      "trade": null,
+      "reason": "Unter SMA20/50, RSI 38; Sorgen um AI-Finanzierung/Neoclouds belasten relativ zum SPY."
+    },
+    {
+      "symbol": "AMZN",
+      "p_up": 0.5,
+      "trade": null,
+      "reason": "Quartalszahlen Do. 29.10. nach Schluss – Ausgang offen."
+    },
+    {
+      "symbol": "GOOGL",
+      "p_up": 0.5,
+      "trade": null,
+      "reason": "Quartalszahlen Mi. 28.10. nach Schluss; überverkauft (RSI 31), aber Abwärtstrend – neutral."
+    },
+    {
+      "symbol": "META",
+      "p_up": 0.43,
+      "trade": null,
+      "reason": "Nach den Zahlen −9,4 % und unter SMA20/50; Post-Earnings-Drift spricht eher für weitere relative Schwäche."
+    },
+    {
+      "symbol": "TSLA",
+      "p_up": 0.52,
+      "trade": null,
+      "reason": "Nach Zahlen +4,9 %, um SMA20/50, unter SMA200 – kein klarer Vorteil."
+    },
+    {
+      "symbol": "JPM",
+      "p_up": 0.47,
+      "trade": null,
+      "reason": "Unter SMA50, 3M negativ, schwaches Volumen – leicht unter SPY erwartet."
+    },
+    {
+      "symbol": "XOM",
+      "p_up": 0.5,
+      "trade": null,
+      "reason": "Am 52W-Hoch und RSI 76, aber Quartalszahlen Fr. 30.10. – neutral."
+    },
+    {
+      "symbol": "LLY",
+      "p_up": 0.5,
+      "trade": null,
+      "reason": "Starker Trend, aber Quartalszahlen Do. 29.10. – neutral."
+    },
+    {
+      "symbol": "SPY",
+      "p_up": 0.52,
+      "trade": null,
+      "reason": "Leicht über langfristiger Basisrate; Fed-Entscheid Mi. und PCE Do. bei erhöhten Ölpreisen als Risiko."
+    },
+    {
+      "symbol": "QQQ",
+      "p_up": 0.48,
+      "trade": null,
+      "reason": "Unter SMA20/50, RSI 37; Megacap-Zahlen (MSFT, GOOGL, AMZN) bringen Doppelrisiko."
+    },
+    {
+      "symbol": "GLD",
+      "p_up": 0.4,
+      "trade": {
+        "side": "short",
+        "stop_pct": 0.03,
+        "target_pct": 0.04
+      },
+      "reason": "Klarer Abwärtstrend unter SMA200, −4 % in der Woche bei hohem Volumen; Test der 4.000-$-Unterstützung mit bärischen Gaps."
+    },
+    {
+      "symbol": "^GDAXI",
+      "p_up": 0.5,
+      "trade": null,
+      "reason": "Seitwärts um SMA20/200; EZB Do., DE-BIP/Inflation Fr. – kein Vorteil."
+    },
+    {
+      "symbol": "SAP.DE",
+      "p_up": 0.6,
+      "trade": {
+        "side": "long",
+        "stop_pct": 0.04,
+        "target_pct": 0.05
+      },
+      "reason": "Nach Zahlen +7,6 % mit starkem Trend über allen SMAs; Post-Earnings-Drift vs. DAX, trotz RSI 77."
+    },
+    {
+      "symbol": "SIE.DE",
+      "p_up": 0.43,
+      "trade": null,
+      "reason": "−5,1 % in der Woche, unter SMA20/50/200; Zahlen erst 12.11. – relative Schwäche zum DAX hält eher an."
+    },
+    {
+      "symbol": "ALV.DE",
+      "p_up": 0.52,
+      "trade": null,
+      "reason": "Um SMA20, über SMA200, defensiv – leicht positiv relativ zum DAX."
+    },
+    {
+      "symbol": "DTE.DE",
+      "p_up": 0.45,
+      "trade": null,
+      "reason": "Abwärtstrend unter SMA200, 23 % unter Hoch; Kursziel gesenkt, SpaceX-Turm-Gespräche unklar."
+    },
+    {
+      "symbol": "RHM.DE",
+      "p_up": 0.47,
+      "trade": null,
+      "reason": "Weit unter SMA200, −6,5 % in der Woche bei dünnem Volumen; Erholung über SMA20 fragil."
+    },
+    {
+      "symbol": "MBG.DE",
+      "p_up": 0.5,
+      "trade": null,
+      "reason": "Quartalszahlen Mi. 28.10. – neutral."
+    },
+    {
+      "symbol": "AMD",
+      "p_up": 0.45,
+      "trade": null,
+      "reason": "12 % unter SMA20, Momentum gebrochen; Zahlen 3.11., Positionsabbau davor wahrscheinlich."
+    },
+    {
+      "symbol": "AVGO",
+      "p_up": 0.42,
+      "trade": null,
+      "reason": "Unter allen SMAs, 33 % unter Hoch, RSI 34; AI-Sorgen – relative Schwäche zum SPY."
+    },
+    {
+      "symbol": "NFLX",
+      "p_up": 0.42,
+      "trade": null,
+      "reason": "Klarer Abwärtstrend unter SMA50/200, −6,6 % in der Woche, 43 % unter Hoch."
+    },
+    {
+      "symbol": "COST",
+      "p_up": 0.56,
+      "trade": null,
+      "reason": "Über allen SMAs, 1M +11,9 %; Rotation in defensive Konsumwerte stützt relative Stärke."
+    },
+    {
+      "symbol": "WMT",
+      "p_up": 0.56,
+      "trade": null,
+      "reason": "Starker Monat (+11,4 %), über allen SMAs; defensiver Rückenwind."
+    },
+    {
+      "symbol": "UNH",
+      "p_up": 0.55,
+      "trade": null,
+      "reason": "Erholungstrend über allen SMAs, nahe 52W-Hoch; Klagen als Restrisiko."
+    },
+    {
+      "symbol": "PG",
+      "p_up": 0.56,
+      "trade": null,
+      "reason": "Nach soliden Zahlen über allen SMAs, nahe Hoch; defensiv gesucht."
+    },
+    {
+      "symbol": "KO",
+      "p_up": 0.5,
+      "trade": null,
+      "reason": "Quartalszahlen Di. 27.10. – neutral."
+    },
+    {
+      "symbol": "CAT",
+      "p_up": 0.5,
+      "trade": null,
+      "reason": "Stark überverkauft (RSI 27), aber Quartalszahlen Do. 29.10. – neutral."
+    },
+    {
+      "symbol": "BA",
+      "p_up": 0.5,
+      "trade": null,
+      "reason": "Quartalszahlen Di. 27.10.; 777F-Produktionsstopp belastet – neutral wegen Termin."
+    },
+    {
+      "symbol": "ASML.AS",
+      "p_up": 0.44,
+      "trade": null,
+      "reason": "9 % unter SMA20, Halbleiter-Schwäche in Europa – eher unter Euro Stoxx 50."
+    },
+    {
+      "symbol": "NOVO-B.CO",
+      "p_up": 0.51,
+      "trade": null,
+      "reason": "Positive Studiendaten, Kurs um SMA20, langfristig schwach – leicht neutral."
+    },
+    {
+      "symbol": "MC.PA",
+      "p_up": 0.4,
+      "trade": {
+        "side": "short",
+        "stop_pct": 0.035,
+        "target_pct": 0.045
+      },
+      "reason": "Abwärtstrend unter SMA50/200; Frankreich-Unruhen und Anleiherenditen auf 2002-Hoch belasten Luxus/Tourismus."
+    },
+    {
+      "symbol": "NESN.SW",
+      "p_up": 0.55,
+      "trade": null,
+      "reason": "Über allen SMAs, nahe Hoch; Turnaround und defensive Rotation stützen."
+    },
+    {
+      "symbol": "SHEL.L",
+      "p_up": 0.5,
+      "trade": null,
+      "reason": "Am 52W-Hoch, RSI 78, aber Quartalszahlen Do. 29.10. – neutral."
+    },
+    {
+      "symbol": "BAS.DE",
+      "p_up": 0.5,
+      "trade": null,
+      "reason": "Quartalszahlen Mi. 28.10. – neutral."
+    },
+    {
+      "symbol": "BAYN.DE",
+      "p_up": 0.48,
+      "trade": null,
+      "reason": "Unter SMA20/50, 1M −10,9 %, kein Katalysator – leicht unter DAX."
+    },
+    {
+      "symbol": "DBK.DE",
+      "p_up": 0.5,
+      "trade": null,
+      "reason": "Stark überverkauft (RSI 29), aber Quartalszahlen Mi. 28.10. – neutral."
+    },
+    {
+      "symbol": "IFX.DE",
+      "p_up": 0.42,
+      "trade": null,
+      "reason": "−7,1 % in der Woche, 14 % unter SMA20/50/200, Sektor unter AI-Capex-Druck – relative Schwäche."
+    },
+    {
+      "symbol": "VOW3.DE",
+      "p_up": 0.5,
+      "trade": null,
+      "reason": "Quartalszahlen Do. 29.10. – neutral."
+    }
+  ]
+}
