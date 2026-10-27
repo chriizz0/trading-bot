@@ -1,0 +1,28 @@
+{
+ "experiment": "EXP-402",
+ "signal_date": "2026-10-26",
+ "created_at": "2026-10-27T00:24:31+00:00",
+ "headlines": {
+  "AAPL": [],
+  "MSFT": [],
+  "NVDA": [],
+  "AMZN": [],
+  "GOOGL": [],
+  "META": [],
+  "TSLA": [],
+  "JPM": [],
+  "XOM": [],
+  "LLY": [],
+  "AMD": [],
+  "AVGO": [],
+  "NFLX": [],
+  "COST": [],
+  "WMT": [],
+  "UNH": [],
+  "PG": [],
+  "KO": [],
+  "CAT": [],
+  "BA": []
+ },
+ "runs": {}
+}

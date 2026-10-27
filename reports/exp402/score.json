@@ -1,36 +1,40 @@
 {
- "updated": "2026-10-23",
- "signals": 28,
+ "updated": "2026-10-27",
+ "signals": 51,
  "models": {
   "claude-haiku-5-5": {
-   "signals": 12,
-   "days": 1,
-   "ic_mean": -0.7225343193980591,
+   "signals": 24,
+   "days": 2,
+   "ic_mean": NaN,
    "ic_by_day": {
-    "2026-10-22": -0.7225343193980591
+    "2026-10-22": -0.690500778143958,
+    "2026-10-23": NaN
    },
-   "perm_p": 0.9935,
+   "perm_p": 0.0,
    "ls_by_day": {
-    "2026-10-22": -0.01721206874976164
+    "2026-10-22": -0.016949249245427428,
+    "2026-10-23": NaN
    },
-   "neg_mean_alpha": 0.0022530845718523596,
-   "pos_mean_alpha": -0.01495898417790928,
-   "ic_close_close_info": -0.2740647418406431
+   "neg_mean_alpha": 0.0019920112111306565,
+   "pos_mean_alpha": -0.014957238034296771,
+   "ic_close_close_info": NaN
   },
   "claude-sonnet-5-5": {
-   "signals": 16,
-   "days": 1,
-   "ic_mean": -0.5524515445746937,
+   "signals": 27,
+   "days": 2,
+   "ic_mean": NaN,
    "ic_by_day": {
-    "2026-10-22": -0.5524515445746937
+    "2026-10-22": -0.5524515445746938,
+    "2026-10-23": NaN
    },
-   "perm_p": 0.9915,
+   "perm_p": 0.0,
    "ls_by_day": {
-    "2026-10-22": -0.015096287171186345
+    "2026-10-22": -0.01486154110661888,
+    "2026-10-23": NaN
    },
-   "neg_mean_alpha": 0.0035108058044283938,
-   "pos_mean_alpha": -0.01158548136675795,
-   "ic_close_close_info": -0.3370108308129748
+   "neg_mean_alpha": 0.003279329665438461,
+   "pos_mean_alpha": -0.011582211441180419,
+   "ic_close_close_info": NaN
   }
  },
  "signals_list": [
@@ -39,15 +43,15 @@
    "date": "2026-10-22",
    "symbol": "AAPL",
    "score": 0.2,
-   "alpha": -0.00406,
-   "alpha_close_close": 0.0038
+   "alpha": -0.00407,
+   "alpha_close_close": 0.00382
   },
   {
    "model": "claude-haiku-5-5",
    "date": "2026-10-22",
    "symbol": "MSFT",
    "score": -0.1,
-   "alpha": 0.01248,
+   "alpha": 0.01296,
    "alpha_close_close": 0.01181
   },
   {
@@ -55,7 +59,7 @@
    "date": "2026-10-22",
    "symbol": "NVDA",
    "score": -0.3,
-   "alpha": -0.0,
+   "alpha": -0.00023,
    "alpha_close_close": -0.00067
   },
   {
@@ -63,7 +67,7 @@
    "date": "2026-10-22",
    "symbol": "AMZN",
    "score": -0.1,
-   "alpha": -0.00231,
+   "alpha": -0.00351,
    "alpha_close_close": -0.00428
   },
   {
@@ -71,7 +75,7 @@
    "date": "2026-10-22",
    "symbol": "META",
    "score": -0.4,
-   "alpha": 0.00695,
+   "alpha": 0.00687,
    "alpha_close_close": -0.00438
   },
   {
@@ -79,7 +83,7 @@
    "date": "2026-10-22",
    "symbol": "TSLA",
    "score": -0.1,
-   "alpha": -0.00255,
+   "alpha": -0.00272,
    "alpha_close_close": -0.00108
   },
   {
@@ -87,7 +91,7 @@
    "date": "2026-10-22",
    "symbol": "LLY",
    "score": 0.1,
-   "alpha": -0.02363,
+   "alpha": -0.02362,
    "alpha_close_close": -0.02021
   },
   {
@@ -95,7 +99,7 @@
    "date": "2026-10-22",
    "symbol": "AMD",
    "score": -0.3,
-   "alpha": 0.01292,
+   "alpha": 0.0128,
    "alpha_close_close": 0.02267
   },
   {
@@ -103,7 +107,7 @@
    "date": "2026-10-22",
    "symbol": "AVGO",
    "score": -0.2,
-   "alpha": 0.00124,
+   "alpha": 0.00047,
    "alpha_close_close": 0.0004
   },
   {
@@ -111,7 +115,7 @@
    "date": "2026-10-22",
    "symbol": "NFLX",
    "score": 0.2,
-   "alpha": -0.01741,
+   "alpha": -0.0174,
    "alpha_close_close": -0.01267
   },
   {
@@ -135,15 +139,15 @@
    "date": "2026-10-22",
    "symbol": "AAPL",
    "score": 0.05,
-   "alpha": -0.00406,
-   "alpha_close_close": 0.0038
+   "alpha": -0.00407,
+   "alpha_close_close": 0.00382
   },
   {
    "model": "claude-sonnet-5-5",
    "date": "2026-10-22",
    "symbol": "MSFT",
    "score": -0.1,
-   "alpha": 0.01248,
+   "alpha": 0.01296,
    "alpha_close_close": 0.01181
   },
   {
@@ -151,7 +155,7 @@
    "date": "2026-10-22",
    "symbol": "NVDA",
    "score": -0.1,
-   "alpha": -0.0,
+   "alpha": -0.00023,
    "alpha_close_close": -0.00067
   },
   {
@@ -159,7 +163,7 @@
    "date": "2026-10-22",
    "symbol": "AMZN",
    "score": -0.05,
-   "alpha": -0.00231,
+   "alpha": -0.00351,
    "alpha_close_close": -0.00428
   },
   {
@@ -167,7 +171,7 @@
    "date": "2026-10-22",
    "symbol": "META",
    "score": -0.15,
-   "alpha": 0.00695,
+   "alpha": 0.00687,
    "alpha_close_close": -0.00438
   },
   {
@@ -175,7 +179,7 @@
    "date": "2026-10-22",
    "symbol": "TSLA",
    "score": -0.05,
-   "alpha": -0.00255,
+   "alpha": -0.00272,
    "alpha_close_close": -0.00108
   },
   {
@@ -183,7 +187,7 @@
    "date": "2026-10-22",
    "symbol": "XOM",
    "score": 0.05,
-   "alpha": 0.02131,
+   "alpha": 0.02132,
    "alpha_close_close": 0.03316
   },
   {
@@ -191,7 +195,7 @@
    "date": "2026-10-22",
    "symbol": "LLY",
    "score": 0.05,
-   "alpha": -0.02363,
+   "alpha": -0.02362,
    "alpha_close_close": -0.02021
   },
   {
@@ -199,7 +203,7 @@
    "date": "2026-10-22",
    "symbol": "AMD",
    "score": -0.1,
-   "alpha": 0.01292,
+   "alpha": 0.0128,
    "alpha_close_close": 0.02267
   },
   {
@@ -207,7 +211,7 @@
    "date": "2026-10-22",
    "symbol": "AVGO",
    "score": -0.1,
-   "alpha": 0.00124,
+   "alpha": 0.00047,
    "alpha_close_close": 0.0004
   },
   {
@@ -215,7 +219,7 @@
    "date": "2026-10-22",
    "symbol": "NFLX",
    "score": 0.05,
-   "alpha": -0.01741,
+   "alpha": -0.0174,
    "alpha_close_close": -0.01267
   },
   {
@@ -231,15 +235,15 @@
    "date": "2026-10-22",
    "symbol": "PG",
    "score": 0.05,
-   "alpha": -0.01827,
-   "alpha_close_close": -0.02238
+   "alpha": -0.01826,
+   "alpha_close_close": -0.01594
   },
   {
    "model": "claude-sonnet-5-5",
    "date": "2026-10-22",
    "symbol": "KO",
    "score": 0.05,
-   "alpha": -0.02431,
+   "alpha": -0.0243,
    "alpha_close_close": -0.02236
   },
   {
@@ -255,8 +259,192 @@
    "date": "2026-10-22",
    "symbol": "BA",
    "score": -0.05,
-   "alpha": 0.01357,
+   "alpha": 0.01358,
    "alpha_close_close": 0.00949
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "date": "2026-10-23",
+   "symbol": "AAPL",
+   "score": 0.1,
+   "alpha": NaN,
+   "alpha_close_close": NaN
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "date": "2026-10-23",
+   "symbol": "NVDA",
+   "score": -0.1,
+   "alpha": NaN,
+   "alpha_close_close": NaN
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "date": "2026-10-23",
+   "symbol": "AMZN",
+   "score": 0.1,
+   "alpha": NaN,
+   "alpha_close_close": NaN
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "date": "2026-10-23",
+   "symbol": "GOOGL",
+   "score": 0.1,
+   "alpha": NaN,
+   "alpha_close_close": NaN
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "date": "2026-10-23",
+   "symbol": "META",
+   "score": -0.3,
+   "alpha": NaN,
+   "alpha_close_close": NaN
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "date": "2026-10-23",
+   "symbol": "TSLA",
+   "score": -0.2,
+   "alpha": NaN,
+   "alpha_close_close": NaN
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "date": "2026-10-23",
+   "symbol": "XOM",
+   "score": 0.2,
+   "alpha": NaN,
+   "alpha_close_close": NaN
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "date": "2026-10-23",
+   "symbol": "AVGO",
+   "score": -0.1,
+   "alpha": NaN,
+   "alpha_close_close": NaN
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "date": "2026-10-23",
+   "symbol": "UNH",
+   "score": -0.1,
+   "alpha": NaN,
+   "alpha_close_close": NaN
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "date": "2026-10-23",
+   "symbol": "PG",
+   "score": 0.2,
+   "alpha": NaN,
+   "alpha_close_close": NaN
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "date": "2026-10-23",
+   "symbol": "CAT",
+   "score": -0.1,
+   "alpha": NaN,
+   "alpha_close_close": NaN
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "date": "2026-10-23",
+   "symbol": "BA",
+   "score": 0.2,
+   "alpha": NaN,
+   "alpha_close_close": NaN
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-23",
+   "symbol": "AAPL",
+   "score": 0.1,
+   "alpha": NaN,
+   "alpha_close_close": NaN
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-23",
+   "symbol": "NVDA",
+   "score": -0.1,
+   "alpha": NaN,
+   "alpha_close_close": NaN
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-23",
+   "symbol": "META",
+   "score": -0.1,
+   "alpha": NaN,
+   "alpha_close_close": NaN
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-23",
+   "symbol": "TSLA",
+   "score": -0.1,
+   "alpha": NaN,
+   "alpha_close_close": NaN
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-23",
+   "symbol": "XOM",
+   "score": 0.05,
+   "alpha": NaN,
+   "alpha_close_close": NaN
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-23",
+   "symbol": "AMD",
+   "score": -0.1,
+   "alpha": NaN,
+   "alpha_close_close": NaN
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-23",
+   "symbol": "AVGO",
+   "score": -0.1,
+   "alpha": NaN,
+   "alpha_close_close": NaN
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-23",
+   "symbol": "NFLX",
+   "score": -0.05,
+   "alpha": NaN,
+   "alpha_close_close": NaN
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-23",
+   "symbol": "UNH",
+   "score": -0.05,
+   "alpha": NaN,
+   "alpha_close_close": NaN
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-23",
+   "symbol": "CAT",
+   "score": -0.1,
+   "alpha": NaN,
+   "alpha_close_close": NaN
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "date": "2026-10-23",
+   "symbol": "BA",
+   "score": 0.1,
+   "alpha": NaN,
+   "alpha_close_close": NaN
   }
  ]
 }
