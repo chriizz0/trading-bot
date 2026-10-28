@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-27T00:27+00:00",
+ "generated": "2026-10-28T00:29+00:00",
  "history": [
   {
    "id": "EXP-101",
@@ -562,42 +562,42 @@
   ]
  },
  "exp402": {
-  "updated": "2026-10-27",
+  "updated": "2026-10-28",
   "signals": 51,
   "models": {
    "claude-haiku-5-5": {
     "signals": 24,
     "days": 2,
-    "ic_mean": NaN,
+    "ic_mean": -0.37414651181557174,
     "ic_by_day": {
      "2026-10-22": -0.690500778143958,
-     "2026-10-23": NaN
+     "2026-10-23": -0.057792245487185395
     },
-    "perm_p": 0.0,
+    "perm_p": 0.9605,
     "ls_by_day": {
-     "2026-10-22": -0.016949249245427428,
-     "2026-10-23": NaN
+     "2026-10-22": -0.016949249245427442,
+     "2026-10-23": -0.005079230180760749
     },
-    "neg_mean_alpha": 0.0019920112111306565,
-    "pos_mean_alpha": -0.014957238034296771,
-    "ic_close_close_info": NaN
+    "neg_mean_alpha": 0.0012379584775649868,
+    "pos_mean_alpha": -0.008890900422488713,
+    "ic_close_close_info": -0.19843663175045603
    },
    "claude-sonnet-5-5": {
     "signals": 27,
     "days": 2,
-    "ic_mean": NaN,
+    "ic_mean": -0.47807083836637465,
     "ic_by_day": {
      "2026-10-22": -0.5524515445746938,
-     "2026-10-23": NaN
+     "2026-10-23": -0.4036901321580555
     },
-    "perm_p": 0.0,
+    "perm_p": 0.995,
     "ls_by_day": {
-     "2026-10-22": -0.01486154110661888,
-     "2026-10-23": NaN
+     "2026-10-22": -0.014861541106618893,
+     "2026-10-23": 0.002133898502604259
     },
-    "neg_mean_alpha": 0.003279329665438461,
-    "pos_mean_alpha": -0.011582211441180419,
-    "ic_close_close_info": NaN
+    "neg_mean_alpha": 0.0011544622967847112,
+    "pos_mean_alpha": -0.007838182505930246,
+    "ic_close_close_info": -0.419568012336631
    }
   },
   "signals_list": [
@@ -830,214 +830,367 @@
     "date": "2026-10-23",
     "symbol": "AAPL",
     "score": 0.1,
-    "alpha": NaN,
-    "alpha_close_close": NaN
+    "alpha": -0.00412,
+    "alpha_close_close": -0.01809
    },
    {
     "model": "claude-haiku-5-5",
     "date": "2026-10-23",
     "symbol": "NVDA",
     "score": -0.1,
-    "alpha": NaN,
-    "alpha_close_close": NaN
+    "alpha": 0.00947,
+    "alpha_close_close": 0.01679
    },
    {
     "model": "claude-haiku-5-5",
     "date": "2026-10-23",
     "symbol": "AMZN",
     "score": 0.1,
-    "alpha": NaN,
-    "alpha_close_close": NaN
+    "alpha": -0.00562,
+    "alpha_close_close": -0.00271
    },
    {
     "model": "claude-haiku-5-5",
     "date": "2026-10-23",
     "symbol": "GOOGL",
     "score": 0.1,
-    "alpha": NaN,
-    "alpha_close_close": NaN
+    "alpha": -0.01684,
+    "alpha_close_close": -0.01775
    },
    {
     "model": "claude-haiku-5-5",
     "date": "2026-10-23",
     "symbol": "META",
     "score": -0.3,
-    "alpha": NaN,
-    "alpha_close_close": NaN
+    "alpha": -0.01631,
+    "alpha_close_close": -0.02587
    },
    {
     "model": "claude-haiku-5-5",
     "date": "2026-10-23",
     "symbol": "TSLA",
     "score": -0.2,
-    "alpha": NaN,
-    "alpha_close_close": NaN
+    "alpha": 0.0162,
+    "alpha_close_close": 0.04501
    },
    {
     "model": "claude-haiku-5-5",
     "date": "2026-10-23",
     "symbol": "XOM",
     "score": 0.2,
-    "alpha": NaN,
-    "alpha_close_close": NaN
+    "alpha": 0.01064,
+    "alpha_close_close": 0.00015
    },
    {
     "model": "claude-haiku-5-5",
     "date": "2026-10-23",
     "symbol": "AVGO",
     "score": -0.1,
-    "alpha": NaN,
-    "alpha_close_close": NaN
+    "alpha": 0.0102,
+    "alpha_close_close": 0.01618
    },
    {
     "model": "claude-haiku-5-5",
     "date": "2026-10-23",
     "symbol": "UNH",
     "score": -0.1,
-    "alpha": NaN,
-    "alpha_close_close": NaN
+    "alpha": -0.02388,
+    "alpha_close_close": -0.02478
    },
    {
     "model": "claude-haiku-5-5",
     "date": "2026-10-23",
     "symbol": "PG",
     "score": 0.2,
-    "alpha": NaN,
-    "alpha_close_close": NaN
+    "alpha": -0.00932,
+    "alpha_close_close": -0.01394
    },
    {
     "model": "claude-haiku-5-5",
     "date": "2026-10-23",
     "symbol": "CAT",
     "score": -0.1,
-    "alpha": NaN,
-    "alpha_close_close": NaN
+    "alpha": 0.00571,
+    "alpha_close_close": 0.00276
    },
    {
     "model": "claude-haiku-5-5",
     "date": "2026-10-23",
     "symbol": "BA",
     "score": 0.2,
-    "alpha": NaN,
-    "alpha_close_close": NaN
+    "alpha": -0.00383,
+    "alpha_close_close": -0.00732
    },
    {
     "model": "claude-sonnet-5-5",
     "date": "2026-10-23",
     "symbol": "AAPL",
     "score": 0.1,
-    "alpha": NaN,
-    "alpha_close_close": NaN
+    "alpha": -0.00412,
+    "alpha_close_close": -0.01809
    },
    {
     "model": "claude-sonnet-5-5",
     "date": "2026-10-23",
     "symbol": "NVDA",
     "score": -0.1,
-    "alpha": NaN,
-    "alpha_close_close": NaN
+    "alpha": 0.00947,
+    "alpha_close_close": 0.01679
    },
    {
     "model": "claude-sonnet-5-5",
     "date": "2026-10-23",
     "symbol": "META",
     "score": -0.1,
-    "alpha": NaN,
-    "alpha_close_close": NaN
+    "alpha": -0.01631,
+    "alpha_close_close": -0.02587
    },
    {
     "model": "claude-sonnet-5-5",
     "date": "2026-10-23",
     "symbol": "TSLA",
     "score": -0.1,
-    "alpha": NaN,
-    "alpha_close_close": NaN
+    "alpha": 0.0162,
+    "alpha_close_close": 0.04501
    },
    {
     "model": "claude-sonnet-5-5",
     "date": "2026-10-23",
     "symbol": "XOM",
     "score": 0.05,
-    "alpha": NaN,
-    "alpha_close_close": NaN
+    "alpha": 0.01064,
+    "alpha_close_close": 0.00015
    },
    {
     "model": "claude-sonnet-5-5",
     "date": "2026-10-23",
     "symbol": "AMD",
     "score": -0.1,
-    "alpha": NaN,
-    "alpha_close_close": NaN
+    "alpha": 0.01215,
+    "alpha_close_close": 0.02093
    },
    {
     "model": "claude-sonnet-5-5",
     "date": "2026-10-23",
     "symbol": "AVGO",
     "score": -0.1,
-    "alpha": NaN,
-    "alpha_close_close": NaN
+    "alpha": 0.0102,
+    "alpha_close_close": 0.01618
    },
    {
     "model": "claude-sonnet-5-5",
     "date": "2026-10-23",
     "symbol": "NFLX",
     "score": -0.05,
-    "alpha": NaN,
-    "alpha_close_close": NaN
+    "alpha": -0.02343,
+    "alpha_close_close": -0.03672
    },
    {
     "model": "claude-sonnet-5-5",
     "date": "2026-10-23",
     "symbol": "UNH",
     "score": -0.05,
-    "alpha": NaN,
-    "alpha_close_close": NaN
+    "alpha": -0.02388,
+    "alpha_close_close": -0.02478
    },
    {
     "model": "claude-sonnet-5-5",
     "date": "2026-10-23",
     "symbol": "CAT",
     "score": -0.1,
-    "alpha": NaN,
-    "alpha_close_close": NaN
+    "alpha": 0.00571,
+    "alpha_close_close": 0.00276
    },
    {
     "model": "claude-sonnet-5-5",
     "date": "2026-10-23",
     "symbol": "BA",
     "score": 0.1,
-    "alpha": NaN,
-    "alpha_close_close": NaN
+    "alpha": -0.00383,
+    "alpha_close_close": -0.00732
    }
   ]
  },
  "exp402_latest": {
   "experiment": "EXP-402",
-  "signal_date": "2026-10-26",
-  "created_at": "2026-10-27T00:24:31+00:00",
+  "signal_date": "2026-10-27",
+  "created_at": "2026-10-28T00:29:35+00:00",
   "headlines": {
-   "AAPL": [],
-   "MSFT": [],
-   "NVDA": [],
-   "AMZN": [],
-   "GOOGL": [],
-   "META": [],
-   "TSLA": [],
-   "JPM": [],
-   "XOM": [],
-   "LLY": [],
-   "AMD": [],
-   "AVGO": [],
-   "NFLX": [],
-   "COST": [],
-   "WMT": [],
-   "UNH": [],
-   "PG": [],
-   "KO": [],
-   "CAT": [],
-   "BA": []
+   "AAPL": [
+    "This website shows you where iPhone Duo is in stock - The Apple Post",
+    "Apple Stock Price Forecast: AAPL Continues Pullback After Record High, Will It Test $300 Again This Year? - TradingKey",
+    "Apple (AAPL) Could Be 36% Overvalued As AI Launches Meet iPhone Duo Scrutiny - Yahoo Finance",
+    "Apple's Foldable iPhone Sold Out in Minutes, But Wall Street Has Questions - MarketBeat",
+    "Evercore ISI reiterates Apple stock rating on new M6 Macs By Investing.com - Investing.com Nigeria",
+    "Apple stock trades flat after OpenAI trade secrets lawsuit emerges - Traders Union"
+   ],
+   "MSFT": [
+    "Why Cerebras Systems Stock Jumped on Tuesday - The Globe and Mail",
+    "Microsoft Q1 Earnings Are on October 28. Options Traders Expect a 5.09% Move in MSFT Stock - TipRanks",
+    "U.S. Markets Rise Ahead of Fed Decision; Microsoft (MSFT) Eyes E - GuruFocus",
+    "How much SBUX stock does Starbucks’ former CEO Howard Schultz own? - TheStreet",
+    "MSFT Stock Alert: What to Know as Microsoft Offers Buyouts to 60,000 Employees - Barchart.com",
+    "Polymarket Odds: Will MSFT, GOOGL, CMG Beat Earnings Tomorrow? - TipRanks"
+   ],
+   "NVDA": [
+    "Nvidia Stock Is 10% Below Its Record. Does Anthropic's IPO Filing Make It a Buy? - The Globe and Mail",
+    "Why Celestica Stock Jumped Today - The Globe and Mail",
+    "Nvidia, AMD Get Their Jollies Hooking Up With Meta's Muse - Investor's Business Daily",
+    "Jensen Huang's Late-Night Calls With President Trump Come as Nvidia's China AI Chip Shipments Fall 44% in the First Half of 2026. Here's Why His Access Matters. - Yahoo Finance",
+    "Nvidia’s New $3 Billion AI Bet Is on One of Its Own Customers - The Motley Fool",
+    "NVDA Stock Alert: What to Know as Nvidia Invests $3 Billion in Meta - Barchart.com"
+   ],
+   "AMZN": [
+    "Amazon.com (NASDAQ:AMZN) Stock Jumps 1.6% - Here's Why - MarketBeat",
+    "Amazon (AMZN) Q3 Earnings Preview: AWS Growth Takes Center Stage - Yahoo Finance",
+    "Amazon has a Muse problem. Is a deal with OpenAI a solution? - Yahoo Finance",
+    "FCC Approves Amazon Leo's $11.57B Globalstar Acquisition, AMZN S - GuruFocus",
+    "US agency approves Amazon Leo’s $11.5 billion acquisition of Globalstar By Reuters - Investing.com Australia",
+    "Amazon Stock: Wall Street Says AMZN Looks Increasingly Attractive Ahead of Q3 Earnings - Barchart.com"
+   ],
+   "GOOGL": [
+    "'We're Trading Them Like Baseball Cards': Mark Cuban Warns ‘Everything’s a Meme Stock’ as AAPL, GOOGL and MU Fuel Market Bubble Fears - Yahoo Finance",
+    "GOOGL Stock: 3 Things to Watch in Alphabet’s Q3 Earnings Tomorrow - TipRanks",
+    "Google Gains Over 2% After Unveiling World Model Genie 4 Ahead of Earnings, Poised to Expand Revenue Streams - TradingKey",
+    "Is SpaceX Stock a Buy After Its Latest Earnings Report? - The Globe and Mail",
+    "Google to report Q3 results as investors focus on AI growth, weigh Meta Muse AI risk - Yahoo Finance",
+    "Oracle Stock Climbs On OpenAI, Google Partnership Expansions. Here's The Next Test. - Investor's Business Daily"
+   ],
+   "META": [
+    "Meta Shares Fall for Fourth Straight Day Despite $97.5 Billion AI Fundraising - BigGo Finance",
+    "Meta Prices $37.5 Billion in Offerings After Raising Common Sale to $25 Billion - www.tokenpost.com",
+    "AMD to Invest $1 Billion in Meta's Share Sale, but a Warrant for Up to 160 Million Shares May Matter More - XenoSpectrum",
+    "Meta’s $50B project came with secrecy, financial benefits for some officials - WWLTV.com",
+    "$1000 Invested In Meta Platforms 10 Years Ago Would Be Worth This Much Today - Benzinga",
+    "Nvidia, AMD Get Their Jollies Hooking Up With Meta's Muse - Investor's Business Daily"
+   ],
+   "TSLA": [
+    "TSLA Stock Heads For Worst Day In Nearly 7 Weeks – This Analyst Flags Two Risks Investors Can’t Ignore - Stocktwits",
+    "Overnight US Stocks | Market Awaits Fed Interest Rate Decision; Major Indices Rise as Tesla (TSLA.US) Shares Reclaim $400 - 富途牛牛",
+    "TSLA Stock Rises As Cybercabs Overtake Model Ys In Authorized Texas Robotaxi Fleet - Yahoo Finance",
+    "Tesla's stock rose 4% after ARK reaffirmed its long-term - KuCoin",
+    "BlackRock reports 196 million Tesla (TSLA) shares in an amended passive ownership disclosure. - Stock Titan",
+    "Tesla (NASDAQ:TSLA) Shares Climb 4% - Here's What Happened - MarketBeat"
+   ],
+   "JPM": [
+    "JPMorgan Stock Price Forecast — NYSE:JPM ($335.79) Trades 8.4% Below Record After Q3 Miss and $108.6B Expense Guide — $350 Target - TradingNEWS",
+    "JPMorgan’s 2027 earnings calls run into January 2028. - Stock Titan",
+    "Anthropic launches Claude for Financial Advisors (ANT:Pending) - Seeking Alpha",
+    "J.P. Morgan keeps Hold rating for Woodside stock at AUD 31.40 - ad-hoc-news.de",
+    "J.P. Morgan keeps AUD 3.10 target for Sigma Healthcare stock - ad-hoc-news.de",
+    "J.P. Morgan sets EUR 45.00 target for Renault stock - ad-hoc-news.de"
+   ],
+   "XOM": [
+    "BlackRock reports a passive stake above 5% in ExxonMobil Holdings (XOM). - Stock Titan",
+    "ExxonMobil (NYSE:XOM) Stock Price Down 2.5% - Should You Sell? - MarketBeat",
+    "Phillips 66 Stock (PSX) Moved Down by 6.24% on Oct 27: Key Drivers Unveiled - TradingKey",
+    "ExxonMobil (XOM) Wins Dismissal Of Kazakhstan’s $12 Billion Kashagan Claim - Yahoo Finance",
+    "What's behind Exxon Mobil's latest 2.3% stock pullback? - Traders Union",
+    "ExxonMobil's Q3 Earnings on Deck: Should You Bet on the Stock? - The Globe and Mail"
+   ],
+   "LLY": [
+    "$10,000 Invested in Eli Lilly 5 Years Ago Would Be Worth This Much Today - Yahoo Finance",
+    "Eli Lilly (LLY) to Merge U.S. and International Operations into Lilly Global Markets - GuruFocus",
+    "Novo Nordisk Vs. Eli Lilly Q3 Preview: I'd (Now) Buy Both, But Lilly Is My Top Pick (NVO) - Seeking Alpha",
+    "Eli Lilly international business chief Jonsson to retire; Yuffa to head global markets unit - Yahoo Finance",
+    "Eli Lilly appoints Ilya Yuffa to lead global ma... - Pluang",
+    "Eli Lilly reorganizes global operations, names new leaders By Investing.com - Investing.com UK"
+   ],
+   "AMD": [
+    "Cathie Wood’s ARK sells AMD stock, buys AeroVironment and Joby By Investing.com - Investing.com India",
+    "Meta Prices $37.5 Billion in Offerings After Raising Common Sale to $25 Billion - www.tokenpost.com",
+    "AMD to Invest $1 Billion in Meta's Share Sale, but a Warrant for Up to 160 Million Shares May Matter More - XenoSpectrum",
+    "Wood Trims AMD, TSMC Ahead of Earnings, Cashes Out $73 Million to Bet on Air Taxis - BigGo Finance",
+    "Penguin Solutions, Broadcom, FormFactor, Lattice Semiconductor, and AMD stocks trade up, what you need to know - Yahoo Finance",
+    "Stock Futures Are Little Changed After Back-to-Back Gains on Wall Street - TipRanks"
+   ],
+   "AVGO": [
+    "American Analyst Updates: Oct 27th, 2026 - The Globe and Mail",
+    "Broadcom (NASDAQ:AVGO) Shares Up 4% After Analyst Upgrade - MarketBeat",
+    "AVGO Stock Rises as $63 Billion Anthropic Deal Advances - FinanceFeeds",
+    "AMD, Avago among market cap stock movers on Tuesday - Investing.com",
+    "Oracle, Avago among market cap stock movers on Tuesday - Investing.com",
+    "This Analyst Just Upgraded Broadcom Stock. Here's Why. - Barchart.com"
+   ],
+   "NFLX": [
+    "Investing $1,000 in Each of These 3 Stocks 20 Years Ago Would Have Created a Portfolio Worth $674,000 Today - The Motley Fool",
+    "Investing $1,000 in Each of These 3 Stocks 20 Years Ago Would Have Created a Portfolio Worth $674,000 Today - The Globe and Mail",
+    "What Does Netflix (NFLX) Leadership Shakeup Mean For Its Streaming Future? - Yahoo Finance",
+    "How Is Netflix (NASDAQ:NFLX) Being Read After Its Third-Quarter Interview? - Kalkine Media",
+    "Stock Market Today, Oct. 27: CoreWeave Surges on Denmark Data Center Launch - The Globe and Mail",
+    "Netflix (NASDAQ:NFLX) Stock Falls 2.2% Following Insider Selling - MarketBeat"
+   ],
+   "COST": [
+    "ENPH Stock Drops After-Hours As Interest Rates And Tax Credit Expiry Hit US Solar Demand - Stocktwits",
+    "ENPH Stock Drops After-Hours As Interest Rates And Tax Credit Expiry Hit US Solar Demand - TradingView",
+    "MDA Space Ltd. (MDA.TO) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+    "Biogen Inc. (BIIB) stock price, news, quote and history - Yahoo Finance Singapore",
+    "Stock Market Today, Oct. 27: Boeing Plummets 11% on Lower Production Rates and Missed Delivery Targets - The Motley Fool",
+    "Costco Wholesale (NASDAQ:COST) Stock Price Down 1.3% - Here's What Happened - MarketBeat"
+   ],
+   "WMT": [
+    "Earnings call transcript: Walmart de México y Centroamérica Q3 2026 shares fall - Investing.com Canada",
+    "Meta's \"Muse\" Retail Push Draws Walmart (NASDAQ: WMT) Into Agentic Commerce Race As Hedge Fund Interest Climbs - Foreign Policy Journal",
+    "Walmart’s margins in Mexico tighten as costs outpace sales growth By Reuters - Investing.com",
+    "Nasdaq Texas & Walmart Discuss Corp Listing Strategies - Yahoo Finance",
+    "What Will Walmart (NASDAQ:WMT) Say About Tariff Refunds and Flipkart Timing? - Kalkine Media",
+    "Walmart's margins in Mexico tighten as costs outpace sales growth - marketscreener.com"
+   ],
+   "UNH": [
+    "Will UnitedHealth Group (NYSE:UNH) Improve Margins As Healthcare Conditions Evolve? - Kalkine Media",
+    "American Analyst Updates: Oct 27th, 2026 - The Globe and Mail",
+    "UNH Oct 2026 402.500 put (UNH261030P00402500) interactive stock chart - Yahoo Finance UK",
+    "Senate Democrats probe whether health insurers involved with ACA purge - Seeking Alpha",
+    "UNH Maintained by Wells Fargo -- Price Target Lowered to $487 - GuruFocus",
+    "UNH Maintained by Morgan Stanley -- Price Target Raised to $531 - GuruFocus"
+   ],
+   "PG": [
+    "Sensex Today | Stock Market Live Updates: Nifty looks to begin new series on a high with Jio Platforms listing - CNBC TV18",
+    "PG Electroplast share price will react to Q2 results that beat expectations, but trade payables rise - CNBC TV18",
+    "News by CNBC TV18 on TradingView, 2026-10-27 — cnbctv:9328d1228094b:0 - TradingView",
+    "How Is Procter & Gamble (NYSE:PG) Handling Commodity Costs After Its Report? - Kalkine Media",
+    "The View | Chef Ayesha Nurdjaja shares Mediterranean-inspired recipes from her new cookbook - ABC Network",
+    "The Coca-Cola Company (KO) stock price, news, quote and history - Yahoo Finance UK"
+   ],
+   "KO": [
+    "Coca-Cola (NYSE:KO) Shares Down 1.5% - Here's What Happened - MarketBeat",
+    "What Coca-Cola (KO) Said on Its Q3 Earnings Call - Yahoo Finance",
+    "KO/PEP earnings spread: what changed and what didn’t after Coca-Cola’s beat - Investing.com",
+    "4 Blue-Chip Dividend Stocks That Could Turn $200,000 Into Annual Retirement Income - 24/7 Wall St.",
+    "Promising Water Stocks To Keep An Eye On - October 27th - MarketBeat",
+    "Coca-Cola Stock Is Everything AI Isn’t—And That’s Its Biggest Strength - MarketBeat"
+   ],
+   "CAT": [
+    "Caterpillar Inc (CAT) Shares Surge 3.1% -- What GF Score of 91 T - GuruFocus",
+    "What Will Caterpillar (NYSE:CAT) Reveal About Data Center Power Demand? - Kalkine Media",
+    "Caterpillar Inc. stock outperforms competitors on strong trading day - MarketWatch",
+    "Form 4 Caterpillar: Kyle Joseph Epley (CFO) For: 26 October By Investing.com - Investing.com UK",
+    "Piper Sandler cuts target for Red Cat Holdings stock from USD 9 to USD 6 - ad-hoc-news.de",
+    "Caterpillar (CAT) CFO acquires 13 and 8 stock-linked units, payable in cash at retirement or separation. - Stock Titan"
+   ],
+   "BA": [
+    "‘Look One Step Ahead,’ Says Investor About Boeing (BA) Stock - TipRanks",
+    "Boeing Company (The) (BA) Stock Forecasts - Yahoo Finance",
+    "Boeing Reports Mixed Q3 Results, Record Backlog; Stock Tumbles - Investor's Business Daily",
+    "Boeing (BA) stock trades down, here is why - Yahoo Finance",
+    "Stock Market Today, Oct. 27: Boeing Plummets 11% on Lower Production Rates and Missed Delivery Targets - Yahoo Finance",
+    "Boeing Co (BA) Stock Down 10.7% -- Now Undervalued? GF Score: 69/100 - GuruFocus"
+   ]
   },
-  "runs": {}
+  "runs": {
+   "claude-haiku-5-5": {
+    "scores": {},
+    "notes": {
+     "_fehler": "HTTP 401 von api.anthropic.com: {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CgTgzPnHF1RpH1qUvZEK5\"}"
+    }
+   },
+   "claude-sonnet-5-5": {
+    "scores": {},
+    "notes": {
+     "_fehler": "HTTP 401 von api.anthropic.com: {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CgTgzQF4HnxzpYZ1FtenC\"}"
+    }
+   }
+  }
  },
  "exp401_rounds": [
   "2026-10-19",

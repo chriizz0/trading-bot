@@ -1,40 +1,40 @@
 {
- "updated": "2026-10-27",
+ "updated": "2026-10-28",
  "signals": 51,
  "models": {
   "claude-haiku-5-5": {
    "signals": 24,
    "days": 2,
-   "ic_mean": NaN,
+   "ic_mean": -0.37414651181557174,
    "ic_by_day": {
     "2026-10-22": -0.690500778143958,
-    "2026-10-23": NaN
+    "2026-10-23": -0.057792245487185395
    },
-   "perm_p": 0.0,
+   "perm_p": 0.9605,
    "ls_by_day": {
-    "2026-10-22": -0.016949249245427428,
-    "2026-10-23": NaN
+    "2026-10-22": -0.016949249245427442,
+    "2026-10-23": -0.005079230180760749
    },
-   "neg_mean_alpha": 0.0019920112111306565,
-   "pos_mean_alpha": -0.014957238034296771,
-   "ic_close_close_info": NaN
+   "neg_mean_alpha": 0.0012379584775649868,
+   "pos_mean_alpha": -0.008890900422488713,
+   "ic_close_close_info": -0.19843663175045603
   },
   "claude-sonnet-5-5": {
    "signals": 27,
    "days": 2,
-   "ic_mean": NaN,
+   "ic_mean": -0.47807083836637465,
    "ic_by_day": {
     "2026-10-22": -0.5524515445746938,
-    "2026-10-23": NaN
+    "2026-10-23": -0.4036901321580555
    },
-   "perm_p": 0.0,
+   "perm_p": 0.995,
    "ls_by_day": {
-    "2026-10-22": -0.01486154110661888,
-    "2026-10-23": NaN
+    "2026-10-22": -0.014861541106618893,
+    "2026-10-23": 0.002133898502604259
    },
-   "neg_mean_alpha": 0.003279329665438461,
-   "pos_mean_alpha": -0.011582211441180419,
-   "ic_close_close_info": NaN
+   "neg_mean_alpha": 0.0011544622967847112,
+   "pos_mean_alpha": -0.007838182505930246,
+   "ic_close_close_info": -0.419568012336631
   }
  },
  "signals_list": [
@@ -267,184 +267,184 @@
    "date": "2026-10-23",
    "symbol": "AAPL",
    "score": 0.1,
-   "alpha": NaN,
-   "alpha_close_close": NaN
+   "alpha": -0.00412,
+   "alpha_close_close": -0.01809
   },
   {
    "model": "claude-haiku-5-5",
    "date": "2026-10-23",
    "symbol": "NVDA",
    "score": -0.1,
-   "alpha": NaN,
-   "alpha_close_close": NaN
+   "alpha": 0.00947,
+   "alpha_close_close": 0.01679
   },
   {
    "model": "claude-haiku-5-5",
    "date": "2026-10-23",
    "symbol": "AMZN",
    "score": 0.1,
-   "alpha": NaN,
-   "alpha_close_close": NaN
+   "alpha": -0.00562,
+   "alpha_close_close": -0.00271
   },
   {
    "model": "claude-haiku-5-5",
    "date": "2026-10-23",
    "symbol": "GOOGL",
    "score": 0.1,
-   "alpha": NaN,
-   "alpha_close_close": NaN
+   "alpha": -0.01684,
+   "alpha_close_close": -0.01775
   },
   {
    "model": "claude-haiku-5-5",
    "date": "2026-10-23",
    "symbol": "META",
    "score": -0.3,
-   "alpha": NaN,
-   "alpha_close_close": NaN
+   "alpha": -0.01631,
+   "alpha_close_close": -0.02587
   },
   {
    "model": "claude-haiku-5-5",
    "date": "2026-10-23",
    "symbol": "TSLA",
    "score": -0.2,
-   "alpha": NaN,
-   "alpha_close_close": NaN
+   "alpha": 0.0162,
+   "alpha_close_close": 0.04501
   },
   {
    "model": "claude-haiku-5-5",
    "date": "2026-10-23",
    "symbol": "XOM",
    "score": 0.2,
-   "alpha": NaN,
-   "alpha_close_close": NaN
+   "alpha": 0.01064,
+   "alpha_close_close": 0.00015
   },
   {
    "model": "claude-haiku-5-5",
    "date": "2026-10-23",
    "symbol": "AVGO",
    "score": -0.1,
-   "alpha": NaN,
-   "alpha_close_close": NaN
+   "alpha": 0.0102,
+   "alpha_close_close": 0.01618
   },
   {
    "model": "claude-haiku-5-5",
    "date": "2026-10-23",
    "symbol": "UNH",
    "score": -0.1,
-   "alpha": NaN,
-   "alpha_close_close": NaN
+   "alpha": -0.02388,
+   "alpha_close_close": -0.02478
   },
   {
    "model": "claude-haiku-5-5",
    "date": "2026-10-23",
    "symbol": "PG",
    "score": 0.2,
-   "alpha": NaN,
-   "alpha_close_close": NaN
+   "alpha": -0.00932,
+   "alpha_close_close": -0.01394
   },
   {
    "model": "claude-haiku-5-5",
    "date": "2026-10-23",
    "symbol": "CAT",
    "score": -0.1,
-   "alpha": NaN,
-   "alpha_close_close": NaN
+   "alpha": 0.00571,
+   "alpha_close_close": 0.00276
   },
   {
    "model": "claude-haiku-5-5",
    "date": "2026-10-23",
    "symbol": "BA",
    "score": 0.2,
-   "alpha": NaN,
-   "alpha_close_close": NaN
+   "alpha": -0.00383,
+   "alpha_close_close": -0.00732
   },
   {
    "model": "claude-sonnet-5-5",
    "date": "2026-10-23",
    "symbol": "AAPL",
    "score": 0.1,
-   "alpha": NaN,
-   "alpha_close_close": NaN
+   "alpha": -0.00412,
+   "alpha_close_close": -0.01809
   },
   {
    "model": "claude-sonnet-5-5",
    "date": "2026-10-23",
    "symbol": "NVDA",
    "score": -0.1,
-   "alpha": NaN,
-   "alpha_close_close": NaN
+   "alpha": 0.00947,
+   "alpha_close_close": 0.01679
   },
   {
    "model": "claude-sonnet-5-5",
    "date": "2026-10-23",
    "symbol": "META",
    "score": -0.1,
-   "alpha": NaN,
-   "alpha_close_close": NaN
+   "alpha": -0.01631,
+   "alpha_close_close": -0.02587
   },
   {
    "model": "claude-sonnet-5-5",
    "date": "2026-10-23",
    "symbol": "TSLA",
    "score": -0.1,
-   "alpha": NaN,
-   "alpha_close_close": NaN
+   "alpha": 0.0162,
+   "alpha_close_close": 0.04501
   },
   {
    "model": "claude-sonnet-5-5",
    "date": "2026-10-23",
    "symbol": "XOM",
    "score": 0.05,
-   "alpha": NaN,
-   "alpha_close_close": NaN
+   "alpha": 0.01064,
+   "alpha_close_close": 0.00015
   },
   {
    "model": "claude-sonnet-5-5",
    "date": "2026-10-23",
    "symbol": "AMD",
    "score": -0.1,
-   "alpha": NaN,
-   "alpha_close_close": NaN
+   "alpha": 0.01215,
+   "alpha_close_close": 0.02093
   },
   {
    "model": "claude-sonnet-5-5",
    "date": "2026-10-23",
    "symbol": "AVGO",
    "score": -0.1,
-   "alpha": NaN,
-   "alpha_close_close": NaN
+   "alpha": 0.0102,
+   "alpha_close_close": 0.01618
   },
   {
    "model": "claude-sonnet-5-5",
    "date": "2026-10-23",
    "symbol": "NFLX",
    "score": -0.05,
-   "alpha": NaN,
-   "alpha_close_close": NaN
+   "alpha": -0.02343,
+   "alpha_close_close": -0.03672
   },
   {
    "model": "claude-sonnet-5-5",
    "date": "2026-10-23",
    "symbol": "UNH",
    "score": -0.05,
-   "alpha": NaN,
-   "alpha_close_close": NaN
+   "alpha": -0.02388,
+   "alpha_close_close": -0.02478
   },
   {
    "model": "claude-sonnet-5-5",
    "date": "2026-10-23",
    "symbol": "CAT",
    "score": -0.1,
-   "alpha": NaN,
-   "alpha_close_close": NaN
+   "alpha": 0.00571,
+   "alpha_close_close": 0.00276
   },
   {
    "model": "claude-sonnet-5-5",
    "date": "2026-10-23",
    "symbol": "BA",
    "score": 0.1,
-   "alpha": NaN,
-   "alpha_close_close": NaN
+   "alpha": -0.00383,
+   "alpha_close_close": -0.00732
   }
  ]
 }
