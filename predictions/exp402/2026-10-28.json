@@ -1,0 +1,181 @@
+{
+ "experiment": "EXP-402",
+ "signal_date": "2026-10-28",
+ "created_at": "2026-10-29T00:53:10+00:00",
+ "headlines": {
+  "AAPL": [
+   "Apple launches first touchscreen MacBook Pro wi... - Pluang",
+   "AAPL Stock Dips After Reports of Cracked Displays Plaguing Foldable iPhone Duo - FXLeaders",
+   "Apple Wraps Up Fall Product Launches With Touch-Screen Notebook - Investor's Business Daily",
+   "Apple Stock And Other Quality Growth Names For Higher Rates - Yahoo Finance",
+   "Apple reportedly agreed $1B annual deal with Google for Gemini technology access - Crypto Briefing",
+   "Where to buy the iPhone Duo for best chance of UK delivery before the end of 2026 - Radio Times"
+  ],
+  "MSFT": [
+   "The major reason Microsoft’s stock is heading higher after earnings - MarketWatch",
+   "S&P 500, Nasdaq Futures Dip As Weaker-Than-Expected Alphabet Earnings Reignite AI Spending Worries — GOOGL, MSFT, ORCL, NVDA, MRVL In Focus - Yahoo Finance",
+   "Microsoft pops as Q1 results, guidance top estimates (MSFT:NASDAQ) - Seeking Alpha",
+   "MSFT Stock Gains 3% After-Hours As AI Demand Powers Q1 Cloud Revenue, Q2 Guidance Beat With Positive Cash Flows - Yahoo Finance",
+   "MSFT stock price today rises after Microsoft earnings beat Wall Street expectations, but is capex still a - The Economic Times",
+   "Microsoft Tops Quarterly Estimates As Azure Growth Accelerates - Investor's Business Daily"
+  ],
+  "NVDA": [
+   "S&P 500, Nasdaq Futures Dip As Weaker-Than-Expected Alphabet Earnings Reignite AI Spending Worries — GOOGL, MSFT, ORCL, NVDA, MRVL In Focus - Yahoo Finance",
+   "Nasdaq, Dow, S&P 500 Futures Drop Premarket: NVDA, AMD, META, CRWV, MRNA, WDC, BE In Focus - Stocktwits",
+   "NVDA Stock Edges Down On DOJ Interest In $12.9 Billion Hugging Face Acquisition - Stocktwits",
+   "NVDA Stock Edges Down On DOJ Interest In $12.9 Billion Hugging Face Acquisition - Yahoo Finance",
+   "AI Spending Is Nearing $1 Trillion Annually. These 2 Stocks Are Most at Risk If It Slows. - The Motley Fool",
+   "AI Spending Is Nearing $1 Trillion Annually. These 2 Stocks Are Most at Risk If It Slows. - The Globe and Mail"
+  ],
+  "AMZN": [
+   "U.S. Stocks Rise Ahead of Amazon's Q3 Earnings as Investors Eye AMZN Valuation - GuruFocus",
+   "Anthropic’s IPO Has 3 Risks That Aren’t Existential, But Might Feel Like It Financially - Barchart.com",
+   "Traders Are Pricing a 7% Swing in Amazon Ahead of Earnings - Benzinga",
+   "Amazon Earnings Preview: Why Wall Street Is Bullish On Cloud Growth - Investor's Business Daily",
+   "SA analyst upgrades/downgrades: TSLA, AMZN, HE, SPCX - Seeking Alpha",
+   "Amazon Stocks Edge Higher Ahead of AWS Earnings Concentration Test - TradingView"
+  ],
+  "GOOGL": [
+   "Alphabet Shares Tank on Sales Misses Across Core Businesses - Bloomberg",
+   "Tech Futures Fall On Google, These Huge Losers - Investor's Business Daily",
+   "S&P 500, Nasdaq Futures Dip As Weaker-Than-Expected Alphabet Earnings Reignite AI Spending Worries — GOOGL, MSFT, ORCL, NVDA, MRVL In Focus - Yahoo Finance",
+   "Google Stock Sinks as AI Mode Pressures Search Ad Growth - ADWEEK",
+   "Google Stock Plunges Q3: Revenue Miss, Cash Burn Rattle AI Bets - JournalArta",
+   "Alphabet Stock: Google Earnings Miss As Cloud Computing Booms, Search Growth Slows - Investor's Business Daily"
+  ],
+  "META": [
+   "Insider Selling: Meta Platforms (NASDAQ:META) COO Sells $605,440.00 in Stock - MarketBeat",
+   "Meta Stock Slides Toward $550 after the Nvidia Partnership as $97.5 Billion Financing Plan Raises Spending Concerns - FXLeaders",
+   "Meta Platforms (META) director sells 390 shares at $640 under a preset trading plan. - Stock Titan",
+   "Meta’s Pullback Just Changed The AI Risk/Reward (NASDAQ:META) - Seeking Alpha",
+   "Meta Platforms (META) COO sells 1,575 shares at $640 each under a trading plan. - Stock Titan",
+   "Meta Platforms (NASDAQ:META) Stock Falls 1.2% - Here's What Happened - MarketBeat"
+  ],
+  "TSLA": [
+   "Leverage Shares 2X Long TSLA Daily ETF (TSLG) Stock Price | Live Quotes & Charts | NASDAQ - www.timothysykes.com",
+   "Crypto Traders Gain Round-The-Clock Access To Tesla (NASDAQ: TSLA), Nvidia (NASDAQ: NVDA) And SpaceX (NASDAQ: SPCX) Through New PrimeXBT Futures - Foreign Policy Journal",
+   "2 AI Stocks to Buy if the Market Sells Off Before Year-End - The Globe and Mail",
+   "SA analyst upgrades/downgrades: TSLA, AMZN, HE, SPCX - TradingView",
+   "SA analyst upgrades/downgrades: TSLA, AMZN, HE, SPCX - Seeking Alpha",
+   "SOLV,TSLA,AXP,HAS,ROL | Stock Prices | Quote Comparison - Yahoo! Finance Canada"
+  ],
+  "JPM": [
+   "JPMorgan Chase & Co. (NYSE:JPM) Shares Climb 1.1% - What's Next? - MarketBeat",
+   "Can JPMorgan Chase (NYSE:JPM) Sustain Its Record-Breaking Momentum? - Kalkine Media",
+   "Stocks Hold Ahead Fed Decision as Chip: Explained - JournalArta",
+   "Texas Stock Exchange gains momentum as State Street joins Blackrock, J.P. Morgan as investors - Pensions & Investments",
+   "JPM, AMD, Coca-Cola Join Corporate Pushback Against Efforts to Tokenize Their Stocks -- WSJ - 富途牛牛",
+   "BAC's NII Growth Accelerates in 2026: Is the Stock Worth Buying Now? - TradingView"
+  ],
+  "XOM": [
+   "ExxonMobil (NYSE:XOM) Shares Climb 1.1% - Here's What Happened - MarketBeat",
+   "Ahead of ExxonMobil Earnings, Here's What Barchart Data Says Comes Next for XOM Stock - Barchart.com",
+   "Can ExxonMobil (NYSE:XOM) Navigate Oil Market Challenges This Quarter? - Kalkine Media",
+   "Oil Stocks Worth Watching - October 28th - MarketBeat",
+   "Energy Stocks And Industry News: Oil, Gas, Solar, Coal And Nuclear Energy - Investor's Business Daily",
+   "ExxonMobil (XOM) Stock Still Looks Undervalued On Its 231% Run - Yahoo Finance"
+  ],
+  "LLY": [
+   "LLY 261030 1265.00C (LLY261030C1265000) Stock Options Chain | Quotes & News - Moomoo",
+   "Novo Stock (NVO) Falls After Another Head-to-Head Obesity Trial Loss to Eli Lilly - TipRanks",
+   "Eli Lilly Stocks Rise After Retatrutide's Head-to-Head Trial Results - TradingView",
+   "Eli Lilly’s (LLY) Head of International Business Retires - TipRanks",
+   "How Are LLY's Neuroscience and Immunology Drugs Poised Ahead of Q3? - The Globe and Mail",
+   "Ahead of Eli Lilly Earnings, Here's What Barchart Data Says Comes Next for LLY Stock - Barchart.com"
+  ],
+  "AMD": [
+   "Nasdaq, Dow, S&P 500 Futures Drop Premarket: NVDA, AMD, META, CRWV, MRNA, WDC, BE In Focus - Stocktwits",
+   "Dear AMD Stock Fans, Mark Your Calendar for November 3 - Barchart.com",
+   "Advanced Micro Devices (NASDAQ:AMD) Stock Price Up 3.2% Following Analyst Upgrade - MarketBeat",
+   "AMD stock price forecast: Wall Street analysts target $800 before earnings - Beinsure",
+   "Meta’s Raising $97.5 Billion. Nvidia and AMD Are Buying In. - Yahoo Finance",
+   "Advanced Micro Devices Inc Stock (AMD) Closed Up by 3.24% on Oct 28: A Full Analysis - TradingKey"
+  ],
+  "AVGO": [
+   "2 Millionaire-Maker Custom Silicon Stocks Powering the AI Infrastructure Supercycle - The Globe and Mail",
+   "Broadcom AVGO stock rises 1.23% with an hourly RSI of 71.85 - KuCoin",
+   "Broadcom (NASDAQ:AVGO) Stock Jumps 2.8% After Analyst Upgrade - MarketBeat",
+   "Broadcom Establishes Major AI Rack Lease Backstop - The Globe and Mail",
+   "Broadcom Inc. (AVGO) Laps the Stock Market: Here's Why - Yahoo Finance",
+   "Can Broadcom (NASDAQ:AVGO) Turn Custom Chip Demand Into Lasting Growth? - Kalkine Media"
+  ],
+  "NFLX": [
+   "Stock Market Today, Oct. 28: Markets Edge Higher as Fed Holds Rates Steady - The Globe and Mail",
+   "Stock Market Today, Oct. 28: Boston Scientific Slips 6% After Cutting Q4 Sales and Full-Year EPS Guidance on Cyberattack Impact - The Globe and Mail",
+   "Why OneSpaWorld Stock Is Up Today - The Globe and Mail",
+   "Netflix stock hits 52-week low at 61.65 USD - Investing.com",
+   "Netflix: Price Increases Are No Longer Providing Unchecked Upside (Downgrade) (NFLX) - Seeking Alpha",
+   "Netflix stock trades at $61.87, down 1.04%, below daily support - The Cryptonomist"
+  ],
+  "COST": [
+   "DMC Global (BOOM) Stock Price Jumps As Q3 Earnings Revive Profit Story - Simply Wall St",
+   "Microsoft’s strong quarter backs up its stock rebound. Here's our new price target - CNBC",
+   "LPL Financial Holdings Inc Stock (LPLA) Moved Down by 13.85% on Oct 28: Facts Behind the Movement - TradingKey",
+   "Independent Bank (IBCP) Stock Price Meets Q3 Earnings With Credit Questions - Simply Wall St",
+   "Wall Street ends higher as Fed holds key rate steady, focus turns to earnings - Reuters",
+   "DWS Group (XTRA:DWS) Stock Faces Fee Questions After Q3 Earnings - Simply Wall St"
+  ],
+  "WMT": [
+   "FTC orders Walmart, Delta and others to share how they use personal data to set prices and pay - Boston Herald",
+   "If You Invested $1000 In Walmart Stock 20 Years Ago, You Would Have This Much Today - Benzinga",
+   "Will Walmart (NASDAQ:WMT) Lead the Next Wave of AI-Powered Retail? - Kalkine Media",
+   "Can Walmart (WMT) Keep Justifying Its Earnings Premium? - Simply Wall St",
+   "Walmart-Branded Rivian Vans Spark Rumors of a Major Fleet Deal - TipRanks",
+   "Tips to save on Thanksgiving as Target, Walmart announce meal deals - Good Morning America"
+  ],
+  "UNH": [
+   "Why Is UnitedHealth Group (NYSE:UNH) Gaining Momentum Again? - Kalkine Media",
+   "Fed on hold? Two discounted blue chips built for high rates - Yahoo Finance",
+   "UnitedHealth: Raised Premiums, Market Exits And Member Attrition Deliver Future Resilience - Seeking Alpha",
+   "Molina Healthcare (MOH) vs. ELV and UNH: Can Margin Recovery and Acquisitions Unlock Long-Term Upside? - Yahoo Finance",
+   "New labor rule to shed light on PBM payments: WSJ - Seeking Alpha",
+   "29 ETFs Add to UnitedHealth (UNH) Holdings on Oct. 26 - GuruFocus"
+  ],
+  "PG": [
+   "PG&E Corp. stock outperforms competitors on strong trading day - MarketWatch",
+   "Can Procter & Gamble (NYSE:PG) Strengthen Its Dividend King Status? - Kalkine Media",
+   "Mavs By The Numbers: NBA 'Stock' Is Rising In Defensive Rankings - roundtable.io",
+   "3 Magnificent Dividend Stocks for Risk-Averse Investors - The Motley Fool",
+   "3 Magnificent Dividend Stocks for Risk-Averse Investors - Yahoo Finance",
+   "PG Electroplast Beats Q2 Estimates Despite Margin Pressure; Shares Rally 6% - TradingView"
+  ],
+  "KO": [
+   "Coca-Cola (NYSE:KO) Stock Price Expected to Rise, Freedom Broker Analyst Says - MarketBeat",
+   "KO Maintained by Citigroup -- Price Target Raised to $103.00 - GuruFocus",
+   "Coca-Cola Stock Raises Full Year Earnings Outlook For Third Consecutive Quarter - TIKR.com",
+   "Coca-Cola Co (KO) (Q3 2026) Earnings Call Highlights: Broad-Based Volume Growth and Raised ... - Yahoo Finance",
+   "How Is Coca-Cola (NYSE:KO) Strengthening Its Dividend Legacy? - Kalkine Media",
+   "Citigroup Forecasts Strong Price Appreciation for Coca-Cola (NYSE:KO) Stock - MarketBeat"
+  ],
+  "CAT": [
+   "Catapult Sports Sets Date for Half-Year FY27 Results and Investor Webcast - TipRanks",
+   "Tech Futures Fall On Google, These Huge Losers - Investor's Business Daily",
+   "Author Veronica Bane blocked a Monrovia bookstore on Threads. Here’s why - San Gabriel Valley Tribune",
+   "Jim Cramer Is “Sick and Tired” of Diversifying Into Stocks That Aren’t That Good - 24/7 Wall St.",
+   "Caxton and CTP Publishers and Printers Limited Estimates – JSE:CAT - TradingView",
+   "CAT Oct 2026 807.500 put (CAT261030P00807500) stock price, news, quote and history - Yahoo Finance UK"
+  ],
+  "BA": [
+   "Can Boeing Stock Jump 40%? - Trefis",
+   "JPMorgan Chase & Co. Has Lowered Expectations for Boeing (NYSE:BA) Stock Price - MarketBeat",
+   "Boeing Outlook Impacted By Slower Production Ramp, Higher Capex From BDS Wins - Benzinga",
+   "Boeing Got Its MAX 10 Approval, But Q3 Delivered a Reality Check - MarketBeat",
+   "Boeing (NYSE:BA) Stock Price Target Cut by BNP Paribas Exane - MarketBeat",
+   "Boeing CEO admits 737 ramp taking longer than hoped - TheStreet"
+  ]
+ },
+ "runs": {
+  "claude-haiku-5-5": {
+   "scores": {},
+   "notes": {
+    "_fehler": "HTTP 401 von api.anthropic.com: {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CgVcbamEeURSFpELfYhbs\"}"
+   }
+  },
+  "claude-sonnet-5-5": {
+   "scores": {},
+   "notes": {
+    "_fehler": "HTTP 401 von api.anthropic.com: {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CgVcbb8K6HTT5QTyb82p4\"}"
+   }
+  }
+ }
+}
