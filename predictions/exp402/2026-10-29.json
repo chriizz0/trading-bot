@@ -1,0 +1,181 @@
+{
+ "experiment": "EXP-402",
+ "signal_date": "2026-10-29",
+ "created_at": "2026-10-30T00:57:18+00:00",
+ "headlines": {
+  "AAPL": [
+   "Apple SVP Jennifer Newstead sells $823,720 in stock - Investing.com",
+   "Apple Stock Falls Premarket After Defective iPhone Replacement Announcement - RS Web Solutions",
+   "Apple (AAPL) executive sells shares at $343.36 under a preset trading plan. - Stock Titan",
+   "Ahead of Apple Earnings, Here's What Barchart Data Says Comes Next for AAPL Stock - Barchart.com",
+   "Apple's Q4 Earnings Loom: Buy or Sell AAPL Stock Ahead of Results? - Zacks Investment Research",
+   "Nvidia Is Getting Dangerously Close to Getting Surpassed by Apple in Market Cap. Here's the Better Growth Stock to Buy Now. - The Motley Fool"
+  ],
+  "MSFT": [
+   "Microsoft : announces debt offerings - www.marketscreener.com",
+   "Microsoft (MSFT) Q1 Results Spotlight AI Growth And CapEx Risk - Simply Wall St",
+   "Microsoft Q1: Capex Shouldn't Scare You Due To Free Cash Flow (NASDAQ:MSFT) - Seeking Alpha",
+   "MSFT Stock Reverses to $530 as Investors Fear Lower Capex Might Signal the End of AI Bubble Despite Microsoft Beating Quarterly Earnings and Revenue Expectations - FXLeaders",
+   "Microsoft Took The Balanced Approach To AI - Now It's The King (NASDAQ:MSFT) - Seeking Alpha",
+   "Microsoft Corporation (MSFT.TO) Seasonal Returns Chart - Yahoo Finance - Yahoo! Finance Canada"
+  ],
+  "NVDA": [
+   "Could Nvidia (NASDAQ:NVDA) Weather the AI Financing Fears? - Kalkine Media",
+   "Jensen Huang Says Nvidia Counted All GPUs At Firm Under Probe For Spying For China - Stocktwits",
+   "NVIDIA Corporation (NVDA.MX) Seasonal Returns Chart - Yahoo Finance - Yahoo! Finance Canada",
+   "Understanding Momentum Shifts in (NVDA) - Stock Traders Daily",
+   "SpaceX vs. Nvidia: The Best AI Stock to Buy Now - The Motley Fool",
+   "Nvidia CEO Jensen Huang May Have Been Targeted by Chinese Spy Plot. What It Means for NVDA Stock. - Barchart.com"
+  ],
+  "AMZN": [
+   "UBS Sees 40% Upside For AMZN Stock — AWS Margins Take Center Stage Ahead Of Earnings - Stocktwits",
+   "$Amazon (AMZN.US)$ - Moomoo",
+   "Amazon’s bold cloud forecast isn’t enough to stave off a stock drop - MarketWatch",
+   "Nasdaq 100 Futures Dip On Weak Intel, Amazon Earnings With Bloated Capex Worries Weighing On Sentiment — AMZN, INTC, SBUX, PLTR, ASTS In Focus - Yahoo Finance",
+   "Amazon Q3: Making A Trillion Dollars Sound Like A Casual Target (NASDAQ:AMZN) - Seeking Alpha",
+   "AMZN Stock Plunges After Amazon Third Quarter Revenue Miss as Shares Approach $220 - FXLeaders"
+  ],
+  "GOOGL": [
+   "Markets spooked as Google reports $1 trillion+ AI bill, negative cash flow - Mashable",
+   "Analyst explains why you should buy the pullback in Google shares - Investing.com",
+   "Alphabet (GOOGL) Stock Drops As Q3 Earnings Reveal Profit Reset - Simply Wall St",
+   "Google value plunges by $500bn as AI fears rattle Wall Street - BBC",
+   "Shares of Google’s parent company just had their worst day ever. Here’s what it means - CNN",
+   "Google just lost $500 billion in a panic over AI - The Independent"
+  ],
+  "META": [
+   "Meta Platforms (NASDAQ:META) Stock Price Up 2% - Still a Buy? - MarketBeat",
+   "Meta’s $100 billion stock sale shrinks your slice of the company - TheStreet",
+   "Why Meta Platform's $100 Billion Financing Plan Is A Boon for Chip Giant Broadcom - MarketBeat",
+   "Reddit Slides 5% Before Earnings as U.S. User Growth Worries Mount; Snap Sinks 4%, Pinterest Drops 2%, Meta Climbs 3% - 24/7 Wall St.",
+   "How Todd Gordon is trading Meta as the stock market rotates out of growth and into value names - CNBC",
+   "Meta Has Given Back All of Its Muse Advance. Shares Could Face More Pressure Ahead. - Barron's"
+  ],
+  "TSLA": [
+   "$1000 Invested In Tesla 15 Years Ago Would Be Worth This Much Today - Benzinga",
+   "Tesla (TSLA) stock forecast and Wall Street's targets: Robotaxi gains meet SpaceX merger risk - Beinsure",
+   "After earnings, we raise our Tesla stock Fair Value Estimate. Are shares a buy? - Morningstar Australia",
+   "Tesla Inc (TSLA) stock price, chart and posts - X",
+   "TSLA Elliott Wave: Tesla breaks channel resistance for wave 3 - FXStreet",
+   "Tesla Just Gained 13% in a Month: Take Profits, or Buy More? - TIKR.com"
+  ],
+  "JPM": [
+   "Exclusive | JPMorgan’s Skyscraper on Park Avenue Estimated to Cost Around $6 Billion - WSJ",
+   "JPMorgan Chase & Co. (NYSE:JPM) Stock Jumps 1.3% - Here's What Happened - MarketBeat",
+   "Palantir Technologies Price Target Announced at $262.00/Share by JP Morgan - Moomoo",
+   "JPMorgan Chase & Co. (JPM.MX) stock price, news, quote and history - Yahoo Finance Australia",
+   "MetLife CEO and CFO to Speak at the J.P. Morgan Financials Conference - Stock Titan",
+   "How (JPM) Movements Inform Risk Allocation Models - Stock Traders Daily"
+  ],
+  "XOM": [
+   "ExxonMobil Holdings Corporation (XOM.TO) Seasonal Returns Chart - Yahoo Finance - Yahoo! Finance Canada",
+   "ExxonMobil (XOM) and Chevron Withdraw from ADIPEC Conference Ami - GuruFocus",
+   "ExxonMobil (XOM) Set to Report Q3 Earnings Amid Strong Dividend Fundamentals - GuruFocus",
+   "Could $1,000 Invested in Palantir Turn Into $100,000? - The Globe and Mail",
+   "Exxon to Report Earnings Friday - Barron's",
+   "Exxon, Chevron pull out of Persian Gulf energy conference over security concerns (XOM:NYSE) - Seeking Alpha"
+  ],
+  "LLY": [
+   "LLY 10-Q & SEC Filings - Yahoo Finance",
+   "A Look at Eli Lilly and Co (LLY) After 6.6% Gain -- GF Value $15 - GuruFocus",
+   "Novo Has Big Plans for 2030. Should You Buy the Stock Now? - The Globe and Mail",
+   "TPL,AVGO,DNLI,JYNT,MU,LLY,VAC,COSM | Stock Prices | Quote Comparison - Yahoo Finance - Yahoo! Finance Canada",
+   "META_TITLE_QUOTE - Yahoo Finance",
+   "Eli Lilly Stock Jumps on Monster Earnings as Finance Chief Eyes Next Growth Engine - Barron's"
+  ],
+  "AMD": [
+   "Is Advanced Micro Devices (NASDAQ:AMD) Gaining Ground in Meta’s AI Race? - Kalkine Media",
+   "Advanced Micro Devices, Inc. (AMD.NE) Seasonal Returns Chart - Yahoo Finance - Yahoo! Finance Canada",
+   "How Investors May Respond To AMD Stock Meta AI Infrastructure Deal - Simply Wall St",
+   "Advanced Micro Devices (NASDAQ:AMD) Stock Price Down 2.1% - Here's What Happened - MarketBeat",
+   "Jefferies reiterates Buy on AMD stock, sees data center upside By Investing.com - Investing.com South Africa",
+   "Not Nvidia. Not AMD. This Custom AI Chip Designer Could Outperform Both by 2030. - The Motley Fool"
+  ],
+  "AVGO": [
+   "Semiconductor Sell-Off: The 1 AI Chip Stock I'd Buy and 1 I'd Avoid - The Globe and Mail",
+   "3 AI Chip Stocks To Own In October 2026 - Simply Wall St",
+   "Could Broadcom (NASDAQ:AVGO) Challenge Nvidia’s AI Dominance? - Kalkine Media",
+   "Broadcom Inc. (AVGO.TO) Seasonal Returns Chart - Yahoo Finance - Yahoo! Finance Canada",
+   "Broadcom Inc. (AVGO) Seasonal Returns Chart - Yahoo Finance - Yahoo! Finance Canada",
+   "Broadcom (NASDAQ:AVGO) Stock Falls 1.9% - Should You Sell? - MarketBeat"
+  ],
+  "NFLX": [
+   "Netflix, Inc. (NFLX.MX) Seasonal Returns Chart - Yahoo Finance - Yahoo! Finance Canada",
+   "Netflix, Inc. (NFLX) Seasonal Returns Chart - Yahoo Finance - Yahoo! Finance Canada",
+   "Stock Market Today, Oct. 29: Norwegian Cruise Line Holdings Beats Q3 Estimates, Raises Full-Year Guidance - The Globe and Mail",
+   "Stock Market Today, Oct. 29: ADT Surges 33% on $10 Per Share All-Cash Acquisition Deal - The Globe and Mail",
+   "Stock Market Today, Oct. 29: Amazon Falls on Q3 Earnings Report and Capex Concerns - The Globe and Mail",
+   "Twilio Sees Slower Q4 Growth and Lower Profit: Rapid Earnings Reaction - The Globe and Mail"
+  ],
+  "COST": [
+   "ServiceNow (NOW) Stock Price Sinks As Q3 Results Expose Profit Strain - Simply Wall St",
+   "NeoGenomics (NEO) Q3 Results Show Margin Gains Beneath A Flat Stock Price - Simply Wall St",
+   "AMERISAFE (AMSF) Stock Price Drops As Q3 Earnings Expose Margin Strain - Simply Wall St",
+   "Is Costco Wholesale (COST) Fully Valued Following Its NationsBenefits Healthcare Partnership? - Simply Wall St",
+   "CMG Stock Sees Slew Of Price Target Reductions Post Q3 Report – RBC Sees Upside To 2027 Comparable Sales - Stocktwits",
+   "Mechanics Bancorp (MCHB) Stock Price Reflects Q3 Results Profit Squeeze - Simply Wall St"
+  ],
+  "WMT": [
+   "Walmart Inc. (WMT.TO) Seasonal Returns Chart - Yahoo Finance - Yahoo! Finance Canada",
+   "Walmart (NASDAQ:WMT) Shares Climb 2.1% - Here's What Happened - MarketBeat",
+   "Walmart (WMT) Gains As Market Dips: What You Should Know - Yahoo Finance",
+   "Walmart commits $6 billion to expand Symbotic deal By Reuters - Investing.com",
+   "3 ‘Strong Buy’ Data Center Stocks to Bet on for 20% or More Upside - TipRanks",
+   "Welltower price target lowered to $263 from $270 at Raymond James - TipRanks"
+  ],
+  "UNH": [
+   "HCA Healthcare Inc Stock (HCA) Moved Up by 3.07% on Oct 29: What Investors Need To Know - TradingKey",
+   "THC Q3 Earnings Beat on Hospital Strength, 2026 EPS View Raised - Yahoo Finance",
+   "Representative David Taylor has filed a new financial disclosure - here’s what we see - Quiver Quantitative",
+   "UnitedHealth is bouncing back, but a major risk remains - TheStreet",
+   "UnitedHealth shares weekly forecast: Overbought conditions highlight correction risk despite active buyers - Traders Union",
+   "State Street Health Care SPDR (XLV) Adds Eli Lilly and Johnson & Johnson on Tuesday - Yahoo Finance"
+  ],
+  "PG": [
+   "Can Procter & Gamble (NYSE:PG) Sustain Growth Despite Margin Pressure? - Kalkine Media",
+   "The Procter & Gamble Company (PG) Seasonal Returns Chart - Yahoo Finance - Yahoo! Finance Canada",
+   "Sun Life Financial Inc. (SLF-PG.TO) Seasonal Returns Chart - Yahoo Finance - Yahoo! Finance Canada",
+   "A trust proposes selling 35,000 Hyatt Hotels (H) shares through J.P. Morgan Securities LLC. - Stock Titan",
+   "Procter & Gamble (NYSE:PG) Shares Climb 1.4% - Here's Why - MarketBeat",
+   "Technical Reactions to PG Trends in Macro Strategies - Stock Traders Daily"
+  ],
+  "KO": [
+   "Jim Cramer praises Broadcom and recommends buying another iconic stock - TheStreet",
+   "Why Is Coca Cola (KO) Challenging Tokenized Share Listings? - Yahoo Finance",
+   "Jim Cramer Says Buy Coca-Cola. Is Its Dividend Still Worth It After a 35% Rally? - 24/7 Wall St.",
+   "Coca-Cola's strong earnings and raised outlook support Jim Cramer's buy call despite a 35% rally. - Pluang",
+   "Amazon stock falls as $220B AI spending plan weighs on earnings and cash flow - Invezz",
+   "Coca-Cola (NYSE:KO) Stock Price Up 1.2% on Analyst Upgrade - MarketBeat"
+  ],
+  "CAT": [
+   "Caterpillar Inc. (CAT) Seasonal Returns Chart - Yahoo Finance - Yahoo! Finance Canada",
+   "Industrials Up Despite Caterpillar Selloff -- Industrials Roundup - www.marketscreener.com",
+   "Caterpillar Inc (CAT) (Q3 2026) Earnings Call Highlights: Record $20. ... - Yahoo Finance",
+   "Dow Jones Top Movers for Oct. 29, 2026: Merck and Nike Lead Gainers, Alphabet and Caterpillar Fall - ChartMill",
+   "Why Caterpillar (CAT) shares are falling today - Yahoo Finance",
+   "Caterpillar, the Dow's best stock of 2026, is unraveling — and an earnings beat couldn't stop it - Yahoo Finance"
+  ],
+  "BA": [
+   "Boeing Co (BA-PA) Seasonal Returns Chart - Yahoo Finance - Yahoo! Finance Canada",
+   "The Boeing Company (BA) Seasonal Returns Chart - Yahoo Finance - Yahoo! Finance Canada",
+   "Boeing (NYSE:BA) Shares Climb 3.4% - Here's What Happened - MarketBeat",
+   "Boeing’s comeback hits another frustrating roadblock - TheStreet",
+   "Boeing (BA) Sees Air Cargo Traffic Doubling By 2045 In New Forecast - Yahoo Finance",
+   "Boeing Keeps Sliding: Why Citi Sees 56% Upside - TIKR.com"
+  ]
+ },
+ "runs": {
+  "claude-haiku-5-5": {
+   "scores": {},
+   "notes": {
+    "_fehler": "HTTP 401 von api.anthropic.com: {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CgXWimZsJ77oWcu8kY86q\"}"
+   }
+  },
+  "claude-sonnet-5-5": {
+   "scores": {},
+   "notes": {
+    "_fehler": "HTTP 401 von api.anthropic.com: {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CgXWin2A24S4VmcaqLUCg\"}"
+   }
+  }
+ }
+}
