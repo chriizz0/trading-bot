@@ -1,0 +1,181 @@
+{
+ "experiment": "EXP-402",
+ "signal_date": "2026-10-30",
+ "created_at": "2026-10-31T00:45:04+00:00",
+ "headlines": {
+  "AAPL": [
+   "Apple Unveils New MacBook Pro Ahead Of November Launch — HSBC Sees Strong iPhone Demand, Potential AI-Driven Upgrade Cycle - Stocktwits",
+   "Apple (NASDAQ:AAPL) Stock Price Down 1.2% Following Insider Selling - MarketBeat",
+   "Apple Sentiment Cautious On December-Ending Quarter Outlook - Investor's Business Daily",
+   "In A Bad Week For The AI Trade, This One Mag Seven Stock Holds Strong - Investor's Business Daily",
+   "Fund Update: New $1.0B $AAPL stock position opened by Rakuten Investment Management, Inc. - Quiver Quantitative",
+   "Apple, Super Micro, AMD, Palantir Step Up To Earnings Plate After Tech Sell-Off - Investor's Business Daily"
+  ],
+  "MSFT": [
+   "FY27 Q1 - Press Releases - Investor Relations - Microsoft",
+   "Microsoft: 48% Azure Growth And Still Not Enough Capacity (NASDAQ:MSFT) - Seeking Alpha",
+   "Microsoft's (NASDAQ: MSFT) $5.5B Capex Miss Hammers Neocloud Shares Of CoreWeave (NASDAQ: CRWV), Nebius (NASDAQ: NBIS) and Iren (NASDAQ: IREN) - Foreign Policy Journal",
+   "How large is Microsoft (NASDAQ:MSFT) share of Anthropic's USD 44.9B? - kalkine.ca",
+   "Microsoft Stocks Decline With $1.28 Billion in Annual Fixed Coupons - TradingView",
+   "Why Is Nebius Stock Falling on Friday? - Benzinga"
+  ],
+  "NVDA": [
+   "Overnight US Stocks | \"Black Friday\" Selloff Sweeps Risk Assets; Nasdaq Posts Worst Single-Day Performance Since June; Apple (AAPL.US) Overtakes NVIDIA (NVDA.US) to Reclaim Top Global Market Cap Spot - 富途牛牛",
+   "NVIDIA Corp (NVDA) Shares Fall 4.2% -- What GF Score of 96 Tells Investors - GuruFocus",
+   "Micron Stock Price Forecast: Nvidia's Planned Rubin Ultra HBM Layer Cut and Declining Per-Unit Memory Usage May Drag on Revenue Growth - TradingKey",
+   "NVIDIA (NASDAQ:NVDA) Stock Price Down 4.2% - Here's Why - MarketBeat",
+   "Why Nvidia Stock Took a Dive Today - The Motley Fool",
+   "Why Nvidia stock fell on Friday, and why October is its worst month in a year - Nacionale"
+  ],
+  "AMZN": [
+   "Amazon (AMZN) Q3 Earnings Reset The Margin Story As Cash Burn Bites - Simply Wall St",
+   "AMZN Analysts Split After Earnings: TD Cowen Says Amazon Selloff Is ‘Overdone,’ Mizuho Raises Target - Stocktwits",
+   "Stock Market Today, Oct. 30: Amazon Misses Revenue and Earnings Expectations - The Motley Fool",
+   "Amazon.com (NASDAQ:AMZN) Stock Price Down 1.4% Following Weak Earnings - MarketBeat",
+   "Unpopular Opinion: Amazon Is A Buy (NASDAQ:AMZN) - Seeking Alpha",
+   "Fund Update: New $522.3M $AMZN stock position opened by Rakuten Investment Management, Inc. - Quiver Quantitative"
+  ],
+  "GOOGL": [
+   "GOOGL Jan 2029 120.000 put (GOOGL290119P00120000) stock price, news, quote and history - Yahoo Finance UK",
+   "Alphabet: Strong Buy As AI Monetization Fears Grow (NASDAQ:GOOG) - Seeking Alpha",
+   "META_TITLE_QUOTE - Yahoo Finance",
+   "Markets spooked as Google reports $1 trillion+ AI bill, negative cash flow - Mashable",
+   "Nasdaq plunges over 3% on AI stock sell-off and weak tech earnings, facing worst day since June. - Pluang",
+   "Veteran fund manager revamps Alphabet stock price target after brutal sell-off - TheStreet"
+  ],
+  "META": [
+   "Meta Platforms (NASDAQ:META) Stock Falls 1.5% - Time to Sell? - MarketBeat",
+   "S&P revises Meta’s outlook to negative as the AI spending bill keeps growing - Crypto Briefing",
+   "S&P cuts Meta outlook to negative amid capex concerns - Investing.com",
+   "Meta Platforms (META) stock price forecast: AI funding and dilution risks after Q3 earnings - Beinsure",
+   "Meta Stocks Edged Lower With Reporting and Product-Assessment Duties in Focus - Yahoo Finance",
+   "Meta (META) Stock Sees Modest Fair Value Lift As Muse And Financing Drive Debate - Yahoo Finance"
+  ],
+  "TSLA": [
+   "Tesla: Paying Peak Multiples For Promises That Keep Slipping (Rating Downgrade) - Seeking Alpha",
+   "Tesla Stocks Move Lower With Cybercab Certification Response Due Today - TradingView",
+   "Elon Musk's $445 Million Midterm 'Crusade' Targets Democrats - Tesla (NASDAQ:TSLA) - Benzinga",
+   "Tesla-SpaceX Merger Could Face The Biggest Regulatory Risk In China, BofA Warns - Yahoo Finance",
+   "Tesla Could Be About to Unlock a Brand-New Revenue Stream. Time to Buy the Stock? - The Motley Fool",
+   "Tesla Stock Could Rebound as These 3 Growth Drivers Take Center Stage - 24/7 Wall St."
+  ],
+  "JPM": [
+   "JPMorgan Chase & Co. (NYSE:JPM) Shares Down 1.9% - Here's Why - MarketBeat",
+   "Why GE Vernova Stock Fell on Friday - The Motley Fool",
+   "Bank of America vs. JPMorgan Chase: Diverging Quarterly Revenue Trends for These Financial Giants - Yahoo Finance",
+   "REG - Ashtead Tech Hldgs JPMorgan Chase & Co - Holding(s) in Company - TradingView",
+   "JPM ETFs(I)-USD IG Co.Bd Ac. R (JRUE.DU) Seasonal Returns Chart - Yahoo Finance - Yahoo! Finance Canada",
+   "Banks And Financial Stocks: Latest News And Analysis - Investor's Business Daily"
+  ],
+  "XOM": [
+   "Investors Buy High Volume of ExxonMobil Call Options (NYSE:XOM) - MarketBeat",
+   "Is ExxonMobil Holdings (XOM) Cheap After Strong Q3 Results And A Dividend Lift? - Yahoo Finance",
+   "Exxon plans to spend $10B on refining business to boost margins, CEO says (XOM:NYSE) - Seeking Alpha",
+   "ExxonMobil (NYSE:XOM) Shares Up 2% on Better-Than-Expected Earnings - MarketBeat",
+   "Fund Update: New $9.8M $XOM stock position opened by MARKEL GROUP INC. - Quiver Quantitative",
+   "ExxonMobil (NYSE:XOM) Posts Earnings Results, Beats Estimates By $0.11 EPS - MarketBeat"
+  ],
+  "LLY": [
+   "Cathie Wood’s ARK sells Eli Lilly stock, buys Tempus AI and Coinbase - Investing.com Australia",
+   "S&P 500, Nasdaq End Third Straight Week Lower As Investors Move Away From Tech, AI — AMZN, INTC, LLY, RBLX In Focus - Yahoo Finance",
+   "What Eli Lilly and Company (LLY) Said on Its Q3 Earnings Call - Yahoo Finance",
+   "LLY Maintained by Citigroup -- Price Target Raised to $1650 - GuruFocus",
+   "Eli Lilly (LLY) Stock Jumps After Q3 Earnings Lift Guidance - Simply Wall St",
+   "LLY Q3 Earnings Call Highlights Raised Outlook and Obesity Drug Growth - Zacks Investment Research"
+  ],
+  "AMD": [
+   "AMD Stock Forecast for 2026, 2027, 2028–2030 and Beyond - LiteFinance",
+   "Advanced Micro Devices (NASDAQ:AMD) Stock Price Down 10.9% - What's Next? - MarketBeat",
+   "AMD Oct 2026 517.500 call (AMD261030C00517500) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+   "Fund Update: New $283.7M $AMD stock position opened by Rakuten Investment Management, Inc. - Quiver Quantitative",
+   "AMD's Stock Slides After Intel Earnings Reveal Two Big Issues - Moomoo",
+   "AMD’s stock slides after Intel earnings reveal two big issues - MarketWatch"
+  ],
+  "AVGO": [
+   "Broadcom (NASDAQ:AVGO) Stock Falls 5.5% - Time to Sell? - MarketBeat",
+   "Anthropic Could Join Public Markets With a Junk Rating Despite $112B Cash Pile, Blackstone Warns - Benzinga",
+   "Broadcom Stocks Decline 5.24% With Residual Support in AI Financing - TradingView",
+   "History Says Now Is the Perfect Time to Buy Broadcom Stock - The Motley Fool",
+   "(AVGO) as a Liquidity Pulse for Institutional Tactics - Stock Traders Daily",
+   "History Says Now Is the Perfect Time to Buy Broadcom Stock - The Globe and Mail"
+  ],
+  "NFLX": [
+   "Why CareDx Stock Soared Today - The Globe and Mail",
+   "Stock Market Today, Oct. 30: Intel Plunges Nearly 29% as Weak Outlook Rattles Wall Street - The Globe and Mail",
+   "What if you had invested $1,000 in Netflix stock 20 years ago? Here’s how much NFLX would be worth today - The Economic Times",
+   "Options Volatility Rises for Netflix (NFLX) Ahead of Market Move - GuruFocus",
+   "S&P 500 Most-Active Stocks: Oct. 30, 2026 - ChartMill",
+   "Apple Is Near a Record. Netflix Is Down More Than Half. I'd Buy Only 1 of Them. - Yahoo Finance"
+  ],
+  "COST": [
+   "Mastercard (MA) Stock May Be 24% Undervalued On UK Card Fee Lawsuit - Yahoo Finance",
+   "META_TITLE_QUOTE - Yahoo Finance",
+   "Oil (USCrude) Price Forecast for Today, Tomorrow, Next Week, and Next 30 Days - LiteFinance",
+   "BP PLC Stock 12‑Month Price Target Raised to GBX 661.2, Implies 6% Upside - TradingView",
+   "Price Shock Is Boon for Oil Stocks, Curse for Renewables - EnergyNow.com",
+   "The Open Question Under Coca-Cola Stock’s Price - Trefis"
+  ],
+  "WMT": [
+   "Walmart Gains as It Commits $6 Billion to Expand Symbotic Robotics - TIKR.com",
+   "Walmart (NASDAQ:WMT) Stock Jumps 1.9% - Still a Buy? - MarketBeat",
+   "What Walmart (WMT)'s $6b Warehouse Automation Deal Means For Shareholders - Yahoo Finance",
+   "Walmart (WMT) Partners with Base Power to Expand Home Energy Sol - GuruFocus",
+   "3 Penny Stocks to Watch Today, October 30 - TipRanks",
+   "Why Is CareDx Stock (CDNA) Up 18% Today? - TipRanks"
+  ],
+  "UNH": [
+   "ACA marketplace premiums rising by 13% in 2027 (UNH:NYSE) - Seeking Alpha",
+   "Can UnitedHealth Group (UNH) Stay Undervalued If Medicare Margins Improve? - Simply Wall St",
+   "What UnitedHealth Group Bulls Got Right - Yahoo Finance",
+   "Why UnitedHealth Stock Can Still Gain After This Year’s 24% Rally - Barron's",
+   "BridgeBio's Heart Disorder Drug Attruby Faces Unanticipated Near-Term Tailwinds, UBS Says - Yahoo! Finance Canada",
+   "UnitedHealth Group stock faces a costly AI execution test - ad-hoc-news.de"
+  ],
+  "PG": [
+   "PG Nov 2026 100.000 put (PG261106P00100000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+   "PG Nov 2026 155.000 call (PG261106C00155000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+   "Form 4 Hyatt Hotels Corporation: DJPS P.G. Trust For: 29 October - Investing.com India",
+   "A trust sold 30,000 Hyatt Hotels (H) Class B shares on October 29, 2026. - Stock Titan",
+   "A trust sold 35,000 Hyatt Hotels (H) shares on October 29, 2026. - Stock Titan",
+   "Two Class B share sales at Hyatt Hotels (H) include another 1,173 shares sold by JSPV P.G. Trust. - Stock Titan"
+  ],
+  "KO": [
+   "Investors advised to shift from AI to consumer staples, with key stocks surging over 11% in October. - Pluang",
+   "The Open Question Under Coca-Cola Stock’s Price - Trefis",
+   "Coca-Cola (NYSE:KO) Stock Jumps 1.4% - Still a Buy? - MarketBeat",
+   "Nasdaq Falls Another 747 Points as Intel Is Way Outside: Stock Market Today - Kiplinger",
+   "Crypto experts question double standard after issuers freeze billions in Binance hack - CoinDesk",
+   "PepsiCo Inc Stock (PEP) Moved Up by 3.12% on Oct 30: What Signal Does It Send? - TradingKey"
+  ],
+  "CAT": [
+   "Did Manitowoc's 89% Run Pass You By? What The Bulls Got Right - Yahoo Finance",
+   "IdaCorp Boosts 2026 Earnings Outlook on Strong Quarter - TipRanks",
+   "Dow Jones Biggest Decliners in the Oct. 30, 2026 Session - ChartMill",
+   "Caterpillar Stocks Decline 3.1% With Strong Margins Facing a Lower Valuation Bar - TradingView",
+   "Unusual Machines Sinks 12%, Red Cat Tumbles 10% as High-Beta Drone Stocks Slide; Ondas Drops 9%, AeroVironment Falls 6% - 24/7 Wall St.",
+   "CAT Q3 deep dive: capacity expansion and backlog growth shape outlook amid market caution - StockStory"
+  ],
+  "BA": [
+   "What BAE Systems Doubters Overlooked - Simply Wall St",
+   "5 must-read analyst questions from Boeing’s Q3 earnings call - Yahoo Finance",
+   "BA Q3 deep dive: supply chain hurdles slow ramp, defense wins boost backlog - Yahoo Finance",
+   "Why Did Firefly Aerospace Stock Just Crash? - The Globe and Mail",
+   "Freedom Broker cuts Boeing stock price target on production concerns By Investing.com - Investing.com Australia",
+   "Weekly Review: Tech Wreck Vs. Rest Of Market - Investor's Business Daily"
+  ]
+ },
+ "runs": {
+  "claude-haiku-5-5": {
+   "scores": {},
+   "notes": {
+    "_fehler": "HTTP 401 von api.anthropic.com: {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CgZPbjy7zvK9fQGo8uU9Z\"}"
+   }
+  },
+  "claude-sonnet-5-5": {
+   "scores": {},
+   "notes": {
+    "_fehler": "HTTP 401 von api.anthropic.com: {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CgZPbkMScPp8hMVF1wzkx\"}"
+   }
+  }
+ }
+}
