@@ -1,25 +1,38 @@
 # EXP-401 Zwischenstand – KI als Analyst
 
-Stand 2026-10-24
+Stand 2026-10-31
 
 ## Claude
 
 **Prognosegüte**
 
-- Prognosen: 20 in 1 Wochen · Trefferquote 28.6% (Ziel ≥ 55 %; Anteil steigender Werte 30%)
-- Brier 0.2625 · Münzwurf 0,2500 · immer long 0.2725 · Momentum 0.2425 (kleiner = besser)
-- Information Coefficient Ø +0.112 (Permutationstest p = 0.32) · Long-Short kumuliert -2.22 %
+- Prognosen: 60 in 2 Wochen · Trefferquote 45.0% (Ziel ≥ 55 %; Anteil steigender Werte 50%)
+- Brier 0.2553 · Münzwurf 0,2500 · immer long 0.2525 · Momentum 0.2375 (kleiner = besser)
+- Information Coefficient Ø +0.122 (Permutationstest p = 0.20) · Long-Short kumuliert -1.56 %
 
 **Simulierte Trades** (Tageskerzen, 0,1 % Kosten, keine echte Ausführung – getrennt von der Prognosegüte lesen)
 
-- Trades: 4, Ø +0.14 R, Gewinner 50%
+- Trades: 7, Ø +0.04 R, Gewinner 43%
 
 | bin     |   n |     p |    up |
 |:--------|----:|------:|------:|
-| 0,4–0,5 |   2 | 0.48  | 1     |
-| 0,5     |   6 | 0.5   | 0.167 |
-| 0,5–0,6 |   8 | 0.532 | 0.25  |
-| ≤0,4    |   1 | 0.4   | 0     |
-| ≥0,6    |   3 | 0.6   | 0.333 |
+| 0,4–0,5 |  15 | 0.451 | 0.667 |
+| 0,5     |  20 | 0.5   | 0.4   |
+| 0,5–0,6 |  18 | 0.538 | 0.556 |
+| ≤0,4    |   3 | 0.4   | 0.333 |
+| ≥0,6    |   4 | 0.6   | 0.25  |
 
-- ChatGPT 2026-10-26.json: Woche läuft noch
+## ChatGPT
+
+**Prognosegüte**
+
+- Prognosen: 40 in 1 Wochen · Trefferquote 63.2% (Ziel ≥ 55 %; Anteil steigender Werte 60%)
+- Brier 0.2438 · Münzwurf 0,2500 · immer long 0.2425 · Momentum 0.2350 (kleiner = besser)
+- Information Coefficient Ø +0.386 (Permutationstest p = 0.01) · Long-Short kumuliert +3.16 %
+
+| bin     |   n |     p |    up |
+|:--------|----:|------:|------:|
+| 0,4–0,5 |  23 | 0.474 | 0.478 |
+| 0,5     |   2 | 0.5   | 0.5   |
+| 0,5–0,6 |  15 | 0.527 | 0.8   |
+

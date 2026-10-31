@@ -1,63 +1,101 @@
 {
- "updated": "2026-10-24",
+ "updated": "2026-10-31",
  "arms": {
   "Claude": {
-   "n": 20,
-   "weeks": 1,
-   "hit_rate": 0.2857142857142857,
-   "share_up": 0.3,
-   "brier": 0.26252000000000003,
+   "n": 60,
+   "weeks": 2,
+   "hit_rate": 0.45,
+   "share_up": 0.5,
+   "brier": 0.2552516666666667,
    "brier_coin": 0.25,
-   "brier_always_long": 0.2725,
-   "brier_momentum": 0.24250000000000002,
-   "ic_mean": 0.1122604643530459,
+   "brier_always_long": 0.2525,
+   "brier_momentum": 0.23750000000000002,
+   "ic_mean": 0.12204804121786732,
    "ic_by_week": {
-    "2026-10-19": 0.1122604643530459
+    "2026-10-19": 0.1122604643530459,
+    "2026-10-26": 0.13183561808268873
    },
-   "perm_p": 0.3245,
+   "perm_p": 0.205,
    "ls_by_week": {
-    "2026-10-19": -0.022212838968880974
+    "2026-10-19": -0.022212838968880974,
+    "2026-10-26": 0.006624318638191135
    },
    "calibration": [
     {
      "bin": "0,4–0,5",
-     "n": 2,
-     "p": 0.48,
-     "up": 1.0
+     "n": 15,
+     "p": 0.451,
+     "up": 0.667
     },
     {
      "bin": "0,5",
-     "n": 6,
+     "n": 20,
      "p": 0.5,
-     "up": 0.167
+     "up": 0.4
     },
     {
      "bin": "0,5–0,6",
-     "n": 8,
-     "p": 0.532,
-     "up": 0.25
+     "n": 18,
+     "p": 0.538,
+     "up": 0.556
     },
     {
      "bin": "≤0,4",
-     "n": 1,
+     "n": 3,
      "p": 0.4,
-     "up": 0.0
+     "up": 0.333
     },
     {
      "bin": "≥0,6",
-     "n": 3,
+     "n": 4,
      "p": 0.6,
-     "up": 0.333
+     "up": 0.25
     }
    ],
-   "trades": 4,
-   "trade_mean_R": 0.14054351717745492,
-   "trade_win": 0.5
+   "trades": 7,
+   "trade_mean_R": 0.04250299708208078,
+   "trade_win": 0.42857142857142855
+  },
+  "ChatGPT": {
+   "n": 40,
+   "weeks": 1,
+   "hit_rate": 0.631578947368421,
+   "share_up": 0.6,
+   "brier": 0.243805,
+   "brier_coin": 0.25,
+   "brier_always_long": 0.2425,
+   "brier_momentum": 0.23499999999999996,
+   "ic_mean": 0.386436931548789,
+   "ic_by_week": {
+    "2026-10-26": 0.386436931548789
+   },
+   "perm_p": 0.0085,
+   "ls_by_week": {
+    "2026-10-26": 0.031633707786220724
+   },
+   "calibration": [
+    {
+     "bin": "0,4–0,5",
+     "n": 23,
+     "p": 0.474,
+     "up": 0.478
+    },
+    {
+     "bin": "0,5",
+     "n": 2,
+     "p": 0.5,
+     "up": 0.5
+    },
+    {
+     "bin": "0,5–0,6",
+     "n": 15,
+     "p": 0.527,
+     "up": 0.8
+    }
+   ]
   }
  },
- "notes": [
-  "ChatGPT 2026-10-26.json: Woche läuft noch"
- ],
+ "notes": [],
  "predictions": [
   {
    "arm": "Claude",
@@ -258,6 +296,806 @@
    "mom": 0.0,
    "ret": 0.00197,
    "alpha": 0.01603
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "AAPL",
+   "p": 0.57,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.00206,
+   "alpha": 0.01063
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "MSFT",
+   "p": 0.5,
+   "up": 0.0,
+   "mom": 1.0,
+   "ret": -0.01041,
+   "alpha": -0.00184
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "NVDA",
+   "p": 0.45,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.03974,
+   "alpha": -0.03118
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "AMZN",
+   "p": 0.5,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.03656,
+   "alpha": -0.02799
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "GOOGL",
+   "p": 0.5,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.12793,
+   "alpha": -0.11936
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "META",
+   "p": 0.43,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.03661,
+   "alpha": -0.02804
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "TSLA",
+   "p": 0.52,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.04163,
+   "alpha": 0.0502
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "JPM",
+   "p": 0.47,
+   "up": 1.0,
+   "mom": 0.0,
+   "ret": 0.0091,
+   "alpha": 0.01767
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "XOM",
+   "p": 0.5,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.02964,
+   "alpha": 0.0382
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "LLY",
+   "p": 0.5,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.10195,
+   "alpha": 0.11052
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "SPY",
+   "p": 0.52,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.00857,
+   "alpha": 0.0
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "QQQ",
+   "p": 0.48,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.02344,
+   "alpha": -0.01487
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "GLD",
+   "p": 0.4,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.03136,
+   "alpha": -0.0228
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "^GDAXI",
+   "p": 0.5,
+   "up": 1.0,
+   "mom": 0.0,
+   "ret": 0.02308,
+   "alpha": 0.03164
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "SAP.DE",
+   "p": 0.6,
+   "up": 0.0,
+   "mom": 1.0,
+   "ret": -0.01054,
+   "alpha": -0.03362
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "SIE.DE",
+   "p": 0.43,
+   "up": 1.0,
+   "mom": 0.0,
+   "ret": 0.03245,
+   "alpha": 0.00938
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "ALV.DE",
+   "p": 0.52,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.01787,
+   "alpha": -0.00521
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "DTE.DE",
+   "p": 0.45,
+   "up": 1.0,
+   "mom": 0.0,
+   "ret": 0.03245,
+   "alpha": 0.00937
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "RHM.DE",
+   "p": 0.47,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.0121,
+   "alpha": -0.01098
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "MBG.DE",
+   "p": 0.5,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.01668,
+   "alpha": -0.03976
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "AMD",
+   "p": 0.45,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.03441,
+   "alpha": -0.02584
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "AVGO",
+   "p": 0.42,
+   "up": 1.0,
+   "mom": 0.0,
+   "ret": 0.00478,
+   "alpha": 0.01334
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "NFLX",
+   "p": 0.42,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.04727,
+   "alpha": -0.0387
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "COST",
+   "p": 0.56,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.01244,
+   "alpha": 0.02101
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "WMT",
+   "p": 0.56,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.03226,
+   "alpha": 0.04083
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "UNH",
+   "p": 0.55,
+   "up": 0.0,
+   "mom": 1.0,
+   "ret": -0.02869,
+   "alpha": -0.02012
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "PG",
+   "p": 0.56,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.00504,
+   "alpha": 0.01361
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "KO",
+   "p": 0.5,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.015,
+   "alpha": 0.02356
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "CAT",
+   "p": 0.5,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.09142,
+   "alpha": -0.08285
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "BA",
+   "p": 0.5,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.08876,
+   "alpha": -0.08019
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "ASML.AS",
+   "p": 0.44,
+   "up": 1.0,
+   "mom": 0.0,
+   "ret": 0.0103,
+   "alpha": -0.00122
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "NOVO-B.CO",
+   "p": 0.51,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.02071,
+   "alpha": 0.0092
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "MC.PA",
+   "p": 0.4,
+   "up": 1.0,
+   "mom": 0.0,
+   "ret": 0.00781,
+   "alpha": -0.0037
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "NESN.SW",
+   "p": 0.55,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.01827,
+   "alpha": 0.00676
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "SHEL.L",
+   "p": 0.5,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.00423,
+   "alpha": -0.00729
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "BAS.DE",
+   "p": 0.5,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.02946,
+   "alpha": 0.00639
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "BAYN.DE",
+   "p": 0.48,
+   "up": 1.0,
+   "mom": 0.0,
+   "ret": 0.13408,
+   "alpha": 0.111
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "DBK.DE",
+   "p": 0.5,
+   "up": 1.0,
+   "mom": 0.0,
+   "ret": 0.06837,
+   "alpha": 0.04529
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "IFX.DE",
+   "p": 0.42,
+   "up": 1.0,
+   "mom": 0.0,
+   "ret": 0.03713,
+   "alpha": 0.01405
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "VOW3.DE",
+   "p": 0.5,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.00172,
+   "alpha": -0.0248
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "AAPL",
+   "p": 0.55,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.00206,
+   "alpha": 0.01063
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "MSFT",
+   "p": 0.52,
+   "up": 0.0,
+   "mom": 1.0,
+   "ret": -0.01041,
+   "alpha": -0.00184
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "NVDA",
+   "p": 0.48,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.03974,
+   "alpha": -0.03118
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "AMZN",
+   "p": 0.48,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.03656,
+   "alpha": -0.02799
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "GOOGL",
+   "p": 0.47,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.12793,
+   "alpha": -0.11936
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "META",
+   "p": 0.48,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.03661,
+   "alpha": -0.02804
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "TSLA",
+   "p": 0.51,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.04163,
+   "alpha": 0.0502
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "JPM",
+   "p": 0.48,
+   "up": 1.0,
+   "mom": 0.0,
+   "ret": 0.0091,
+   "alpha": 0.01767
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "XOM",
+   "p": 0.53,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.02964,
+   "alpha": 0.0382
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "LLY",
+   "p": 0.55,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.10195,
+   "alpha": 0.11052
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "SPY",
+   "p": 0.5,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.00857,
+   "alpha": 0.0
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "QQQ",
+   "p": 0.49,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.02344,
+   "alpha": -0.01487
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "GLD",
+   "p": 0.46,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.03136,
+   "alpha": -0.0228
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "^GDAXI",
+   "p": 0.49,
+   "up": 1.0,
+   "mom": 0.0,
+   "ret": 0.02308,
+   "alpha": 0.03164
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "SAP.DE",
+   "p": 0.52,
+   "up": 0.0,
+   "mom": 1.0,
+   "ret": -0.01054,
+   "alpha": -0.03362
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "SIE.DE",
+   "p": 0.47,
+   "up": 1.0,
+   "mom": 0.0,
+   "ret": 0.03245,
+   "alpha": 0.00938
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "ALV.DE",
+   "p": 0.51,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.01787,
+   "alpha": -0.00521
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "DTE.DE",
+   "p": 0.45,
+   "up": 1.0,
+   "mom": 0.0,
+   "ret": 0.03245,
+   "alpha": 0.00937
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "RHM.DE",
+   "p": 0.49,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.0121,
+   "alpha": -0.01098
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "MBG.DE",
+   "p": 0.47,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.01668,
+   "alpha": -0.03976
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "AMD",
+   "p": 0.49,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.03441,
+   "alpha": -0.02584
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "AVGO",
+   "p": 0.46,
+   "up": 1.0,
+   "mom": 0.0,
+   "ret": 0.00478,
+   "alpha": 0.01334
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "NFLX",
+   "p": 0.46,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.04727,
+   "alpha": -0.0387
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "COST",
+   "p": 0.54,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.01244,
+   "alpha": 0.02101
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "WMT",
+   "p": 0.52,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.03226,
+   "alpha": 0.04083
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "UNH",
+   "p": 0.53,
+   "up": 0.0,
+   "mom": 1.0,
+   "ret": -0.02869,
+   "alpha": -0.02012
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "PG",
+   "p": 0.55,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.00504,
+   "alpha": 0.01361
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "KO",
+   "p": 0.53,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.015,
+   "alpha": 0.02356
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "CAT",
+   "p": 0.48,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.09142,
+   "alpha": -0.08285
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "BA",
+   "p": 0.46,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.08876,
+   "alpha": -0.08019
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "ASML.AS",
+   "p": 0.48,
+   "up": 1.0,
+   "mom": 0.0,
+   "ret": 0.0103,
+   "alpha": -0.00122
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "NOVO-B.CO",
+   "p": 0.5,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.02071,
+   "alpha": 0.0092
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "MC.PA",
+   "p": 0.46,
+   "up": 1.0,
+   "mom": 0.0,
+   "ret": 0.00781,
+   "alpha": -0.0037
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "NESN.SW",
+   "p": 0.52,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.01827,
+   "alpha": 0.00676
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "SHEL.L",
+   "p": 0.51,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.00423,
+   "alpha": -0.00729
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "BAS.DE",
+   "p": 0.52,
+   "up": 1.0,
+   "mom": 1.0,
+   "ret": 0.02946,
+   "alpha": 0.00639
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "BAYN.DE",
+   "p": 0.48,
+   "up": 1.0,
+   "mom": 0.0,
+   "ret": 0.13408,
+   "alpha": 0.111
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "DBK.DE",
+   "p": 0.48,
+   "up": 1.0,
+   "mom": 0.0,
+   "ret": 0.06837,
+   "alpha": 0.04529
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "IFX.DE",
+   "p": 0.47,
+   "up": 1.0,
+   "mom": 0.0,
+   "ret": 0.03713,
+   "alpha": 0.01405
+  },
+  {
+   "arm": "ChatGPT",
+   "week": "2026-10-26",
+   "symbol": "VOW3.DE",
+   "p": 0.48,
+   "up": 0.0,
+   "mom": 0.0,
+   "ret": -0.00172,
+   "alpha": -0.0248
   }
  ],
  "trades": [
@@ -288,6 +1126,27 @@
    "symbol": "GLD",
    "side": "short",
    "R": 0.967
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "GLD",
+   "side": "short",
+   "R": 1.012
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "SAP.DE",
+   "side": "long",
+   "R": -1.025
+  },
+  {
+   "arm": "Claude",
+   "week": "2026-10-26",
+   "symbol": "MC.PA",
+   "side": "short",
+   "R": -0.252
   }
  ]
 }
